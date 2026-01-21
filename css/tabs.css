@@ -1,0 +1,21 @@
+
+/* Tabs CSS */
+/* configure the tab buttons */
+.charsheet .sheet-attributes,
+.charsheet .sheet-powers,
+.charsheet .sheet-attacks {
+    display: none;
+}
+
+/* style the active button */
+.charsheet .sheet-tabstoggle[value="attributes"] ~ div .sheet-button0 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="powers"] ~ div .sheet-button1 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="attacks"] ~ div .sheet-button2 {outline: 2px solid red;}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="attributes"] ~ div.sheet-attributes,
+.charsheet .sheet-tabstoggle[value="powers"] ~ div.sheet-powers,
+.charsheet .sheet-tabstoggle[value="attacks"] ~ div.sheet-attacks {
+    display: block;
+}
+/* End of Tabs CSS */
