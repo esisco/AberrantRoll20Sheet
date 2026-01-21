@@ -1,0 +1,29 @@
+
+<rolltemplate class="sheet-rolltemplate-base">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+        {{#roll}}
+        <div class="rowcolor"><span class="tcat">Roll: </span>{{roll}} Success(es)</div>
+        {{/roll}}
+        {{#attack}}
+        <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} Success(es)</div>
+        {{/attack}}
+        {{#damage}}
+            <div>
+                 <span class="tcat">Damage: </span>{{damage}} 
+            </div>
+        {{/damage}}
+        {{#note}}
+            <div>
+                {{note}} 
+            </div>
+        {{/note}}
+        {{#mega}}
+            <div>
+                <div class="rowcolor2">{{mega}}</div>
+            </div>
+        {{/mega}}
+    </div>
+</rolltemplate>
