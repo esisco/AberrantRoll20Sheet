@@ -1,5 +1,5 @@
 
-const buttonlist = ["main", "powers", "attacks"];
+const buttonlist = ["abilities", "quantum", "combat", "info"];
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         console.log(`Switching to ${button} tab`);

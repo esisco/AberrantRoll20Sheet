@@ -1,0 +1,1785 @@
+    <div class='sheet-abilities'>
+		<h2>Attributes and Abilities</h2>
+		<!--    Strength, Perception, Charisma-->
+		<div>
+    		<div class="col">
+    		    <h3>Physical</h3>
+                <div class="row">
+                    <div class="item 100 title">Strength</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Strength_Quality' placeholder='Quality' /></div>
+                </div>
+                <div class="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Strength' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Strength' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Strength' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Strength' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Strength' value=5 /><span></span>
+                </div>
+                <div class="row">
+                    <div class="item 100">Mega Strength</div>
+                </div>
+                <div class="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Strength' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Strength' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Strength' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Strength' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Strength' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Strength' value=5 /><span></span>
+                    <button type="action" class="sheet-d10-dice" name="act_roll_Mega_Strength">0 </button>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Mental</h3>
+                <div class="row">
+                    <div class="item 100 title">Perception</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Perception_Quality' placeholder='Quality' /></div>
+                </div>
+                <div class="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Perception' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Perception' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Perception' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Perception' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Perception' value=5 /><span></span>
+                </div>
+                <div class="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Perception' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Perception' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Perception' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Perception' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Perception' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Perception' value=5 /><span></span>
+                    <button type="action" class="sheet-d10-dice" name="act_roll_Mega_Perception">0 </button>
+                </div>
+            </div>
+            <div class="col">
+                <h3>Social</h3>
+                <div class="row">
+                    <div class="item 100 title">Charisma</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Charisma_Quality' placeholder='Quality' /></div>
+                </div>
+                <div class="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Charisma' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Charisma' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Charisma' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Charisma' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Charisma' value=5 /><span></span>
+                </div>
+                <div class="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Charisma' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Charisma' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Charisma' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Charisma' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Charisma' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Charisma' value=5 /><span></span>
+                    <button type="action" class="sheet-d10-dice" name="act_roll_Mega_Charisma">0 </button>
+                </div>
+            </div>
+        </div>
+		<!--    Skills-->
+		<div>
+            <!--    Strength    -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-str" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Brawl</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Brawl_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Brawl" value="&{template:base} {{subtag= @{character_name} }} {{name= Brawl }} {{roll= [[ (?{Modifier?|0} +@{Brawl_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Brawl_Specialty}}} {{mega=MegaStrength: @{Mega_Strength} [Roll](~roll_Mega_Strength) }}">
+                        <!-- <button type='roll' class="grid_btn" name="roll_Brawl" value="&{template:base} {{subtag= @{character_name} }} {{name= Brawl }} {{roll= [[ (?{Modifier?|0} +@{Brawl_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Brawl_Specialty}}} {{mega= Strength: @{Mega_Strength} [Roll](!&#13;/r @{Mega_Strength}d10>7f1s2!>10s+s3) }}"> -->
+        				    <input type='text' class='sheet-total' name='attr_Brawl_Total' value="@{Strength}+@{Brawl}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Brawl' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Brawl' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Might</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Might_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Might" value="&{template:base} {{subtag= @{character_name} }} {{name= Might }} {{roll= [[ (?{Modifier?|0} +@{Might_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Might_Specialty}}} {{mega= Strength: @{Mega_Strength} }}">
+        				    <input type='text' class='sheet-total' name='attr_Might_Total' value="@{Strength}+@{Might}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Might' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Might' value=10/><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Throwing</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Throwing_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Throwing" value="&{template:base} {{subtag= @{character_name} }} {{name= Throwing }} {{roll= [[ (?{Modifier?|0} +@{Throwing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Throwing_Specialty}}} {{mega= Strength: @{Mega_Strength} }}">
+        				    <input type='text' class='sheet-total' name='attr_Throwing_Total' value="@{Strength}+@{Throwing}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Throwing' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Throwing' value=10/><span></span>
+                    </div>
+                    <fieldset class='repeating_strength'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rStrName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rStrSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" name="roll_rStr_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rStrName} }} {{roll= [[ (?{Modifier?|0} +@{rStr_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStrSpecialty}}} {{mega= Strength: @{Mega_Strength} }}">
+            				    <input type='text' class='sheet-total' name='attr_rStr_Total' value="@{Strength}+@{rStr}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rStr' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rStr' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+                </div>
+            </div>
+            <!--    Perception  -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-per" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Artillery</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Artillery_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Artillery" value="&{template:base} {{subtag= @{character_name} }} {{name= Artillery }} {{roll= [[ (?{Modifier?|0} +@{Artillery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Artillery_Specialty}}} {{mega= Perception: @{Mega_Perception} }}">
+        				    <input type='text' class='sheet-total' name='attr_Artillery_Total' value="@{Perception}+@{Artillery}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Artillery' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Artillery' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Awareness</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Awareness_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Awareness" value="&{template:base} {{subtag= @{character_name} }} {{name= Awareness }} {{roll= [[ (?{Modifier?|0} +@{Awareness_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Awareness_Specialty}}} {{mega= Perception: @{Mega_Perception} }}">
+        				    <input type='text' class='sheet-total' name='attr_Awareness_Total' value="@{Perception}+@{Awareness}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Awareness' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Awareness' value=10/><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Channeling</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Channeling_Perception_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Channeling_Perception" value="&{template:base} {{subtag= @{character_name} }} {{name= Channeling [Perception]}} {{roll= [[ (?{Modifier?|0} +@{Channeling_Perception_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Channeling_Perception_Specialty}}} {{mega= Perception: @{Mega_Perception} }}">
+        				    <input type='text' class='sheet-total' name='attr_Channeling_Perception_Total' value="@{Perception}+@{Channeling_Perception}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Channeling_Perception' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling_Perception' value=10/><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Investigation</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Investigation_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Investigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Investigation }} {{roll= [[ (?{Modifier?|0} +@{Investigation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Investigation_Specialty}}} {{mega= Perception: @{Mega_Perception} }}">
+        				    <input type='text' class='sheet-total' name='attr_Investigation_Total' value="@{Perception}+@{Investigation}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Investigation' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Investigation' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Navigation</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Navigation_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Navigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Navigation }} {{roll= [[ (?{Modifier?|0} +@{Navigation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Navigation_Specialty}}} {{mega= Perception: @{Mega_Perception} }}">
+        				    <input type='text' class='sheet-total' name='attr_Navigation_Total' value="@{Perception}+@{Navigation}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Navigation' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Navigation' value=10 /><span></span>
+                    </div>
+    				<fieldset class='repeating_perception'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rPerName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rPerSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPerName} }} {{roll= [[ (?{Modifier?|0} +@{rPer_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPerSpecialty}}} {{mega= Perception: @{Mega_Perception} }}">
+            				    <input type='text' class='sheet-total' name='attr_rPer_Total' value="@{Perception}+@{rStr}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rPer' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rPer' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+            <!--    Charisma  -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-cha" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Animal Training</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Animal_Training_Specialty' placeholder='Specialty' /></div>
+                    </div>    
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Animal_Training" value="&{template:base} {{subtag= @{character_name} }} {{name= Animal Training }} {{roll= [[ (?{Modifier?|0} +@{Animal_Training_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Animal_Training_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Animal_Training_Total' value="@{Charisma}+@{Animal_Training}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Animal_Training' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Animal_Training' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Carousing</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Carousing_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Carousing" value="&{template:base} {{subtag= @{character_name} }} {{name= Carousing }} {{roll= [[ (?{Modifier?|0} +@{Carousing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Carousing_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Carousing_Total' value="@{Charisma}+@{Carousing}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Carousing' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Carousing' value=10/><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Command</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Command_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Command" value="&{template:base} {{subtag= @{character_name} }} {{name= Command }} {{roll= [[ (?{Modifier?|0} +@{Command_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Command_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Command_Total' value="@{Charisma}+@{Command}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Command' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Command' value=10/><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Etiquette</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Etiquette_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Etiquette" value="&{template:base} {{subtag= @{character_name} }} {{name= Etiquette }} {{roll= [[ (?{Modifier?|0} +@{Etiquette_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Etiquette_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Etiquette_Total' value="@{Charisma}+@{Etiquette}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Etiquette' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Etiquette' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Instruction</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Instruction_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Instruction" value="&{template:base} {{subtag= @{character_name} }} {{name= Instruction }} {{roll= [[ (?{Modifier?|0} +@{Instruction_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Instruction_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Instruction_Total' value="@{Charisma}+@{Instruction}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Instruction' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Instruction' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Perform</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Perform_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Perform" value="&{template:base} {{subtag= @{character_name} }} {{name= Perform }} {{roll= [[ (?{Modifier?|0} +@{Perform_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Perform_Specialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+        				    <input type='text' class='sheet-total' name='attr_Perform_Total' value="@{Charisma}+@{Perform}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Perform' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Perform' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_perception'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rChaName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rChaSpecialty' placeholder='Specialty' /></div>
+                        </div>
+                        <div class='row'>
+                            <button type='roll' class="grid_btn" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rChaName} }} {{roll= [[ (?{Modifier?|0} +@{rCha_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rChaSpecialty}}} {{mega= Charisma: @{Mega_Charisma} }}">
+                                <input type='text' class='sheet-total' name='attr_rCha_Total' value="@{Charisma}+@{rCha}" disabled />
+                            </button>
+                            <input type='radio' class="dot zero" name='attr_rCha' value=0 checked /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=1 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=2 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=3 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=4 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=5 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=6 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=7 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=8 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=9 /><span></span>
+                            <input type='radio' class="dot" name='attr_rCha' value=10 /><span></span>
+                        </div>
+                    </fieldset>
+                </div>
+            </div>
+        </div>
+		<!--    Dexterity, Intelligence, Manipulation-->
+		<div>
+    		<div class="col">
+                <div class="row">
+                    <div class="item 100 title">Dexterity</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Dexterity_Quality' placeholder='Quality' /></div>
+                </div>
+                <div clas="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Dexterity' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Dexterity' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Dexterity' value=10 /><span></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="item 100 title">Intelligence</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Intelligence_Quality' placeholder='Quality' /></div>
+                </div>
+                <div clas="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Intelligence' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Intelligence' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Intelligence' value=10 /><span></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="item 100 title">Manipulation</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Manipulation_Quality' placeholder='Quality' /></div>
+                </div>
+                <div class="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Manipulation' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Manipulation' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Manipulation' value=10 /><span></span>
+                </div>
+            </div>
+    	</div>
+		<!--    Skills-->
+		<div>
+            <!--    Dexterity       -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-dex" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Archery</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Archery_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Archery" value="&{template:base} {{subtag= @{character_name} }} {{name= Archery }} {{roll= [[ (?{Modifier?|0} +@{Archery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Archery_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Archery_Total' value="@{Dexterity}+@{Archery}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Archery' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Archery' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Athletics</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Athletics_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Athletics" value="&{template:base} {{subtag= @{character_name} }} {{name= Athletics }} {{roll= [[ (?{Modifier?|0} +@{Athletics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Athletics_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Athletics_Total' value="@{Dexterity}+@{Athletics}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Athletics' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Athletics' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Drive</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Drive_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Drive" value="&{template:base} {{subtag= @{character_name} }} {{name= Drive }} {{roll= [[ (?{Modifier?|0} +@{Drive_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Drive_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Drive_Total' value="@{Dexterity}+@{Drive}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Drive' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Drive' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Firearms</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Firearms_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Firearms" value="&{template:base} {{subtag= @{character_name} }} {{name= Firearms }} {{roll= [[ (?{Modifier?|0} +@{Firearms_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Firearms_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Firearms_Total' value="@{Dexterity}+@{Firearms}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Firearms' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Firearms' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Gunnery</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Gunnery_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Gunnery" value="&{template:base} {{subtag= @{character_name} }} {{name= Gunnery }} {{roll= [[ (?{Modifier?|0} +@{Gunnery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gunnery_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Gunnery_Total' value="@{Dexterity}+@{Gunnery}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Gunnery' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gunnery' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Heavy Weapons</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Heavy_Weapons_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Heavy_Weapons" value="&{template:base} {{subtag= @{character_name} }} {{name= Heavy Weapons }} {{roll= [[ (?{Modifier?|0} +@{Heavy_Weapons_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Heavy_Weapons_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Heavy_Weapons_Total' value="@{Dexterity}+@{Heavy_Weapons}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Heavy_Weapons' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Heavy_Weapons' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Legerdemain</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Legerdemain_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Legerdemain" value="&{template:base} {{subtag= @{character_name} }} {{name= Legerdemain }} {{roll= [[ (?{Modifier?|0} +@{Legerdemain_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Legerdemain_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Legerdemain_Total' value="@{Dexterity}+@{Legerdemain}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Legerdemain' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Legerdemain' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Martial Arts</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Martial_Arts_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Martial_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Martial Arts }} {{roll= [[ (?{Modifier?|0} +@{Martial_Arts_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Martial_Arts_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Martial_Arts_Total' value="@{Dexterity}+@{Martial_Arts}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Martial_Arts' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Martial_Arts' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Melee</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Melee_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Melee" value="&{template:base} {{subtag= @{character_name} }} {{name= Melee }} {{roll= [[ (?{Modifier?|0} +@{Melee_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Melee_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Melee_Total' value="@{Dexterity}+@{Melee}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Melee' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Melee' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Pilot</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Pilot_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Pilot" value="&{template:base} {{subtag= @{character_name} }} {{name= Pilot }} {{roll= [[ (?{Modifier?|0} +@{Pilot_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Pilot_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Pilot_Total' value="@{Dexterity}+@{Pilot}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Pilot' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Pilot' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Ride</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Ride_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Ride" value="&{template:base} {{subtag= @{character_name} }} {{name= Ride }} {{roll= [[ (?{Modifier?|0} +@{Ride_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Ride_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Ride_Total' value="@{Dexterity}+@{Ride}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Ride' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Ride' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Stealth</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Stealth_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Stealth" value="&{template:base} {{subtag= @{character_name} }} {{name= Stealth }} {{roll= [[ (?{Modifier?|0} +@{Stealth_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Stealth_Specialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+        				    <input type='text' class='sheet-total' name='attr_Stealth_Total' value="@{Dexterity}+@{Stealth}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Stealth' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Stealth' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_dexterity'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rDexName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rDexSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" value="&{template:base} {{subtag= @{character_name} }} {{name=@{rDexName} }} {{roll= [[ (?{Modifier?|0} +@{rDex_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rDexSpecialty}}} {{mega= Dexterity: @{Mega_Dexterity} }}">
+            				    <input type='text' class='sheet-total' name='attr_rDex_Total' value="@{Dexterity}+@{rDex}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rDex' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rDex' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+                </div>
+            </div>
+            <!--    Intelligence    -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-int" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Academics</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Academics_Specialty' placeholder='Specialty' /></div>
+                    </div>                
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Academics" value="&{template:base} {{subtag= @{character_name} }} {{name= Academics }} {{roll= [[ (?{Modifier?|0} +@{Academics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Academics_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Academics_Total' value="@{Intelligence}+@{Academics}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Academics' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Academics' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Analysis</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Analysis_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Analysis" value="&{template:base} {{subtag= @{character_name} }} {{name= Analysis }} {{roll= [[ (?{Modifier?|0} +@{Analysis_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Analysis_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Analysis_Total' value="@{Intelligence}+@{Analysis}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Analysis' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Analysis' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Bureaucracy</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Bureaucracy_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Bureaucracy" value="&{template:base} {{subtag= @{character_name} }} {{name= Bureaucracy }} {{roll= [[ (?{Modifier?|0} +@{Bureaucracy_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Bureaucracy_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Bureaucracy_Total' value="@{Intelligence}+@{Bureaucracy}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Bureaucracy' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Bureaucracy' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Computer</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Computer_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Computer" value="&{template:base} {{subtag= @{character_name} }} {{name= Computer }} {{roll= [[ (?{Modifier?|0} +@{Computer_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Computer_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Computer_Total' value="@{Intelligence}+@{Computer}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Computer' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Computer' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Demolitions</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Demolitions_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Demolitions" value="&{template:base} {{subtag= @{character_name} }} {{name= Demolitions }} {{roll= [[ (?{Modifier?|0} +@{Demolitions_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Demolitions_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Demolitions_Total' value="@{Intelligence}+@{Demolitions}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Demolitions' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Demolitions' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Engineering</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Engineering_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Demolitions" value="&{template:base} {{subtag= @{character_name} }} {{name= Demolitions }} {{roll= [[ (?{Modifier?|0} +@{Demolitions_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Demolitions_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Engineering_Total' value="@{Intelligence}+@{Engineering}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Engineering' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Engineering' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Gambling</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Gambling_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Gambling" value="&{template:base} {{subtag= @{character_name} }} {{name= Gambling }} {{roll= [[ (?{Modifier?|0} +@{Gambling_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gambling_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Gambling_Total' value="@{Intelligence}+@{Gambling}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Gambling' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Gambling' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Intrusion</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Intrusion_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Intrusion" value="&{template:base} {{subtag= @{character_name} }} {{name= Intrusion }} {{roll= [[ (?{Modifier?|0} +@{Intrusion_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intrusion_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Intrusion_Total' value="@{Intelligence}+@{Intrusion}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Intrusion' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intrusion' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Linguistics</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Linguistics_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Linguistics" value="&{template:base} {{subtag= @{character_name} }} {{name= Linguistics }} {{roll= [[ (?{Modifier?|0} +@{Linguistics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Linguistics_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Linguistics_Total' value="@{Intelligence}+@{Linguistics}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Linguistics' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Linguistics' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Medicine</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Medicine_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Medicine" value="&{template:base} {{subtag= @{character_name} }} {{name= Medicine }} {{roll= [[ (?{Modifier?|0} +@{Medicine_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Medicine_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Medicine_Total' value="@{Intelligence}+@{Medicine}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Medicine' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Medicine' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Occult</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Occult_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Occult" value="&{template:base} {{subtag= @{character_name} }} {{name= Occult }} {{roll= [[ (?{Modifier?|0} +@{Occult_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Occult_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Occult_Total' value="@{Intelligence}+@{Occult}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Occult' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Occult' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Science</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Science_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Science" value="&{template:base} {{subtag= @{character_name} }} {{name= Science }} {{roll= [[ (?{Modifier?|0} +@{Science_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Science_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Science_Total' value="@{Intelligence}+@{Science}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Science' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Science' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Survival</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Survival_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Survival" value="&{template:base} {{subtag= @{character_name} }} {{name= Survival }} {{roll= [[ (?{Modifier?|0} +@{Survival_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Survival_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Survival_Total' value="@{Intelligence}+@{Survival}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Survival' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Survival' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Tradecraft</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Tradecraft_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Tradecraft" value="&{template:base} {{subtag= @{character_name} }} {{name= Tradecraft }} {{roll= [[ (?{Modifier?|0} +@{Tradecraft_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tradecraft_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Tradecraft_Total' value="@{Intelligence}+@{Tradecraft}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Tradecraft' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tradecraft' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Thought Discipline</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Thought_Discipline_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Thought_Discipline" value="&{template:base} {{subtag= @{character_name} }} {{name= Thought_Discipline }} {{roll= [[ (?{Modifier?|0} +@{Thought_Discipline_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Thought_Discipline_Specialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+        				    <input type='text' class='sheet-total' name='attr_Thought Discipline_Total' value="@{Intelligence}+@{Thought_Discipline}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Thought_Discipline' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Thought_Discipline' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_intelligence'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rIntName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rIntSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" value="&{template:base} {{subtag= @{character_name} }} {{name=@{rIntName} }} {{roll= [[ (?{Modifier?|0} +@{rInt_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rIntSpecialty}}} {{mega= Intelligence: @{Mega_Intelligence} }}">
+            				    <input type='text' class='sheet-total' name='attr_rInt_Total' value="@{Intelligence}+@{rInt}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rInt' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rInt' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+            <!--    Manipulation    -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-man" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Diplomacy</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Diplomacy_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Diplomacy" value="&{template:base} {{subtag= @{character_name} }} {{name= Diplomacy }} {{roll= [[ (?{Modifier?|0} +@{Diplomacy_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Diplomacy_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Diplomacy_Total' value="@{Manipulation}+@{Diplomacy}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Diplomacy' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Diplomacy' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Hypnosis</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Hypnosis_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="grid_item">
+                        <button type='roll' class="grid_btn" name="roll_Hypnosis" value="&{template:base} {{subtag= @{character_name} }} {{name= Hypnosis }} {{roll= [[ (?{Modifier?|0} +@{Hypnosis_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Hypnosis_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Hypnosis_Total' value="@{Manipulation}+@{Hypnosis}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Hypnosis' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Hypnosis' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Interrogation</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Interrogation_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="grid_item">
+                        <button type='roll' class="grid_btn" name="roll_Interrogation" value="&{template:base} {{subtag= @{character_name} }} {{name= Interrogation }} {{roll= [[ (?{Modifier?|0} +@{Interrogation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Interrogation_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Interrogation_Total' value="@{Manipulation}+@{Interrogation}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Interrogation' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Interrogation' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Seduction</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Seduction_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="grid_item">
+                        <button type='roll' class="grid_btn" name="roll_Seduction" value="&{template:base} {{subtag= @{character_name} }} {{name= Seduction }} {{roll= [[ (?{Modifier?|0} +@{Seduction_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Seduction_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Seduction_Total' value="@{Manipulation}+@{Seduction}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Seduction' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Seduction' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Streetwise</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Streetwise_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="grid_item">
+                        <button type='roll' class="grid_btn" name="roll_Streetwise" value="&{template:base} {{subtag= @{character_name} }} {{name= Streetwise }} {{roll= [[ (?{Modifier?|0} +@{Streetwise_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Streetwise_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Streetwise_Total' value="@{Manipulation}+@{Streetwise}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Streetwise' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Streetwise' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Subterfuge</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Subterfuge_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="grid_item">
+                        <button type='roll' class="grid_btn" name="roll_Subterfuge" value="&{template:base} {{subtag= @{character_name} }} {{name= Subterfuge }} {{roll= [[ (?{Modifier?|0} +@{Subterfuge_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Subterfuge_Specialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+        				    <input type='text' class='sheet-total' name='attr_Subterfuge_Total' value="@{Manipulation}+@{Subterfuge}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Subterfuge' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Subterfuge' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_manipulation'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rManName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rManSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" value="&{template:base} {{subtag= @{character_name} }} {{name=@{rManName} }} {{roll= [[ (?{Modifier?|0} + @{rMan_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rManSpecialty}}} {{mega= Manipulation: @{Mega_Manipulation} }}">
+            				    <input type='text' class='sheet-total' name='attr_rMan_Total' value="@{Manipulation}+@{rMan}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rMan' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rMan' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+        </div>
+		<!--    Stamina, Wits, Appearance-->
+        <div>
+            <div class="col">
+                <div class="row">
+                    <div class="item 100 title">Stamina</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Stamina_Quality' placeholder='Quality' /></div>
+                </div>
+                <div clas="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Stamina' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Stamina' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Stamina' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Stamina' value=10 /><span></span>
+                </div>
+                
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="item 100 title">Wits</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Wits_Quality' placeholder='Quality' /></div>
+                </div>
+                <div clas="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Wits' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Wits' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Wits' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Wits' value=10 /><span></span>
+                </div>
+                
+            </div>
+            <div class="col">
+                <div class="row">
+                    <div class="item 100 title">Appearance</div>
+                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Appearance_Quality' placeholder='Quality' /></div>
+                </div>
+                <div clas="row">
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Appearance' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Appearance' value=10 /><span></span>
+                </div>
+                <div clas="row">
+                    <input type='radio' class="mdot zero" name='attr_Mega_Appearance' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Appearance' value=10 /><span></span>
+                </div>
+                
+            </div>
+        </div>
+		<!--    Skills-->
+		<div>
+		    <!--    Stamina -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-sta" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Endurance</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Endurance_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Endurance" value="&{template:base} {{subtag= @{character_name} }} {{name= Endurance }} {{roll= [[ (?{Modifier?|0} +@{Endurance_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Endurance_Specialty}}} {{mega= Stamina: @{Mega_Stamina} }}">
+        				    <input type='text' class='sheet-total' name='attr_Endurance_Total' value="@{Stamina}+@{Endurance}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Endurance' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Endurance' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Resistance</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Resistance_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Resistance" value="&{template:base} {{subtag= @{character_name} }} {{name= Resistance }} {{roll= [[ (?{Modifier?|0} +@{Resistance_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Resistance_Specialty}}} {{mega= Stamina: @{Mega_Stamina} }}">
+        				    <input type='text' class='sheet-total' name='attr_Resistance_Total' value="@{Stamina}+@{Resistance}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Resistance' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resistance' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Channeling</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Channeling_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Channeling" value="&{template:base} {{subtag= @{character_name} }} {{name= Channeling }} {{roll= [[ (?{Modifier?|0} +@{Channeling_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Channeling_Specialty}}} {{mega= Stamina: @{Mega_Stamina} }}">
+        				    <input type='text' class='sheet-total' name='attr_Channeling_Total' value="@{Stamina}+@{Channeling}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Channeling' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Channeling' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_stamina'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rStaName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rStaSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" name="roll_rStamina_skill" value="&{template:base} {{subtag= @{character_name} }} {{name=@{rStaName} }} {{roll= [[ (?{Modifier?|0} +@{rSta_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStaSpecialty}}} {{mega= Stamina: @{Mega_Stamina} }}">
+            				    <input type='text' class='sheet-total' name='attr_rSta_Total' value="@{Stamina}+@{rSta}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rSta' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rSta' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+		    <!--    Wits    -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-wit" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Arts</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Arts_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Arts }} {{roll= [[ (?{Modifier?|0} +@{Arts_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Arts_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Arts_Total' value="@{Wits}+@{Arts}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Arts' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Arts' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Biz</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Biz_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Biz" value="&{template:base} {{subtag= @{character_name} }} {{name= Biz }} {{roll= [[ (?{Modifier?|0} +@{Biz_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Biz_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Biz_Total' value="@{Wits}+@{Biz}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Biz' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Biz' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Meditation</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Meditation_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Meditation" value="&{template:base} {{subtag= @{character_name} }} {{name= Meditation }} {{roll= [[ (?{Modifier?|0} +@{Meditation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Meditation_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Meditation_Total' value="@{Wits}+@{Meditation}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Meditation' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Meditation' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Modulate</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Modulate_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Modulate" value="&{template:base} {{subtag= @{character_name} }} {{name= Modulate }} {{roll= [[ (?{Modifier?|0} +@{Modulate_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Modulate_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Modulate_Total' value="@{Wits}+@{Modulate}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Modulate' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Modulate' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Rapport</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Rapport_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Rapport" value="&{template:base} {{subtag= @{character_name} }} {{name= Rapport }} {{roll= [[ (?{Modifier?|0} +@{Rapport_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Rapport_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Rapport_Total' value="@{Wits}+@{Rapport}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Rapport' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rapport' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Shadowing</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Shadowing_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Shadowing" value="&{template:base} {{subtag= @{character_name} }} {{name= Shadowing }} {{roll= [[ (?{Modifier?|0} +@{Shadowing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Shadowing_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Shadowing_Total' value="@{Wits}+@{Shadowing}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Shadowing' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Shadowing' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Tactics</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Tactics_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Tactics" value="&{template:base} {{subtag= @{character_name} }} {{name= Tactics }} {{roll= [[ (?{Modifier?|0} +@{Tactics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tactics_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Tactics_Total' value="@{Wits}+@{Tactics}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Tactics' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Tactics' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Unify</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Unify_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Unify" value="&{template:base} {{subtag= @{character_name} }} {{name= Unify }} {{roll= [[ (?{Modifier?|0} +@{Unify_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Unify_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Unify_Total' value="@{Wits}+@{Unify}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Unify' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Unify' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Weave</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Weave_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div clas="row">
+                        <button type='roll' class="grid_btn" name="roll_Weave" value="&{template:base} {{subtag= @{character_name} }} {{name= Weave }} {{roll= [[ (?{Modifier?|0} +@{Weave_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Weave_Specialty}}} {{mega= Wits: @{Mega_Wits} }}">
+        				    <input type='text' class='sheet-total' name='attr_Weave_Total' value="@{Wits}+@{Weave}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Weave' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Weave' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_wits'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rWitName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rWitSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" name="roll_rWit_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rWitName} }} {{roll= [[ (?{Modifier?|0} +@{rWit_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rWitSpecialty}}} {{mega= Wits: @{Mega_Wits} }}">
+            				    <input type='text' class='sheet-total' name='attr_rWit_Total' value="@{Wits}+@{rWit}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rWit' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rWit' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+		    <!--    Appearance  -->
+            <div class="col">
+                <input type="checkbox" class="skill_open hider" name="attr_skill_open-app" checked/><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Disguise</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Disguise_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Disguise" value="&{template:base} {{subtag= @{character_name} }} {{name= Disguise }} {{roll= [[ (?{Modifier?|0} +@{Disguise_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Disguise_Specialty}}} {{mega= Appearance: @{Mega_Appearance} }}">
+        				    <input type='text' class='sheet-total' name='attr_Disguise_Total' value="@{Appearance}+@{Disguise}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Disguise' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Disguise' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Intimidation</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Intimidation_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Intimidation" value="&{template:base} {{subtag= @{character_name} }} {{name= Intimidation }} {{roll= [[ (?{Modifier?|0} +@{Intimidation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intimidation_Specialty}}} {{mega= Appearance: @{Mega_Appearance} }}">
+        				    <input type='text' class='sheet-total' name='attr_Intimidation_Total' value="@{Appearance}+@{Intimidation}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Intimidation' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Intimidation' value=10 /><span></span>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Style</div>
+                        <div class="item 130"><input class='sheet-specialty' type='text' name='attr_Style_Specialty' placeholder='Specialty' /></div>
+                    </div>
+                    <div class="row">
+                        <button type='roll' class="grid_btn" name="roll_Style" value="&{template:base} {{subtag= @{character_name} }} {{name= Style }} {{roll= [[ (?{Modifier?|0} +@{Style_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Style_Specialty}}} {{mega= Appearance: @{Mega_Appearance} }}">
+        				    <input type='text' class='sheet-total' name='attr_Style_Total' value="@{Appearance}+@{Style}" disabled />
+                        </button>
+                        <input type='radio' class="dot zero" name='attr_Style' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Style' value=10 /><span></span>
+                    </div>
+                    <fieldset class='repeating_appearance'>
+                        <div class="row">
+                            <div class="item 100"><input type='text' class='sheet-repeating' name='attr_rAppName' placeholder='Ability'></div>
+                            <div class="item 130"><input type='text' class='sheet-specialty' name='attr_rAppSpecialty' placeholder='Specialty' /></div>
+                        </div>
+    					<div class='row'>
+                            <button type='roll' class="grid_btn" name="roll_rAppearance_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rAppName} }} {{roll= [[ (?{Modifier?|0} +@{rApp_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rAppSpecialty}}} {{mega= Appearance: @{Mega_Appearance} }}">
+            				    <input type='text' class='sheet-total' name='attr_rApp_Total' value="@{Appearance}+@{rApp}" disabled />
+                            </button>
+    						<input type='radio' class="dot zero" name='attr_rApp' value=0 checked /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=1 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=2 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=3 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=4 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=5 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=6 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=7 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=8 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=9 /><span></span>
+    						<input type='radio' class="dot" name='attr_rApp' value=10 /><span></span>
+    					</div>
+    				</fieldset>
+    			</div>
+            </div>
+        </div>
+        <br>
+    </div>	

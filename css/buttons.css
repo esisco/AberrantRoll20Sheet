@@ -1,0 +1,5 @@
+
+button[type=action].sheet-d10-dice::before {
+    font-family: 'dicefontd10';
+    content: '0 ';
+}
