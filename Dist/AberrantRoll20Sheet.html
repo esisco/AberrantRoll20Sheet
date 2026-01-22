@@ -1,3 +1,13 @@
+<div class='wrapper'>
+    <!-- <h1 class='sheet-title'>Aberrant</h1> -->
+    <img class='sheet-logo' width="50%" src='https://raw.githubusercontent.com/AndrewHolder/roll20-character-sheets-Testing/831c3fc33fdd10ee5e4d64db31eb7c64f7947420/AEON-Aberrant/AberrantLogo.png' alt='Aberrant Logo' />
+    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="abilities" />
+    <div>
+        <button type="action" name="act_abilities" class="sheet-button0">Abilities</button>
+        <button type="action" name="act_quantum" class="sheet-button1">Quantum</button>
+        <button type="action" name="act_combat" class="sheet-button2">Combat</button>
+        <button type="action" name="act_info" class="sheet-button3">Info</button>
+    </div>
     <div class='sheet-abilities'>
 		<h2>Attributes and Abilities</h2>
 		<!--    Strength, Perception, Charisma-->
@@ -1470,4 +1480,988 @@
             </div>
 		</div>
         <br>
-    </div>	
+    </div>		<div class='sheet-quantum'>
+        <h2>Quantum Powers</h2>	
+        <div class="dual_col">
+            <div class="col">
+				<h3>Quantum Powers</h3>
+				<fieldset class='repeating_Powers'>
+                    <div class="row">
+                        <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
+                        <div class="item 5"></div>
+                        <div class="item 160"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
+                        <div class="item 180">
+							<input type='radio' class="dot zero" name='attr_rPower' value=1 checked /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=3 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=4 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=5 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=6 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=7 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=8 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=9 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=10 /><span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item 50"><input type='text' class="st" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
+                        <div class="item 75"><input type='text' class="st" name='attr_rPowerPMaxExp_Total' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 50 subtitle">Level</div>
+                        <div class="item 75 subtitle">Power Max XP</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rExtraName' value="" /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_rMasteryp' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Extras</div>
+                        <div class="item 50 subtitle">Mastery</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rPowerTechniques' value="" /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_rDicePoolp' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Techniques</div>
+                        <div class="item 50 subtitle">Dice Pool</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180"><input type='text' class="st" name='attr_rRangep' value="" /></div>
+                        <div class="item 180"><input type='text' class="st" name='attr_rAreaNotes' value="" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180 subtitle">Range</div>
+                        <div class="item 180 subtitle">Area</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180"><input type='text' class="st" name='attr_rWeakNotes' value="" /></div>
+                        <div class="item 180"><input type='text' class="st" name='attr_rStrengthNotes' value="" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180 subtitle">Weaknesses</div>
+                        <div class="item 180 subtitle">Strengths</div>
+                    </div>
+                    <textarea class="textarea_1" name='attr_rPowerNotes' placeholder='Notes'></textarea>
+				</fieldset>
+            </div>
+            <div class="col">
+                <h3>Taint</h3>
+				<div class="row">
+                    <input type='radio' class="dot zero" name='attr_Taint_max' value=0 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=1 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Taint_max' value=10 /><span></span>
+				    <div class="item 24"><button type='roll' class='sheet-background d10-dice' value="&{template:base} {{subtag= @{character_name} }} {{name=Taint }} {{roll= [[ (?{Modifier?|0} +@{Taint_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                </div>
+                <div class="row">
+                    <input type='radio' class="mdot zero" name='attr_Taint' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Taint' value=10 /><span></span>
+                </div>
+
+                <h3>Chrysalis</h3>
+				<div class="row">
+                    <input type='radio' class="dot zero" name='attr_Chrysalis_max' value=0 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=1 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=10 /><span></span>
+                    <div class="item 24"><button type='roll' class='sheet-background d10-dice'' value="&{template:base} {{subtag= @{character_name} }}  {{name=Chrysalis }} {{roll= [[ (?{Modifier?|0} +@{Chrysalis_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                </div>
+                <h3>Quantum</h3>
+				<div class="row">
+                    <input type='radio' class="dot zero" name='attr_Quantum_max' value=0 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_max' value=10 /><span></span>
+                    <div class="item 24"><button type='roll' class='sheet-background d10-dice'' value="&{template:base} {{subtag= @{character_name} }} {{name=Quantum }} {{roll= [[ (?{Modifier?|0} +@{Quantum_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                </div>
+                <h3>Body Modifications</h3>
+                <fieldset class='repeating_rbAberrations'>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rbBModName' placeholder="Aberration" /></div>
+                        <div class="item 70"><input type='text' class="st" name='attr_rbBModValue' placeholder="Value" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Aberration</div>
+                        <div class="item 70 subtitle">Value</div>
+                    </div>
+                    <textarea class="textarea_1" name='attr_rbBodyModificationNotes' placeholder='Notes'></textarea>
+				</fieldset>
+                <h3>Aberrations</h3>
+                <fieldset class='repeating_rAberrations'>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rBModName' placeholder="Aberration" /></div>
+                        <div class="item 70"><input type='text' class="st" name='attr_rBModValue' placeholder="Value" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Aberration</div>
+                        <div class="item 70 subtitle">Value</div>
+                    </div>
+                    <textarea class="textarea_1" name='attr_rBodyModificationNotes' placeholder='Notes'></textarea>
+				</fieldset>
+            </div>
+        </div>
+        <div class="row">
+            <h2>Quantum Pool</h2>
+            <div class="row">
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=1 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=5 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=10 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=11 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=12 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=13 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=14 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=15 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=16 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=17 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=18 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=19 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=20 checked /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=21 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=22 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=23 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=24 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=25 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=26 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=27 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=28 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=29 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=30 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=31 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=32 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=33 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=34 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=35 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=36 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=37 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=38 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=39 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=40 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=41 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=42 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=43 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=44 /><span></span>
+                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=45 /><span></span>
+            </div>
+            <div class="row">
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=5 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=10 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=11 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=12 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=13 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=14 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=15 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=16 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=17 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=18 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=19 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=20 checked /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=21 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=22 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=23 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=24 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=25 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=26 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=27 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=28 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=29 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=30 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=31 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=32 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=33 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=34 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=35 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=36 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=37 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=38 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=39 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=40 /><span></span>
+                    &nbsp;
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=41 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=42 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=43 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=44 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Quantum_pool' value=45 /><span></span>
+            </div>
+        </div>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+	</div>	<div class='sheet-combat'>
+		<div class="dual_col">
+            <div class="col">
+                <div class="row">
+                    <div class="item 100"><h4>Initiative</h4></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_Initiative' value=0 /></div>
+                    <button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}">
+        				    <input type='text' class='sheet-total' name='init_roll' value="d10+@{Initiative}" disabled />
+                        </button>
+                </div>
+                <div class="row">
+                    <h4>Movement</h4>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Walk</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_Walk' value=7 /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Run</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_Run' value="@{Dexterity}+12+@{Mega_Dexterity}" disabled /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Sprint</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_Run' value="@{Dexterity}*3+20+@{Mega_Dexterity}" disabled /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Flight</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_FlightSpeed' value=0 /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Swim</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_SwimSpeed' value=0 /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Hyper Flight</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_HyperFlightSpeed' value=0 /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><h5>Hyper Swim</h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_HyperSwimSpeed' value=0 /></div>
+                </div>
+                <div class="row">
+                    <div class="item 100"><input type='text' class="st" name='attr_altmoveName' value="" /></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_altmoveRate' value=0 /></div>
+                </div>
+            </div>
+                        <div class="col">
+				<h3>Willpower</h3>
+				<div class="row">
+				    <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{mega= Willpower: @{Mega_Willpower} }}"></button></div>
+                    <div class="item 13"></div>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=1 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=10 /><span></span>
+                </div>
+                <div class="row">
+                    <div class="item 20"></div>
+                    <input type='radio' class="dot zero" name='attr_Willpower' value=0 checked /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=1 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=2 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=3 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=4 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=5 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=6 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=7 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=8 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=9 /><span></span>
+                    <input type='radio' class="dot" name='attr_Willpower' value=10 /><span></span>
+                </div>
+                <div class="row">
+                    <div class="item 20"></div>
+                    <input type='radio' class="mdot zero" name='attr_Mega_Willpower' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=10 /><span></span>
+                </div>
+                <div class='row'>
+					<h3>Willpower Pool</h3>
+				</div>
+                <div class='row'>
+                    <div class="item 20"></div>
+                    <div class="item 50"><input type='text' class="repeating" name='attr_WPool' value= 3 min=0 /></div>
+                    <div class="item 5">/</div>
+                    <div class="item 50"><input type='text' class="repeating" name='attr_WPool_max' value=3 min=0 /></div>
+                </div>
+            </div>
+        </div>
+        <div>
+			<h2>Weapons</h2>
+			<div class="row">
+                <div class="item 40">Roll</div>
+                <div class="item 120">Weapon</div>
+                <div class="item 70">Dice</div>
+                <div class="item 70">Damage</div>
+			</div>
+			<fieldset class='repeating_weapons'>
+    			<div class="row"> 
+                    <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                    <div class="item 120"><input type='text' class="st" name='attr_wname'/></div>
+                    <div class="item 70" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
+                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
+    			    <div class="item 50" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
+    			</div>
+    			<input type="checkbox" class="hidden hider" name="attr_weapon_open" value="1" checked/><span></span>
+    			<div class="hold">
+        			<div class="row">
+                        <div class="item 100">Skill</div>
+                        <div class="item 70">Accuracy</div>
+                        <div class="item 70">Damage</div>
+                        <div class="item 50">Str</div>
+                        <div class="item 50">Range</div>
+                        <div class="item 180">Maneuvers</div>
+                        <div class="item 50">RoF</div>
+                        <div class="item 50">Clip</div>
+                        <div class="item 50">Conceal</div>
+                        <div class="item 50">Mass</div>
+        			</div>
+        			<div class="row">
+                        <div class="item 100">
+        					<select name='attr_wskill' class='sheet-st'>
+        						<option value="@{Athletics_Total}">Athletics</option>
+        						<option value="@{Brawl_Total}">Brawl</option>
+        						<option value="@{Firearms_Total}">Firearms</option>
+        						<option value="@{Martial_Arts_Total}">Martial Arts</option>
+        						<option value="@{Melee_Total}">Melee</option>
+        					</select>
+        				</div>
+                        <div class="item 70" ><input type='text' class="st" name='attr_wacc' value="0"/></div>
+                        <div class="item 70" ><input type='text' class="st" name='attr_wdam' value="0"/></div>
+                        <div class="item 50" ><input type='checkbox' value="@{Strength}" name='attr_wstr' /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_range'value="0"/></div>
+                        <div class="item 180">
+        					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
+        					<input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
+        					<input type='checkbox' class="strike" name='attr_wm_sa' value=1 /><span class="strike">Sa</span>
+        					<input type='checkbox' class="strike" name='attr_wm_st' value=1 /><span class="strike">St</span>
+        					<input type='checkbox' class="strike" name='attr_wm_tw' value=1 /><span class="strike">Tw</span>
+        				</div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_wrof' value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_wclip'value="0"/></div>
+                        <div class="item 50" >
+                            <select name='attr_wconceal' class='sheet-st'>
+        						<option value='Pocket'>P</option>
+        						<option value='Jacket'>J</option>
+        						<option value='Trenchcoat'>T</option>
+        						<option value='N/A'>N/A</option>
+        					</select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_wmass' value="0"/></div>
+        			</div>
+                </div>
+            </fieldset>
+        </div>
+        <div class='sheet-health'>
+			<h2>Health</h2>
+    		<div class="dual_col">
+                <div class="col">
+				    <h3>Soak</h3>
+                    <div class="row">
+                        <div class="item 100">Armor</div>
+                        <div class="item 50">Bashing</div>
+                        <div class="item 50">Lethal</div>
+                        <div class="item 75">Aggravated</div>
+                        <div class="item 50">Penalty</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Natural Soak</div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Bashing_Soak' value=1 min=1 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75"><input type='text' class="st" name='attr_Natural_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Aggravated_Penalty' value=0 readonly /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Mega_Stamina</div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75"><input type='text' class="st" name='attr_Armor1_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Eufiber</div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75"><input type='text' class="st" name='attr_Armor2_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor3_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor3_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor4_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor4_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor5_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor5_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor6_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor6_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor7_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor7_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor8_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor8_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor9_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor9_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor10_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor10_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100"><input type='text' class="st" name='attr_Armor11_Name'/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Armor11_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Penalty' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Total</div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}+@{Armor1_Bashing_Soak}+@{Armor2_Bashing_Soak}+@{Armor3_Bashing_Soak}+@{Armor4_Bashing_Soak}+@{Armor5_Bashing_Soak}+@{Armor6_Bashing_Soak}+@{Armor7_Bashing_Soak}+@{Armor8_Bashing_Soak}+@{Armor9_Bashing_Soak}+@{Armor10_Bashing_Soak}+@{Armor11_Bashing_Soak}" disabled/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}+@{Armor1_Lethal_Soak}+@{Armor2_Lethal_Soak}+@{Armor3_Lethal_Soak}+@{Armor4_Lethal_Soak}+@{Armor5_Lethal_Soak}+@{Armor6_Lethal_Soak}+@{Armor7_Lethal_Soak}+@{Armor8_Lethal_Soak}+@{Armor9_Lethal_Soak}+@{Armor10_Lethal_Soak}+@{Armor11_Lethal_Soak}" disabled/></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}+@{Armor1_Aggravated_Soak}+@{Armor2_Aggravated_Soak}+@{Armor3_Aggravated_Soak}+@{Armor4_Aggravated_Soak}+@{Armor5_Aggravated_Soak}+@{Armor6_Aggravated_Soak}+@{Armor7_Aggravated_Soak}+@{Armor8_Aggravated_Soak}+@{Armor9_Aggravated_Soak}+@{Armor10_Aggravated_Soak}+@{Armor11_Aggravated_Soak}" disabled /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Penalty' value="@{Armor1_Penalty}+@{Armor2_Penalty}+@{Armor3_Penalty}+@{Armor4_Penalty}+@{Armor5_Penalty}+@{Armor6_Penalty}+@{Armor7_Penalty}+@{Armor8_Penalty}+@{Armor9_Penalty}+@{Armor10_Penalty}+@{Armor11_Penalty}" disabled/></div>
+					</div>
+                </div>
+                <div class="col">
+				    <h3>Injuries</h3>
+                    <div class="row">
+                        <div class="item 120">Injury</div>
+                        <div class="item 50" >Type</div>
+                        <div class="item 50" >Penalty</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 120">Bruised</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Bruised'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_BruisedHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_bruisedhealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Bruised</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_BruisedHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Hurt</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Hurt'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_HurtHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_hurthealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Hurt</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_HurtHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Injured</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Injured'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_InjuredHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_hurthealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Injured</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_InjuredHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Wounded</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Wounded'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_WoundedHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_woundedhealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Wounded</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_WoundedHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    
+                    <div class="row">
+                        <div class="item 120">Maimed</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Maimed'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_MaimedHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_maimedhealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Maimed</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_MaimedHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Crippled</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Maimed'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_CrippledHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_crippledhealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Crippled</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_CrippledHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Incapacitated</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Incapacitated'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_IncapacitatedHealthPenalty' value=0 /></div>
+                    </div>
+				    <fieldset class='repeating_incapacitatedhealth'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Incapacitated</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_IncapacitatedHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <h4>Extras</h4>
+				    <fieldset class='repeating_health'>
+                        <div class="row">
+                            <div class="item 120">
+                                <select class='select_wound' name='attr_rHealthName'>
+                                    <option>Bruised</option>
+                                    <option>Hurt</option>
+                                    <option>Injured</option>
+                                    <option>Wounded</option>
+                                    <option>Maimed</option>
+                                    <option>Crippled</option>
+                                    <option>Incapacitated</option>
+                                    <option>Dead</option>
+                                </select>
+                            </div>
+                            <div class="item 50" >
+                                <select class='select_wound' name='attr_rHealthWound'>
+                                    <option></option>
+                                    <option>/</option>
+                                    <option>X</option>
+                                    <option>*</option>
+                                </select>
+                            </div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_rHealthPenalty' value=0 /></div>
+                        </div>
+                    </fieldset>
+                    <div class="row">
+                        <div class="item 120">Dead</div>
+                        <div class="item 50" >
+                            <select class='select_wound' name='attr_Dead'>
+                                <option></option>
+                                <option>/</option>
+                                <option>X</option>
+                                <option>*</option>
+                            </select>
+                        </div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_DeadHealthPenalty' value=0 /></div>
+                    </div>
+                </div>
+            </div>
+		</div>
+	</div>	
+<div class='sheet-info'>
+    <div class='sheet-grid_details'>
+        <div clas="grid_item"><input type='text' class='sheet-st' name='attr_BName' /></div>
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_NName' /></div>
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Series' /></div>
+        <div clas="grid_item"><div class="subtitle">Birth Name</div></div> 
+        <div clas="grid_item"><div class="subtitle">Nova Name</div></div> 
+        <div clas="grid_item"><div class="subtitle">Series</div></div> 
+    </div>
+    <div class='sheet-grid_details_2'>
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Exp' min='0' value="0" /></div>
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attrExpEarned' min='0' value="0"/></div> 
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Nationality' /></div> 
+        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Allegiance' /></div>
+        <div clas="grid_item"><div class="subtitle">Experience</div></div> 
+        <div clas="grid_item"><div class="subtitle">Total XP Earned</div></div> 
+        <div clas="grid_item"><div class="subtitle">Nationality</div></div> 
+        <div clas="grid_item"><div class="subtitle">Allegiance</div></div>  
+    </div>
+    <div class='sheet-grid_details'>
+        <div clas="grid_item"><input class='sheet-charNatureInput sheet-st' type='text' name='attr_Nature' /></div> 
+        <div clas="grid_item"><input class='sheet-charDemeanorInput sheet-st' type='text' name='attr_Demeanor' /></div> 
+        <div clas="grid_item"><input class='sheet-charArchetypeInput sheet-st' type='text' name='attr_Archetype' /></div> 
+        <div clas="grid_item"><div class="subtitle">Nature</div></div> 
+        <div clas="grid_item"><div class="subtitle">Demeanor</div></div> 
+        <div clas="grid_item"><div class="subtitle">Archetype</div></div> 
+        <div clas="grid_item"><input class='sheet-charVirtueInput sheet-st' type='text' name='attr_Virtue' /></div> 
+        <div clas="grid_item"><input class='sheet-charViceInput sheet-st' type='text' name='attr_Vice' /></div> 
+        <div clas="grid_item"><input class='sheet-charEruptionInput sheet-st' type='text' name='attr_Eruption' /></div> 
+        <div clas="grid_item"><div class="subtitle">Virtue</div></div> 
+        <div clas="grid_item"><div class="subtitle">Vice</div></div> 
+        <div clas="grid_item"><div class="subtitle">Eruption</div></div> 
+    </div>
+    <div class="col">
+        <h3>Backgrounds</h3>
+        <fieldset class='repeating_backgrounds'>
+            <div class="row">
+                <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item 200"><input type='text' class='sheet-specialty' name='attr_rBackName' placeholder='Background'></div>
+            </div>
+            <div class="row">
+                <input type='radio' class="dot zero" name='attr_rBack' value=0 checked /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=1  /><span></span>
+                <input type='radio' class="dot"name='attr_rBack' value=2 /><span></span>
+                <input type='radio' class="dot"name='attr_rBack' value=3 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=4 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=5 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=6 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=7 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=8 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=9 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=10 /><span></span>
+            </div>
+            <div class="row">
+                <div class="item 240"><input type='text' class='sheet-specialty' name='attr_rBackEnh' placeholder='Enhancement'></div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col">
+        <h3>Merits</h3>
+        <fieldset class='repeating_rMerits'>
+            <div class="row">
+                <div class="item 250"><input type='text' class="st" name='attr_rMeritName' placeholder="Merit" /></div>
+                <div class="item 70"><input type='text' class="st" name='attr_rMeritValue' placeholder="Value" /></div>
+            </div>
+            <div class="row">
+                <div class="item 250 subtitle">Merit</div>
+                <div class="item 70 subtitle">Value</div>
+            </div>
+            <textarea class="textarea_1" name='attr_rMeritNotes' placeholder='Notes'></textarea>
+        </fieldset>
+        <h3>Flaws</h3>
+        <fieldset class='repeating_rFlaws'>
+            <div class="row">
+                <div class="item 250"><input type='text' class="st" name='attr_rFlawsName' placeholder="Flaw" /></div>
+                <div class="item 70"><input type='text' class="st" name='attr_rFlawsValue' placeholder="Value" /></div>
+            </div>
+            <div class="row">
+                <div class="item 250 subtitle">Flaw</div>
+                <div class="item 70 subtitle">Value</div>
+            </div>
+            <textarea class="textarea_1" name='attr_rFlawsNotes' placeholder='Notes'></textarea>
+        </fieldset>
+    </div>
+    <div class="col">
+        <h3>General Notes</h3>
+        <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+    </div>
+</div>
+
+</div>
+
+<rolltemplate class="sheet-rolltemplate-base">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+        {{#roll}}
+        <div class="rowcolor"><span class="tcat">Roll: </span>{{roll}} Success(es)</div>
+        {{/roll}}
+        {{#attack}}
+        <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} Success(es)</div>
+        {{/attack}}
+        {{#damage}}
+            <div>
+                 <span class="tcat">Damage: </span>{{damage}} 
+            </div>
+        {{/damage}}
+        {{#note}}
+            <div>
+                {{note}} 
+            </div>
+        {{/note}}
+        {{#mega}}
+            <div>
+                <div class="rowcolor2">{{mega}}</div>
+            </div>
+        {{/mega}}
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-initiative">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+        {{#roll}}
+        <div class="rowcolor"><span class="tcat">Roll: </span>{{roll}}</div>
+        {{/roll}}
+        {{#note}}
+            <div>
+                {{note}} 
+            </div>
+        {{/note}}
+    </div>
+</rolltemplate>
+
+<rolltemplate class="sheet-rolltemplate-megaroll">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+        {{#mega}}
+        <div class="rowcolor"><span class="tcat">Roll: </span>{{computed::mega}} Success(es)</div>
+        {{/mega}}
+    </div>
+</rolltemplate>
+<script type="text/worker">
+
+const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
+
+megaAttributes.forEach(attr => {
+    on(`clicked:roll_${attr}`, function() {
+        console.log(`Rolling ${attr}`);
+        startRoll(`&{template:megaroll} {{subtag= @{character_name} }} {{name=${attr.replace("Mega_", "Mega ")} }} {{mega= [[ @{${attr}}d10 ]] }}`, (results) => {
+            let successes = 0;
+            for (let roll of results.results.mega.rolls[0].results) {
+                if (roll == 10) {
+                    console.log("Roll is a 10, adding 3 successes.");
+                    successes += 3;
+                } else if (roll >= 7) {
+                    console.log("Roll is 7 or higher, adding 2 successes.");
+                    successes += 2;
+                }
+            }
+            const computed = successes;
+            finishRoll(
+                results.rollId, 
+                {
+                    mega: computed,
+                });
+        });
+    });
+});
+
+const buttonlist = ["abilities", "quantum", "combat", "info"];
+buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+        console.log(`Switching to ${button} tab`);
+        setAttrs({
+            sheetTab: button
+        });
+    });
+});</script>

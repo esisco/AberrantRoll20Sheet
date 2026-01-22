@@ -32,4 +32,59 @@
         <div clas="grid_item"><div class="subtitle">Vice</div></div> 
         <div clas="grid_item"><div class="subtitle">Eruption</div></div> 
     </div>
+    <div class="col">
+        <h3>Backgrounds</h3>
+        <fieldset class='repeating_backgrounds'>
+            <div class="row">
+                <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item 200"><input type='text' class='sheet-specialty' name='attr_rBackName' placeholder='Background'></div>
+            </div>
+            <div class="row">
+                <input type='radio' class="dot zero" name='attr_rBack' value=0 checked /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=1  /><span></span>
+                <input type='radio' class="dot"name='attr_rBack' value=2 /><span></span>
+                <input type='radio' class="dot"name='attr_rBack' value=3 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=4 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=5 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=6 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=7 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=8 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=9 /><span></span>
+                <input type='radio' class="dot" name='attr_rBack' value=10 /><span></span>
+            </div>
+            <div class="row">
+                <div class="item 240"><input type='text' class='sheet-specialty' name='attr_rBackEnh' placeholder='Enhancement'></div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col">
+        <h3>Merits</h3>
+        <fieldset class='repeating_rMerits'>
+            <div class="row">
+                <div class="item 250"><input type='text' class="st" name='attr_rMeritName' placeholder="Merit" /></div>
+                <div class="item 70"><input type='text' class="st" name='attr_rMeritValue' placeholder="Value" /></div>
+            </div>
+            <div class="row">
+                <div class="item 250 subtitle">Merit</div>
+                <div class="item 70 subtitle">Value</div>
+            </div>
+            <textarea class="textarea_1" name='attr_rMeritNotes' placeholder='Notes'></textarea>
+        </fieldset>
+        <h3>Flaws</h3>
+        <fieldset class='repeating_rFlaws'>
+            <div class="row">
+                <div class="item 250"><input type='text' class="st" name='attr_rFlawsName' placeholder="Flaw" /></div>
+                <div class="item 70"><input type='text' class="st" name='attr_rFlawsValue' placeholder="Value" /></div>
+            </div>
+            <div class="row">
+                <div class="item 250 subtitle">Flaw</div>
+                <div class="item 70 subtitle">Value</div>
+            </div>
+            <textarea class="textarea_1" name='attr_rFlawsNotes' placeholder='Notes'></textarea>
+        </fieldset>
+    </div>
+    <div class="col">
+        <h3>General Notes</h3>
+        <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+    </div>
 </div>

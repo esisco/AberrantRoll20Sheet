@@ -1,5 +1,43 @@
 
+
+button {
+    border-radius:5px;
+}
+
+/*  grid_btn        */
+/*  grid_btn        */
+/*  grid_btn        */
+button[type=roll].sheet-background::before,
+button[type=roll].sheet-grid_btn::before {
+    content: '';
+}
+.sheet-grid_btn {
+    height:20px;
+    width:20px;
+    color:black;
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+    font-weight:bold;
+    border-radius:5px;
+    padding:0;
+    margin:0px;
+}
+.sheet-background {
+    height:16px;
+    width:16px;
+    color:black;
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+    font-weight:bold;
+    border-radius:5px;
+    padding:0;
+    margin:0px;
+}
+/*  End of grid_btn        */
+/*  End of grid_btn        */
+/*  End of grid_btn        */
+
 button[type=action].sheet-d10-dice::before {
     font-family: 'dicefontd10';
     content: '0 ';
+    font-weight: bold;
+    font-size: large;
 }

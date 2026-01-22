@@ -532,3 +532,283 @@ input.sheet-skill_open[type="checkbox"]:checked + span::before {
     content: "Skill Open";
 }
 
+
+/* Roll Template CSS */
+.sheet-rolltemplate-base .sheet-container {
+    background-color: #ffffff;
+    border: 1px solid;
+    padding: 2px;
+    width: 189px;
+}
+
+.sheet-rolltemplate-base .sheet-container h1 {
+    color: darkred;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 20px;
+}
+
+.sheet-rolltemplate-base div {
+    padding: 2px;
+};
+ 
+.sheet-rolltemplate-base span {
+    color: rgb(126, 45, 64);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    padding-left: 5px;
+    text-align: left;
+}
+ 
+.sheet-rolltemplate-base .sheet-subheader {
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-base .sheet-arrow-right {
+    border-bottom: 2px solid transparent;
+    border-left: 180px solid black;
+    border-top: 2px solid transparent;
+}
+ 
+.sheet-rolltemplate-base .sheet-tcat {
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-base .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+ 
+.sheet-rolltemplate-base .inlinerollresult.fullcrit {
+    color: #3FB315;
+    border: none;
+}
+ 
+.sheet-rolltemplate-base .inlinerollresult.fullfail {
+    color: #B31515;
+    border: none;
+}
+ 
+.sheet-rolltemplate-base .inlinerollresult.importandivoll {
+    color: #4A57ED;
+    border: none;
+} 
+.sheet-rolltemplate-base .sheet-rowcolor2 {
+    color: red;
+    font-size: 1em;
+    font-style: italic;
+    font-weight:bold;
+}
+
+.sheet-rolltemplate-initiative .sheet-container {
+    background-color: #ffffff;
+    border: 1px solid;
+    padding: 2px;
+    width: 189px;
+}
+
+.sheet-rolltemplate-initiative .sheet-container h1 {
+    color: darkred;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 20px;
+}
+
+.sheet-rolltemplate-initiative div {
+    padding: 2px;
+};
+ 
+.sheet-rolltemplate-initiative span {
+    color: rgb(126, 45, 64);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    padding-left: 5px;
+    text-align: left;
+}
+ 
+.sheet-rolltemplate-initiative .sheet-subheader {
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-initiative .sheet-arrow-right {
+    border-bottom: 2px solid transparent;
+    border-left: 180px solid black;
+    border-top: 2px solid transparent;
+}
+ 
+.sheet-rolltemplate-initiative .sheet-tcat {
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-initiative .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+ 
+.sheet-rolltemplate-initiative .inlinerollresult.fullcrit {
+    color: #3FB315;
+    border: none;
+}
+ 
+.sheet-rolltemplate-initiative .inlinerollresult.fullfail {
+    color: #B31515;
+    border: none;
+}
+ 
+.sheet-rolltemplate-initiative .inlinerollresult.importandivoll {
+    color: #4A57ED;
+    border: none;
+} 
+.sheet-rolltemplate-initiative .sheet-rowcolor2 {
+    color: red;
+    font-size: 1em;
+    font-style: italic;
+    font-weight:bold;
+}
+
+
+.sheet-rolltemplate-megaroll .sheet-container {
+    background-color: #ffffff;
+    border: 1px solid;
+    padding: 2px;
+    width: 189px;
+}
+
+.sheet-rolltemplate-megaroll .sheet-container h1 {
+    color: darkred;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 20px;
+}
+
+.sheet-rolltemplate-megaroll div {
+    padding: 2px;
+};
+ 
+.sheet-rolltemplate-megaroll span {
+    color: rgb(126, 45, 64);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    padding-left: 5px;
+    text-align: left;
+}
+ 
+.sheet-rolltemplate-megaroll .sheet-subheader {
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-megaroll .sheet-arrow-right {
+    border-bottom: 2px solid transparent;
+    border-left: 180px solid black;
+    border-top: 2px solid transparent;
+}
+ 
+.sheet-rolltemplate-megaroll .sheet-tcat {
+    font-style: italic;
+}
+ 
+.sheet-rolltemplate-megaroll .inlinerollresult  {
+    background-color: #ffffff;
+    border: none;
+}
+ 
+.sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
+    color: #3FB315;
+    border: none;
+}
+ 
+.sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
+    color: #B31515;
+    border: none;
+}
+ 
+.sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
+    color: #4A57ED;
+    border: none;
+} 
+.sheet-rolltemplate-megaroll .sheet-rowcolor2 {
+    color: red;
+    font-size: 1em;
+    font-style: italic;
+    font-weight:bold;
+}
+/* End of Roll Template CSS */
+
+/* Tabs CSS */
+/* configure the tab buttons */
+.charsheet .sheet-abilities,
+.charsheet .sheet-info,
+.charsheet .sheet-quantum,
+.charsheet .sheet-combat {
+    display: none;
+}
+
+/* style the active button */
+.charsheet .sheet-tabstoggle[value="abilities"] ~ div .sheet-button0 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="quantum"] ~ div .sheet-button1 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="combat"] ~ div .sheet-button2 {outline: 2px solid red;}
+.charsheet .sheet-tabstoggle[value="info"] ~ div .sheet-button3 {outline: 2px solid red;}
+
+/* show the selected tab */
+.charsheet .sheet-tabstoggle[value="abilities"] ~ div.sheet-abilities,
+.charsheet .sheet-tabstoggle[value="quantum"] ~ div.sheet-quantum,
+.charsheet .sheet-tabstoggle[value="combat"] ~ div.sheet-combat,
+.charsheet .sheet-tabstoggle[value="info"] ~ div.sheet-info {
+    display: block;
+}
+/* End of Tabs CSS */
+
+
+button {
+    border-radius:5px;
+}
+
+/*  grid_btn        */
+/*  grid_btn        */
+/*  grid_btn        */
+button[type=roll].sheet-background::before,
+button[type=roll].sheet-grid_btn::before {
+    content: '';
+}
+.sheet-grid_btn {
+    height:20px;
+    width:20px;
+    color:black;
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+    font-weight:bold;
+    border-radius:5px;
+    padding:0;
+    margin:0px;
+}
+.sheet-background {
+    height:16px;
+    width:16px;
+    color:black;
+    background: radial-gradient(#f6f6f6, #dfdfdf);
+    font-weight:bold;
+    border-radius:5px;
+    padding:0;
+    margin:0px;
+}
+/*  End of grid_btn        */
+/*  End of grid_btn        */
+/*  End of grid_btn        */
+
+button[type=action].sheet-d10-dice::before {
+    font-family: 'dicefontd10';
+    content: '0 ';
+    font-weight: bold;
+    font-size: large;
+}
