@@ -1,6 +1,4 @@
-
 const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
-
 megaAttributes.forEach(attr => {
     on(`clicked:roll_${attr}`, function() {
         console.log(`Rolling ${attr}`);
@@ -21,6 +19,17 @@ megaAttributes.forEach(attr => {
                 {
                     mega: computed,
                 });
+        });
+    });
+});
+
+
+const buttonlist = ["abilities", "quantum", "combat", "info"];
+buttonlist.forEach(button => {
+    on(`clicked:${button}`, function() {
+        console.log(`Switching to ${button} tab`);
+        setAttrs({
+            sheetTab: button
         });
     });
 });
