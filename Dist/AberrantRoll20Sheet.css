@@ -1,97 +1,8 @@
 .charsheet {
-  background: rgb(145, 163, 255);
+  background: #91a3ff;
 }
 
-/*      Repeating Blocks        */
-/*      Repeating Blocks        */
-/*      Repeating Blocks        */
-.repcontrol {
-  min-height: 27px;
-}
-
-.repcontrol .btn {
-  /*visibility: hidden;*/
-  border: medium none;
-  color: white !important;
-  background: none;
-  box-shadow: none;
-}
-
-.repcontrol .btn:focus {
-  outline: 0;
-}
-
-.sheet-saving-throw-container .repcontrol .repcontrol_edit,
-.sheet-saving-throw-container .repcontrol .repcontrol_add {
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-.repcontrol .repcontrol_edit:after {
-  content: "(";
-  visibility: visible;
-  font-family: pictos;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius: 2px;
-  font-size: 12px;
-  height: 12px;
-  width: 12px;
-  padding: 2px 4px 2px 4px;
-  color: black;
-}
-
-.editmode ~ .repcontrol .repcontrol_edit:after {
-  content: ")";
-}
-
-.repcontrol .repcontrol_add:before {
-  content: "&";
-  visibility: visible;
-  font-family: pictos;
-  background-color: #fff;
-  border: 1px solid black;
-  border-radius: 2px;
-  font-size: 12px;
-  height: 12px;
-  width: 12px;
-  padding: 2px 4px 2px 4px;
-  color: black;
-}
-
-.repcontrol .repcontrol_edit:hover:after,
-.repcontrol .repcontrol_add:hover:before {
-  background-color: #EFEFEF;
-}
-
-.sheet-resources .repcontrol {
-  margin-top: -10px;
-}
-
-.itemcontrol {
-  z-index: 10;
-}
-
-.itemcontrol .repcontrol_del {
-  font-size: 10px;
-  margin-top: 3px;
-  padding: 0px;
-  height: 18px;
-  width: 18px;
-}
-
-.itemcontrol .repcontrol_move {
-  font-size: 10px;
-  margin-top: 3px;
-  padding: 0px;
-  height: 18px;
-  width: 18px;
-}
-
-/*      End of Repeating Blocks        */
-/*      End of Repeating Blocks        */
-/*      End of Repeating Blocks        */
-/* columns */
+/* Columns */
 .sheet-col {
   width: 250px;
 }
@@ -217,7 +128,7 @@ select.sheet-st {
   width: 100%;
   height: 23px;
   background: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   border-left: 6px solid gray;
   border-bottom: 1px dotted gray;
   border-right: none;
@@ -232,7 +143,7 @@ input.sheet-total {
   box-shadow: none;
   font-size: 12px;
   padding: 0;
-  margin: 0px;
+  margin: 0;
   font-weight: bold;
   text-align: center;
 }
@@ -241,7 +152,7 @@ input.sheet-specialty {
   width: 100%;
   height: 23px;
   background: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   border-bottom: 1px dotted gray;
   border-left: none;
   border-right: none;
@@ -253,7 +164,7 @@ input.sheet-repeating {
   width: 100%;
   height: 23px;
   background: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   border-bottom: 1px dotted gray;
   border-left: none;
   border-right: none;
@@ -313,7 +224,7 @@ select.sheet-select_wound {
   width: 100%;
   height: 23px;
   background: transparent;
-  border-radius: 0px;
+  border-radius: 0;
   border-left: 6px solid darkred;
   border-bottom: 1px dotted gray;
   border-right: none;
@@ -324,9 +235,7 @@ select.sheet-select_wound {
   display: none;
 }
 
-/*  Grid        */
-/*  Grid        */
-/*  Grid        */
+/* Grid Layout */
 div.sheet-grid_details {
   display: grid;
   grid-template-columns: 250px 250px 250px;
@@ -356,14 +265,12 @@ div.sheet-subtitle {
   grid-column: span 2;
 }
 
-/*  End of Grid        */
-/*  End of Grid        */
-/*  End of Grid        */
+/* End of Grid Layout */
 input.sheet-hider:checked ~ div.sheet-hold {
   display: none;
 }
 
-/* Hide actual radio */
+/* Custom Radio Buttons */
 input.sheet-mdot[type=radio],
 input.sheet-dot[type=radio] {
   opacity: 0;
@@ -377,7 +284,6 @@ input.sheet-dot[type=radio] {
   z-index: 1;
 }
 
-/* Fake radio */
 input.sheet-dot[type=radio] + span::before {
   margin-right: 4px;
   border: solid 1px #a8a8a8;
@@ -386,7 +292,6 @@ input.sheet-dot[type=radio] + span::before {
   display: inline-block;
   vertical-align: middle;
   box-shadow: 0 0 2px #ccc;
-  background: #f6f6f6;
   background: radial-gradient(#f6f6f6, #000);
   content: "";
   width: 12px;
@@ -395,7 +300,6 @@ input.sheet-dot[type=radio] + span::before {
   border-radius: 50%;
 }
 
-/* Remove dot from all radios _after_ selected one */
 input.sheet-dot[type=radio]:checked ~ input.sheet-dot[type=radio] + span::before {
   content: "";
   background: radial-gradient(#f6f6f6, #dfdfdf);
@@ -409,7 +313,6 @@ input.sheet-mdot[type=radio] + span::before {
   display: inline-block;
   vertical-align: middle;
   box-shadow: 0 0 2px #ccc;
-  background: #f6f6f6;
   background: radial-gradient(#f6f6f6, #000);
   content: "";
   width: 12px;
@@ -418,13 +321,12 @@ input.sheet-mdot[type=radio] + span::before {
   border-radius: 10%;
 }
 
-/* Remove dot from all radios _after_ selected one */
 input.sheet-mdot[type=radio]:checked ~ input.sheet-mdot[type=radio] + span::before {
   content: "";
   background: radial-gradient(#f6f6f6, #dfdfdf);
 }
 
-/*------------empty traits-----------*/
+/* Empty Traits */
 input.sheet-zero[type=radio]:checked + span::before {
   opacity: 0;
 }
@@ -445,30 +347,23 @@ input.sheet-zero[type=radio] + span::before {
   font-weight: bold;
 }
 
-/*  gear        */
-/*  gear        */
-/*  gear        */
-/* Hide actual radio/checkbox */
+/* Gear Checkbox */
 input.sheet-gear[type=checkbox] {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
-  width: 16px;
-  height: 16px;
   position: relative;
   top: 5px;
   left: 6px;
+  opacity: 0;
+  width: 16px;
+  height: 16px;
   margin: -10px;
   cursor: pointer;
   z-index: 1;
 }
 
-/* Fake radio/checkbox */
 input.sheet-gear[type=checkbox] + span::before {
   position: relative;
   top: 4px;
-  left: 0px;
+  left: 0;
   margin-right: 4px;
   border: none;
   line-height: 14px;
@@ -480,12 +375,6 @@ input.sheet-gear[type=checkbox] + span::before {
   font-family: "Pictos";
   content: "y";
   color: red;
-}
-
-/* Fake checkbox */
-input.sheet-gear[type=checkbox] + span::before {
-  font-family: "Pictos";
-  content: "y";
   width: 14px;
   height: 14px;
   font-size: 16px;
@@ -496,24 +385,21 @@ input.sheet-gear[type=checkbox]:checked + span::before {
   color: gray;
 }
 
-/*  strike        */
-/*  strike        */
-/*  strike        */
+/* Strike Checkbox */
 input.sheet-strike[type=checkbox] {
   opacity: 0;
   width: 25px;
   position: relative;
-  top: 0px;
-  left: 0px;
+  top: 0;
+  left: 0;
   margin: -5px;
   cursor: pointer;
   z-index: 1;
 }
 
-/* -----Fake sheet-gear skillbox----- */
 input.sheet-strike[type=checkbox]::before + span::before {
   margin-right: 4px;
-  margin-left: 0px;
+  margin-left: 0;
   line-height: 14px;
   display: inline-block;
   vertical-align: middle;
@@ -540,28 +426,24 @@ input.sheet-strike[type=checkbox]:checked + span {
   text-decoration: none;
 }
 
-/* Hide actual radio/checkbox */
+/* Skill Open/Close Toggle */
 input.sheet-skill_open[type=checkbox] {
-  position: relative;
-  top: 0px;
-  left: 0px;
-  opacity: 0;
-  width: 250px;
-  height: 16px;
   position: relative;
   top: 5px;
   left: 6px;
+  opacity: 0;
+  width: 250px;
+  height: 16px;
   margin: -10px;
   cursor: pointer;
   z-index: 1;
 }
 
-/* Fake radio/checkbox */
 input.sheet-skill_open[type=checkbox] + span::before {
   position: relative;
   top: -14px;
   left: -4px;
-  margin-right: 0px;
+  margin-right: 0;
   border: none;
   border-radius: 4px;
   line-height: 14px;
@@ -570,24 +452,19 @@ input.sheet-skill_open[type=checkbox] + span::before {
   vertical-align: middle;
   background: darkred;
   color: white;
-}
-
-/* Fake checkbox */
-input.sheet-skill_open[type=checkbox] + span::before {
   content: "Skill Close";
   height: 16px;
   width: 250px;
   font-size: 12px;
-  border-radius: 4px;
 }
 
 input.sheet-skill_open[type=checkbox]:checked + span::before {
   content: "Skill Open";
 }
 
-/* Roll Template CSS */
+/* Roll Templates */
 .sheet-rolltemplate-base .sheet-container {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid;
   padding: 2px;
   width: 189px;
@@ -605,7 +482,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-base span {
-  color: rgb(126, 45, 64);
+  color: #7e2d40;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2em;
   font-variant: small-caps;
@@ -631,22 +508,22 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-base .inlinerollresult {
-  background-color: #ffffff;
+  background-color: #fff;
   border: none;
 }
 
 .sheet-rolltemplate-base .inlinerollresult.fullcrit {
-  color: #3FB315;
+  color: #3fb315;
   border: none;
 }
 
 .sheet-rolltemplate-base .inlinerollresult.fullfail {
-  color: #B31515;
+  color: #b31515;
   border: none;
 }
 
 .sheet-rolltemplate-base .inlinerollresult.importandivoll {
-  color: #4A57ED;
+  color: #4a57ed;
   border: none;
 }
 
@@ -658,7 +535,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-initiative .sheet-container {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid;
   padding: 2px;
   width: 189px;
@@ -676,7 +553,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-initiative span {
-  color: rgb(126, 45, 64);
+  color: #7e2d40;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2em;
   font-variant: small-caps;
@@ -702,22 +579,22 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-initiative .inlinerollresult {
-  background-color: #ffffff;
+  background-color: #fff;
   border: none;
 }
 
 .sheet-rolltemplate-initiative .inlinerollresult.fullcrit {
-  color: #3FB315;
+  color: #3fb315;
   border: none;
 }
 
 .sheet-rolltemplate-initiative .inlinerollresult.fullfail {
-  color: #B31515;
+  color: #b31515;
   border: none;
 }
 
 .sheet-rolltemplate-initiative .inlinerollresult.importandivoll {
-  color: #4A57ED;
+  color: #4a57ed;
   border: none;
 }
 
@@ -729,7 +606,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-megaroll .sheet-container {
-  background-color: #ffffff;
+  background-color: #fff;
   border: 1px solid;
   padding: 2px;
   width: 189px;
@@ -747,7 +624,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-megaroll span {
-  color: rgb(126, 45, 64);
+  color: #7e2d40;
   font-family: "Times New Roman", Times, serif;
   font-size: 1.2em;
   font-variant: small-caps;
@@ -773,22 +650,22 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
 }
 
 .sheet-rolltemplate-megaroll .inlinerollresult {
-  background-color: #ffffff;
+  background-color: #fff;
   border: none;
 }
 
 .sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
-  color: #3FB315;
+  color: #3fb315;
   border: none;
 }
 
 .sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
-  color: #B31515;
+  color: #b31515;
   border: none;
 }
 
 .sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
-  color: #4A57ED;
+  color: #4a57ed;
   border: none;
 }
 
@@ -799,9 +676,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   font-weight: bold;
 }
 
-/* End of Roll Template CSS */
-/* Tabs CSS */
-/* configure the tab buttons */
+/* Tabs */
 .charsheet .sheet-abilities,
 .charsheet .sheet-info,
 .charsheet .sheet-quantum,
@@ -809,7 +684,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   display: none;
 }
 
-/* style the active button */
+/* Active button styling */
 .charsheet .sheet-tabstoggle[value=abilities] ~ div .sheet-button0 {
   outline: 2px solid red;
 }
@@ -826,7 +701,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   outline: 2px solid red;
 }
 
-/* show the selected tab */
+/* Show selected tab */
 .charsheet .sheet-tabstoggle[value=abilities] ~ div.sheet-abilities,
 .charsheet .sheet-tabstoggle[value=quantum] ~ div.sheet-quantum,
 .charsheet .sheet-tabstoggle[value=combat] ~ div.sheet-combat,
@@ -834,14 +709,11 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   display: block;
 }
 
-/* End of Tabs CSS */
+/* Buttons */
 button {
   border-radius: 5px;
 }
 
-/*  grid_btn        */
-/*  grid_btn        */
-/*  grid_btn        */
 button[type=roll].sheet-background::before,
 button[type=roll].sheet-grid_btn::before {
   content: "";
@@ -855,7 +727,7 @@ button[type=roll].sheet-grid_btn::before {
   font-weight: bold;
   border-radius: 5px;
   padding: 0;
-  margin: 0px;
+  margin: 0;
 }
 
 .sheet-background {
@@ -866,15 +738,95 @@ button[type=roll].sheet-grid_btn::before {
   font-weight: bold;
   border-radius: 5px;
   padding: 0;
-  margin: 0px;
+  margin: 0;
 }
 
-/*  End of grid_btn        */
-/*  End of grid_btn        */
-/*  End of grid_btn        */
 button[type=action].sheet-d10-dice::before {
   font-family: "dicefontd10";
   content: "0 ";
   font-weight: bold;
   font-size: large;
+}
+
+/* Repeating Blocks */
+.repcontrol {
+  min-height: 27px;
+}
+
+.repcontrol .btn {
+  border: medium none;
+  color: white !important;
+  background: none;
+  box-shadow: none;
+}
+
+.repcontrol .btn:focus {
+  outline: 0;
+}
+
+.sheet-saving-throw-container .repcontrol .repcontrol_edit,
+.sheet-saving-throw-container .repcontrol .repcontrol_add {
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+.repcontrol .repcontrol_edit:after {
+  content: "(";
+  visibility: visible;
+  font-family: pictos;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 12px;
+  width: 12px;
+  padding: 2px 4px;
+  color: black;
+}
+
+.editmode ~ .repcontrol .repcontrol_edit:after {
+  content: ")";
+}
+
+.repcontrol .repcontrol_add:before {
+  content: "&";
+  visibility: visible;
+  font-family: pictos;
+  background-color: #fff;
+  border: 1px solid black;
+  border-radius: 2px;
+  font-size: 12px;
+  height: 12px;
+  width: 12px;
+  padding: 2px 4px;
+  color: black;
+}
+
+.repcontrol .repcontrol_edit:hover:after,
+.repcontrol .repcontrol_add:hover:before {
+  background-color: #efefef;
+}
+
+.sheet-resources .repcontrol {
+  margin-top: -10px;
+}
+
+.itemcontrol {
+  z-index: 10;
+}
+
+.itemcontrol .repcontrol_del {
+  font-size: 10px;
+  margin-top: 3px;
+  padding: 0;
+  height: 18px;
+  width: 18px;
+}
+
+.itemcontrol .repcontrol_move {
+  font-size: 10px;
+  margin-top: 3px;
+  padding: 0;
+  height: 18px;
+  width: 18px;
 }

@@ -1,7 +1,6 @@
-
-/* Roll Template CSS */
+/* Roll Templates */
 .sheet-rolltemplate-base .sheet-container {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid;
     padding: 2px;
     width: 189px;
@@ -16,10 +15,10 @@
 
 .sheet-rolltemplate-base div {
     padding: 2px;
-};
- 
+}
+
 .sheet-rolltemplate-base span {
-    color: rgb(126, 45, 64);
+    color: #7e2d40;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.2em;
     font-variant: small-caps;
@@ -33,45 +32,46 @@
     font-size: 1em;
     font-style: italic;
 }
- 
+
 .sheet-rolltemplate-base .sheet-arrow-right {
     border-bottom: 2px solid transparent;
     border-left: 180px solid black;
     border-top: 2px solid transparent;
 }
- 
+
 .sheet-rolltemplate-base .sheet-tcat {
     font-style: italic;
 }
- 
-.sheet-rolltemplate-base .inlinerollresult  {
-    background-color: #ffffff;
+
+.sheet-rolltemplate-base .inlinerollresult {
+    background-color: #fff;
     border: none;
 }
- 
+
 .sheet-rolltemplate-base .inlinerollresult.fullcrit {
-    color: #3FB315;
+    color: #3fb315;
     border: none;
 }
- 
+
 .sheet-rolltemplate-base .inlinerollresult.fullfail {
-    color: #B31515;
+    color: #b31515;
     border: none;
 }
- 
+
 .sheet-rolltemplate-base .inlinerollresult.importandivoll {
-    color: #4A57ED;
+    color: #4a57ed;
     border: none;
-} 
+}
+
 .sheet-rolltemplate-base .sheet-rowcolor2 {
     color: red;
     font-size: 1em;
     font-style: italic;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 .sheet-rolltemplate-initiative .sheet-container {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid;
     padding: 2px;
     width: 189px;
@@ -86,10 +86,10 @@
 
 .sheet-rolltemplate-initiative div {
     padding: 2px;
-};
- 
+}
+
 .sheet-rolltemplate-initiative span {
-    color: rgb(126, 45, 64);
+    color: #7e2d40;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.2em;
     font-variant: small-caps;
@@ -103,46 +103,47 @@
     font-size: 1em;
     font-style: italic;
 }
- 
+
 .sheet-rolltemplate-initiative .sheet-arrow-right {
     border-bottom: 2px solid transparent;
     border-left: 180px solid black;
     border-top: 2px solid transparent;
 }
- 
+
 .sheet-rolltemplate-initiative .sheet-tcat {
     font-style: italic;
 }
- 
-.sheet-rolltemplate-initiative .inlinerollresult  {
-    background-color: #ffffff;
+
+.sheet-rolltemplate-initiative .inlinerollresult {
+    background-color: #fff;
     border: none;
 }
- 
+
 .sheet-rolltemplate-initiative .inlinerollresult.fullcrit {
-    color: #3FB315;
+    color: #3fb315;
     border: none;
 }
- 
+
 .sheet-rolltemplate-initiative .inlinerollresult.fullfail {
-    color: #B31515;
+    color: #b31515;
     border: none;
 }
- 
+
 .sheet-rolltemplate-initiative .inlinerollresult.importandivoll {
-    color: #4A57ED;
+    color: #4a57ed;
     border: none;
-} 
+}
+
 .sheet-rolltemplate-initiative .sheet-rowcolor2 {
     color: red;
     font-size: 1em;
     font-style: italic;
-    font-weight:bold;
+    font-weight: bold;
 }
 
 
 .sheet-rolltemplate-megaroll .sheet-container {
-    background-color: #ffffff;
+    background-color: #fff;
     border: 1px solid;
     padding: 2px;
     width: 189px;
@@ -157,10 +158,10 @@
 
 .sheet-rolltemplate-megaroll div {
     padding: 2px;
-};
- 
+}
+
 .sheet-rolltemplate-megaroll span {
-    color: rgb(126, 45, 64);
+    color: #7e2d40;
     font-family: "Times New Roman", Times, serif;
     font-size: 1.2em;
     font-variant: small-caps;
@@ -174,40 +175,40 @@
     font-size: 1em;
     font-style: italic;
 }
- 
+
 .sheet-rolltemplate-megaroll .sheet-arrow-right {
     border-bottom: 2px solid transparent;
     border-left: 180px solid black;
     border-top: 2px solid transparent;
 }
- 
+
 .sheet-rolltemplate-megaroll .sheet-tcat {
     font-style: italic;
 }
- 
-.sheet-rolltemplate-megaroll .inlinerollresult  {
-    background-color: #ffffff;
+
+.sheet-rolltemplate-megaroll .inlinerollresult {
+    background-color: #fff;
     border: none;
 }
- 
+
 .sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
-    color: #3FB315;
+    color: #3fb315;
     border: none;
 }
- 
+
 .sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
-    color: #B31515;
+    color: #b31515;
     border: none;
 }
- 
+
 .sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
-    color: #4A57ED;
+    color: #4a57ed;
     border: none;
-} 
+}
+
 .sheet-rolltemplate-megaroll .sheet-rowcolor2 {
     color: red;
     font-size: 1em;
     font-style: italic;
-    font-weight:bold;
+    font-weight: bold;
 }
-/* End of Roll Template CSS */
