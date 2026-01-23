@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc"
+    "build": "npm run build:html",
+    "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html"
   },
   "repository": {
     "type": "git",
