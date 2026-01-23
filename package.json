@@ -1,0 +1,24 @@
+{
+  "name": "aberrantroll20sheet",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "npm run build:html && npm run build:css",
+    "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html",
+    "build:css": "npx sass --no-source-map --no-charset src/scss/index.scss dist/AberrantRoll20Sheet.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/esisco/AberrantRoll20Sheet.git"
+  },
+  "author": "Eric Sisco",
+  "bugs": {
+    "url": "https://github.com/esisco/AberrantRoll20Sheet/issues"
+  },
+  "homepage": "https://github.com/esisco/AberrantRoll20Sheet#readme",
+  "devDependencies": {
+    "ejs": "^4.0.1",
+    "sass": "^1.97.3",
+    "typescript": "^5.9.3"
+  }
+}

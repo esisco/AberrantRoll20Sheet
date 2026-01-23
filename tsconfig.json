@@ -1,0 +1,15 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    "module": "system",
+    "sourceMap": false,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "src/scripts/AberrantRoll20Sheet.js",
+    "target": "es6"
+  },
+  "include": [
+    "src/ts/**/*.ts",
+    "src/Roll20.d.ts"
+  ]
+}
