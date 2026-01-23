@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "npm run build:html",
+    "build": "npm run build:html && npm run build:css",
     "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html",
-    "build:css": "npx sass src/scss/index.scss dist/AberrantRoll20Sheet.css"
+    "build:css": "npx sass --no-source-map --no-charset src/scss/index.scss dist/AberrantRoll20Sheet.css"
   },
   "repository": {
     "type": "git",
