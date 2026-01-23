@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:html",
-    "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html"
+    "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html",
+    "build:css": "npx sass src/scss/index.scss dist/AberrantRoll20Sheet.css"
   },
   "repository": {
     "type": "git",
