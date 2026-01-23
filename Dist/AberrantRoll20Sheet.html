@@ -1,6 +1,8 @@
 <div class='wrapper'>
     <!-- <h1 class='sheet-title'>Aberrant</h1> -->
-    <img class='sheet-logo' width="50%" src='https://raw.githubusercontent.com/AndrewHolder/roll20-character-sheets-Testing/831c3fc33fdd10ee5e4d64db31eb7c64f7947420/AEON-Aberrant/AberrantLogo.png' alt='Aberrant Logo' />
+    <img class='sheet-logo' width="50%"
+        src='https://raw.githubusercontent.com/AndrewHolder/roll20-character-sheets-Testing/831c3fc33fdd10ee5e4d64db31eb7c64f7947420/AEON-Aberrant/AberrantLogo.png'
+        alt='Aberrant Logo' />
     <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="abilities" />
     <div>
         <button type="action" name="act_abilities" class="sheet-button0">Abilities</button>
@@ -8,7 +10,8 @@
         <button type="action" name="act_combat" class="sheet-button2">Combat</button>
         <button type="action" name="act_info" class="sheet-button3">Info</button>
     </div>
-    <div class='sheet-abilities'>
+
+        <div class='sheet-abilities'>
 		<h2>Attributes and Abilities</h2>
 		<!--    Strength, Perception, Charisma-->
 		<div>
@@ -1480,7 +1483,8 @@
             </div>
 		</div>
         <br>
-    </div>		<div class='sheet-quantum'>
+    </div>	
+    	<div class='sheet-quantum'>
         <h2>Quantum Powers</h2>	
         <div class="dual_col">
             <div class="col">
@@ -1750,7 +1754,8 @@
         <br>
         <br>
         <br>
-	</div>	<div class='sheet-combat'>
+	</div>
+    	<div class='sheet-combat'>
 		<div class="dual_col">
             <div class="col">
                 <div class="row">
@@ -2281,7 +2286,7 @@
             </div>
 		</div>
 	</div>	
-<div class='sheet-info'>
+    <div class='sheet-info'>
     <div class='sheet-grid_details'>
         <div clas="grid_item"><input type='text' class='sheet-st' name='attr_BName' /></div>
         <div clas="grid_item"><input class='sheet-st' type='text' name='attr_NName' /></div>
@@ -2428,12 +2433,13 @@
         {{/mega}}
     </div>
 </rolltemplate>
+
+
 <script type="text/worker">
 
-const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
-
+const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina", "Mega_Perception", "Mega_Intelligence", "Mega_Wits", "Mega_Charisma", "Mega_Manipulation", "Mega_Appearance"];
 megaAttributes.forEach(attr => {
-    on(`clicked:roll_${attr}`, function() {
+    on(`clicked:roll_${attr}`, function () {
         console.log(`Rolling ${attr}`);
         startRoll(`&{template:megaroll} {{subtag= @{character_name} }} {{name=${attr.replace("Mega_", "Mega ")} }} {{mega= [[ @{${attr}}d10 ]] }}`, (results) => {
             let successes = 0;
@@ -2441,27 +2447,28 @@ megaAttributes.forEach(attr => {
                 if (roll == 10) {
                     console.log("Roll is a 10, adding 3 successes.");
                     successes += 3;
-                } else if (roll >= 7) {
+                }
+                else if (roll >= 7) {
                     console.log("Roll is 7 or higher, adding 2 successes.");
                     successes += 2;
                 }
             }
             const computed = successes;
-            finishRoll(
-                results.rollId, 
-                {
-                    mega: computed,
-                });
+            finishRoll(results.rollId, {
+                mega: computed,
+            });
         });
     });
 });
-
 const buttonlist = ["abilities", "quantum", "combat", "info"];
 buttonlist.forEach(button => {
-    on(`clicked:${button}`, function() {
+    on(`clicked:${button}`, function () {
         console.log(`Switching to ${button} tab`);
         setAttrs({
             sheetTab: button
         });
     });
-});</script>
+});
+
+
+</script>
