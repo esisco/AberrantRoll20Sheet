@@ -1,0 +1,56 @@
+/* Header Banner */
+
+.charsheet .sheet-header {
+    height: 100px;
+    background-color: #c514a8;
+    position: relative;
+    top: -10px;
+    left: -10px;
+    width: calc(100% + 16px);
+    border: 2px solid black;
+}
+
+.charsheet .sheet-header .row {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    align-items: flex-start;
+    height: 100px;
+    gap: 20px;
+    position: relative;
+}
+
+.charsheet .sheet-header img.sheet-character-avatar {
+    height: 100px;
+    width: 100px;
+    object-fit: contain;
+    flex-shrink: 0;
+    border-right: 2px solid black;
+    border-bottom: 0;
+    background-color: white;
+}
+
+.charsheet .sheet-header .sheet-character-detail {
+    display: inline-block;
+    flex: 1;
+    text-align: left;
+    padding-left: 10px;
+    font-variant: small-caps;
+    font-weight: bold;
+}
+
+.charsheet .sheet-header .sheet-logo-col {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+    max-width: 400px;
+}
+
+.charsheet .sheet-logo {
+    display: inline-block;
+    height: 100px;
+    width: auto;
+    max-width: 400px;
+    object-fit: contain;
+}

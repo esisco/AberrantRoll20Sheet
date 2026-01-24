@@ -2,6 +2,84 @@
   background: #91a3ff;
 }
 
+/* Header Banner */
+.charsheet .sheet-logo {
+  display: block;
+  height: 120px;
+  width: auto;
+  max-width: 400px;
+  object-fit: contain;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.charsheet .sheet-header {
+  height: 120px;
+  padding: 0;
+  margin: 0;
+}
+
+.charsheet .sheet-header .row {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start;
+  height: 120px;
+  gap: 20px;
+}
+
+.charsheet .sheet-header img.character-avatar,
+.charsheet .sheet-header img.sheet-character-avatar {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  object-fit: contain;
+  flex-shrink: 0;
+  border: 2px solid black;
+  background-color: white;
+}
+
+.charsheet .sheet-header .character-detail,
+.charsheet .sheet-header .sheet-character-detail {
+  display: inline-block;
+  flex: 1;
+  text-align: left;
+  padding-left: 10px;
+}
+
+.charsheet .sheet-header .right-align,
+.charsheet .sheet-header .sheet-right-align {
+  display: inline-block;
+  margin-left: auto;
+  text-align: right;
+}
+
+.charsheet .sheet-header .avatar-col,
+.charsheet .sheet-header .sheet-avatar-col {
+  display: inline-block;
+  width: 100px;
+  flex-shrink: 0;
+}
+
+.charsheet .sheet-header .character-details-col,
+.charsheet .sheet-header .sheet-character-details-col {
+  display: inline-block;
+  flex: 1;
+  text-align: left;
+}
+
+.charsheet .sheet-header .logo-col,
+.charsheet .sheet-header .sheet-logo-col {
+  display: flex;
+  flex-shrink: 0;
+  margin-left: auto;
+  margin-right: 0;
+  padding-right: 0;
+  max-width: 400px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
 /* Columns */
 .sheet-col {
   width: 250px;
