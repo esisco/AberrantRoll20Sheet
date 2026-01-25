@@ -110,6 +110,8 @@ h2 {
 .sheet-label {
     color: darkred;
     font-variant: small-caps;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     font-size: 11px;
 }
 
@@ -229,6 +231,8 @@ input.sheet-dot[type="radio"] + span::before {
     font-size: 24px;
     border-radius: 50%;
 }
+
+
 
 input.sheet-dot[type="radio"]:checked ~ input.sheet-dot[type="radio"] + span::before {
     content: "";
