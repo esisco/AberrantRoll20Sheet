@@ -3,12 +3,11 @@
 const movementTypes = [
     { name: 'Walk', attr: 'Walk', value: 7, disabled: false },
     { name: 'Run', attr: 'Run', value: '@{Dexterity}+12+@{Mega_Dexterity}', disabled: true },
-    { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true },
-    { name: 'Flight', attr: 'FlightSpeed', value: 0, disabled: false },
-    { name: 'Swim', attr: 'SwimSpeed', value: 0, disabled: false },
-    { name: 'Hyper Flight', attr: 'HyperFlightSpeed', value: 0, disabled: false },
-    { name: 'Hyper Swim', attr: 'HyperSwimSpeed', value: 0, disabled: false }
+    { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true }
 ];
+
+// Custom movement column options
+const customMoveOptions = ['Flight', 'Swim', 'Hyper Run', 'Hyper Flight', 'Hyper Swim', 'Teleport', 'Burrowing', 'Climbing', 'Other'];
 
 // Armor configuration
 const armorSlots = [
@@ -35,61 +34,91 @@ const injuryTypes = [
 const woundOptions = ['', '/', 'X', '*'];
 -%>
 	<div class='sheet-combat'>
-		<div class="dual_col">
             <div class="col">
                 <div class="row">
-                    <div class="item 100"><h4>Initiative</h4></div>
+                    <h3 class="category-title">Initiative</h3>
                     <div class="item 100"><input type='text' class="st" name='attr_Initiative' value=0 /></div>
-                    <button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}">
-        				    <input type='text' class='sheet-total' name='init_roll' value="d10+@{Initiative}" disabled />
-                        </button>
-                </div>
-                <div class="row">
-                    <h4>Movement</h4>
-                </div>
-                <% movementTypes.forEach(move => { -%>
-                <div class="row">
-                    <div class="item 100"><h5><%= move.name %></h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></div>
-                </div>
-                <% }); -%>
-                <div class="row">
-                    <div class="item 100"><input type='text' class="st" name='attr_altmoveName' value="" /></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_altmoveRate' value=0 /></div>
+                    <button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button>
                 </div>
             </div>
-                        <div class="col">
-				<h3>Willpower</h3>
+            <div class="col">
+                <div class="row">
+                    <h3 class="category-title">Movement</h3>
+                </div>
+                <table class="movement-table">
+                    <thead>
+                        <tr>
+                            <% movementTypes.forEach(move => { -%>
+                            <th><%= move.name %></th>
+                            <% }); -%>
+                            <th><span name='attr_moveColumn1Name'></span></th>
+                            <th><span name='attr_moveColumn2Name'></span></th>
+                            <th><span name='attr_moveColumn3Name'></span></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <% movementTypes.forEach(move => { -%>
+                            <td><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></td>
+                            <% }); -%>
+                            <td><input type='text' class="st" name='attr_moveColumn1Value' value=0 /></td>
+                            <td><input type='text' class="st" name='attr_moveColumn2Value' value=0 /></td>
+                            <td><input type='text' class="st" name='attr_moveColumn3Value' value=0 /></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <input type="checkbox" class="gear" name="attr_movement_config_open" value="1" /><span></span>
+                <input type="checkbox" class="hidden hider" name="attr_movement_config_open" value="1" /><span></span>
+                <div class="hold">
+                    <div class="row">
+                        <div class="item 100">Column 4:</div>
+                        <div class="item 100">
+                            <select name='attr_moveColumn1Name' class='sheet-st'>
+                                <% customMoveOptions.forEach(opt => { -%>
+                                <option value='<%= opt %>'><%= opt %></option>
+                                <% }); -%>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Column 5:</div>
+                        <div class="item 100">
+                            <select name='attr_moveColumn2Name' class='sheet-st'>
+                                <% customMoveOptions.forEach(opt => { -%>
+                                <option value='<%= opt %>'><%= opt %></option>
+                                <% }); -%>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item 100">Column 6:</div>
+                        <div class="item 100">
+                            <select name='attr_moveColumn3Name' class='sheet-st'>
+                                <% customMoveOptions.forEach(opt => { -%>
+                                <option value='<%= opt %>'><%= opt %></option>
+                                <% }); -%>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+				<h3 class="category-title">Willpower</h3>
 				<div class="row">
-				    <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{mega= Willpower: @{Mega_Willpower} }}"></button></div>
+				    <div class="item 20"></div>
                     <div class="item 13"></div>
                     <% for (let i = 1; i <= 10; i++) { -%>
                     <input type='radio' class="dot" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
                     <% } -%>
+                    <button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
                 <div class="row">
                     <div class="item 20"></div>
                     <% for (let i = 0; i <= 10; i++) { -%>
-                    <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %>" name='attr_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+                    <input type='radio' class="mdot<%= i === 0 ? ' zero' : '' %>" name='attr_Temp_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
                     <% } -%>
-                </div>
-                <div class="row">
-                    <div class="item 20"></div>
-                    <% for (let i = 0; i <= 10; i++) { -%>
-                    <input type='radio' class="mdot<%= i === 0 ? ' zero' : '' %>" name='attr_Mega_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
-                    <% } -%>
-                </div>
-                <div class='row'>
-					<h3>Willpower Pool</h3>
-				</div>
-                <div class='row'>
-                    <div class="item 20"></div>
-                    <div class="item 50"><input type='text' class="repeating" name='attr_WPool' value= 3 min=0 /></div>
-                    <div class="item 5">/</div>
-                    <div class="item 50"><input type='text' class="repeating" name='attr_WPool_max' value=3 min=0 /></div>
                 </div>
             </div>
-        </div>
         <div>
 			<h2>Weapons</h2>
 			<div class="row">

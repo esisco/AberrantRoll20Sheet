@@ -4,7 +4,7 @@
 
 /* Columns */
 .sheet-col {
-  width: 250px;
+  width: 265px;
 }
 
 .sheet-dual_col .sheet-col {
@@ -169,6 +169,26 @@ input.sheet-repeating {
   border-left: none;
   border-right: none;
   border-top: none;
+}
+
+/* Movement table header styling */
+.charsheet .sheet-movement-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.charsheet .sheet-movement-table th {
+  text-align: center;
+  padding: 4px;
+  font-weight: bold;
+  color: black;
+  font-variant: small-caps;
+  vertical-align: middle;
+}
+
+.charsheet .sheet-movement-table td {
+  text-align: center;
+  padding: 2px;
 }
 
 h2 {
