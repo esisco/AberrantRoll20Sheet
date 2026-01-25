@@ -2,7 +2,7 @@ const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_
 megaAttributes.forEach(attr => {
     on(`clicked:roll_${attr}`, function() {
         console.log(`Rolling ${attr}`);
-        startRoll(`&{template:megaroll} {{subtag= @{character_name} }} {{name=${attr.replace("Mega_", "Mega ")} }} {{mega= [[ @{${attr}}d10 ]] }}`, (results) => {
+        startRoll(`&{template:megaroll} {{subtag= @{character_name} }} {{name=${attr.replace("Mega_", "Mega ")} }} {{mega= [[ (@{${attr}} + ?{Modifier|0})d10 ]] }}`, (results) => {
             let successes = 0;
             for (let roll of results.results.mega.rolls[0].results) {
                 if (roll == 10) {
