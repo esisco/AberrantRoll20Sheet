@@ -466,19 +466,25 @@ input.sheet-skill_open[type=checkbox] + span::before {
   border: none;
   border-radius: 4px;
   line-height: 14px;
-  text-align: center;
+  text-align: left;
   display: inline-block;
   vertical-align: middle;
   background: darkred;
   color: white;
-  content: "Skill Close";
+  content: "▼ Abilities";
   height: 16px;
   width: 250px;
   font-size: 12px;
 }
 
 input.sheet-skill_open[type=checkbox]:checked + span::before {
-  content: "Skill Open";
+  content: "▶ Abilities";
+}
+
+h3.sheet-category-title {
+  font-variant: small-caps;
+  text-align: center;
+  color: black;
 }
 
 /* Header Banner */
@@ -790,11 +796,16 @@ button {
 }
 
 button[type=roll].sheet-background::before,
-button[type=roll].sheet-grid_btn::before {
-  content: "";
+button[type=roll].sheet-grid_btn::before,
+button[type=action].sheet-d10-dice::before {
+  font-family: "dicefontd10";
+  content: "0 ";
+  font-weight: bold;
+  font-size: large;
 }
 
-.sheet-grid_btn {
+.sheet-grid_btn,
+.sheet-d10-dice {
   height: 20px;
   width: 20px;
   color: black;
@@ -803,6 +814,7 @@ button[type=roll].sheet-grid_btn::before {
   border-radius: 5px;
   padding: 0;
   margin: 0;
+  margin-left: auto;
 }
 
 .sheet-background {
@@ -814,13 +826,6 @@ button[type=roll].sheet-grid_btn::before {
   border-radius: 5px;
   padding: 0;
   margin: 0;
-}
-
-button[type=action].sheet-d10-dice::before {
-  font-family: "dicefontd10";
-  content: "0 ";
-  font-weight: bold;
-  font-size: large;
 }
 
 /* Repeating Blocks */

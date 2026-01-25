@@ -4,11 +4,16 @@ button {
 }
 
 button[type=roll].sheet-background::before,
-button[type=roll].sheet-grid_btn::before {
-    content: '';
+button[type=roll].sheet-grid_btn::before,
+button[type=action].sheet-d10-dice::before {
+    font-family: 'dicefontd10';
+    content: '0 ';
+    font-weight: bold;
+    font-size: large;
 }
 
-.sheet-grid_btn {
+.sheet-grid_btn,
+.sheet-d10-dice {
     height: 20px;
     width: 20px;
     color: black;
@@ -17,6 +22,7 @@ button[type=roll].sheet-grid_btn::before {
     border-radius: 5px;
     padding: 0;
     margin: 0;
+    margin-left: auto;
 }
 
 .sheet-background {
@@ -28,11 +34,4 @@ button[type=roll].sheet-grid_btn::before {
     border-radius: 5px;
     padding: 0;
     margin: 0;
-}
-
-button[type=action].sheet-d10-dice::before {
-    font-family: 'dicefontd10';
-    content: '0 ';
-    font-weight: bold;
-    font-size: large;
 }

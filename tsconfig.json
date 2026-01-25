@@ -5,11 +5,17 @@
     "sourceMap": false,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outFile": "src/scripts/AberrantRoll20Sheet.js",
+    "outDir": "src/scripts/",
+    // "outFile": "src/scripts/AberrantRoll20Sheet.js",
     "target": "es6"
   },
   "include": [
     "src/ts/**/*.ts",
-    "src/Roll20.d.ts"
+    "src/ts/types/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "src/ts/utils/*",
+    "src/ts/common/*"
   ]
 }

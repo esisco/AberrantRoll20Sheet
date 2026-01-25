@@ -232,7 +232,23 @@ input.sheet-dot[type="radio"] + span::before {
     border-radius: 50%;
 }
 
+/* Temporary Dots */
 
+input.sheet-dot[type="radio"].temporary + span::before {
+    margin-right: 4px;
+    border: solid 1px #a8a8a8;
+    line-height: 14px;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    box-shadow: 0 0 2px #ccc;
+    background: radial-gradient(#f6f6f6, #931010);
+    content: "";
+    width: 12px;
+    height: 12px;
+    font-size: 24px;
+    border-radius: 50%;
+}
 
 input.sheet-dot[type="radio"]:checked ~ input.sheet-dot[type="radio"] + span::before {
     content: "";
@@ -379,18 +395,24 @@ input.sheet-skill_open[type="checkbox"] + span::before {
     border: none;
     border-radius: 4px;
     line-height: 14px;
-    text-align: center;
+    text-align: left;
     display: inline-block;
     vertical-align: middle;
     background: darkred;
     color: white;
-    content: "Skill Close";
+    content: "▼ Abilities";
     height: 16px;
     width: 250px;
     font-size: 12px;
 }
 
 input.sheet-skill_open[type="checkbox"]:checked + span::before {
-    content: "Skill Open";
+    content: "▶ Abilities";
+}
+
+h3.sheet-category-title {
+    font-variant: small-caps;
+    text-align: center;
+    color: black;
 }
 
