@@ -1,3 +1,39 @@
+<%
+// Movement types configuration
+const movementTypes = [
+    { name: 'Walk', attr: 'Walk', value: 7, disabled: false },
+    { name: 'Run', attr: 'Run', value: '@{Dexterity}+12+@{Mega_Dexterity}', disabled: true },
+    { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true },
+    { name: 'Flight', attr: 'FlightSpeed', value: 0, disabled: false },
+    { name: 'Swim', attr: 'SwimSpeed', value: 0, disabled: false },
+    { name: 'Hyper Flight', attr: 'HyperFlightSpeed', value: 0, disabled: false },
+    { name: 'Hyper Swim', attr: 'HyperSwimSpeed', value: 0, disabled: false }
+];
+
+// Armor configuration
+const armorSlots = [
+    { id: 1, name: 'Mega_Stamina' },
+    { id: 2, name: 'Eufiber' }
+];
+// Additional numbered armor slots (3-11)
+for (let i = 3; i <= 11; i++) {
+    armorSlots.push({ id: i, name: null });
+}
+
+// Health injury types
+const injuryTypes = [
+    { name: 'Bruised', repeatingClass: 'bruisedhealth' },
+    { name: 'Hurt', repeatingClass: 'hurthealth' },
+    { name: 'Injured', repeatingClass: 'hurthealth' },
+    { name: 'Wounded', repeatingClass: 'woundedhealth' },
+    { name: 'Maimed', repeatingClass: 'maimedhealth' },
+    { name: 'Crippled', repeatingClass: 'crippledhealth' },
+    { name: 'Incapacitated', repeatingClass: 'incapacitatedhealth' }
+];
+
+// Wound options for select dropdowns
+const woundOptions = ['', '/', 'X', '*'];
+-%>
 	<div class='sheet-combat'>
 		<div class="dual_col">
             <div class="col">
@@ -11,34 +47,12 @@
                 <div class="row">
                     <h4>Movement</h4>
                 </div>
+                <% movementTypes.forEach(move => { -%>
                 <div class="row">
-                    <div class="item 100"><h5>Walk</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_Walk' value=7 /></div>
+                    <div class="item 100"><h5><%= move.name %></h5></div>
+                    <div class="item 100"><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></div>
                 </div>
-                <div class="row">
-                    <div class="item 100"><h5>Run</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_Run' value="@{Dexterity}+12+@{Mega_Dexterity}" disabled /></div>
-                </div>
-                <div class="row">
-                    <div class="item 100"><h5>Sprint</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_Run' value="@{Dexterity}*3+20+@{Mega_Dexterity}" disabled /></div>
-                </div>
-                <div class="row">
-                    <div class="item 100"><h5>Flight</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_FlightSpeed' value=0 /></div>
-                </div>
-                <div class="row">
-                    <div class="item 100"><h5>Swim</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_SwimSpeed' value=0 /></div>
-                </div>
-                <div class="row">
-                    <div class="item 100"><h5>Hyper Flight</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_HyperFlightSpeed' value=0 /></div>
-                </div>
-                <div class="row">
-                    <div class="item 100"><h5>Hyper Swim</h5></div>
-                    <div class="item 100"><input type='text' class="st" name='attr_HyperSwimSpeed' value=0 /></div>
-                </div>
+                <% }); -%>
                 <div class="row">
                     <div class="item 100"><input type='text' class="st" name='attr_altmoveName' value="" /></div>
                     <div class="item 100"><input type='text' class="st" name='attr_altmoveRate' value=0 /></div>
@@ -49,44 +63,21 @@
 				<div class="row">
 				    <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{mega= Willpower: @{Mega_Willpower} }}"></button></div>
                     <div class="item 13"></div>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=1 checked /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=5 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=10 /><span></span>
+                    <% for (let i = 1; i <= 10; i++) { -%>
+                    <input type='radio' class="dot" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
+                    <% } -%>
                 </div>
                 <div class="row">
                     <div class="item 20"></div>
-                    <input type='radio' class="dot zero" name='attr_Willpower' value=0 checked /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=1 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=5 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Willpower' value=10 /><span></span>
+                    <% for (let i = 0; i <= 10; i++) { -%>
+                    <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %>" name='attr_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+                    <% } -%>
                 </div>
                 <div class="row">
                     <div class="item 20"></div>
-                    <input type='radio' class="mdot zero" name='attr_Mega_Willpower' value=0 checked /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=1 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=2 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=3 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=4 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=5 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=6 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=7 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=8 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=9 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Mega_Willpower' value=10 /><span></span>
+                    <% for (let i = 0; i <= 10; i++) { -%>
+                    <input type='radio' class="mdot<%= i === 0 ? ' zero' : '' %>" name='attr_Mega_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+                    <% } -%>
                 </div>
                 <div class='row'>
 					<h3>Willpower Pool</h3>
@@ -184,89 +175,21 @@
                         <div class="item 75"><input type='text' class="st" name='attr_Natural_Aggravated_Soak' value=0 min=0 /></div>
                         <div class="item 50"><input type='text' class="st" name='attr_Natural_Aggravated_Penalty' value=0 readonly /></div>
                     </div>
+                    <% armorSlots.forEach(armor => { -%>
                     <div class="row">
-                        <div class="item 100">Mega_Stamina</div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Armor1_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor1_Penalty' value=0 min=0 /></div>
+                        <div class="item 100"><% if (armor.name) { %><%= armor.name %><% } else { %><input type='text' class="st" name='attr_Armor<%= armor.id %>_Name'/><% } %></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Bashing_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Lethal_Soak' value=0 min=0 /></div>
+                        <div class="item 75"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Aggravated_Soak' value=0 min=0 /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Penalty' value=0 min=0<% if (armor.id === 1) { %> readonly<% } %> /></div>
                     </div>
-                    <div class="row">
-                        <div class="item 100">Eufiber</div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Armor2_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor2_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor3_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor3_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor3_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor4_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor4_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor4_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor5_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor5_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor5_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor6_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor6_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor6_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor7_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor7_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor7_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor8_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor8_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor8_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor9_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor9_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor9_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor10_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor10_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor10_Penalty' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100"><input type='text' class="st" name='attr_Armor11_Name'/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Armor11_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Armor11_Penalty' value=0 min=0 /></div>
-                    </div>
+                    <% }); -%>
                     <div class="row">
                         <div class="item 100">Total</div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}+@{Armor1_Bashing_Soak}+@{Armor2_Bashing_Soak}+@{Armor3_Bashing_Soak}+@{Armor4_Bashing_Soak}+@{Armor5_Bashing_Soak}+@{Armor6_Bashing_Soak}+@{Armor7_Bashing_Soak}+@{Armor8_Bashing_Soak}+@{Armor9_Bashing_Soak}+@{Armor10_Bashing_Soak}+@{Armor11_Bashing_Soak}" disabled/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}+@{Armor1_Lethal_Soak}+@{Armor2_Lethal_Soak}+@{Armor3_Lethal_Soak}+@{Armor4_Lethal_Soak}+@{Armor5_Lethal_Soak}+@{Armor6_Lethal_Soak}+@{Armor7_Lethal_Soak}+@{Armor8_Lethal_Soak}+@{Armor9_Lethal_Soak}+@{Armor10_Lethal_Soak}+@{Armor11_Lethal_Soak}" disabled/></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}+@{Armor1_Aggravated_Soak}+@{Armor2_Aggravated_Soak}+@{Armor3_Aggravated_Soak}+@{Armor4_Aggravated_Soak}+@{Armor5_Aggravated_Soak}+@{Armor6_Aggravated_Soak}+@{Armor7_Aggravated_Soak}+@{Armor8_Aggravated_Soak}+@{Armor9_Aggravated_Soak}+@{Armor10_Aggravated_Soak}+@{Armor11_Aggravated_Soak}" disabled /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Penalty' value="@{Armor1_Penalty}+@{Armor2_Penalty}+@{Armor3_Penalty}+@{Armor4_Penalty}+@{Armor5_Penalty}+@{Armor6_Penalty}+@{Armor7_Penalty}+@{Armor8_Penalty}+@{Armor9_Penalty}+@{Armor10_Penalty}+@{Armor11_Penalty}" disabled/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Bashing_Soak}<% }); %>" disabled/></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Lethal_Soak}<% }); %>" disabled/></div>
+                        <div class="item 75" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Aggravated_Soak}<% }); %>" disabled /></div>
+                        <div class="item 50" ><input type='text' class="st" name='attr_Penalty' value="<% armorSlots.forEach((a, i) => { %><% if (i > 0) { %>+<% } %>@{Armor<%= a.id %>_Penalty}<% }); %>" disabled/></div>
 					</div>
                 </div>
                 <div class="col">
@@ -276,238 +199,52 @@
                         <div class="item 50" >Type</div>
                         <div class="item 50" >Penalty</div>
                     </div>
+                    <% injuryTypes.forEach(injury => { -%>
                     <div class="row">
-                        <div class="item 120">Bruised</div>
+                        <div class="item 120"><%= injury.name %></div>
                         <div class="item 50" >
-                            <select class='select_wound' name='attr_Bruised'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
+                            <select class='select_wound' name='attr_<%= injury.name %>'>
+                                <% woundOptions.forEach(opt => { -%>
+                                <option><%= opt %></option>
+                                <% });-%>
                             </select>
                         </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_BruisedHealthPenalty' value=0 /></div>
+                        <div class="item 50" ><input type='text' class="select_wound" name='attr_<%= injury.name %>HealthPenalty' value=0 /></div>
                     </div>
-				    <fieldset class='repeating_bruisedhealth'>
+				    <fieldset class='repeating_<%= injury.repeatingClass %>'>
                         <div class="row">
                             <div class="item 120">
                                 <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Bruised</option>
+                                    <option><%= injury.name %></option>
                                 </select>
                             </div>
                             <div class="item 50" >
                                 <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
+                                    <% woundOptions.forEach(opt => { -%>
+                                    <option><%= opt %></option>
+                                    <% }); -%>
                                 </select>
                             </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_BruisedHealthPenalty' value=0 /></div>
+                            <div class="item 50" ><input type='text' class="select_wound" name='attr_<%= injury.name %>HealthPenalty' value=0 /></div>
                         </div>
                     </fieldset>
-                    <div class="row">
-                        <div class="item 120">Hurt</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Hurt'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_HurtHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_hurthealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Hurt</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_HurtHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <div class="row">
-                        <div class="item 120">Injured</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Injured'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_InjuredHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_hurthealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Injured</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_InjuredHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <div class="row">
-                        <div class="item 120">Wounded</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Wounded'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_WoundedHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_woundedhealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Wounded</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_WoundedHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    
-                    <div class="row">
-                        <div class="item 120">Maimed</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Maimed'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_MaimedHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_maimedhealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Maimed</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_MaimedHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <div class="row">
-                        <div class="item 120">Crippled</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Maimed'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_CrippledHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_crippledhealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Crippled</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_CrippledHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <div class="row">
-                        <div class="item 120">Incapacitated</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Incapacitated'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_IncapacitatedHealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_incapacitatedhealth'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Incapacitated</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_IncapacitatedHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
+                    <% }); -%>
                     <h4>Extras</h4>
 				    <fieldset class='repeating_health'>
                         <div class="row">
                             <div class="item 120">
                                 <select class='select_wound' name='attr_rHealthName'>
-                                    <option>Bruised</option>
-                                    <option>Hurt</option>
-                                    <option>Injured</option>
-                                    <option>Wounded</option>
-                                    <option>Maimed</option>
-                                    <option>Crippled</option>
-                                    <option>Incapacitated</option>
+                                    <% injuryTypes.forEach(injury => { -%>
+                                    <option><%= injury.name %></option>
+                                    <% }); -%>
                                     <option>Dead</option>
                                 </select>
                             </div>
                             <div class="item 50" >
                                 <select class='select_wound' name='attr_rHealthWound'>
-                                    <option></option>
-                                    <option>/</option>
-                                    <option>X</option>
-                                    <option>*</option>
+                                    <% woundOptions.forEach(opt => { -%>
+                                    <option><%= opt %></option>
+                                    <% }); -%>
                                 </select>
                             </div>
                             <div class="item 50" ><input type='text' class="select_wound" name='attr_rHealthPenalty' value=0 /></div>
@@ -517,10 +254,9 @@
                         <div class="item 120">Dead</div>
                         <div class="item 50" >
                             <select class='select_wound' name='attr_Dead'>
-                                <option></option>
-                                <option>/</option>
-                                <option>X</option>
-                                <option>*</option>
+                                <% woundOptions.forEach(opt => { -%>
+                                <option><%= opt %></option>
+                                <% }); -%>
                             </select>
                         </div>
                         <div class="item 50" ><input type='text' class="select_wound" name='attr_DeadHealthPenalty' value=0 /></div>
