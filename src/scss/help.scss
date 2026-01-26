@@ -1,0 +1,61 @@
+/* Help Page Styles */
+
+.sheet-help {
+    .sheet-intro-text {
+        font-style: italic;
+        margin-bottom: 10px;
+    }
+
+    .sheet-step-section {
+        margin-bottom: 15px;
+    }
+
+    .sheet-step-content {
+        margin-left: 15px;
+    }
+
+    .sheet-info-box {
+        border: 2px solid #ccc;
+        padding: 10px;
+        margin: 15px 0;
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .sheet-costs-table {
+        width: 100%;
+        border-collapse: collapse;
+
+        &.sheet-with-spacing {
+            margin-bottom: 15px;
+        }
+
+        &.sheet-small-spacing {
+            margin-bottom: 10px;
+        }
+
+        td {
+            padding: 2px 0;
+
+            &.sheet-table-header {
+                font-weight: bold;
+            }
+
+            &.sheet-align-right {
+                text-align: right;
+            }
+        }
+
+        tr:first-child td {
+            padding-bottom: 5px;
+        }
+    }
+
+    .sheet-footnote {
+        font-size: 10px;
+        line-height: 1.4;
+
+        &.sheet-footnote-spacing {
+            margin-top: 5px;
+        }
+    }
+}

@@ -959,3 +959,50 @@ button[type=action].sheet-d10-dice::before {
   height: 18px;
   width: 18px;
 }
+
+/* Help Page Styles */
+.sheet-help .sheet-intro-text {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.sheet-help .sheet-step-section {
+  margin-bottom: 15px;
+}
+.sheet-help .sheet-step-content {
+  margin-left: 15px;
+}
+.sheet-help .sheet-info-box {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.sheet-help .sheet-costs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.sheet-help .sheet-costs-table.sheet-with-spacing {
+  margin-bottom: 15px;
+}
+.sheet-help .sheet-costs-table.sheet-small-spacing {
+  margin-bottom: 10px;
+}
+.sheet-help .sheet-costs-table td {
+  padding: 2px 0;
+}
+.sheet-help .sheet-costs-table td.sheet-table-header {
+  font-weight: bold;
+}
+.sheet-help .sheet-costs-table td.sheet-align-right {
+  text-align: right;
+}
+.sheet-help .sheet-costs-table tr:first-child td {
+  padding-bottom: 5px;
+}
+.sheet-help .sheet-footnote {
+  font-size: 10px;
+  line-height: 1.4;
+}
+.sheet-help .sheet-footnote.sheet-footnote-spacing {
+  margin-top: 5px;
+}
