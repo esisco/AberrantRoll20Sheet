@@ -149,21 +149,21 @@ const attributeColumns = [
 -%>
                 <div class="row">
                     <div class="item 100 title"><%= attrName %></div>
-                    <div class="item 130"><input class='sheet-specialty' type='text' name='attr_<%= attrName %>_Quality' placeholder='Quality' /></div>
+                    <div class="item 130"><input class='sheet-specialty sheet-edit-mode' type='text' name='attr_<%= attrName %>_Quality' placeholder='Quality' /></div>
                 </div>
                 <div class="row">
                     <div class="item 13"></div>
 <% for (let i = 1; i <= 5; i++) { -%>
-                    <input type='radio' class="dot" name='attr_<%= attrName %>' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_<%= attrName %>' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
 <% } -%>
                 </div>
                 <div class="row">
                     <div class="item 130 title">Mega&nbsp;<%= attrName %></div>
                 </div>
                 <div class="row">
-                    <input type='radio' class="mdot zero" name='attr_Mega_<%= attrName %>' value=0 checked /><span></span>
+                    <input type='radio' class="mdot zero sheet-edit-mode" name='attr_Mega_<%= attrName %>' value=0 checked /><span></span>
 <% for (let i = 1; i <= 5; i++) { -%>
-                    <input type='radio' class="mdot" name='attr_Mega_<%= attrName %>' value=<%= i %> /><span></span>
+                    <input type='radio' class="mdot sheet-edit-mode" name='attr_Mega_<%= attrName %>' value=<%= i %> /><span></span>
 <% } -%>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_<%= attrName %>"></button>
                 </div>
@@ -180,12 +180,12 @@ const attributeColumns = [
 -%>
                         <div class="<%= rowClass === 'row' ? 'row' : 'row' %>">
                             <div class="item 100 label"><span title="<%= sourceName %>"><%= displayName %></span></div>
-                            <div class="item 130"><input class='sheet-specialty' type='text' name='attr_<%= skillName %>_Specialty' placeholder='Specialty' /></div>
+                            <div class="item 130"><input class='sheet-specialty sheet-edit-mode' type='text' name='attr_<%= skillName %>_Specialty' placeholder='Specialty' /></div>
                         </div>
                         <div class="<%= rowClass %>">
-                            <input type='radio' class="dot zero" name='attr_<%= skillName %>' value=0 checked /><span></span>
+                            <input type='radio' class="dot zero sheet-edit-mode" name='attr_<%= skillName %>' value=0 checked /><span></span>
 <% for (let i = 1; i <= 5; i++) { -%>
-                            <input type='radio' class="dot" name='attr_<%= skillName %>' value=<%= i %> /><span></span>
+                            <input type='radio' class="dot sheet-edit-mode" name='attr_<%= skillName %>' value=<%= i %> /><span></span>
 <% } -%>
                             =<input type='text' class='sheet-total' name='attr_<%= skillName %>_Total' value="@{<%= attrName %>}+@{<%= skillName %>}" disabled />
                             <button type='roll' class="grid_btn" name="roll_<%= skillName %>" value="&{template:base} {{subtag= @{character_name} }} {{name= <%= displayName %> }} {{roll= [[ (?{Modifier?|0} +@{<%= skillName %>_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= skillName %>_Specialty}}} <%= megaRoll %>"></button>
@@ -193,13 +193,13 @@ const attributeColumns = [
 <% }); -%>
                         <fieldset class='repeating_<%= attrName.toLowerCase() %>'>
                             <div class="row">
-                                <div class="item 100 label"><input type='text' class='sheet-repeating' name='attr_<%= attr.repeatPrefix %>Name' placeholder='Ability'></div>
-                                <div class="item 130"><input type='text' class='sheet-specialty' name='attr_<%= attr.repeatPrefix %>Specialty' placeholder='Specialty' /></div>
+                                <div class="item 100 label"><input type='text' class='sheet-repeating sheet-edit-mode' name='attr_<%= attr.repeatPrefix %>Name' placeholder='Ability'></div>
+                                <div class="item 130"><input type='text' class='sheet-specialty sheet-edit-mode' name='attr_<%= attr.repeatPrefix %>Specialty' placeholder='Specialty' /></div>
                             </div>
         					<div class='row'>
-        						<input type='radio' class="dot zero" name='attr_<%= attr.repeatPrefix %>' value=0 checked /><span></span>
+        						<input type='radio' class="dot zero sheet-edit-mode" name='attr_<%= attr.repeatPrefix %>' value=0 checked /><span></span>
 <% for (let i = 1; i <= 5; i++) { -%>
-        						<input type='radio' class="dot" name='attr_<%= attr.repeatPrefix %>' value=<%= i %> /><span></span>
+        						<input type='radio' class="dot sheet-edit-mode" name='attr_<%= attr.repeatPrefix %>' value=<%= i %> /><span></span>
 <% } -%>
                                 =<input type='text' class='sheet-total' name='attr_<%= attr.repeatPrefix %>_Total' value="@{<%= attrName %>}+@{<%= attr.repeatPrefix %>}" disabled />
                                 <button type='roll' class="grid_btn" name="roll_<%= attr.repeatPrefix %>_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{<%= attr.repeatPrefix %>Name} }} {{roll= [[ (?{Modifier?|0} +@{<%= attr.repeatPrefix %>_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= attr.repeatPrefix %>Specialty}}}"></button>
@@ -219,9 +219,9 @@ const attributeColumns = [
     		    <h4>Mega <%= attrName %> Enhancements</h4>
 				<fieldset class='repeating_<%= attrName.toLowerCase() %>enhancements'>
                     <div class="row">
-                        <div class="item 240"><input type='text' class="st" name='attr_rEnhName' placeholder="Enhancement" /></div>
+                        <div class="item 240"><input type='text' class="st sheet-edit-mode" name='attr_rEnhName' placeholder="Enhancement" /></div>
                     </div>
-					<textarea class="textarea_1" name='attr_rEnhNotes' placeholder='Notes'></textarea>
+					<textarea class="textarea_1 sheet-edit-mode" name='attr_rEnhNotes' placeholder='Notes'></textarea>
 				</fieldset>
 <% }); -%>
             </div>
