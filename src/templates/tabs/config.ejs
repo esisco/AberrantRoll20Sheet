@@ -1,26 +1,36 @@
 	<div class='sheet-config'>
 		<h2>Configuration</h2>
 		<div class="col">
-			<h3>Sheet Settings</h3>
+			<h3>Sheet Configuration</h3>
 			<p>Configure your character sheet preferences and settings here.</p>
 			
-			<h3>Display Options</h3>
+			<h3>Character Settings</h3>
 			<div class="row">
 				<label>
-					<input type="checkbox" name="attr_show_advanced" value="1" />
-					Show Advanced Options
+					<input type="checkbox" name="attr_edit_mode" value="1" />
+					Enable Edit Mode
 				</label>
 			</div>
-			
-			<h3>Roll Templates</h3>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				When edit mode is enabled, you can modify character details directly on the sheet.
+			</p>
 			<div class="row">
 				<label>
-					<input type="checkbox" name="attr_detailed_rolls" value="1" />
-					Use Detailed Roll Output
+					<input type="checkbox" name="attr_mega_over_5" value="0" />
+					Allow Mega Attributes Over 5
 				</label>
 			</div>
-			
-			<h3>Custom Settings</h3>
-			<p>Additional configuration options will be added here.</p>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				By default, mega attributes are capped at 5. Enable this option to allow mega attributes to exceed 5.
+			</p>
+			<div class="row">
+				<label>
+					<input type="checkbox" name="attr_show_chrysalis" value="0" />
+					Show Chrysalis Fields
+				</label>
+			</div>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				Enable this option to show Chrysalis-related fields on the sheet.
+			</p>
 		</div>
 	</div>
