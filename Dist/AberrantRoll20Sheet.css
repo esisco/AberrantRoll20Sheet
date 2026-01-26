@@ -781,8 +781,27 @@ h3.sheet-category-title {
 .charsheet .sheet-abilities,
 .charsheet .sheet-info,
 .charsheet .sheet-quantum,
-.charsheet .sheet-combat {
+.charsheet .sheet-combat,
+.charsheet .sheet-help,
+.charsheet .sheet-config {
   display: none;
+}
+
+/* Tab navigation layout */
+.charsheet .sheet-tab-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.charsheet .sheet-tab-left {
+  display: flex;
+  gap: 4px;
+}
+
+.charsheet .sheet-tab-right {
+  display: flex;
+  gap: 4px;
 }
 
 /* Active button styling */
@@ -802,11 +821,21 @@ h3.sheet-category-title {
   outline: 2px solid red;
 }
 
+.charsheet .sheet-tabstoggle[value=help] ~ div .sheet-button4 {
+  outline: 2px solid red;
+}
+
+.charsheet .sheet-tabstoggle[value=config] ~ div .sheet-button5 {
+  outline: 2px solid red;
+}
+
 /* Show selected tab */
 .charsheet .sheet-tabstoggle[value=abilities] ~ div.sheet-abilities,
 .charsheet .sheet-tabstoggle[value=quantum] ~ div.sheet-quantum,
 .charsheet .sheet-tabstoggle[value=combat] ~ div.sheet-combat,
-.charsheet .sheet-tabstoggle[value=info] ~ div.sheet-info {
+.charsheet .sheet-tabstoggle[value=info] ~ div.sheet-info,
+.charsheet .sheet-tabstoggle[value=help] ~ div.sheet-help,
+.charsheet .sheet-tabstoggle[value=config] ~ div.sheet-config {
   display: block;
 }
 

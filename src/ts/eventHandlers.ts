@@ -24,7 +24,7 @@ megaAttributes.forEach(attr => {
 });
 
 
-const buttonlist = ["abilities", "quantum", "combat", "info"];
+const buttonlist = ["abilities", "quantum", "combat", "info", "help", "config"];
 buttonlist.forEach(button => {
     on(`clicked:${button}`, function() {
         console.log(`Switching to ${button} tab`);

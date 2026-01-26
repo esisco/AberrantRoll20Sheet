@@ -1,17 +1,25 @@
 <div class='wrapper'>
     <%- include('header'); %>
     <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="abilities" />
-    <div>
-        <button type="action" name="act_abilities" class="sheet-button0">Abilities</button>
-        <button type="action" name="act_quantum" class="sheet-button1">Quantum</button>
-        <button type="action" name="act_combat" class="sheet-button2">Combat</button>
-        <button type="action" name="act_info" class="sheet-button3">Info</button>
+    <div class="sheet-tab-nav">
+        <div class="sheet-tab-left">
+            <button type="action" name="act_abilities" class="sheet-button0">Abilities</button>
+            <button type="action" name="act_quantum" class="sheet-button1">Quantum</button>
+            <button type="action" name="act_combat" class="sheet-button2">Combat</button>
+            <button type="action" name="act_info" class="sheet-button3">Info</button>
+        </div>
+        <div class="sheet-tab-right">
+            <button type="action" name="act_help" class="sheet-button4" title="Help">?</button>
+            <button type="action" name="act_config" class="sheet-button5" title="Configuration">⚙</button>
+        </div>
     </div>
 
     <%- include('tabs/abilities'); %>
     <%- include('tabs/quantum'); %>
     <%- include('tabs/combat'); %>
     <%- include('tabs/info'); %>
+    <%- include('tabs/help'); %>
+    <%- include('tabs/config'); %>
 </div>
 
 <%- include('rollTemplates/base') %>
