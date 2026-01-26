@@ -1,89 +1,94 @@
+<%
+// Define basic info fields
+const basicInfoFields = [
+    { attr: 'BName', label: 'Birth Name' },
+    { attr: 'NName', label: 'Nova Name' },
+    { attr: 'Series', label: 'Series' }
+];
+
+const detailsFields = [
+    { attr: 'Exp', label: 'Experience', min: '0', value: '0' },
+    { attr: 'ExpEarned', label: 'Total XP Earned', min: '0', value: '0' },
+    { attr: 'Nationality', label: 'Nationality' },
+    { attr: 'Allegiance', label: 'Allegiance' }
+];
+
+const characterFieldsRow1 = [
+    { attr: 'Nature', label: 'Nature', className: 'sheet-charNatureInput' },
+    { attr: 'Demeanor', label: 'Demeanor', className: 'sheet-charDemeanorInput' },
+    { attr: 'Archetype', label: 'Archetype', className: 'sheet-charArchetypeInput' }
+];
+
+const characterFieldsRow2 = [
+    { attr: 'Virtue', label: 'Virtue', className: 'sheet-charVirtueInput' },
+    { attr: 'Vice', label: 'Vice', className: 'sheet-charViceInput' },
+    { attr: 'Eruption', label: 'Eruption', className: 'sheet-charEruptionInput' }
+];
+-%>
 <div class='sheet-info'>
     <div class='sheet-grid_details'>
-        <div clas="grid_item"><input type='text' class='sheet-st' name='attr_BName' /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_NName' /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Series' /></div>
-        <div clas="grid_item"><div class="subtitle">Birth Name</div></div> 
-        <div clas="grid_item"><div class="subtitle">Nova Name</div></div> 
-        <div clas="grid_item"><div class="subtitle">Series</div></div> 
+        <% basicInfoFields.forEach(field => { -%>
+        <div class="grid_item"><input type='text' class='sheet-st' name='attr_<%= field.attr %>' /></div>
+        <% }); -%>
+        <% basicInfoFields.forEach(field => { -%>
+        <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
+        <% }); -%>
     </div>
     <div class='sheet-grid_details_2'>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Exp' min='0' value="0" /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attrExpEarned' min='0' value="0"/></div> 
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Nationality' /></div> 
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Allegiance' /></div>
-        <div clas="grid_item"><div class="subtitle">Experience</div></div> 
-        <div clas="grid_item"><div class="subtitle">Total XP Earned</div></div> 
-        <div clas="grid_item"><div class="subtitle">Nationality</div></div> 
-        <div clas="grid_item"><div class="subtitle">Allegiance</div></div>  
+        <% detailsFields.forEach(field => { -%>
+        <div class="grid_item"><input class='sheet-st' type='text' name='attr_<%= field.attr %>'<% if (field.min) { %> min='<%= field.min %>'<% } %><% if (field.value) { %> value="<%= field.value %>"<% } %> /></div>
+        <% }); -%>
+        <% detailsFields.forEach(field => { -%>
+        <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
+        <% }); -%>
     </div>
     <div class='sheet-grid_details'>
-        <div clas="grid_item"><input class='sheet-charNatureInput sheet-st' type='text' name='attr_Nature' /></div> 
-        <div clas="grid_item"><input class='sheet-charDemeanorInput sheet-st' type='text' name='attr_Demeanor' /></div> 
-        <div clas="grid_item"><input class='sheet-charArchetypeInput sheet-st' type='text' name='attr_Archetype' /></div> 
-        <div clas="grid_item"><div class="subtitle">Nature</div></div> 
-        <div clas="grid_item"><div class="subtitle">Demeanor</div></div> 
-        <div clas="grid_item"><div class="subtitle">Archetype</div></div> 
-        <div clas="grid_item"><input class='sheet-charVirtueInput sheet-st' type='text' name='attr_Virtue' /></div> 
-        <div clas="grid_item"><input class='sheet-charViceInput sheet-st' type='text' name='attr_Vice' /></div> 
-        <div clas="grid_item"><input class='sheet-charEruptionInput sheet-st' type='text' name='attr_Eruption' /></div> 
-        <div clas="grid_item"><div class="subtitle">Virtue</div></div> 
-        <div clas="grid_item"><div class="subtitle">Vice</div></div> 
-        <div clas="grid_item"><div class="subtitle">Eruption</div></div> 
+        <% characterFieldsRow1.forEach(field => { -%>
+        <div class="grid_item"><input class='<%= field.className %> sheet-st' type='text' name='attr_<%= field.attr %>' /></div>
+        <% }); -%>
+        <% characterFieldsRow1.forEach(field => { -%>
+        <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
+        <% }); -%>
+        <% characterFieldsRow2.forEach(field => { -%>
+        <div class="grid_item"><input class='<%= field.className %> sheet-st' type='text' name='attr_<%= field.attr %>' /></div>
+        <% }); -%>
+        <% characterFieldsRow2.forEach(field => { -%>
+        <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
+        <% }); -%>
+    </div>
+    <%- include('sections/backgrounds.ejs') -%>
+    <% 
+    const repeatingFields = [
+        { section: 'Merits', attr: 'rMerit', fields: [
+            { name: 'Name', label: 'Merit', width: 250, placeholder: 'Merit' },
+            { name: 'Value', label: 'Value', width: 70, placeholder: 'Value' }
+        ]},
+        { section: 'Flaws', attr: 'rFlaw', fields: [
+            { name: 'Name', label: 'Flaw', width: 250, placeholder: 'Flaw' },
+            { name: 'Value', label: 'Value', width: 70, placeholder: 'Value' }
+        ]}
+    ];
+    -%>
+    <div class="col">
+        <% repeatingFields.forEach(section => { -%>
+        <h3 class="category-title"><%= section.section %></h3>
+        <fieldset class='repeating_<%= section.attr %>'>
+            <div class="row">
+                <% section.fields.forEach(field => { -%>
+                <div class="item <%= field.width %>"><input type='text' class="st" name='attr_<%= section.attr %><%= field.name %>' placeholder="<%= field.placeholder %>" /></div>
+                <% }); -%>
+            </div>
+            <div class="row">
+                <% section.fields.forEach(field => { -%>
+                <div class="item <%= field.width %> subtitle"><%= field.label %></div>
+                <% }); -%>
+            </div>
+            <textarea class="textarea_1" name='attr_<%= section.attr %>Notes' placeholder='Notes'></textarea>
+        </fieldset>
+        <% }); -%>
     </div>
     <div class="col">
-        <h3>Backgrounds</h3>
-        <fieldset class='repeating_backgrounds'>
-            <div class="row">
-                <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
-                <div class="item 200"><input type='text' class='sheet-specialty' name='attr_rBackName' placeholder='Background'></div>
-            </div>
-            <div class="row">
-                <input type='radio' class="dot zero" name='attr_rBack' value=0 checked /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=1  /><span></span>
-                <input type='radio' class="dot"name='attr_rBack' value=2 /><span></span>
-                <input type='radio' class="dot"name='attr_rBack' value=3 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=4 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=5 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=6 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=7 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=8 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=9 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=10 /><span></span>
-            </div>
-            <div class="row">
-                <div class="item 240"><input type='text' class='sheet-specialty' name='attr_rBackEnh' placeholder='Enhancement'></div>
-            </div>
-        </fieldset>
-    </div>
-    <div class="col">
-        <h3>Merits</h3>
-        <fieldset class='repeating_rMerits'>
-            <div class="row">
-                <div class="item 250"><input type='text' class="st" name='attr_rMeritName' placeholder="Merit" /></div>
-                <div class="item 70"><input type='text' class="st" name='attr_rMeritValue' placeholder="Value" /></div>
-            </div>
-            <div class="row">
-                <div class="item 250 subtitle">Merit</div>
-                <div class="item 70 subtitle">Value</div>
-            </div>
-            <textarea class="textarea_1" name='attr_rMeritNotes' placeholder='Notes'></textarea>
-        </fieldset>
-        <h3>Flaws</h3>
-        <fieldset class='repeating_rFlaws'>
-            <div class="row">
-                <div class="item 250"><input type='text' class="st" name='attr_rFlawsName' placeholder="Flaw" /></div>
-                <div class="item 70"><input type='text' class="st" name='attr_rFlawsValue' placeholder="Value" /></div>
-            </div>
-            <div class="row">
-                <div class="item 250 subtitle">Flaw</div>
-                <div class="item 70 subtitle">Value</div>
-            </div>
-            <textarea class="textarea_1" name='attr_rFlawsNotes' placeholder='Notes'></textarea>
-        </fieldset>
-    </div>
-    <div class="col">
-        <h3>General Notes</h3>
+        <h3 class="category-title">General Notes</h3>
         <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
     </div>
 </div>

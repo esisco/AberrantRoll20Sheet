@@ -1438,7 +1438,6 @@
                     <input type='radio' class="mdot" name='attr_Taint' value=9 /><span></span>
                     <input type='radio' class="mdot" name='attr_Taint' value=10 /><span></span>
                 </div>
-
                 <h3>Chrysalis</h3>
 				<div class="row">
                     <input type='radio' class="dot zero" name='attr_Chrysalis_max' value=0 checked /><span></span>
@@ -2162,90 +2161,330 @@
 	</div>	
     <div class='sheet-info'>
     <div class='sheet-grid_details'>
-        <div clas="grid_item"><input type='text' class='sheet-st' name='attr_BName' /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_NName' /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Series' /></div>
-        <div clas="grid_item"><div class="subtitle">Birth Name</div></div> 
-        <div clas="grid_item"><div class="subtitle">Nova Name</div></div> 
-        <div clas="grid_item"><div class="subtitle">Series</div></div> 
-    </div>
+                <div class="grid_item"><input type='text' class='sheet-st' name='attr_BName' /></div>
+                <div class="grid_item"><input type='text' class='sheet-st' name='attr_NName' /></div>
+                <div class="grid_item"><input type='text' class='sheet-st' name='attr_Series' /></div>
+                        <div class="grid_item"><div class="subtitle">Birth Name</div></div>
+                <div class="grid_item"><div class="subtitle">Nova Name</div></div>
+                <div class="grid_item"><div class="subtitle">Series</div></div>
+            </div>
     <div class='sheet-grid_details_2'>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Exp' min='0' value="0" /></div>
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attrExpEarned' min='0' value="0"/></div> 
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Nationality' /></div> 
-        <div clas="grid_item"><input class='sheet-st' type='text' name='attr_Allegiance' /></div>
-        <div clas="grid_item"><div class="subtitle">Experience</div></div> 
-        <div clas="grid_item"><div class="subtitle">Total XP Earned</div></div> 
-        <div clas="grid_item"><div class="subtitle">Nationality</div></div> 
-        <div clas="grid_item"><div class="subtitle">Allegiance</div></div>  
-    </div>
+                <div class="grid_item"><input class='sheet-st' type='text' name='attr_Exp' min='0' value="0" /></div>
+                <div class="grid_item"><input class='sheet-st' type='text' name='attr_ExpEarned' min='0' value="0" /></div>
+                <div class="grid_item"><input class='sheet-st' type='text' name='attr_Nationality' /></div>
+                <div class="grid_item"><input class='sheet-st' type='text' name='attr_Allegiance' /></div>
+                        <div class="grid_item"><div class="subtitle">Experience</div></div>
+                <div class="grid_item"><div class="subtitle">Total XP Earned</div></div>
+                <div class="grid_item"><div class="subtitle">Nationality</div></div>
+                <div class="grid_item"><div class="subtitle">Allegiance</div></div>
+            </div>
     <div class='sheet-grid_details'>
-        <div clas="grid_item"><input class='sheet-charNatureInput sheet-st' type='text' name='attr_Nature' /></div> 
-        <div clas="grid_item"><input class='sheet-charDemeanorInput sheet-st' type='text' name='attr_Demeanor' /></div> 
-        <div clas="grid_item"><input class='sheet-charArchetypeInput sheet-st' type='text' name='attr_Archetype' /></div> 
-        <div clas="grid_item"><div class="subtitle">Nature</div></div> 
-        <div clas="grid_item"><div class="subtitle">Demeanor</div></div> 
-        <div clas="grid_item"><div class="subtitle">Archetype</div></div> 
-        <div clas="grid_item"><input class='sheet-charVirtueInput sheet-st' type='text' name='attr_Virtue' /></div> 
-        <div clas="grid_item"><input class='sheet-charViceInput sheet-st' type='text' name='attr_Vice' /></div> 
-        <div clas="grid_item"><input class='sheet-charEruptionInput sheet-st' type='text' name='attr_Eruption' /></div> 
-        <div clas="grid_item"><div class="subtitle">Virtue</div></div> 
-        <div clas="grid_item"><div class="subtitle">Vice</div></div> 
-        <div clas="grid_item"><div class="subtitle">Eruption</div></div> 
-    </div>
-    <div class="col">
-        <h3>Backgrounds</h3>
-        <fieldset class='repeating_backgrounds'>
+                <div class="grid_item"><input class='sheet-charNatureInput sheet-st' type='text' name='attr_Nature' /></div>
+                <div class="grid_item"><input class='sheet-charDemeanorInput sheet-st' type='text' name='attr_Demeanor' /></div>
+                <div class="grid_item"><input class='sheet-charArchetypeInput sheet-st' type='text' name='attr_Archetype' /></div>
+                        <div class="grid_item"><div class="subtitle">Nature</div></div>
+                <div class="grid_item"><div class="subtitle">Demeanor</div></div>
+                <div class="grid_item"><div class="subtitle">Archetype</div></div>
+                        <div class="grid_item"><input class='sheet-charVirtueInput sheet-st' type='text' name='attr_Virtue' /></div>
+                <div class="grid_item"><input class='sheet-charViceInput sheet-st' type='text' name='attr_Vice' /></div>
+                <div class="grid_item"><input class='sheet-charEruptionInput sheet-st' type='text' name='attr_Eruption' /></div>
+                        <div class="grid_item"><div class="subtitle">Virtue</div></div>
+                <div class="grid_item"><div class="subtitle">Vice</div></div>
+                <div class="grid_item"><div class="subtitle">Eruption</div></div>
+            </div>
+        <div class="col">
+        <h3 class="category-title">Backgrounds</h3>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 139; Players Guide, pg. 76">Allies</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Allies' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Allies' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 139; Players Guide, pg. 77">Attunement</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Attunement' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Attunement' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 140; Players Guide, pg. 78">Backing</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Backing' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Backing' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 140; Players Guide, pg. 78">Cipher</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Cipher' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Cipher' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 140; Players Guide, pg. 79">Contacts</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Contacts' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Contacts' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 141; Players Guide, pg. 80">Dormancy</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Dormancy' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Dormancy' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="The Directive, pg. 53">Equipment</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Equipment' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Equipment' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 141; Players Guide, pg. 80">Eufiber</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Eufiber' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Eufiber' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="The Directive, pg. 54">Favors</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Favors' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Favors' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 142; Players Guide, pg. 83">Followers</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Followers' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Followers' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 142; Players Guide, pg. 83">Influence</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Influence' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Influence' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 142; Players Guide, pg. 84">Mentor</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Mentor' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Mentor' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 143; Players Guide, pg. 84">Node</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Node' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Node' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="The Directive, pg. 54">Rank</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Rank' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Rank' value=10 /><span></span>
+                    </div>
+                <div class="row">
+            <div class="item 100 label"><span title="Aberrant, pg. 144; Players Guide, pg. 86">Resources</span></div>
+        </div>
+        <div class="row">
+                        <input type='radio' class="dot zero" name='attr_Resources' value=0 checked /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=1 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=2 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=3 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=4 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=5 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=6 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=7 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=8 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=9 /><span></span>
+                        <input type='radio' class="dot" name='attr_Resources' value=10 /><span></span>
+                    </div>
+                <fieldset class='repeating_backgrounds'>
             <div class="row">
                 <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
                 <div class="item 200"><input type='text' class='sheet-specialty' name='attr_rBackName' placeholder='Background'></div>
             </div>
             <div class="row">
-                <input type='radio' class="dot zero" name='attr_rBack' value=0 checked /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=1  /><span></span>
-                <input type='radio' class="dot"name='attr_rBack' value=2 /><span></span>
-                <input type='radio' class="dot"name='attr_rBack' value=3 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=4 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=5 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=6 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=7 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=8 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=9 /><span></span>
-                <input type='radio' class="dot" name='attr_rBack' value=10 /><span></span>
-            </div>
+                                <input type='radio' class="dot zero" name='attr_rBack' value=0 checked /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=1 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=2 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=3 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=4 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=5 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=6 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=7 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=8 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=9 /><span></span>
+                                <input type='radio' class="dot" name='attr_rBack' value=10 /><span></span>
+                            </div>
             <div class="row">
                 <div class="item 240"><input type='text' class='sheet-specialty' name='attr_rBackEnh' placeholder='Enhancement'></div>
             </div>
         </fieldset>
     </div>
-    <div class="col">
-        <h3>Merits</h3>
-        <fieldset class='repeating_rMerits'>
+        <div class="col">
+                <h3 class="category-title">Merits</h3>
+        <fieldset class='repeating_rMerit'>
             <div class="row">
-                <div class="item 250"><input type='text' class="st" name='attr_rMeritName' placeholder="Merit" /></div>
-                <div class="item 70"><input type='text' class="st" name='attr_rMeritValue' placeholder="Value" /></div>
-            </div>
+                                <div class="item 250"><input type='text' class="st" name='attr_rMeritName' placeholder="Merit" /></div>
+                                <div class="item 70"><input type='text' class="st" name='attr_rMeritValue' placeholder="Value" /></div>
+                            </div>
             <div class="row">
-                <div class="item 250 subtitle">Merit</div>
-                <div class="item 70 subtitle">Value</div>
-            </div>
+                                <div class="item 250 subtitle">Merit</div>
+                                <div class="item 70 subtitle">Value</div>
+                            </div>
             <textarea class="textarea_1" name='attr_rMeritNotes' placeholder='Notes'></textarea>
         </fieldset>
-        <h3>Flaws</h3>
-        <fieldset class='repeating_rFlaws'>
+                <h3 class="category-title">Flaws</h3>
+        <fieldset class='repeating_rFlaw'>
             <div class="row">
-                <div class="item 250"><input type='text' class="st" name='attr_rFlawsName' placeholder="Flaw" /></div>
-                <div class="item 70"><input type='text' class="st" name='attr_rFlawsValue' placeholder="Value" /></div>
-            </div>
+                                <div class="item 250"><input type='text' class="st" name='attr_rFlawName' placeholder="Flaw" /></div>
+                                <div class="item 70"><input type='text' class="st" name='attr_rFlawValue' placeholder="Value" /></div>
+                            </div>
             <div class="row">
-                <div class="item 250 subtitle">Flaw</div>
-                <div class="item 70 subtitle">Value</div>
-            </div>
-            <textarea class="textarea_1" name='attr_rFlawsNotes' placeholder='Notes'></textarea>
+                                <div class="item 250 subtitle">Flaw</div>
+                                <div class="item 70 subtitle">Value</div>
+                            </div>
+            <textarea class="textarea_1" name='attr_rFlawNotes' placeholder='Notes'></textarea>
         </fieldset>
-    </div>
+            </div>
     <div class="col">
-        <h3>General Notes</h3>
+        <h3 class="category-title">General Notes</h3>
         <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
     </div>
 </div>
@@ -2258,8 +2497,8 @@
 			
 			<h3>Tabs</h3>
 			<ul>
-				<li><strong>Abilities:</strong> Manage your character's attributes, skills, and enhancements</li>
-				<li><strong>Quantum:</strong> Track quantum powers and abilities</li>
+				<li><strong>Abilities:</strong> Manage your character's attributes, abilities, and enhancements</li>
+				<li><strong>Quantum:</strong> Track quantum powers, quantum and taint</li>
 				<li><strong>Combat:</strong> Handle initiative, movement, weapons, health, and soak values</li>
 				<li><strong>Info:</strong> Character background and information</li>
 				<li><strong>Config:</strong> Configure sheet settings and preferences</li>
