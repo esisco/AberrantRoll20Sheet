@@ -26,22 +26,22 @@ const backgrounds = [
         </div>
         <div class="row">
             <% for (let i = 0; i <= 10; i++) { -%>
-            <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %>" name='attr_<%= bg.name %>' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+            <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %> sheet-edit-mode" name='attr_<%= bg.name %>' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
             <% } -%>
         </div>
         <% }); -%>
         <fieldset class='repeating_backgrounds'>
             <div class="row">
-                <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
-                <div class="item 200"><input type='text' class='sheet-specialty' name='attr_rBackName' placeholder='Background'></div>
+                <div class="item 40"><button type='roll' class='sheet-background sheet-edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item 200"><input type='text' class='sheet-specialty sheet-edit-mode' name='attr_rBackName' placeholder='Background'></div>
             </div>
             <div class="row">
                 <% for (let i = 0; i <= 10; i++) { -%>
-                <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %>" name='attr_rBack' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+                <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %> sheet-edit-mode" name='attr_rBack' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
                 <% } -%>
             </div>
             <div class="row">
-                <div class="item 240"><input type='text' class='sheet-specialty' name='attr_rBackEnh' placeholder='Enhancement'></div>
+                <div class="item 240"><input type='text' class='sheet-specialty sheet-edit-mode' name='attr_rBackEnh' placeholder='Enhancement'></div>
             </div>
         </fieldset>
     </div>

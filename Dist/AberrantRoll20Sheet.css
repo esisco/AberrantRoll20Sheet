@@ -1009,35 +1009,25 @@ button[type=action].sheet-d10-dice::before {
 
 /* Edit Mode Styles */
 /* When edit mode is disabled (checkbox not checked), make inputs read-only and hide interactive elements */
-input[name=attr_edit_mode]:not(:checked) {
-  /* Make input fields with edit-mode class read-only and styled as non-editable */
-}
 input[name=attr_edit_mode]:not(:checked) ~ * input.sheet-edit-mode[type=text],
 input[name=attr_edit_mode]:not(:checked) ~ * input.sheet-edit-mode[type=number],
 input[name=attr_edit_mode]:not(:checked) ~ * textarea.sheet-edit-mode,
 input[name=attr_edit_mode]:not(:checked) ~ * select.sheet-edit-mode {
+  /* Make input fields with edit-mode class read-only and styled as non-editable */
   pointer-events: none !important;
   cursor: default !important;
   background-color: transparent;
 }
-input[name=attr_edit_mode]:not(:checked) {
-  /* Make radio buttons and checkboxes with edit-mode class non-interactive */
-}
 input[name=attr_edit_mode]:not(:checked) ~ * input.sheet-edit-mode[type=radio],
 input[name=attr_edit_mode]:not(:checked) ~ * input.sheet-edit-mode[type=checkbox] {
+  /* Make radio buttons and checkboxes with edit-mode class non-interactive */
   pointer-events: none !important;
   cursor: default !important;
 }
-input[name=attr_edit_mode]:not(:checked) {
-  /* Hide buttons with edit-mode class when edit mode is off */
-}
 input[name=attr_edit_mode]:not(:checked) ~ * button.sheet-edit-mode[type=roll],
 input[name=attr_edit_mode]:not(:checked) ~ * button.sheet-edit-mode[type=action] {
+  /* Hide buttons with edit-mode class when edit mode is off */
   display: none !important;
-}
-input[name=attr_edit_mode]:not(:checked) {
-  /* Hide repeating section controls in fieldsets when edit mode is off */
-  /* Hide repeating controls regardless of placement */
 }
 input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol,
 input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol .repcontrol_edit,
@@ -1054,22 +1044,24 @@ input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_ad
 input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_edit,
 input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_del,
 input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_move {
+  /* Hide repeating section controls in fieldsets when edit mode is off */
+  /* Hide repeating controls regardless of placement */
   display: none !important;
 }
 
 /* When edit mode is enabled (checkbox is checked), all elements function normally */
-input[name=attr_edit_mode]:checked {
-  /* Edit mode active - all inputs are editable by default */
-  /* No overrides needed, Roll20 default behavior applies */
-}
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=text],
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=number],
 input[name=attr_edit_mode]:checked ~ * textarea.sheet-edit-mode,
-input[name=attr_edit_mode]:checked ~ * select.sheet-edit-mode,
+input[name=attr_edit_mode]:checked ~ * select.sheet-edit-mode {
+  pointer-events: auto !important;
+  cursor: auto !important;
+  background: white !important;
+}
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=radio],
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=checkbox],
 input[name=attr_edit_mode]:checked ~ * button.sheet-edit-mode[type=roll],
 input[name=attr_edit_mode]:checked ~ * button.sheet-edit-mode[type=action] {
   pointer-events: auto !important;
-  cursor: auto !important;
+  cursor: pointer !important;
 }
