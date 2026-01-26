@@ -1613,14 +1613,14 @@
         <br/>
 	</div>
     	<div class='sheet-combat'>
-            <div class="col">
+            <div class="col item 100">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
-                    <div class="item 100"><input type='text' class="st" name='attr_Initiative' value=0 /></div>
-                    <button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button>
+                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_Initiative' value=0 /></div>
+                    <div class="item 25"><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button></div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col item 430">
                 <div class="row">
                     <h3 class="category-title">Movement</h3>
                 </div>
@@ -1640,80 +1640,29 @@
                                                         <td><input type='text' class="st" name='attr_Walk' value=7 /></td>
                                                         <td><input type='text' class="st" name='attr_Run' value=@{Dexterity}+12+@{Mega_Dexterity} disabled /></td>
                                                         <td><input type='text' class="st" name='attr_Run' value=@{Dexterity}*3+20+@{Mega_Dexterity} disabled /></td>
-                                                        <td><input type='text' class="st" name='attr_moveColumn1Value' value=0 /></td>
-                            <td><input type='text' class="st" name='attr_moveColumn2Value' value=0 /></td>
-                            <td><input type='text' class="st" name='attr_moveColumn3Value' value=0 /></td>
+                                                        <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn1Value' value=0 /></td>
+                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn2Value' value=0 /></td>
+                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn3Value' value=0 /></td>
                         </tr>
                     </tbody>
                 </table>
-                <input type="checkbox" class="gear" name="attr_movement_config_open" value="1" /><span></span>
-                <input type="checkbox" class="hidden hider" name="attr_movement_config_open" value="1" /><span></span>
-                <div class="hold">
-                    <div class="row">
-                        <div class="item 100">Column 4:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn1Name' class='sheet-st'>
-                                                                <option value='Flight'>Flight</option>
-                                                                <option value='Swim'>Swim</option>
-                                                                <option value='Hyper Run'>Hyper Run</option>
-                                                                <option value='Hyper Flight'>Hyper Flight</option>
-                                                                <option value='Hyper Swim'>Hyper Swim</option>
-                                                                <option value='Teleport'>Teleport</option>
-                                                                <option value='Burrowing'>Burrowing</option>
-                                                                <option value='Climbing'>Climbing</option>
-                                                                <option value='Other'>Other</option>
-                                                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Column 5:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn2Name' class='sheet-st'>
-                                                                <option value='Flight'>Flight</option>
-                                                                <option value='Swim'>Swim</option>
-                                                                <option value='Hyper Run'>Hyper Run</option>
-                                                                <option value='Hyper Flight'>Hyper Flight</option>
-                                                                <option value='Hyper Swim'>Hyper Swim</option>
-                                                                <option value='Teleport'>Teleport</option>
-                                                                <option value='Burrowing'>Burrowing</option>
-                                                                <option value='Climbing'>Climbing</option>
-                                                                <option value='Other'>Other</option>
-                                                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Column 6:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn3Name' class='sheet-st'>
-                                                                <option value='Flight'>Flight</option>
-                                                                <option value='Swim'>Swim</option>
-                                                                <option value='Hyper Run'>Hyper Run</option>
-                                                                <option value='Hyper Flight'>Hyper Flight</option>
-                                                                <option value='Hyper Swim'>Hyper Swim</option>
-                                                                <option value='Teleport'>Teleport</option>
-                                                                <option value='Burrowing'>Burrowing</option>
-                                                                <option value='Climbing'>Climbing</option>
-                                                                <option value='Other'>Other</option>
-                                                            </select>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="col">
 				<h3 class="category-title">Willpower</h3>
 				<div class="row">
 				    <div class="item 20"></div>
                     <div class="item 13"></div>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=1 checked /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=2 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=3 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=4 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=5 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=6 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=7 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=8 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=9 /><span></span>
-                                        <input type='radio' class="dot" name='attr_Willpower_max' value=10 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=1 checked /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=2 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=3 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=4 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=5 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=6 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=7 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=8 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=9 /><span></span>
+                                        <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=10 /><span></span>
                                         <button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
                 <div class="row">
@@ -1736,16 +1685,18 @@
 			<div class="row">
                 <div class="item 40">Roll</div>
                 <div class="item 120">Weapon</div>
-                <div class="item 70">Dice</div>
+                <div class="item 50">Dice</div>
                 <div class="item 70">Damage</div>
+                <div class="item 50">Difficulty</div>
 			</div>
 			<fieldset class='repeating_weapons'>
     			<div class="row"> 
                     <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
-                    <div class="item 120"><input type='text' class="st" name='attr_wname'/></div>
-                    <div class="item 70" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
+                    <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
+                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
                     <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
-    			    <div class="item 50" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
+                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></div>
+    			    <div class="item 25" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
     			</div>
     			<input type="checkbox" class="hidden hider" name="attr_weapon_open" value="1" checked/><span></span>
     			<div class="hold">
@@ -1763,7 +1714,7 @@
         			</div>
         			<div class="row">
                         <div class="item 100">
-        					<select name='attr_wskill' class='sheet-st'>
+        					<select name='attr_wskill sheet-edit-mode' class='sheet-st'>
         						<option value="@{Athletics_Total}">Athletics</option>
         						<option value="@{Brawl_Total}">Brawl</option>
         						<option value="@{Firearms_Total}">Firearms</option>
@@ -1771,10 +1722,10 @@
         						<option value="@{Melee_Total}">Melee</option>
         					</select>
         				</div>
-                        <div class="item 70" ><input type='text' class="st" name='attr_wacc' value="0"/></div>
-                        <div class="item 70" ><input type='text' class="st" name='attr_wdam' value="0"/></div>
+                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></div>
+                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></div>
                         <div class="item 50" ><input type='checkbox' value="@{Strength}" name='attr_wstr' /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_range'value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_range'value="0"/></div>
                         <div class="item 180">
         					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
         					<input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
@@ -1782,22 +1733,22 @@
         					<input type='checkbox' class="strike" name='attr_wm_st' value=1 /><span class="strike">St</span>
         					<input type='checkbox' class="strike" name='attr_wm_tw' value=1 /><span class="strike">Tw</span>
         				</div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wrof' value="0"/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wclip'value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wrof' value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wclip'value="0"/></div>
                         <div class="item 50" >
-                            <select name='attr_wconceal' class='sheet-st'>
+                            <select name='attr_wconceal' class='sheet-st sheet-edit-mode'>
         						<option value='Pocket'>P</option>
         						<option value='Jacket'>J</option>
         						<option value='Trenchcoat'>T</option>
         						<option value='N/A'>N/A</option>
         					</select>
                         </div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wmass' value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wmass' value="0"/></div>
         			</div>
                 </div>
             </fieldset>
         </div>
-        <div class='sheet-health'>
+                <div class='sheet-health'>
 			<h2>Health</h2>
     		<div class="dual_col">
                 <div class="col">
@@ -2462,24 +2413,24 @@
                 <h3 class="category-title">Merits</h3>
         <fieldset class='repeating_rMerit'>
             <div class="row">
-                                <div class="item 250"><input type='text' class="st sheet-edit-mode" name='attr_rMeritName' placeholder="Merit" /></div>
-                                <div class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_rMeritValue' placeholder="Value" /></div>
+                                <div class="item 180"><input type='text' class="st sheet-edit-mode" name='attr_rMeritName' placeholder="Merit" /></div>
+                                <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_rMeritValue' placeholder="Value" /></div>
                             </div>
             <div class="row">
-                                <div class="item 250 subtitle">Merit</div>
-                                <div class="item 70 subtitle">Value</div>
+                                <div class="item 180 subtitle">Merit</div>
+                                <div class="item 50 subtitle">Value</div>
                             </div>
             <textarea class="textarea_1 sheet-edit-mode" name='attr_rMeritNotes' placeholder='Notes'></textarea>
         </fieldset>
                 <h3 class="category-title">Flaws</h3>
         <fieldset class='repeating_rFlaw'>
             <div class="row">
-                                <div class="item 250"><input type='text' class="st sheet-edit-mode" name='attr_rFlawName' placeholder="Flaw" /></div>
-                                <div class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_rFlawValue' placeholder="Value" /></div>
+                                <div class="item 180"><input type='text' class="st sheet-edit-mode" name='attr_rFlawName' placeholder="Flaw" /></div>
+                                <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_rFlawValue' placeholder="Value" /></div>
                             </div>
             <div class="row">
-                                <div class="item 250 subtitle">Flaw</div>
-                                <div class="item 70 subtitle">Value</div>
+                                <div class="item 180 subtitle">Flaw</div>
+                                <div class="item 50 subtitle">Value</div>
                             </div>
             <textarea class="textarea_1 sheet-edit-mode" name='attr_rFlawNotes' placeholder='Notes'></textarea>
         </fieldset>
@@ -2779,7 +2730,7 @@
 		</div>
 	</div>
 
-    	<div class='sheet-config'>
+        <div class='sheet-config'>
 		<h2>Configuration</h2>
 		<div class="col">
 			<h3>Sheet Configuration</h3>
@@ -2814,6 +2765,57 @@
 				Enable this option to show Chrysalis-related fields on the sheet.
 			</p>
 		</div>
+        <div class="col">
+            <h3>Movement Custom Columns:</h3>
+            <div class="row">
+                <div class="item 100">Column 4:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn1Name' class='sheet-st'>
+                                                <option value='Flight' selected>Flight</option>
+                                                <option value='Swim'>Swim</option>
+                                                <option value='Hyperrun'>Hyperrun</option>
+                                                <option value='Hyperflight'>Hyperflight</option>
+                                                <option value='Hyperswim'>Hyperswim</option>
+                                                <option value='Teleport'>Teleport</option>
+                                                <option value='Burrowing'>Burrowing</option>
+                                                <option value='Climbing'>Climbing</option>
+                                                <option value='Other'>Other</option>
+                                            </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item 100">Column 5:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn2Name' class='sheet-st'>
+                                                <option value='Flight'>Flight</option>
+                                                <option value='Swim' selected>Swim</option>
+                                                <option value='Hyperrun'>Hyperrun</option>
+                                                <option value='Hyperflight'>Hyperflight</option>
+                                                <option value='Hyperswim'>Hyperswim</option>
+                                                <option value='Teleport'>Teleport</option>
+                                                <option value='Burrowing'>Burrowing</option>
+                                                <option value='Climbing'>Climbing</option>
+                                                <option value='Other'>Other</option>
+                                            </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item 100">Column 6:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn3Name' class='sheet-st'>
+                                                <option value='Flight'>Flight</option>
+                                                <option value='Swim'>Swim</option>
+                                                <option value='Hyperrun'>Hyperrun</option>
+                                                <option value='Hyperflight'>Hyperflight</option>
+                                                <option value='Hyperswim'>Hyperswim</option>
+                                                <option value='Teleport'>Teleport</option>
+                                                <option value='Burrowing'>Burrowing</option>
+                                                <option value='Climbing'>Climbing</option>
+                                                <option value='Other' selected>Other</option>
+                                            </select>
+                </div>
+            </div>
+        </div>
 	</div>
 
 </div>

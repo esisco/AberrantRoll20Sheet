@@ -5,43 +5,16 @@ const movementTypes = [
     { name: 'Run', attr: 'Run', value: '@{Dexterity}+12+@{Mega_Dexterity}', disabled: true },
     { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true }
 ];
-
-// Custom movement column options
-const customMoveOptions = ['Flight', 'Swim', 'Hyper Run', 'Hyper Flight', 'Hyper Swim', 'Teleport', 'Burrowing', 'Climbing', 'Other'];
-
-// Armor configuration
-const armorSlots = [
-    { id: 1, name: 'Mega_Stamina' },
-    { id: 2, name: 'Eufiber' }
-];
-// Additional numbered armor slots (3-11)
-for (let i = 3; i <= 11; i++) {
-    armorSlots.push({ id: i, name: null });
-}
-
-// Health injury types
-const injuryTypes = [
-    { name: 'Bruised', repeatingClass: 'bruisedhealth' },
-    { name: 'Hurt', repeatingClass: 'hurthealth' },
-    { name: 'Injured', repeatingClass: 'hurthealth' },
-    { name: 'Wounded', repeatingClass: 'woundedhealth' },
-    { name: 'Maimed', repeatingClass: 'maimedhealth' },
-    { name: 'Crippled', repeatingClass: 'crippledhealth' },
-    { name: 'Incapacitated', repeatingClass: 'incapacitatedhealth' }
-];
-
-// Wound options for select dropdowns
-const woundOptions = ['', '/', 'X', '*'];
 -%>
 	<div class='sheet-combat'>
-            <div class="col">
+            <div class="col item 100">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
-                    <div class="item 100"><input type='text' class="st" name='attr_Initiative' value=0 /></div>
-                    <button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button>
+                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_Initiative' value=0 /></div>
+                    <div class="item 25"><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button></div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col item 430">
                 <div class="row">
                     <h3 class="category-title">Movement</h3>
                 </div>
@@ -61,46 +34,13 @@ const woundOptions = ['', '/', 'X', '*'];
                             <% movementTypes.forEach(move => { -%>
                             <td><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></td>
                             <% }); -%>
-                            <td><input type='text' class="st" name='attr_moveColumn1Value' value=0 /></td>
-                            <td><input type='text' class="st" name='attr_moveColumn2Value' value=0 /></td>
-                            <td><input type='text' class="st" name='attr_moveColumn3Value' value=0 /></td>
+                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn1Value' value=0 /></td>
+                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn2Value' value=0 /></td>
+                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn3Value' value=0 /></td>
                         </tr>
                     </tbody>
                 </table>
-                <input type="checkbox" class="gear" name="attr_movement_config_open" value="1" /><span></span>
-                <input type="checkbox" class="hidden hider" name="attr_movement_config_open" value="1" /><span></span>
-                <div class="hold">
-                    <div class="row">
-                        <div class="item 100">Column 4:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn1Name' class='sheet-st'>
-                                <% customMoveOptions.forEach(opt => { -%>
-                                <option value='<%= opt %>'><%= opt %></option>
-                                <% }); -%>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Column 5:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn2Name' class='sheet-st'>
-                                <% customMoveOptions.forEach(opt => { -%>
-                                <option value='<%= opt %>'><%= opt %></option>
-                                <% }); -%>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Column 6:</div>
-                        <div class="item 100">
-                            <select name='attr_moveColumn3Name' class='sheet-st'>
-                                <% customMoveOptions.forEach(opt => { -%>
-                                <option value='<%= opt %>'><%= opt %></option>
-                                <% }); -%>
-                            </select>
-                        </div>
-                    </div>
-                </div>
+
             </div>
             <div class="col">
 				<h3 class="category-title">Willpower</h3>
@@ -108,7 +48,7 @@ const woundOptions = ['', '/', 'X', '*'];
 				    <div class="item 20"></div>
                     <div class="item 13"></div>
                     <% for (let i = 1; i <= 10; i++) { -%>
-                    <input type='radio' class="dot" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
                     <% } -%>
                     <button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
@@ -124,16 +64,18 @@ const woundOptions = ['', '/', 'X', '*'];
 			<div class="row">
                 <div class="item 40">Roll</div>
                 <div class="item 120">Weapon</div>
-                <div class="item 70">Dice</div>
+                <div class="item 50">Dice</div>
                 <div class="item 70">Damage</div>
+                <div class="item 50">Difficulty</div>
 			</div>
 			<fieldset class='repeating_weapons'>
     			<div class="row"> 
                     <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
-                    <div class="item 120"><input type='text' class="st" name='attr_wname'/></div>
-                    <div class="item 70" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
+                    <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
+                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
                     <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
-    			    <div class="item 50" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
+                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></div>
+    			    <div class="item 25" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
     			</div>
     			<input type="checkbox" class="hidden hider" name="attr_weapon_open" value="1" checked/><span></span>
     			<div class="hold">
@@ -151,7 +93,7 @@ const woundOptions = ['', '/', 'X', '*'];
         			</div>
         			<div class="row">
                         <div class="item 100">
-        					<select name='attr_wskill' class='sheet-st'>
+        					<select name='attr_wskill sheet-edit-mode' class='sheet-st'>
         						<option value="@{Athletics_Total}">Athletics</option>
         						<option value="@{Brawl_Total}">Brawl</option>
         						<option value="@{Firearms_Total}">Firearms</option>
@@ -159,10 +101,10 @@ const woundOptions = ['', '/', 'X', '*'];
         						<option value="@{Melee_Total}">Melee</option>
         					</select>
         				</div>
-                        <div class="item 70" ><input type='text' class="st" name='attr_wacc' value="0"/></div>
-                        <div class="item 70" ><input type='text' class="st" name='attr_wdam' value="0"/></div>
+                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></div>
+                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></div>
                         <div class="item 50" ><input type='checkbox' value="@{Strength}" name='attr_wstr' /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_range'value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_range'value="0"/></div>
                         <div class="item 180">
         					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
         					<input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
@@ -170,127 +112,20 @@ const woundOptions = ['', '/', 'X', '*'];
         					<input type='checkbox' class="strike" name='attr_wm_st' value=1 /><span class="strike">St</span>
         					<input type='checkbox' class="strike" name='attr_wm_tw' value=1 /><span class="strike">Tw</span>
         				</div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wrof' value="0"/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wclip'value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wrof' value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wclip'value="0"/></div>
                         <div class="item 50" >
-                            <select name='attr_wconceal' class='sheet-st'>
+                            <select name='attr_wconceal' class='sheet-st sheet-edit-mode'>
         						<option value='Pocket'>P</option>
         						<option value='Jacket'>J</option>
         						<option value='Trenchcoat'>T</option>
         						<option value='N/A'>N/A</option>
         					</select>
                         </div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_wmass' value="0"/></div>
+                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wmass' value="0"/></div>
         			</div>
                 </div>
             </fieldset>
         </div>
-        <div class='sheet-health'>
-			<h2>Health</h2>
-    		<div class="dual_col">
-                <div class="col">
-				    <h3>Soak</h3>
-                    <div class="row">
-                        <div class="item 100">Armor</div>
-                        <div class="item 50">Bashing</div>
-                        <div class="item 50">Lethal</div>
-                        <div class="item 75">Aggravated</div>
-                        <div class="item 50">Penalty</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Natural Soak</div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Bashing_Soak' value=1 min=1 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Natural_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Aggravated_Penalty' value=0 readonly /></div>
-                    </div>
-                    <% armorSlots.forEach(armor => { -%>
-                    <div class="row">
-                        <div class="item 100"><% if (armor.name) { %><%= armor.name %><% } else { %><input type='text' class="st" name='attr_Armor<%= armor.id %>_Name'/><% } %></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Penalty' value=0 min=0<% if (armor.id === 1) { %> readonly<% } %> /></div>
-                    </div>
-                    <% }); -%>
-                    <div class="row">
-                        <div class="item 100">Total</div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Bashing_Soak}<% }); %>" disabled/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Lethal_Soak}<% }); %>" disabled/></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Aggravated_Soak}<% }); %>" disabled /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Penalty' value="<% armorSlots.forEach((a, i) => { %><% if (i > 0) { %>+<% } %>@{Armor<%= a.id %>_Penalty}<% }); %>" disabled/></div>
-					</div>
-                </div>
-                <div class="col">
-				    <h3>Injuries</h3>
-                    <div class="row">
-                        <div class="item 120">Injury</div>
-                        <div class="item 50" >Type</div>
-                        <div class="item 50" >Penalty</div>
-                    </div>
-                    <% injuryTypes.forEach(injury => { -%>
-                    <div class="row">
-                        <div class="item 120"><%= injury.name %></div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_<%= injury.name %>'>
-                                <% woundOptions.forEach(opt => { -%>
-                                <option><%= opt %></option>
-                                <% });-%>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_<%= injury.name %>HealthPenalty' value=0 /></div>
-                    </div>
-				    <fieldset class='repeating_<%= injury.repeatingClass %>'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <option><%= injury.name %></option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <% woundOptions.forEach(opt => { -%>
-                                    <option><%= opt %></option>
-                                    <% }); -%>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_<%= injury.name %>HealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <% }); -%>
-                    <h4>Extras</h4>
-				    <fieldset class='repeating_health'>
-                        <div class="row">
-                            <div class="item 120">
-                                <select class='select_wound' name='attr_rHealthName'>
-                                    <% injuryTypes.forEach(injury => { -%>
-                                    <option><%= injury.name %></option>
-                                    <% }); -%>
-                                    <option>Dead</option>
-                                </select>
-                            </div>
-                            <div class="item 50" >
-                                <select class='select_wound' name='attr_rHealthWound'>
-                                    <% woundOptions.forEach(opt => { -%>
-                                    <option><%= opt %></option>
-                                    <% }); -%>
-                                </select>
-                            </div>
-                            <div class="item 50" ><input type='text' class="select_wound" name='attr_rHealthPenalty' value=0 /></div>
-                        </div>
-                    </fieldset>
-                    <div class="row">
-                        <div class="item 120">Dead</div>
-                        <div class="item 50" >
-                            <select class='select_wound' name='attr_Dead'>
-                                <% woundOptions.forEach(opt => { -%>
-                                <option><%= opt %></option>
-                                <% }); -%>
-                            </select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="select_wound" name='attr_DeadHealthPenalty' value=0 /></div>
-                    </div>
-                </div>
-            </div>
-		</div>
+        <%- include('sections/health.ejs') -%>
 	</div>	

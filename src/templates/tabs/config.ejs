@@ -1,4 +1,8 @@
-	<div class='sheet-config'>
+<%
+// Custom movement column options
+const customMoveOptions = ['Flight', 'Swim', 'Hyperrun', 'Hyperflight', 'Hyperswim', 'Teleport', 'Burrowing', 'Climbing', 'Other'];
+-%>
+    <div class='sheet-config'>
 		<h2>Configuration</h2>
 		<div class="col">
 			<h3>Sheet Configuration</h3>
@@ -33,4 +37,37 @@
 				Enable this option to show Chrysalis-related fields on the sheet.
 			</p>
 		</div>
+        <div class="col">
+            <h3>Movement Custom Columns:</h3>
+            <div class="row">
+                <div class="item 100">Column 4:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn1Name' class='sheet-st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Flight' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item 100">Column 5:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn2Name' class='sheet-st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Swim' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item 100">Column 6:</div>
+                <div class="item 100">
+                    <select name='attr_moveColumn3Name' class='sheet-st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Other' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+        </div>
 	</div>

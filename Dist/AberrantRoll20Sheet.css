@@ -31,6 +31,10 @@
   width: 620px;
 }
 
+.charsheet .sheet-wrapper .sheet-item.sheet-430 {
+  width: 430px;
+}
+
 .charsheet .sheet-wrapper .sheet-item.sheet-250 {
   width: 250px;
 }
@@ -179,8 +183,9 @@ input.sheet-repeating {
 
 .charsheet .sheet-movement-table th {
   text-align: center;
-  padding: 4px;
+  padding: 2px;
   font-weight: bold;
+  font-size: smaller;
   color: black;
   font-variant: small-caps;
   vertical-align: middle;
@@ -884,7 +889,7 @@ button[type=action].sheet-d10-dice::before {
 
 .repcontrol .btn {
   border: medium none;
-  color: white !important;
+  color: gray !important;
   background: none;
   box-shadow: none;
 }
@@ -1056,7 +1061,6 @@ input[name=attr_edit_mode]:checked ~ * textarea.sheet-edit-mode,
 input[name=attr_edit_mode]:checked ~ * select.sheet-edit-mode {
   pointer-events: auto !important;
   cursor: auto !important;
-  background: white !important;
 }
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=radio],
 input[name=attr_edit_mode]:checked ~ * input.sheet-edit-mode[type=checkbox],
