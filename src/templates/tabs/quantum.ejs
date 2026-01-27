@@ -1,69 +1,7 @@
 	<div class='sheet-quantum'>
         <h2>Quantum Powers</h2>	
         <div class="dual_col">
-            <div class="col">
-				<h3>Quantum Powers</h3>
-				<fieldset class='repeating_Powers'>
-                    <div class="row">
-                        <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
-                        <div class="item 5"></div>
-                        <div class="item 160"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
-                        <div class="item 180">
-							<input type='radio' class="dot zero" name='attr_rPower' value=1 checked /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=3 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=4 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=5 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=6 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=7 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=8 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=9 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=10 /><span></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="item 50"><input type='text' class="st" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_rPowerPMaxExp_Total' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 50 subtitle">Level</div>
-                        <div class="item 75 subtitle">Power Max XP</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 250"><input type='text' class="st" name='attr_rExtraName' value="" /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_rMasteryp' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 250 subtitle">Extras</div>
-                        <div class="item 50 subtitle">Mastery</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 250"><input type='text' class="st" name='attr_rPowerTechniques' value="" /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_rDicePoolp' value=0 min=0 /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 250 subtitle">Techniques</div>
-                        <div class="item 50 subtitle">Dice Pool</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 180"><input type='text' class="st" name='attr_rRangep' value="" /></div>
-                        <div class="item 180"><input type='text' class="st" name='attr_rAreaNotes' value="" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 180 subtitle">Range</div>
-                        <div class="item 180 subtitle">Area</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 180"><input type='text' class="st" name='attr_rWeakNotes' value="" /></div>
-                        <div class="item 180"><input type='text' class="st" name='attr_rStrengthNotes' value="" /></div>
-                    </div>
-                    <div class="row">
-                        <div class="item 180 subtitle">Weaknesses</div>
-                        <div class="item 180 subtitle">Strengths</div>
-                    </div>
-                    <textarea class="textarea_1" name='attr_rPowerNotes' placeholder='Notes'></textarea>
-				</fieldset>
-            </div>
+            <%- include('sections/quantumPowers.ejs') -%>
             <div class="col">
                 <h3>Taint</h3>
 				<div class="row">

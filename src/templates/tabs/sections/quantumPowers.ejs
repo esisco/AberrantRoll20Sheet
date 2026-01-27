@@ -1,0 +1,155 @@
+<%
+const quantumPowerRefs = [
+    { name: 'Aberration Transfer', level: 2, quantum: 3, source: 'Teragen pg. 125' },
+    { name: 'Absorption', level: 2, quantum: 1, source: 'Aberrant pg. 182' },
+    { name: 'Animal/Plant Mastery', level: 2, quantum: 1, source: 'Aberrant pg. 182' },
+    { name: 'Armor', level: 2, quantum: 1, source: 'Aberrant pg. 183' },
+    { name: 'Bioluminescence', level: 1, quantum: 1, source: 'Aberrant pg. 183' },
+    { name: 'Biomanipulation', level: 3, quantum: 6, source: 'Worldwide Phase I pg. 113' },
+    { name: 'Bodymorph', level: 2, quantum: 3, source: 'Aberrant pg. 185' },
+    { name: 'Boost', level: 2, quantum: 2, source: 'Aberrant pg. 186' },
+    { name: 'Bounce', level: 2, quantum: 1, source: 'Project Utopia pg. 140' },
+    { name: 'Chimeric Aberration', level: 2, quantum: 3, source: 'Teragen pg. 126' },
+    { name: 'Claws', level: 1, quantum: 1, source: 'Aberrant pg. 186' },
+    { name: 'Clone', level: 3, quantum: 5, source: 'Players Guide pg. 110' },
+    { name: 'Cyberkinesis', level: 3, quantum: 4, source: 'Aberrant pg. 187' },
+    { name: 'Deflect/Redirect', level: 1, quantum: 1, source: 'Teragen pg. 126' },
+    { name: 'Density Control', level: 2, quantum: 3, source: 'Aberrant pg. 189' },
+    { name: 'Disimmunize', level: 2, quantum: 3, source: 'Teragen pg. 127' },
+    { name: 'Disintegration', level: 3, quantum: 5, source: 'Aberrant pg. 190' },
+    { name: 'Disorient', level: 2, quantum: 1, source: 'Aberrant pg. 190' },
+    { name: 'Disrupt', level: 2, quantum: 3, source: 'Aberrant pg. 190' },
+    { name: 'Domination', level: 2, quantum: 3, source: 'Aberrant pg. 191' },
+    { name: 'Elemental Anima', level: 3, quantum: 4, source: 'Aberrant pg. 192' },
+    { name: 'Elemental Mastery', level: 3, quantum: 5, source: 'Aberrant pg. 194' },
+    { name: 'Empathic Manipulation', level: 2, quantum: 2, source: 'Aberrant pg. 196' },
+    { name: 'Entropy Control', level: 3, quantum: 4, source: 'Aberrant pg. 196' },
+    { name: 'E.S.P.', level: 2, quantum: 3, source: 'Aberrant pg. 198' },
+    { name: 'Flight', level: 2, quantum: 1, source: 'Aberrant pg. 198' },
+    { name: 'Force Field', level: 2, quantum: 2, source: 'Aberrant pg. 199' },
+    { name: 'Gravity Control', level: 3, quantum: 4, source: 'Aberrant pg. 199' },
+    { name: 'Healing', level: 3, quantum: 4, source: 'Aberrant pg. 201' },
+    { name: 'Homonculus', level: 3, quantum: 4, source: 'Aberrant pg. 203' },
+    { name: 'Hypermovement', level: 2, quantum: 1, source: 'Aberrant pg. 203' },
+    { name: 'Hypnosis', level: 1, quantum: 1, source: 'Aberrant pg. 203' },
+    { name: 'Immobilize', level: 2, quantum: 1, source: 'Aberrant pg. 204' },
+    { name: 'Immolate', level: 2, quantum: 2, source: 'Aberrant pg. 204' },
+    { name: 'Information Manipulation', level: 3, quantum: 5, source: 'Players Guide pg. 115' },
+    { name: 'Intuition', level: 1, quantum: 1, source: 'Aberrant pg. 205' },
+    { name: 'Invisibility', level: 2, quantum: 1, source: 'Aberrant pg. 205' },
+    { name: 'Invulnerability', level: 2, quantum: 1, source: 'Aberrant pg. 206' },
+    { name: 'Luck', level: 1, quantum: 1, source: 'Aberrant pg. 206' },
+    { name: 'Magnetic Mastery', level: 3, quantum: 4, source: 'Aberrant pg. 207' },
+    { name: 'Matter Chameleon', level: 3, quantum: 5, source: 'Aberrant pg. 209' },
+    { name: 'Matter Creation', level: 3, quantum: 5, source: 'Aberrant pg. 210' },
+    { name: 'Mental Blast', level: 2, quantum: 3, source: 'Aberrant pg. 210' },
+    { name: 'Mirage', level: 2, quantum: 3, source: 'Aberrant pg. 211' },
+    { name: 'Molecular Manipulation', level: 3, quantum: 5, source: 'Aberrant pg. 211' },
+    { name: 'Momentum Control', level: 3, quantum: 4, source: 'Players Guide pg. 116' },
+    { name: 'Node Spark', level: 3, quantum: 5, source: 'Teragen pg. 127' },
+    { name: 'Nova Proxy', level: 2, quantum: 2, source: 'Teragen pg. 128' },
+    { name: 'Poison', level: 2, quantum: 1, source: 'Aberrant pg. 213' },
+    { name: 'Premonition', level: 2, quantum: 1, source: 'Aberrant pg. 214' },
+    { name: 'Pretercognition', level: 3, quantum: 4, source: 'Aberrant pg. 215' },
+    { name: 'Psychic Link', level: 1, quantum: 1, source: 'Players Guide pg. 64' },
+    { name: 'Psychic Shield', level: 1, quantum: 1, source: 'Aberrant pg. 215' },
+    { name: 'Quantum Bolt', level: 2, quantum: 1, source: 'Aberrant pg. 216' },
+    { name: 'Quantum Construct', level: 3, quantum: 4, source: 'Aberrant pg. 216' },
+    { name: 'Quantum Conversion', level: 1, quantum: 1, source: 'Aberrant pg. 217' },
+    { name: 'Quantum Forgery', level: 2, quantum: 3, source: 'Teragen pg. 128' },
+    { name: 'Quantum Imprint', level: 3, quantum: 4, source: 'Aberrant pg. 218' },
+    { name: 'Quantum Leech', level: 2, quantum: 2, source: 'Aberrant pg. 218' },
+    { name: 'Quantum Regeneration', level: 2, quantum: 3, source: 'Aberrant pg. 219' },
+    { name: 'Quantum Vampire', level: 2, quantum: 3, source: 'Aberrant pg. 219' },
+    { name: 'Sensory Shield', level: 1, quantum: 1, source: 'Aberrant pg. 220' },
+    { name: 'Shapeshift', level: 3, quantum: 4, source: 'Aberrant pg. 220' },
+    { name: 'Shroud', level: 2, quantum: 1, source: 'Aberrant pg. 221' },
+    { name: 'Sizemorph (Grow)', level: 2, quantum: 1, source: 'Aberrant pg. 222' },
+    { name: 'Sizemorph (Shrink)', level: 2, quantum: 1, source: 'Aberrant pg. 222' },
+    { name: 'Spatial Manipulation', level: 3, quantum: 5, source: 'Teragen pg. 128' },
+    { name: 'Strobe', level: 2, quantum: 1, source: 'Aberrant pg. 223' },
+    { name: 'Stun Attack', level: 2, quantum: 1, source: 'Aberrant pg. 223' },
+    { name: 'Telekinesis', level: 2, quantum: 2, source: 'Aberrant pg. 224' },
+    { name: 'Telepathy', level: 2, quantum: 3, source: 'Aberrant pg. 224' },
+    { name: 'Teleport', level: 2, quantum: 2, source: 'Aberrant pg. 225' },
+    { name: 'Temporal Manipulation', level: 3, quantum: 5, source: 'Aberrant pg. 226' },
+    { name: 'Transmit', level: 2, quantum: 2, source: 'Project Utopia pg. 141' },
+    { name: 'Warp', level: 3, quantum: 3, source: 'Aberrant pg. 228' },
+    { name: 'Weather Manipulation', level: 3, quantum: 4, source: 'Aberrant pg. 229' }
+];
+%>
+            <div class="col">
+				<h3>Quantum Powers</h3>
+				<fieldset class='repeating_Powers'>
+                    <div class="row">
+                        <div class="item 20"></div>
+                        <div class="item 5"></div>
+                        <div class="item 160">
+                            <select name='attr_rPowerPreset' class="st sheet-edit-mode">
+                                <option value="">Custom (type below)</option>
+                                <% quantumPowerRefs.forEach(power => { -%>
+                                    <option value="<%= power.name %>"><%= power.name %> (<%= power.source %>)</option>
+                                <% }); -%>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
+                        <div class="item 5"></div>
+                        <div class="item 160"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
+                        <div class="item 180">
+							<input type='radio' class="dot zero" name='attr_rPower' value=1 checked /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=3 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=4 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=5 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=6 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=7 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=8 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=9 /><span></span>
+							<input type='radio' class="dot" name='attr_rPower' value=10 /><span></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="item 50"><input type='text' class="st" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
+                        <div class="item 250"><input type='text' class="st" name='attr_rPowerSource' placeholder='Sourcebook & page' /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 50 subtitle">Level</div>
+                        <div class="item 250 subtitle">Sourcebook</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rExtraName' value="" /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_rMasteryp' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Extras</div>
+                        <div class="item 50 subtitle">Mastery</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250"><input type='text' class="st" name='attr_rPowerTechniques' value="" /></div>
+                        <div class="item 50"><input type='text' class="st" name='attr_rDicePoolp' value=0 min=0 /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 250 subtitle">Techniques</div>
+                        <div class="item 50 subtitle">Dice Pool</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180"><input type='text' class="st" name='attr_rRangep' value="" /></div>
+                        <div class="item 180"><input type='text' class="st" name='attr_rAreaNotes' value="" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180 subtitle">Range</div>
+                        <div class="item 180 subtitle">Area</div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180"><input type='text' class="st" name='attr_rWeakNotes' value="" /></div>
+                        <div class="item 180"><input type='text' class="st" name='attr_rStrengthNotes' value="" /></div>
+                    </div>
+                    <div class="row">
+                        <div class="item 180 subtitle">Weaknesses</div>
+                        <div class="item 180 subtitle">Strengths</div>
+                    </div>
+                    <textarea class="textarea_1" name='attr_rPowerNotes' placeholder='Notes'></textarea>
+				</fieldset>
+            </div>
