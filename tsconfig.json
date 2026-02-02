@@ -1,21 +1,20 @@
 {
   // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "module": "commonjs",
+    "module": "esnext",
     "sourceMap": false,
     "removeComments": true,
     "preserveConstEnums": true,
     "outDir": "src/scripts/",
-    // "outFile": "src/scripts/AberrantRoll20Sheet.js",
-    "target": "es6"
+    "target": "esnext"
   },
   "include": [
-    "src/ts/**/*.ts",
-    "src/ts/types/*.ts"
+    "src/ts/*.ts",
+    "src/ts/common/*.ts",
+    "src/ts/types/*"
   ],
   "exclude": [
     "node_modules",
-    "src/ts/utils/*",
-    "src/ts/common/*"
+    "src/ts/utils/*"
   ]
 }

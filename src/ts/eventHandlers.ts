@@ -1,5 +1,3 @@
-import { QuantumPowers } from './common/QuantumPowers';
-
 const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
 megaAttributes.forEach(attr => {
     on(`clicked:roll_${attr}`, function() {
@@ -45,7 +43,7 @@ on("clicked:add_quantum_power", () => {
             return;
         }
         
-        const power = QuantumPowers.find(p => p.name === selectedPower);
+        const power = QuantumPowerData.QuantumPowers.find(p => p.name === selectedPower);
         if (!power) {
             console.log('Power not found:', selectedPower);
             return;
@@ -132,7 +130,7 @@ on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
         if (!preset) {
             return;
         }
-        const power = QuantumPowers.find(p => p.name === preset);
+        const power = QuantumPowerData.QuantumPowers.find(p => p.name === preset);
         console.log(`Found power data:`, power);
         if (!power) {
             return;
