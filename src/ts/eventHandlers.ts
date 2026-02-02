@@ -1,3 +1,5 @@
+import { QuantumPowers } from './common/QuantumPowers';
+
 const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
 megaAttributes.forEach(attr => {
     on(`clicked:roll_${attr}`, function() {
@@ -34,109 +36,144 @@ buttonlist.forEach(button => {
     });
 });
 
-// Quantum power reference list for dropdown + page note
-const quantumPowerRefs = [
-    { name: "Aberration Transfer", source: "Teragen pg. 125", level: 2, quantum: 3 },
-    { name: "Absorption", source: "Aberrant pg. 182", level: 2, quantum: 1 },
-    { name: "Animal/Plant Mastery", source: "Aberrant pg. 182", level: 2, quantum: 1 },
-    { name: "Armor", source: "Aberrant pg. 183", level: 2, quantum: 1 },
-    { name: "Bioluminescence", source: "Aberrant pg. 183", level: 1, quantum: 1 },
-    { name: "Biomanipulation", source: "Worldwide Phase I pg. 113", level: 3, quantum: 6 },
-    { name: "Bodymorph", source: "Aberrant pg. 185", level: 2, quantum: 3 },
-    { name: "Boost", source: "Aberrant pg. 186", level: 2, quantum: 2 },
-    { name: "Bounce", source: "Project Utopia pg. 140", level: 2, quantum: 1 },
-    { name: "Chimeric Aberration", source: "Teragen pg. 126", level: 2, quantum: 3 },
-    { name: "Claws", source: "Aberrant pg. 186", level: 1, quantum: 1 },
-    { name: "Clone", source: "Players Guide pg. 110", level: 3, quantum: 5 },
-    { name: "Cyberkinesis", source: "Aberrant pg. 187", level: 3, quantum: 4 },
-    { name: "Deflect/Redirect", source: "Teragen pg. 126", level: 1, quantum: 1 },
-    { name: "Density Control", source: "Aberrant pg. 189", level: 2, quantum: 3 },
-    { name: "Disimmunize", source: "Teragen pg. 127", level: 2, quantum: 3 },
-    { name: "Disintegration", source: "Aberrant pg. 190", level: 3, quantum: 5 },
-    { name: "Disorient", source: "Aberrant pg. 190", level: 2, quantum: 1 },
-    { name: "Disrupt", source: "Aberrant pg. 190", level: 2, quantum: 3 },
-    { name: "Domination", source: "Aberrant pg. 191", level: 2, quantum: 3 },
-    { name: "Elemental Anima", source: "Aberrant pg. 192", level: 3, quantum: 4 },
-    { name: "Elemental Mastery", source: "Aberrant pg. 194", level: 3, quantum: 5 },
-    { name: "Empathic Manipulation", source: "Aberrant pg. 196", level: 2, quantum: 2 },
-    { name: "Entropy Control", source: "Aberrant pg. 196", level: 3, quantum: 4 },
-    { name: "E.S.P.", source: "Aberrant pg. 198", level: 2, quantum: 3 },
-    { name: "Flight", source: "Aberrant pg. 198", level: 2, quantum: 1 },
-    { name: "Force Field", source: "Aberrant pg. 199", level: 2, quantum: 2 },
-    { name: "Gravity Control", source: "Aberrant pg. 199", level: 3, quantum: 4 },
-    { name: "Healing", source: "Aberrant pg. 201", level: 3, quantum: 4 },
-    { name: "Homonculus", source: "Aberrant pg. 203", level: 3, quantum: 4 },
-    { name: "Hypermovement", source: "Aberrant pg. 203", level: 2, quantum: 1 },
-    { name: "Hypnosis", source: "Aberrant pg. 203", level: 1, quantum: 1 },
-    { name: "Immobilize", source: "Aberrant pg. 204", level: 2, quantum: 1 },
-    { name: "Immolate", source: "Aberrant pg. 204", level: 2, quantum: 2 },
-    { name: "Information Manipulation", source: "Players Guide pg. 115", level: 3, quantum: 5 },
-    { name: "Intuition", source: "Aberrant pg. 205", level: 1, quantum: 1 },
-    { name: "Invisibility", source: "Aberrant pg. 205", level: 2, quantum: 1 },
-    { name: "Invulnerability", source: "Aberrant pg. 206", level: 2, quantum: 1 },
-    { name: "Luck", source: "Aberrant pg. 206", level: 1, quantum: 1 },
-    { name: "Magnetic Mastery", source: "Aberrant pg. 207", level: 3, quantum: 4 },
-    { name: "Matter Chameleon", source: "Aberrant pg. 209", level: 3, quantum: 5 },
-    { name: "Matter Creation", source: "Aberrant pg. 210", level: 3, quantum: 5 },
-    { name: "Mental Blast", source: "Aberrant pg. 210", level: 2, quantum: 3 },
-    { name: "Mirage", source: "Aberrant pg. 211", level: 2, quantum: 3 },
-    { name: "Molecular Manipulation", source: "Aberrant pg. 211", level: 3, quantum: 5 },
-    { name: "Momentum Control", source: "Players Guide pg. 116", level: 3, quantum: 4 },
-    { name: "Node Spark", source: "Teragen pg. 127", level: 3, quantum: 5 },
-    { name: "Nova Proxy", source: "Teragen pg. 128", level: 2, quantum: 2 },
-    { name: "Poison", source: "Aberrant pg. 213", level: 2, quantum: 1 },
-    { name: "Premonition", source: "Aberrant pg. 214", level: 2, quantum: 1 },
-    { name: "Pretercognition", source: "Aberrant pg. 215", level: 3, quantum: 4 },
-    { name: "Psychic Link", source: "Players Guide pg. 64", level: 1, quantum: 1 },
-    { name: "Psychic Shield", source: "Aberrant pg. 215", level: 1, quantum: 1 },
-    { name: "Quantum Bolt", source: "Aberrant pg. 216", level: 2, quantum: 1 },
-    { name: "Quantum Construct", source: "Aberrant pg. 216", level: 3, quantum: 4 },
-    { name: "Quantum Conversion", source: "Aberrant pg. 217", level: 1, quantum: 1 },
-    { name: "Quantum Forgery", source: "Teragen pg. 128", level: 2, quantum: 3 },
-    { name: "Quantum Imprint", source: "Aberrant pg. 218", level: 3, quantum: 4 },
-    { name: "Quantum Leech", source: "Aberrant pg. 218", level: 2, quantum: 2 },
-    { name: "Quantum Regeneration", source: "Aberrant pg. 219", level: 2, quantum: 3 },
-    { name: "Quantum Vampire", source: "Aberrant pg. 219", level: 2, quantum: 3 },
-    { name: "Sensory Shield", source: "Aberrant pg. 220", level: 1, quantum: 1 },
-    { name: "Shapeshift", source: "Aberrant pg. 220", level: 3, quantum: 4 },
-    { name: "Shroud", source: "Aberrant pg. 221", level: 2, quantum: 1 },
-    { name: "Sizemorph (Grow)", source: "Aberrant pg. 222", level: 2, quantum: 1 },
-    { name: "Sizemorph (Shrink)", source: "Aberrant pg. 222", level: 2, quantum: 1 },
-    { name: "Spatial Manipulation", source: "Teragen pg. 128", level: 3, quantum: 5 },
-    { name: "Strobe", source: "Aberrant pg. 223", level: 2, quantum: 1 },
-    { name: "Stun Attack", source: "Aberrant pg. 223", level: 2, quantum: 1 },
-    { name: "Telekinesis", source: "Aberrant pg. 224", level: 2, quantum: 2 },
-    { name: "Telepathy", source: "Aberrant pg. 224", level: 2, quantum: 3 },
-    { name: "Teleport", source: "Aberrant pg. 225", level: 2, quantum: 2 },
-    { name: "Temporal Manipulation", source: "Aberrant pg. 226", level: 3, quantum: 5 },
-    { name: "Transmit", source: "Project Utopia pg. 141", level: 2, quantum: 2 },
-    { name: "Warp", source: "Aberrant pg. 228", level: 3, quantum: 3 },
-    { name: "Weather Manipulation", source: "Aberrant pg. 229", level: 3, quantum: 4 }
-];
+// Add power from dropdown button
+on("clicked:add_quantum_power", () => {
+    getAttrs(['power_selector'], (values) => {
+        const selectedPower = values['power_selector'];
+        if (!selectedPower) {
+            console.log('No power selected');
+            return;
+        }
+        
+        const power = QuantumPowers.find(p => p.name === selectedPower);
+        if (!power) {
+            console.log('Power not found:', selectedPower);
+            return;
+        }
+        
+        // Create new repeating section row with data
+        const rowAttrs: { [key: string]: string | number } = {};
+        
+        // Basic fields
+        rowAttrs['rPowerName'] = power.name;
+        rowAttrs['rPowerSource'] = power.source;
+        if (power.level !== undefined && power.level !== -1) {
+            rowAttrs['rPowerLevel'] = String(power.level);
+        }
+        
+        // Range
+        if (power.range) {
+            rowAttrs['rRangep'] = power.range;
+        }
+        
+        // Area
+        if (power.area) {
+            rowAttrs['rAreaNotes'] = power.area;
+        }
+        
+        // Techniques
+        if (power.techniques && power.techniques.length > 0) {
+            rowAttrs['rPowerTechniques'] = power.techniques.join(', ');
+        }
+        
+        // Notes - combine effect and summary
+        const noteParts: string[] = [];
+        if (power.effect) {
+            noteParts.push(`Effect: ${power.effect}`);
+        }
+        if (power.duration) {
+            noteParts.push(`Duration: ${power.duration}`);
+        }
+        if (power.multipleActions !== null && power.multipleActions !== undefined) {
+            const ma = typeof power.multipleActions === 'boolean' 
+                ? (power.multipleActions ? 'Yes' : 'No')
+                : String(power.multipleActions);
+            noteParts.push(`Multiple Actions: ${ma}`);
+        }
+        if (power.summary) {
+            noteParts.push(`\n${power.summary}`);
+        }
+        if (noteParts.length > 0) {
+            rowAttrs['rPowerNotes'] = noteParts.join('\n');
+        }
+        
+        // Generate new row ID and create the row
+        getSectionIDs('repeating_Powers', (idArray) => {
+            const newRowId = generateRowID();
+            const rowUpdate: { [key: string]: string | number } = {};
+            
+            // Prefix all attributes with the repeating section syntax
+            Object.keys(rowAttrs).forEach(key => {
+                rowUpdate[`repeating_Powers_${newRowId}_${key}`] = rowAttrs[key];
+            });
+            
+            // Reset the selector
+            rowUpdate['power_selector'] = '';
+            
+            setAttrs(rowUpdate);
+            console.log('Added power:', power.name, 'with row ID:', newRowId);
+        });
+    });
+});
 
-// When a preset is chosen, set power name and add page info to notes
+// When a preset is chosen in a row (legacy support), populate all available fields from QuantumPowers data
 on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
+    console.log("Preset change detected:", eventInfo);
     const match = eventInfo.sourceAttribute.match(/repeating_Powers_([^_]+)_rPowerPreset/i);
     if (!match) {
         return;
     }
     const rowId = match[1];
     const prefix = `repeating_Powers_${rowId}_`;
-    getAttrs([`${prefix}rPowerPreset`, `${prefix}rPowerName`, `${prefix}rPowerNotes`, `${prefix}rPowerLevel`, `${prefix}rPowerSource`], (values) => {
+    getAttrs([`${prefix}rPowerPreset`], (values) => {
+        console.log(`Loaded values for row ${rowId}:`, values);
         const preset = values[`${prefix}rPowerPreset`];
+        console.log(`Preset changed for row ${rowId}: ${preset}`);
         if (!preset) {
             return;
         }
-        const ref = quantumPowerRefs.find(p => p.name === preset);
-        if (!ref) {
+        const power = QuantumPowers.find(p => p.name === preset);
+        console.log(`Found power data:`, power);
+        if (!power) {
             return;
         }
-        const updates: { [key: string]: string } = {};
-        updates[`${prefix}rPowerName`] = ref.name;
-        updates[`${prefix}rPowerSource`] = ref.source;
-        if (ref.level !== undefined) {
-            updates[`${prefix}rPowerLevel`] = String(ref.level);
+        const updates: { [key: string]: string | number } = {};
+        
+        // Basic fields
+        updates[`${prefix}rPowerName`] = power.name;
+        updates[`${prefix}rPowerSource`] = power.source;
+        if (power.level !== undefined && power.level !== -1) {
+            updates[`${prefix}rPowerLevel`] = String(power.level);
         }
+
+        // Range
+        if (power.range) {
+            updates[`${prefix}rRangep`] = power.range;
+        }
+        
+        // Area
+        if (power.area) {
+            updates[`${prefix}rAreaNotes`] = power.area;
+        }
+        
+        // Notes - combine effect and summary
+        const noteParts: string[] = [];
+        if (power.effect) {
+            noteParts.push(`Effect: ${power.effect}`);
+        }
+        if (power.duration) {
+            noteParts.push(`Duration: ${power.duration}`);
+        }
+        if (power.multipleActions !== null && power.multipleActions !== undefined) {
+            const ma = typeof power.multipleActions === 'boolean' 
+                ? (power.multipleActions ? 'Yes' : 'No')
+                : String(power.multipleActions);
+            noteParts.push(`Multiple Actions: ${ma}`);
+        }
+        if (noteParts.length > 0) {
+            updates[`${prefix}rPowerNotes`] = noteParts.join('\n');
+        }
+        
         if (Object.keys(updates).length) {
             setAttrs(updates);
         }

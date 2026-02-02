@@ -80,23 +80,25 @@ const quantumPowerRefs = [
 %>
             <div class="col">
 				<h3>Quantum Powers</h3>
-				<fieldset class='repeating_Powers'>
-                    <div class="row">
-                        <div class="item 20"></div>
-                        <div class="item 5"></div>
-                        <div class="item 160">
-                            <select name='attr_rPowerPreset' class="st sheet-edit-mode">
-                                <option value="">Custom (type below)</option>
-                                <% quantumPowerRefs.forEach(power => { -%>
-                                    <option value="<%= power.name %>"><%= power.name %> (<%= power.source %>)</option>
-                                <% }); -%>
-                            </select>
-                        </div>
+                <!-- Power selector - only visible in edit mode, outside repeating section -->
+                <div class="row sheet-edit-mode">
+                    <div class="item 180">
+                        <select name='attr_power_selector' class="st sheet-edit-mode">
+                            <option value="">Select a power to add...</option>
+                            <% quantumPowerRefs.forEach(power => { -%>
+                                <option value="<%= power.name %>"><%= power.name %> (<%= power.source %>)</option>
+                            <% }); -%>
+                        </select>
                     </div>
+                    <div class="item 100">
+                        <button type='action' name='act_add_quantum_power' class="st sheet-edit-mode">Add Power</button>
+                    </div>
+                </div>
+				<fieldset class='repeating_Powers'>
                     <div class="row">
                         <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
                         <div class="item 5"></div>
-                        <div class="item 160"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
+                        <div class="item 150"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
                         <div class="item 180">
 							<input type='radio' class="dot zero" name='attr_rPower' value=1 checked /><span></span>
 							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>

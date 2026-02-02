@@ -25,6 +25,12 @@ input[name="attr_edit_mode"]:not(:checked) {
         display: none !important;
     }
     
+    ~ * div.sheet-edit-mode,
+    ~ * .sheet-edit-mode {
+        /* Hide elements with sheet-edit-mode class when edit mode is off */
+        display: none !important;
+    }
+    
     ~ * .repcontrol,
     ~ * .repcontrol .repcontrol_edit,
     ~ * .repcontrol .repcontrol_del,
@@ -63,5 +69,11 @@ input[name="attr_edit_mode"]:checked {
     ~ * button.sheet-edit-mode[type="action"] {
         pointer-events: auto !important;
         cursor: pointer !important;
+    }
+    
+    ~ * div.sheet-edit-mode-only,
+    ~ * .sheet-edit-mode-only {
+        /* Show elements with sheet-edit-mode-only class when edit mode is on */
+        display: block !important;
     }
 }
