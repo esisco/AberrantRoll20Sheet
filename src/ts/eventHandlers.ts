@@ -88,9 +88,9 @@ on("clicked:add_quantum_power", () => {
                 : String(power.multipleActions);
             noteParts.push(`Multiple Actions: ${ma}`);
         }
-        if (power.summary) {
-            noteParts.push(`\n${power.summary}`);
-        }
+        // if (power.summary) {
+        //     noteParts.push(`\n${power.summary}`);
+        // }
         if (noteParts.length > 0) {
             rowAttrs['rPowerNotes'] = noteParts.join('\n');
         }

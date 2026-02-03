@@ -1353,7 +1353,7 @@
                 <!-- Power selector - only visible in edit mode, outside repeating section -->
                 <div class="row sheet-edit-mode">
                     <div class="item 180">
-                        <select name='attr_power_selector' class="st sheet-edit-mode">
+                        <select name='attr_power_selector' class="st sheet-edit-mode-only">
                             <option value="">Select a power to add...</option>
                                                             <option value="Aberration Transfer">Aberration Transfer (Teragen pg. 125)</option>
                                                             <option value="Absorption">Absorption (Aberrant pg. 182)</option>
@@ -1779,7 +1779,7 @@
 			</div>
 			<fieldset class='repeating_weapons'>
     			<div class="row"> 
-                    <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                    <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Damage Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Damage Bonus Successes?|0 }]] }}"></button></div>
                     <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
                     <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
                     <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
@@ -3038,9 +3038,6 @@ on("clicked:add_quantum_power", () => {
                 ? (power.multipleActions ? 'Yes' : 'No')
                 : String(power.multipleActions);
             noteParts.push(`Multiple Actions: ${ma}`);
-        }
-        if (power.summary) {
-            noteParts.push(`\n${power.summary}`);
         }
         if (noteParts.length > 0) {
             rowAttrs['rPowerNotes'] = noteParts.join('\n');

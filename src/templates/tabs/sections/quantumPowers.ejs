@@ -83,7 +83,7 @@ const quantumPowerRefs = [
                 <!-- Power selector - only visible in edit mode, outside repeating section -->
                 <div class="row sheet-edit-mode">
                     <div class="item 180">
-                        <select name='attr_power_selector' class="st sheet-edit-mode">
+                        <select name='attr_power_selector' class="st sheet-edit-mode-only">
                             <option value="">Select a power to add...</option>
                             <% quantumPowerRefs.forEach(power => { -%>
                                 <option value="<%= power.name %>"><%= power.name %> (<%= power.source %>)</option>
