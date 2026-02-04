@@ -1,16 +1,41 @@
 /* Roll Templates */
+@font-face {
+  font-family: "Adam Warren";
+  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/adamwarrenpro.ttf) format("truetype");
+}
+
+@import url("https://fonts.googleapis.com/css?family=Bangers|Dekko|Lato:900|Rock+Salt");
+
+@mixin halftone($dotColor, $bgColor){
+  $backgroundSize: 5px;
+  background-color: $bgColor;
+  background-image: radial-gradient($dotColor 33%, transparent 34%),
+  radial-gradient($dotColor 33%, transparent 34%);
+  background-size: $backgroundSize $backgroundSize;
+  background-position: 0 0, calc($backgroundSize/2) calc($backgroundSize/2);
+}
+
 .sheet-rolltemplate-base .sheet-container {
-    background-color: #fff;
-    border: 1px solid;
+    @include halftone(#e0e0e0, white);
+    // @include halftone(#ffd500, yellow);
+    border: 2px solid;
     padding: 2px;
     width: 189px;
+    font-family: "Bangers", cursive;
+    filter: drop-shadow(5px 5px 0 black);
 }
 
 .sheet-rolltemplate-base .sheet-container h1 {
     color: darkred;
-    font-size: 1.2em;
+    font-family: "Bangers", cursive;
+    font-size: 1.4em;
     font-variant: small-caps;
     line-height: 20px;
+}
+
+.sheet-rolltemplate-base .sheet-container button {
+    font-family: "Bangers", cursive;
+    border-radius: 5px;
 }
 
 .sheet-rolltemplate-base div {
@@ -19,7 +44,7 @@
 
 .sheet-rolltemplate-base span {
     color: #7e2d40;
-    font-family: "Times New Roman", Times, serif;
+    font-family: "Bangers", cursive;
     font-size: 1.2em;
     font-variant: small-caps;
     line-height: 1.6em;
@@ -30,7 +55,7 @@
 .sheet-rolltemplate-base .sheet-subheader {
     color: #000;
     font-size: 1em;
-    font-style: italic;
+    font-family: "Rock Salt", cursive;
 }
 
 .sheet-rolltemplate-base .sheet-arrow-right {
@@ -211,4 +236,115 @@
     font-size: 1em;
     font-style: italic;
     font-weight: bold;
+}
+
+/* Attack/Weapon Roll Template */
+.sheet-rolltemplate-attack .sheet-container {
+    @include halftone(#9a9a9a, #fff);
+    border: 1px solid;
+    padding: 2px;
+    width: 189px;
+}
+
+.sheet-rolltemplate-attack .sheet-container h1 {
+    color: darkred;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 20px;
+}
+
+.sheet-rolltemplate-attack div {
+    padding: 2px;
+}
+
+.sheet-rolltemplate-attack span {
+    color: #7e2d40;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.2em;
+    font-variant: small-caps;
+    line-height: 1.6em;
+    padding-left: 5px;
+    text-align: left;
+}
+
+.sheet-rolltemplate-attack .sheet-subheader {
+    color: #000;
+    font-size: 1em;
+    font-style: italic;
+}
+
+.sheet-rolltemplate-attack .sheet-arrow-right {
+    border-bottom: 2px solid transparent;
+    border-left: 180px solid black;
+    border-top: 2px solid transparent;
+}
+
+.sheet-rolltemplate-attack .sheet-tcat {
+    font-style: italic;
+}
+
+.sheet-rolltemplate-attack .inlinerollresult {
+    background-color: #fff;
+    border: none;
+}
+
+.sheet-rolltemplate-attack .inlinerollresult.fullcrit {
+    color: #3fb315;
+    border: none;
+}
+
+.sheet-rolltemplate-attack .inlinerollresult.fullfail {
+    color: #b31515;
+    border: none;
+}
+
+.sheet-rolltemplate-attack .inlinerollresult.importandivoll {
+    color: #4a57ed;
+    border: none;
+}
+
+.sheet-rolltemplate-attack .sheet-damage-section {
+    margin-top: 8px;
+    padding: 5px;
+    background-color: #f5f5f5;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+}
+
+.sheet-rolltemplate-attack .sheet-roll-damage-btn {
+    background-color: #8b0000;
+    color: white;
+    border: 1px solid #5a0000;
+    padding: 5px 10px;
+    margin-left: 5px;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 0.9em;
+}
+
+.sheet-rolltemplate-attack .sheet-roll-damage-btn:hover {
+    background-color: #a00000;
+    border-color: #700000;
+}
+
+.sheet-rolltemplate-attack .sheet-damage-result {
+    margin-top: 5px;
+    padding: 5px;
+    background-color: #ffe6e6;
+    border-left: 3px solid #8b0000;
+    font-weight: bold;
+}
+
+.sheet-rolltemplate-attack .sheet-attack-note {
+    color: #666;
+    font-size: 0.95em;
+    font-style: italic;
+    margin-top: 3px;
+}
+
+.sheet-rolltemplate-attack .sheet-note {
+    color: #666;
+    font-size: 0.95em;
+    margin-top: 5px;
 }

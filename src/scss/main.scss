@@ -1,5 +1,21 @@
+@mixin rays($rayColor, $bgColor){
+    background-color: $bgColor;
+    background-image: 
+        radial-gradient(circle at 10% 15%, $bgColor 0%, transparent 50%),
+        repeating-conic-gradient(
+            from 47deg at 10% 15%,
+            transparent 0deg 10deg,
+            $rayColor 10deg 15deg,
+            transparent 15deg 20deg,
+            $rayColor 20deg 30deg,
+            transparent 30deg 35deg,
+            $rayColor 35deg 45deg
+    );
+    background-size: cover;
+}
+
 .charsheet {
-    background: radial-gradient(#f7f7f7, #faeba2);
+    @include rays(#fcdf78d4, #faeba2);
 }
 
 /* Columns */
