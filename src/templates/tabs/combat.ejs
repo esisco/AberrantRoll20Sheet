@@ -69,11 +69,12 @@ const movementTypes = [
                 <div class="item 50">Difficulty</div>
 			</div>
 			<fieldset class='repeating_weapons'>
-    			<div class="row"> 
-                    <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Damage Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Damage Bonus Successes?|0 }]] }}"></button></div>
+                <div class="row"> 
+                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></div>
+                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></div>
                     <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
-                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
-                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
+                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></div>
+                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="0" readonly/></div>
                     <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></div>
     			    <div class="item 25" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
     			</div>
@@ -93,17 +94,16 @@ const movementTypes = [
         			</div>
         			<div class="row">
                         <div class="item 100">
-        					<select name='attr_wskill sheet-edit-mode' class='sheet-st'>
-        						<option value="@{Athletics_Total}">Athletics</option>
-        						<option value="@{Brawl_Total}">Brawl</option>
-        						<option value="@{Firearms_Total}">Firearms</option>
-        						<option value="@{Martial_Arts_Total}">Martial Arts</option>
-        						<option value="@{Melee_Total}">Melee</option>
+        					<select name='attr_wskill' class='sheet-st sheet-edit-mode'>
+                                <% const skills = ['Athletics', 'Archery', 'Brawl', 'Firearms', 'Gunnery', 'Heavy Weapons', 'Martial Arts', 'Melee', 'Throwing']; -%>
+                                <% skills.forEach(skill => { -%>
+        						<option value='<%= skill %>'><%= skill %></option>
+                                <% }); -%>
         					</select>
         				</div>
                         <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></div>
                         <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></div>
-                        <div class="item 50" ><input type='checkbox' value="@{Strength}" name='attr_wstr' /></div>
+                        <div class="item 50" ><input type='checkbox' value="1" name='attr_wstr' /></div>
                         <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_range'value="0"/></div>
                         <div class="item 180">
         					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>

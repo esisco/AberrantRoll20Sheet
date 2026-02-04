@@ -5,8 +5,8 @@
         <img class="character-avatar avatar-col" name="attr_character_avatar">
         <div class="character-detail character-details-col">
             Name: <span class="character-name" name="attr_character_name"></span><br>
-            Alias(es): <span class="character-aliases" name="attr_character_aliases"></span><br>
-            Faction: <span class="character-faction" name="attr_character_faction"></span><br>
+            Alias(es): <span class="character-aliases" name="attr_BName"></span><br>
+            Faction: <span class="character-faction" name="attr_Allegiance"></span><br>
         </div>
         <div class="logo-col">
             <img class='sheet-logo'
@@ -1778,11 +1778,16 @@
                 <div class="item 50">Difficulty</div>
 			</div>
 			<fieldset class='repeating_weapons'>
-    			<div class="row"> 
-                    <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage= [[ (?{Damage Modifier?|0} + @{wdamtotal})d10>7f1!>10s+?{Damage Bonus Successes?|0 }]] }}"></button></div>
+                <div class="row"> 
+                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></div>
+                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></div>
+                        
+    			<!-- <div class="row">  -->
+                    <!-- <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~selected|roll_damage) }}"></button></div> -->
+                    <!-- <div class="item 40"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{wname} }} {{attack= [[ (?{Modifier?|0} +@{wtotalacc})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~roll-attack) }}"></button></div> -->
                     <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
-                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="@{wskill}+@{wacc}" disabled/></div>
-                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="@{wstr}+@{wdam}" disabled/></div>
+                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></div>
+                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="0" readonly/></div>
                     <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></div>
     			    <div class="item 25" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
     			</div>
@@ -1802,17 +1807,21 @@
         			</div>
         			<div class="row">
                         <div class="item 100">
-        					<select name='attr_wskill sheet-edit-mode' class='sheet-st'>
-        						<option value="@{Athletics_Total}">Athletics</option>
-        						<option value="@{Brawl_Total}">Brawl</option>
-        						<option value="@{Firearms_Total}">Firearms</option>
-        						<option value="@{Martial_Arts_Total}">Martial Arts</option>
-        						<option value="@{Melee_Total}">Melee</option>
-        					</select>
+        					<select name='attr_wskill' class='sheet-st sheet-edit-mode'>
+                                                                        						<option value='Athletics'>Athletics</option>
+                                        						<option value='Archery'>Archery</option>
+                                        						<option value='Brawl'>Brawl</option>
+                                        						<option value='Firearms'>Firearms</option>
+                                        						<option value='Gunnery'>Gunnery</option>
+                                        						<option value='Heavy Weapons'>Heavy Weapons</option>
+                                        						<option value='Martial Arts'>Martial Arts</option>
+                                        						<option value='Melee'>Melee</option>
+                                        						<option value='Throwing'>Throwing</option>
+                                        					</select>
         				</div>
                         <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></div>
                         <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></div>
-                        <div class="item 50" ><input type='checkbox' value="@{Strength}" name='attr_wstr' /></div>
+                        <div class="item 50" ><input type='checkbox' value="1" name='attr_wstr' /></div>
                         <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_range'value="0"/></div>
                         <div class="item 180">
         					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
@@ -2964,6 +2973,34 @@
     </div>
 </rolltemplate>
 
+<rolltemplate class="sheet-rolltemplate-attack">
+    <div class="container">
+        <div><h1>{{name}}</h1></div>
+        <div><span class="subheader">{{subtag}}</span></div>
+        <div class="arrow-container"><div class="arrow-right"></div></div>
+        {{#attack}}
+        <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} Success(es)</div>
+        {{/attack}}
+        {{#attacknote}}
+            <div class="attack-note">
+                {{attacknote}} 
+            </div>
+        {{/attacknote}}
+        {{#damage}}
+            <div class="damage-section">
+                <span class="tcat">Damage Roll: </span>
+                <button class="roll-damage-btn" onclick="this.closest('.sheet-rolltemplate-attack').querySelector('.damage-result').innerHTML = 'Rolling damage...'" type="button">Roll Damage</button>
+            </div>
+            <div class="damage-result">{{damage}}</div>
+        {{/damage}}
+        {{#note}}
+            <div class="note">
+                {{note}} 
+            </div>
+        {{/note}}
+    </div>
+</rolltemplate>
+
 
 <script type="text/worker">
 
@@ -2997,6 +3034,117 @@ buttonlist.forEach(button => {
         setAttrs({
             sheetTab: button
         });
+    });
+});
+on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function () {
+    console.log("Weapon skill changed, updating attack bonus.");
+    const prefix = `repeating_weapons_`;
+    getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
+        'Dexterity', 'Strength', 'Athletics', 'Brawl', 'Firearms', 'Melee',
+        'Throwing', 'Martial_Arts', 'Archery', 'Gunnery', 'Heavy_Weapons'], (values) => {
+        const accuracy = parseInt(values[`${prefix}wacc`] || '0');
+        const dexterity = parseInt(values['Dexterity'] || '0');
+        const strength = parseInt(values['Strength'] || '0');
+        switch (values[`${prefix}wskill`]) {
+            case 'Brawl':
+            case 'Thowing':
+                const skillValue = parseInt(values[`${prefix}wskill`] || '0');
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + strength + skillValue
+                });
+                break;
+            case 'Athletics':
+            case 'Archery':
+            case 'Firearms':
+            case 'Gunnery':
+            case 'Heavy Weapons':
+            case 'Martial Arts':
+            case 'Melee':
+                const skillName = values[`${prefix}wskill`].replace(' ', '_');
+                const skillVal = parseInt(values[skillName] || '0');
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillVal
+                });
+                break;
+            default:
+                console.error("Unknown skill:", values[`${prefix}wskill`]);
+                break;
+        }
+    });
+});
+on("change:repeating_weapons:wstr change:repeating_weapons:wdam", function () {
+    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'strength'], (values) => {
+        const attackDamage = parseInt(values[`repeating_weapons_wdam`] || '0');
+        if (values['repeating_weapons_wstr'] === '1') {
+            const strength = parseInt(values[`strength`] || '0');
+            setAttrs({
+                ['repeating_weapons_wdamtotal']: strength + attackDamage
+            });
+        }
+        else {
+            setAttrs({
+                ['repeating_weapons_wdamtotal']: attackDamage
+            });
+        }
+    });
+});
+on("clicked:repeating_weapons:roll-attack", function (eventInfo) {
+    console.log("Attack roll button clicked:", eventInfo);
+    const match = eventInfo.sourceAttribute.match(/repeating_weapons_([^_]+)_roll-attack/i);
+    if (!match) {
+        console.log("No matching row ID found.");
+        return;
+    }
+    const rowId = match[1];
+    console.log("Row ID for attack roll:", rowId);
+    getAttrs([`repeating_weapons_wtotalacc`, `repeating_weapons_wname`, 'character_name'], (values) => {
+        const attackBonus = parseInt(values[`repeating_weapons_wtotalacc`] || '0');
+        const characterName = values['character_name'] || 'Unknown';
+        const weaponName = values[`repeating_weapons_wname`] || 'Attack';
+        const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
+        startRoll(roll, (results) => {
+            console.log("Attack roll results:", results);
+            finishRoll(results.rollId, {});
+        });
+    });
+});
+on("clicked:repeating_weapons:roll-damage", function (eventInfo) {
+    console.log("Damage roll button clicked:", eventInfo);
+    const match = eventInfo.sourceAttribute.match(/repeating_weapons_([^_]+)_roll-damage/i);
+    if (!match) {
+        console.log("No matching row ID found.");
+        return;
+    }
+    const rowId = match[1];
+    console.log("Row ID for damage roll:", rowId);
+    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
+        const characterName = values['character_name'] || 'Unknown';
+        const weaponName = values['repeating_weapons_wname'] || 'Damage';
+        const results = await startRoll('{{modifiers=[[?{Target Soak?|0}*?{Additional Dice?|0}{}]] }}');
+        const modifiers = results.results.modifiers.expression.match(/(\d+)\*?/g) || [];
+        let soak = parseInt(modifiers[0] || '0');
+        const additionalDice = parseInt(modifiers[1] || '0');
+        console.log("Soak value entered:", soak, "Additional dice:", additionalDice);
+        let damage = parseInt(values['repeating_weapons_wdamtotal'] || '0') + (additionalDice || 0);
+        let damageAdds = 0;
+        if (values['repeating_weapons_wstr'] === '1') {
+            damageAdds += parseInt(values['mega_strength'] || '0') * 5;
+        }
+        if (soak > 0) {
+            if (damageAdds >= soak) {
+                damageAdds -= soak;
+                soak = 0;
+            }
+            else {
+                soak -= damageAdds;
+                damageAdds = 0;
+            }
+            damage = Math.max(1, damage - soak);
+        }
+        const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7f1!>10s+${damageAdds} ]] }}`;
+        const damageResults = await startRoll(roll);
+        console.log("Damage roll results:", damageResults);
+        finishRoll(damageResults.rollId, {});
     });
 });
 on("clicked:add_quantum_power", () => {

@@ -45,4 +45,6 @@ declare function on(event: string, callback: (eventInfo: EventInfo) => void): vo
 
 declare function startRoll(rollTemplate: string, callback: (results: {rollId: string, results: RollResults}) => void): void
 
+declare function startRoll(rollTemplate: string): Promise<{rollId: string, results: RollResults}>;
+
 declare function finishRoll(rollId: string, computed: {[key: string]: AttributeContent}): void
