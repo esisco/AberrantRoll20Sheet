@@ -44,10 +44,12 @@
 }
 .charsheet .sheet-wrapper .sheet-item.sheet-620 { width: 620px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-430 { width: 430px; }
+.charsheet .sheet-wrapper .sheet-item.sheet-375 { width: 375px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-250 { width: 250px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-200 { width: 200px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-190 { width: 190px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-180 { width: 180px; }
+.charsheet .sheet-wrapper .sheet-item.sheet-160 { width: 160px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-150 { width: 150px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-140 { width: 140px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-130 { width: 130px; }
@@ -61,6 +63,7 @@
 .charsheet .sheet-wrapper .sheet-item.sheet-75 { width: 75px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-70 { width: 70px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-50 { width: 50px; }
+.charsheet .sheet-wrapper .sheet-item.sheet-40 { width: 40px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-25 { width: 25px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-24 { width: 24px; }
 .charsheet .sheet-wrapper .sheet-item.sheet-20 { width: 20px; }
@@ -374,7 +377,7 @@ input.sheet-gear[type="checkbox"]:checked + span::before {
 /* Strike Checkbox */
 input.sheet-strike[type="checkbox"] {
     opacity: 0;
-    width: 25px;
+    width: 15px;
     position: relative;
     top: 0;
     left: 0;

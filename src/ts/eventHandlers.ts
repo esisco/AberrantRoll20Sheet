@@ -72,18 +72,22 @@ on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function() {
 });
 
 
-on("change:repeating_weapons:wstr change:repeating_weapons:wdam", function() {
-    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'strength'], (values) => {
+on("change:repeating_weapons:wstr change:repeating_weapons:wdam change:repeating_weapons:wdam_auto", function() {
+    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'repeating_weapons_wdam_auto', 'strength', 'mega_strength'], (values) => {
         const attackDamage = parseInt(values[`repeating_weapons_wdam`] || '0');
+        const autoDamage = parseInt(values['repeating_weapons_wdam_auto'] || '0');
         if (values['repeating_weapons_wstr'] === '1') {
             const strength = parseInt(values[`strength`] || '0');
+            const megaStrength = parseInt(values[`mega_strength`] || '0');
             setAttrs({
-                ['repeating_weapons_wdamtotal']: strength + attackDamage
+                ['repeating_weapons_wdamtotal']: strength + attackDamage,
+                ['repeating_weapons_wdamdisplay']: `[${autoDamage + (megaStrength * 5)}] + ${attackDamage + strength}`
             });
         }
         else {
             setAttrs({
-                ['repeating_weapons_wdamtotal']: attackDamage
+                ['repeating_weapons_wdamtotal']: attackDamage,
+                ['repeating_weapons_wdamdisplay']: `[${autoDamage}] + ${attackDamage}`
             });
         }
     });
@@ -122,7 +126,7 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
     const rowId = match[1];
     console.log("Row ID for damage roll:", rowId);
 
-    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
+    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wdam_auto', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
         const characterName = values['character_name'] || 'Unknown';
         const weaponName = values['repeating_weapons_wname'] || 'Damage';
         // const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ (?{Modifier?|0} + ${damage} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }}`;
@@ -133,7 +137,7 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
         console.log("Soak value entered:", soak, "Additional dice:", additionalDice);
 
         let damage = parseInt(values['repeating_weapons_wdamtotal'] || '0') + (additionalDice || 0);
-        let damageAdds = 0; // Add auto Damage Fields to combat template
+        let damageAdds = parseInt(values['repeating_weapons_wdam_auto'] || '0');
         if (values['repeating_weapons_wstr'] === '1') {
             damageAdds += parseInt(values['mega_strength'] || '0') * 5;
         }

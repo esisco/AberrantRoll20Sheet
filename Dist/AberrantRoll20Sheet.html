@@ -1701,14 +1701,30 @@
         <br/>
 	</div>
     	<div class='sheet-combat'>
-            <div class="col item 100">
+            <div class="col item 160">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
-                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_Initiative' value=0 /></div>
-                    <div class="item 25"><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></div>
+                    <table class="movement-table">
+                        <thead>
+                            <tr>
+                                <th>Base</th>
+                                <th>Bonus</th>
+                                <th>Total</th>
+                                <th>Roll</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><input type='text' class="st" name='attr_init_base' value='@{Dexterity}+@{Mega_Dexterity}+@{Wits}+@{Mega_Wits}' disabled /></td>
+                                <td><input type='text' class="st sheet-edit-mode" name='attr_Initiative_bonus' value=0 /></td>
+                                <td><input type='text' class="st" name='attr_Initiative' value='@{init_base}+@{Initiative_bonus}' disabled/></td>
+                                <td><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="col item 430">
+            <div class="col item 375">
                 <div class="row">
                     <h3 class="category-title">Movement</h3>
                 </div>
@@ -1769,75 +1785,101 @@
                                     </div>
             </div>
         <div>
-			<h2>Weapons</h2>
-			<div class="row">
-                <div class="item 40">Roll</div>
-                <div class="item 120">Weapon</div>
-                <div class="item 50">Dice</div>
-                <div class="item 70">Damage</div>
-                <div class="item 50">Difficulty</div>
-			</div>
+			<h2>Attacks</h2>
+            <table class="movement-table">
+                <thead>
+                    <tr>
+                        <th class="item 140">Name</th>
+                        <th class="item 40">Atk</th>
+                        <th class="item 50">Dice</th>
+                        <th class="item 70">Difficulty</th>
+                        <th class="item 40">Dmg</th>
+                        <th class="item 70">Dice</th>
+                        <th class="item 50">Range</th>
+                        <th class="item 70">Settings</th>
+                    </tr>
+                </thead>
+            </table>
 			<fieldset class='repeating_weapons'>
-                <div class="row"> 
-                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></div>
-                    <div class="item 40"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></div>
-                    <div class="item 120"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></div>
-                    <div class="item 50" ><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></div>
-                    <div class="item 70" ><input type='text' class="st" name='attr_wdamtotal' value="0" readonly/></div>
-                    <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></div>
-    			    <div class="item 25" ><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></div>
-    			</div>
+                <table class="movement-table">
+                    <tbody>
+                        <tr>
+                            <td class="item 140"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></td>
+                            <td class="item 40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></td>
+                            <td class="item 50"><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></td>
+                            <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></td>
+                            <td class="item 40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></td>
+                            <td class="item 70"><input type='text' class="hidden" name='attr_wdamtotal' value="0" readonly/><input type='text' class="st" name='attr_wdamdisplay' value="0" readonly/></td>
+                            <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_range'/></td>
+                            <td class="item 70" style="align-content: center;"><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></td>
+                        </tr>
+                    </tbody>
+                </table>
     			<input type="checkbox" class="hidden hider" name="attr_weapon_open" value="1" checked/><span></span>
     			<div class="hold">
-        			<div class="row">
-                        <div class="item 100">Skill</div>
-                        <div class="item 70">Accuracy</div>
-                        <div class="item 70">Damage</div>
-                        <div class="item 50">Str</div>
-                        <div class="item 50">Range</div>
-                        <div class="item 180">Maneuvers</div>
-                        <div class="item 50">RoF</div>
-                        <div class="item 50">Clip</div>
-                        <div class="item 50">Conceal</div>
-                        <div class="item 50">Mass</div>
-        			</div>
-        			<div class="row">
-                        <div class="item 100">
-        					<select name='attr_wskill' class='sheet-st sheet-edit-mode'>
-                                                                        						<option value='Athletics'>Athletics</option>
-                                        						<option value='Archery'>Archery</option>
-                                        						<option value='Brawl'>Brawl</option>
-                                        						<option value='Firearms'>Firearms</option>
-                                        						<option value='Gunnery'>Gunnery</option>
-                                        						<option value='Heavy Weapons'>Heavy Weapons</option>
-                                        						<option value='Martial Arts'>Martial Arts</option>
-                                        						<option value='Melee'>Melee</option>
-                                        						<option value='Throwing'>Throwing</option>
-                                        					</select>
-        				</div>
-                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></div>
-                        <div class="item 70" ><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></div>
-                        <div class="item 50" ><input type='checkbox' value="1" name='attr_wstr' /></div>
-                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_range'value="0"/></div>
-                        <div class="item 180">
-        					<input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
-        					<input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
-        					<input type='checkbox' class="strike" name='attr_wm_sa' value=1 /><span class="strike">Sa</span>
-        					<input type='checkbox' class="strike" name='attr_wm_st' value=1 /><span class="strike">St</span>
-        					<input type='checkbox' class="strike" name='attr_wm_tw' value=1 /><span class="strike">Tw</span>
-        				</div>
-                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wrof' value="0"/></div>
-                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wclip'value="0"/></div>
-                        <div class="item 50" >
-                            <select name='attr_wconceal' class='sheet-st sheet-edit-mode'>
-        						<option value='Pocket'>P</option>
-        						<option value='Jacket'>J</option>
-        						<option value='Trenchcoat'>T</option>
-        						<option value='N/A'>N/A</option>
-        					</select>
-                        </div>
-                        <div class="item 50" ><input type='text' class="st sheet-edit-mode" name='attr_wmass' value="0"/></div>
-        			</div>
+                    <table class="movement-table">
+                        <thead>
+                            <tr>
+                                <th class="item 100">Skill</th>
+                                <th class="item 70">Accuracy</th>
+                                <th class="item 40">Str</th>
+                                <th class="item 70">Damage</th>
+                                <th class="item 70">Automatic</th>
+                                <th class="item 100">Type</th>
+                                <th class="item 70">Conceal</th>
+                                <th class="item 50">Mass</th>
+                                <th class="item 50">RoF</th>
+                                <th class="item 50">Clip</th>
+                                <th class="item 120">Maneuvers</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="item 100">
+                                    <select name='attr_wskill' class='sheet-st sheet-edit-mode'>
+                                                                                                                        <option value='Athletics'>Athletics</option>
+                                                                                <option value='Archery'>Archery</option>
+                                                                                <option value='Brawl'>Brawl</option>
+                                                                                <option value='Firearms'>Firearms</option>
+                                                                                <option value='Gunnery'>Gunnery</option>
+                                                                                <option value='Heavy Weapons'>Heavy Weapons</option>
+                                                                                <option value='Martial Arts'>Martial Arts</option>
+                                                                                <option value='Melee'>Melee</option>
+                                                                                <option value='Throwing'>Throwing</option>
+                                                                            </select>
+                                </td>
+                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></td>
+                                <td class="item 40"><input type='checkbox' value="1" name='attr_wstr' /></td>
+                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></td>
+                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdam_auto' value="0"/></td>
+                                <td class="item 100">
+                                    <select name='attr_wdam_type' class='sheet-st sheet-edit-mode'>
+                                        <option value='Bashing'>Bashing</option>
+                                        <option value='Lethal'>Lethal</option>
+                                        <option value='Aggravated'>Aggravated</option>
+                                    </select>
+                                </td>
+                                <td class="item 70">
+                                    <select name='attr_wconceal' class='sheet-st sheet-edit-mode'>
+                                        <option value='Pocket'>P</option>
+                                        <option value='Jacket'>J</option>
+                                        <option value='Trenchcoat'>T</option>
+                                        <option value='N/A'>N/A</option>
+                                    </select>
+                                </td>
+                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wmass' value="0"/></td>
+                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wrof' value="0"/></td>
+                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wclip'value="0"/></td>
+                                <td class="item 120">
+                                    <input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
+                                    <input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
+                                    <input type='checkbox' class="strike" name='attr_wm_sa' value=1 /><span class="strike">Sa</span>
+                                    <input type='checkbox' class="strike" name='attr_wm_st' value=1 /><span class="strike">St</span>
+                                    <input type='checkbox' class="strike" name='attr_wm_tw' value=1 /><span class="strike">Tw</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </fieldset>
         </div>
@@ -3060,18 +3102,22 @@ on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function () 
         }
     });
 });
-on("change:repeating_weapons:wstr change:repeating_weapons:wdam", function () {
-    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'strength'], (values) => {
+on("change:repeating_weapons:wstr change:repeating_weapons:wdam change:repeating_weapons:wdam_auto", function () {
+    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'repeating_weapons_wdam_auto', 'strength', 'mega_strength'], (values) => {
         const attackDamage = parseInt(values[`repeating_weapons_wdam`] || '0');
+        const autoDamage = parseInt(values['repeating_weapons_wdam_auto'] || '0');
         if (values['repeating_weapons_wstr'] === '1') {
             const strength = parseInt(values[`strength`] || '0');
+            const megaStrength = parseInt(values[`mega_strength`] || '0');
             setAttrs({
-                ['repeating_weapons_wdamtotal']: strength + attackDamage
+                ['repeating_weapons_wdamtotal']: strength + attackDamage,
+                ['repeating_weapons_wdamdisplay']: `[${autoDamage + (megaStrength * 5)}] + ${attackDamage + strength}`
             });
         }
         else {
             setAttrs({
-                ['repeating_weapons_wdamtotal']: attackDamage
+                ['repeating_weapons_wdamtotal']: attackDamage,
+                ['repeating_weapons_wdamdisplay']: `[${autoDamage}] + ${attackDamage}`
             });
         }
     });
@@ -3105,7 +3151,7 @@ on("clicked:repeating_weapons:roll-damage", function (eventInfo) {
     }
     const rowId = match[1];
     console.log("Row ID for damage roll:", rowId);
-    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
+    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wdam_auto', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
         const characterName = values['character_name'] || 'Unknown';
         const weaponName = values['repeating_weapons_wname'] || 'Damage';
         const results = await startRoll('{{modifiers=[[?{Target Soak?|0}*?{Additional Dice?|0}{}]] }}');
@@ -3114,7 +3160,7 @@ on("clicked:repeating_weapons:roll-damage", function (eventInfo) {
         const additionalDice = parseInt(modifiers[1] || '0');
         console.log("Soak value entered:", soak, "Additional dice:", additionalDice);
         let damage = parseInt(values['repeating_weapons_wdamtotal'] || '0') + (additionalDice || 0);
-        let damageAdds = 0;
+        let damageAdds = parseInt(values['repeating_weapons_wdam_auto'] || '0');
         if (values['repeating_weapons_wstr'] === '1') {
             damageAdds += parseInt(values['mega_strength'] || '0') * 5;
         }
