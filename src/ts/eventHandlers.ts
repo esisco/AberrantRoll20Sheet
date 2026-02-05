@@ -44,10 +44,11 @@ on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function() {
         const accuracy = parseInt(values[`${prefix}wacc`] || '0');
         const dexterity = parseInt(values['Dexterity'] || '0');
         const strength = parseInt(values['Strength'] || '0');
-        switch (values[`${prefix}wskill`]) {
+        const skillName = values[`${prefix}wskill`].replace(' ', '_');
+        const skillValue = parseInt(values[skillName] || '0');
+        switch (skillName) {
             case 'Brawl':
-            case 'Thowing':
-                const skillValue = parseInt(values[`${prefix}wskill`] || '0');
+            case 'Throwing':
                 setAttrs({
                     [`${prefix}wtotalacc`]: accuracy + strength + skillValue
                 });
@@ -56,13 +57,11 @@ on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function() {
             case 'Archery':
             case 'Firearms':
             case 'Gunnery':
-            case 'Heavy Weapons':
-            case 'Martial Arts':
+            case 'Heavy_Weapons':
+            case 'Martial_Arts':
             case 'Melee':
-                const skillName = values[`${prefix}wskill`].replace(' ', '_');
-                const skillVal = parseInt(values[skillName] || '0');
                 setAttrs({
-                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillVal
+                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
                 });
                 break;
             default:

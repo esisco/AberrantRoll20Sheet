@@ -1,15 +1,9 @@
 <rolltemplate class="sheet-rolltemplate-initiative">
     <div class="container">
-        <div><h1>{{name}}</h1></div>
-        <div><span class="subheader">{{subtag}}</span></div>
-        <div class="arrow-container"><div class="arrow-right"></div></div>
+        <div><h1>{{name}} is ready for action!</h1></div>
+        <div class="dice-divider"></div>
         {{#roll}}
-        <div class="rowcolor"><span class="tcat">Roll: </span>{{roll}}</div>
+        <div class="rowcolor"><span class="tcat">Initiative: </span>{{roll}}</div>
         {{/roll}}
-        {{#note}}
-            <div>
-                {{note}} 
-            </div>
-        {{/note}}
     </div>
 </rolltemplate>

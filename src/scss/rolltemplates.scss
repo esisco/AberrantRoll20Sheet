@@ -1,350 +1,158 @@
 /* Roll Templates */
-@font-face {
-  font-family: "Adam Warren";
-  src: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/172299/adamwarrenpro.ttf) format("truetype");
-}
-
 @import url("https://fonts.googleapis.com/css?family=Bangers|Dekko|Lato:900|Rock+Salt");
 
-@mixin halftone($dotColor, $bgColor){
-  $backgroundSize: 5px;
-  background-color: $bgColor;
-  background-image: radial-gradient($dotColor 33%, transparent 34%),
-  radial-gradient($dotColor 33%, transparent 34%);
-  background-size: $backgroundSize $backgroundSize;
-  background-position: 0 0, calc($backgroundSize/2) calc($backgroundSize/2);
+// ============================================
+// VARIABLES
+// ============================================
+$font-primary: "Bangers", cursive;
+$font-accent: "Rock Salt", cursive;
+
+$color-primary-text: #7e2d40;
+$color-subheader: #000;
+$color-title: darkred;
+$color-white: #fff;
+$color-success: #3fb315;
+$color-fail: #b31515;
+$color-important: #4a57ed;
+$color-accent: red;
+
+$container-width: 189px;
+$container-padding: 2px;
+$arrow-length: 180px;
+
+$crit-color: #3fb315;
+$fail-color: #b31515;
+$important-color: #4a57ed;
+
+$damage-btn-bg: #8b0000;
+$damage-btn-border: #5a0000;
+$damage-btn-hover: #a00000;
+$damage-btn-border-hover: #700000;
+$damage-result-bg: #ffe6e6;
+
+// ============================================
+// MIXINS
+// ============================================
+@mixin halftone($dotColor, $bgColor) {
+    $backgroundSize: 5px;
+    background-color: $bgColor;
+    background-image: radial-gradient($dotColor 33%, transparent 34%),
+        radial-gradient($dotColor 33%, transparent 34%);
+    background-size: $backgroundSize $backgroundSize;
+    background-position: 0 0, calc($backgroundSize/2) calc($backgroundSize/2);
 }
 
-.sheet-rolltemplate-base .sheet-container {
+@mixin rolltemplate-container($bg-style: solid, $font-family: $font-primary) {
     @include halftone(#e0e0e0, white);
-    // @include halftone(#ffd500, yellow);
     border: 2px solid;
-    padding: 2px;
-    width: 189px;
-    font-family: "Bangers", cursive;
+    padding: $container-padding;
+    width: $container-width;
+    font-family: $font-primary;
     filter: drop-shadow(5px 5px 0 black);
+
+    h1 {
+        color: $color-title;
+        font-family: $font-primary;
+        font-size: 1.4em;
+        font-variant: small-caps;
+        line-height: 20px;
+    }
 }
 
-.sheet-rolltemplate-base .sheet-container h1 {
-    color: darkred;
-    font-family: "Bangers", cursive;
-    font-size: 1.4em;
-    font-variant: small-caps;
-    line-height: 20px;
+@mixin rolltemplate-common {
+    div {
+        padding: $container-padding;
+    }
+
+    span {
+        color: $color-primary-text;
+        font-family: inherit;
+        font-size: 1.2em;
+        font-variant: small-caps;
+        line-height: 1.6em;
+        padding-left: 5px;
+        text-align: left;
+    }
+
+    .sheet-subheader {
+        color: $color-subheader;
+        font-size: 1em;
+        font-family: $font-accent;
+    }
+
+    .sheet-dice-divider {
+        position: relative;
+        text-align: center;
+        height: 2px;
+        background: black;
+        margin: 14px 4px;
+        padding: 0 !important;
+        overflow: visible;
+
+        &:before {
+            content: '\004A';
+            font-family: 'dicefontd10';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            @include halftone(#e0e0e0, white);
+            padding: 0 10px;
+            font-size: 2.5em;
+            color: black;
+            line-height: 1;
+        }
+    }
+
+    .sheet-tcat {
+        font-style: italic;
+    }
+
+    .inlinerollresult {
+        background-color: transparent;
+        border: none;
+
+        &.fullcrit {
+            color: $crit-color;
+            background-color: transparent;
+            border: none;
+        }
+
+        &.fullfail {
+            color: $fail-color;
+            background-color: transparent;
+            border: none;
+        }
+
+        &.importantroll {
+            color: $important-color;
+            background-color: transparent;
+            border: none;
+        }
+
+        &.importandivoll {
+            color: $important-color;
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    .sheet-rowcolor2 {
+        color: $color-accent;
+        font-size: 1em;
+        font-style: italic;
+        font-weight: bold;
+    }
 }
 
-.sheet-rolltemplate-base .sheet-container button {
-    font-family: "Bangers", cursive;
-    border-radius: 5px;
-}
+// Templates
+.sheet-rolltemplate-base,
+.sheet-rolltemplate-attack,
+.sheet-rolltemplate-initiative,
+.sheet-rolltemplate-megaroll {
+    .sheet-container {
+        @include rolltemplate-container();
+    }
 
-.sheet-rolltemplate-base div {
-    padding: 2px;
-}
-
-.sheet-rolltemplate-base span {
-    color: #7e2d40;
-    font-family: "Bangers", cursive;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 1.6em;
-    padding-left: 5px;
-    text-align: left;
-}
- 
-.sheet-rolltemplate-base .sheet-subheader {
-    color: #000;
-    font-size: 1em;
-    font-family: "Rock Salt", cursive;
-}
-
-.sheet-rolltemplate-base .sheet-arrow-right {
-    border-bottom: 2px solid transparent;
-    border-left: 180px solid black;
-    border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-base .sheet-tcat {
-    font-style: italic;
-}
-
-.sheet-rolltemplate-base .inlinerollresult {
-    background-color: #fff;
-    border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.fullcrit {
-    color: #3fb315;
-    border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.fullfail {
-    color: #b31515;
-    border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.importandivoll {
-    color: #4a57ed;
-    border: none;
-}
-
-.sheet-rolltemplate-base .sheet-rowcolor2 {
-    color: red;
-    font-size: 1em;
-    font-style: italic;
-    font-weight: bold;
-}
-
-.sheet-rolltemplate-initiative .sheet-container {
-    background-color: #fff;
-    border: 1px solid;
-    padding: 2px;
-    width: 189px;
-}
-
-.sheet-rolltemplate-initiative .sheet-container h1 {
-    color: darkred;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 20px;
-}
-
-.sheet-rolltemplate-initiative div {
-    padding: 2px;
-}
-
-.sheet-rolltemplate-initiative span {
-    color: #7e2d40;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 1.6em;
-    padding-left: 5px;
-    text-align: left;
-}
- 
-.sheet-rolltemplate-initiative .sheet-subheader {
-    color: #000;
-    font-size: 1em;
-    font-style: italic;
-}
-
-.sheet-rolltemplate-initiative .sheet-arrow-right {
-    border-bottom: 2px solid transparent;
-    border-left: 180px solid black;
-    border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-initiative .sheet-tcat {
-    font-style: italic;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult {
-    background-color: #fff;
-    border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.fullcrit {
-    color: #3fb315;
-    border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.fullfail {
-    color: #b31515;
-    border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.importandivoll {
-    color: #4a57ed;
-    border: none;
-}
-
-.sheet-rolltemplate-initiative .sheet-rowcolor2 {
-    color: red;
-    font-size: 1em;
-    font-style: italic;
-    font-weight: bold;
-}
-
-
-.sheet-rolltemplate-megaroll .sheet-container {
-    background-color: #fff;
-    border: 1px solid;
-    padding: 2px;
-    width: 189px;
-}
-
-.sheet-rolltemplate-megaroll .sheet-container h1 {
-    color: darkred;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 20px;
-}
-
-.sheet-rolltemplate-megaroll div {
-    padding: 2px;
-}
-
-.sheet-rolltemplate-megaroll span {
-    color: #7e2d40;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 1.6em;
-    padding-left: 5px;
-    text-align: left;
-}
- 
-.sheet-rolltemplate-megaroll .sheet-subheader {
-    color: #000;
-    font-size: 1em;
-    font-style: italic;
-}
-
-.sheet-rolltemplate-megaroll .sheet-arrow-right {
-    border-bottom: 2px solid transparent;
-    border-left: 180px solid black;
-    border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-megaroll .sheet-tcat {
-    font-style: italic;
-}
-
-.sheet-rolltemplate-megaroll .inlinerollresult {
-    background-color: #fff;
-    border: none;
-}
-
-.sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
-    color: #3fb315;
-    border: none;
-}
-
-.sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
-    color: #b31515;
-    border: none;
-}
-
-.sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
-    color: #4a57ed;
-    border: none;
-}
-
-.sheet-rolltemplate-megaroll .sheet-rowcolor2 {
-    color: red;
-    font-size: 1em;
-    font-style: italic;
-    font-weight: bold;
-}
-
-/* Attack/Weapon Roll Template */
-.sheet-rolltemplate-attack .sheet-container {
-    @include halftone(#9a9a9a, #fff);
-    border: 1px solid;
-    padding: 2px;
-    width: 189px;
-}
-
-.sheet-rolltemplate-attack .sheet-container h1 {
-    color: darkred;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 20px;
-}
-
-.sheet-rolltemplate-attack div {
-    padding: 2px;
-}
-
-.sheet-rolltemplate-attack span {
-    color: #7e2d40;
-    font-family: "Times New Roman", Times, serif;
-    font-size: 1.2em;
-    font-variant: small-caps;
-    line-height: 1.6em;
-    padding-left: 5px;
-    text-align: left;
-}
-
-.sheet-rolltemplate-attack .sheet-subheader {
-    color: #000;
-    font-size: 1em;
-    font-style: italic;
-}
-
-.sheet-rolltemplate-attack .sheet-arrow-right {
-    border-bottom: 2px solid transparent;
-    border-left: 180px solid black;
-    border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-attack .sheet-tcat {
-    font-style: italic;
-}
-
-.sheet-rolltemplate-attack .inlinerollresult {
-    background-color: #fff;
-    border: none;
-}
-
-.sheet-rolltemplate-attack .inlinerollresult.fullcrit {
-    color: #3fb315;
-    border: none;
-}
-
-.sheet-rolltemplate-attack .inlinerollresult.fullfail {
-    color: #b31515;
-    border: none;
-}
-
-.sheet-rolltemplate-attack .inlinerollresult.importandivoll {
-    color: #4a57ed;
-    border: none;
-}
-
-.sheet-rolltemplate-attack .sheet-damage-section {
-    margin-top: 8px;
-    padding: 5px;
-    background-color: #f5f5f5;
-    border: 1px solid #ddd;
-    border-radius: 3px;
-}
-
-.sheet-rolltemplate-attack .sheet-roll-damage-btn {
-    background-color: #8b0000;
-    color: white;
-    border: 1px solid #5a0000;
-    padding: 5px 10px;
-    margin-left: 5px;
-    border-radius: 3px;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 0.9em;
-}
-
-.sheet-rolltemplate-attack .sheet-roll-damage-btn:hover {
-    background-color: #a00000;
-    border-color: #700000;
-}
-
-.sheet-rolltemplate-attack .sheet-damage-result {
-    margin-top: 5px;
-    padding: 5px;
-    background-color: #ffe6e6;
-    border-left: 3px solid #8b0000;
-    font-weight: bold;
-}
-
-.sheet-rolltemplate-attack .sheet-attack-note {
-    color: #666;
-    font-size: 0.95em;
-    font-style: italic;
-    margin-top: 3px;
-}
-
-.sheet-rolltemplate-attack .sheet-note {
-    color: #666;
-    font-size: 0.95em;
-    margin-top: 5px;
+    @include rolltemplate-common;
 }

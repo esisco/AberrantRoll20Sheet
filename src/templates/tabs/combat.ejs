@@ -11,7 +11,7 @@ const movementTypes = [
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
                     <div class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_Initiative' value=0 /></div>
-                    <div class="item 25"><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{subtag= @{character_name} }} {{name=Initiative }} {{roll= [[ 1d10+@{Initiative} &{tracker}]] }}"></button></div>
+                    <div class="item 25"><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></div>
                 </div>
             </div>
             <div class="col item 430">
