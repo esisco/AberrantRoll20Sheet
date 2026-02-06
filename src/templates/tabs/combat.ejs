@@ -6,8 +6,8 @@ const movementTypes = [
     { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true }
 ];
 -%>
-	<div class='sheet-combat'>
-            <div class="col item 160">
+	<div class='combat'>
+            <div class="col item w160">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
                     <table class="movement-table">
@@ -22,7 +22,7 @@ const movementTypes = [
                         <tbody>
                             <tr>
                                 <td><input type='text' class="st" name='attr_init_base' value='@{Dexterity}+@{Mega_Dexterity}+@{Wits}+@{Mega_Wits}' disabled /></td>
-                                <td><input type='text' class="st sheet-edit-mode" name='attr_Initiative_bonus' value=0 /></td>
+                                <td><input type='text' class="st edit-mode" name='attr_Initiative_bonus' value=0 /></td>
                                 <td><input type='text' class="st" name='attr_Initiative' value='@{init_base}+@{Initiative_bonus}' disabled/></td>
                                 <td><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></td>
                             </tr>
@@ -30,7 +30,7 @@ const movementTypes = [
                     </table>
                 </div>
             </div>
-            <div class="col item 375">
+            <div class="col item w375">
                 <div class="row">
                     <h3 class="category-title">Movement</h3>
                 </div>
@@ -50,26 +50,25 @@ const movementTypes = [
                             <% movementTypes.forEach(move => { -%>
                             <td><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></td>
                             <% }); -%>
-                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn1Value' value=0 /></td>
-                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn2Value' value=0 /></td>
-                            <td><input type='text' class="st sheet-edit-mode" name='attr_moveColumn3Value' value=0 /></td>
+                            <td><input type='text' class="st edit-mode" name='attr_moveColumn1Value' value=0 /></td>
+                            <td><input type='text' class="st edit-mode" name='attr_moveColumn2Value' value=0 /></td>
+                            <td><input type='text' class="st edit-mode" name='attr_moveColumn3Value' value=0 /></td>
                         </tr>
                     </tbody>
                 </table>
-
             </div>
-            <div class="col">
+            <div class="col item w265">
 				<h3 class="category-title">Willpower</h3>
 				<div class="row">
-				    <div class="item 20"></div>
-                    <div class="item 13"></div>
+				    <div class="item w20"></div>
+                    <div class="item w13"></div>
                     <% for (let i = 1; i <= 10; i++) { -%>
-                    <input type='radio' class="dot sheet-edit-mode" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
+                    <input type='radio' class="dot edit-mode" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
                     <% } -%>
-                    <button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
+                    <button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
                 <div class="row">
-                    <div class="item 20"></div>
+                    <div class="item w20"></div>
                     <% for (let i = 0; i <= 10; i++) { -%>
                     <input type='radio' class="mdot<%= i === 0 ? ' zero' : '' %>" name='attr_Temp_Willpower' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
                     <% } -%>
@@ -80,14 +79,14 @@ const movementTypes = [
             <table class="movement-table">
                 <thead>
                     <tr>
-                        <th class="item 140">Name</th>
-                        <th class="item 40">Atk</th>
-                        <th class="item 50">Dice</th>
-                        <th class="item 70">Difficulty</th>
-                        <th class="item 40">Dmg</th>
-                        <th class="item 70">Dice</th>
-                        <th class="item 50">Range</th>
-                        <th class="item 70">Settings</th>
+                        <th class="item w140">Name</th>
+                        <th class="item w40">Atk</th>
+                        <th class="item w50">Dice</th>
+                        <th class="item w70">Difficulty</th>
+                        <th class="item w40">Dmg</th>
+                        <th class="item w70">Dice</th>
+                        <th class="item w50">Range</th>
+                        <th class="item w70">Settings</th>
                     </tr>
                 </thead>
             </table>
@@ -95,14 +94,14 @@ const movementTypes = [
                 <table class="movement-table">
                     <tbody>
                         <tr>
-                            <td class="item 140"><input type='text' class="st sheet-edit-mode" name='attr_wname'/></td>
-                            <td class="item 40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></td>
-                            <td class="item 50"><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></td>
-                            <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdifficulty' /></td>
-                            <td class="item 40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></td>
-                            <td class="item 70"><input type='text' class="hidden" name='attr_wdamtotal' value="0" readonly/><input type='text' class="st" name='attr_wdamdisplay' value="0" readonly/></td>
-                            <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_range'/></td>
-                            <td class="item 70" style="align-content: center;"><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></td>
+                            <td class="item w140"><input type='text' class="st edit-mode" name='attr_wname'/></td>
+                            <td class="item w40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></td>
+                            <td class="item w50"><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></td>
+                            <td class="item w70"><input type='text' class="st edit-mode" name='attr_wdifficulty' /></td>
+                            <td class="item w40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></td>
+                            <td class="item w70"><input type='text' class="hidden" name='attr_wdamtotal' value="0" readonly/><input type='text' class="st" name='attr_wdamdisplay' value="0" readonly/></td>
+                            <td class="item w50"><input type='text' class="st edit-mode" name='attr_range'/></td>
+                            <td class="item w70" style="align-content: center;"><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></td>
                         </tr>
                     </tbody>
                 </table>
@@ -111,52 +110,52 @@ const movementTypes = [
                     <table class="movement-table">
                         <thead>
                             <tr>
-                                <th class="item 100">Skill</th>
-                                <th class="item 70">Accuracy</th>
-                                <th class="item 40">Str</th>
-                                <th class="item 70">Damage</th>
-                                <th class="item 70">Automatic</th>
-                                <th class="item 100">Type</th>
-                                <th class="item 70">Conceal</th>
-                                <th class="item 50">Mass</th>
-                                <th class="item 50">RoF</th>
-                                <th class="item 50">Clip</th>
-                                <th class="item 120">Maneuvers</th>
+                                <th class="item w100">Skill</th>
+                                <th class="item w70">Accuracy</th>
+                                <th class="item w40">Str</th>
+                                <th class="item w70">Damage</th>
+                                <th class="item w70">Automatic</th>
+                                <th class="item w100">Type</th>
+                                <th class="item w70">Conceal</th>
+                                <th class="item w50">Mass</th>
+                                <th class="item w50">RoF</th>
+                                <th class="item w50">Clip</th>
+                                <th class="item w120">Maneuvers</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="item 100">
-                                    <select name='attr_wskill' class='sheet-st sheet-edit-mode'>
+                                <td class="item w100">
+                                    <select name='attr_wskill' class='st edit-mode'>
                                         <% const skills = ['Athletics', 'Archery', 'Brawl', 'Firearms', 'Gunnery', 'Heavy Weapons', 'Martial Arts', 'Melee', 'Throwing']; -%>
                                         <% skills.forEach(skill => { -%>
                                         <option value='<%= skill %>'><%= skill %></option>
                                         <% }); -%>
                                     </select>
                                 </td>
-                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wacc' value="0"/></td>
-                                <td class="item 40"><input type='checkbox' value="1" name='attr_wstr' /></td>
-                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdam' value="0"/></td>
-                                <td class="item 70"><input type='text' class="st sheet-edit-mode" name='attr_wdam_auto' value="0"/></td>
-                                <td class="item 100">
-                                    <select name='attr_wdam_type' class='sheet-st sheet-edit-mode'>
+                                <td class="item w70"><input type='text' class="st edit-mode" name='attr_wacc' value="0"/></td>
+                                <td class="item w40"><input type='checkbox' value="1" name='attr_wstr' /></td>
+                                <td class="item w70"><input type='text' class="st edit-mode" name='attr_wdam' value="0"/></td>
+                                <td class="item w70"><input type='text' class="st edit-mode" name='attr_wdam_auto' value="0"/></td>
+                                <td class="item w100">
+                                    <select name='attr_wdam_type' class='st edit-mode'>
                                         <option value='Bashing'>Bashing</option>
                                         <option value='Lethal'>Lethal</option>
                                         <option value='Aggravated'>Aggravated</option>
                                     </select>
                                 </td>
-                                <td class="item 70">
-                                    <select name='attr_wconceal' class='sheet-st sheet-edit-mode'>
+                                <td class="item w70">
+                                    <select name='attr_wconceal' class='st edit-mode'>
                                         <option value='Pocket'>P</option>
                                         <option value='Jacket'>J</option>
                                         <option value='Trenchcoat'>T</option>
                                         <option value='N/A'>N/A</option>
                                     </select>
                                 </td>
-                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wmass' value="0"/></td>
-                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wrof' value="0"/></td>
-                                <td class="item 50"><input type='text' class="st sheet-edit-mode" name='attr_wclip'value="0"/></td>
-                                <td class="item 120">
+                                <td class="item w50"><input type='text' class="st edit-mode" name='attr_wmass' value="0"/></td>
+                                <td class="item w50"><input type='text' class="st edit-mode" name='attr_wrof' value="0"/></td>
+                                <td class="item w50"><input type='text' class="st edit-mode" name='attr_wclip'value="0"/></td>
+                                <td class="item w120">
                                     <input type='checkbox' class="strike" name='attr_wm_af' value=1 /><span class="strike">Af</span>
                                     <input type='checkbox' class="strike" name='attr_wm_ms' value=1 /><span class="strike">Ms</span>
                                     <input type='checkbox' class="strike" name='attr_wm_sa' value=1 /><span class="strike">Sa</span>

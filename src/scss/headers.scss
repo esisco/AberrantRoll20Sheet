@@ -1,6 +1,6 @@
 /* Header Banner */
 
-.charsheet .sheet-header {
+.ui-dialog .tab-content .charsheet .header {
     height: 100px;
     background-color: #c514a8;
     position: relative;
@@ -10,7 +10,7 @@
     border: 2px solid black;
 }
 
-.charsheet .sheet-header .row {
+.ui-dialog .tab-content .charsheet .header .row {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -20,7 +20,7 @@
     position: relative;
 }
 
-.charsheet .sheet-header img.sheet-character-avatar {
+.ui-dialog .tab-content .charsheet .header img.character-avatar {
     height: 100px;
     width: 100px;
     object-fit: contain;
@@ -30,7 +30,7 @@
     background-color: white;
 }
 
-.charsheet .sheet-header .sheet-character-detail {
+.ui-dialog .tab-content .charsheet .header .character-detail {
     display: inline-block;
     flex: 1;
     text-align: left;
@@ -39,7 +39,7 @@
     font-weight: bold;
 }
 
-.charsheet .sheet-header .sheet-logo-col {
+.ui-dialog .tab-content .charsheet .header .logo-col {
     display: inline-block;
     position: absolute;
     right: 0;
@@ -47,7 +47,7 @@
     max-width: 400px;
 }
 
-.charsheet .sheet-logo {
+.ui-dialog .tab-content .charsheet .logo {
     display: inline-block;
     height: 100px;
     width: auto;

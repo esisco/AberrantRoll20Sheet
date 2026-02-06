@@ -14,43 +14,43 @@ const detailsFields = [
 ];
 
 const characterFieldsRow1 = [
-    { attr: 'Nature', label: 'Nature', className: 'sheet-charNatureInput' },
-    { attr: 'Demeanor', label: 'Demeanor', className: 'sheet-charDemeanorInput' },
-    { attr: 'Archetype', label: 'Archetype', className: 'sheet-charArchetypeInput' }
+    { attr: 'Nature', label: 'Nature', className: 'charNatureInput' },
+    { attr: 'Demeanor', label: 'Demeanor', className: 'charDemeanorInput' },
+    { attr: 'Archetype', label: 'Archetype', className: 'charArchetypeInput' }
 ];
 
 const characterFieldsRow2 = [
-    { attr: 'Virtue', label: 'Virtue', className: 'sheet-charVirtueInput' },
-    { attr: 'Vice', label: 'Vice', className: 'sheet-charViceInput' },
-    { attr: 'Eruption', label: 'Eruption', className: 'sheet-charEruptionInput' }
+    { attr: 'Virtue', label: 'Virtue', className: 'charVirtueInput' },
+    { attr: 'Vice', label: 'Vice', className: 'charViceInput' },
+    { attr: 'Eruption', label: 'Eruption', className: 'charEruptionInput' }
 ];
 -%>
-<div class='sheet-info'>
-    <div class='sheet-grid_details'>
+<div class='info'>
+    <div class='grid_details'>
         <% basicInfoFields.forEach(field => { -%>
-        <div class="grid_item"><input type='text' class='sheet-st sheet-edit-mode' name='attr_<%= field.attr %>' /></div>
+        <div class="grid_item"><input type='text' class='st edit-mode' name='attr_<%= field.attr %>' /></div>
         <% }); -%>
         <% basicInfoFields.forEach(field => { -%>
         <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
         <% }); -%>
     </div>
-    <div class='sheet-grid_details_2'>
+    <div class='grid_details_2'>
         <% detailsFields.forEach(field => { -%>
-        <div class="grid_item"><input class='sheet-st<% if (field.attr !== 'Exp' && field.attr !== 'ExpEarned') { %> sheet-edit-mode<% } %>' type='text' name='attr_<%= field.attr %>'<% if (field.min) { %> min='<%= field.min %>'<% } %><% if (field.value) { %> value="<%= field.value %>"<% } %> /></div>
+        <div class="grid_item"><input class='st<% if (field.attr !== 'Exp' && field.attr !== 'ExpEarned') { %> edit-mode<% } %>' type='text' name='attr_<%= field.attr %>'<% if (field.min) { %> min='<%= field.min %>'<% } %><% if (field.value) { %> value="<%= field.value %>"<% } %> /></div>
         <% }); -%>
         <% detailsFields.forEach(field => { -%>
         <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
         <% }); -%>
     </div>
-    <div class='sheet-grid_details'>
+    <div class='grid_details'>
         <% characterFieldsRow1.forEach(field => { -%>
-        <div class="grid_item"><input class='<%= field.className %> sheet-st sheet-edit-mode' type='text' name='attr_<%= field.attr %>' /></div>
+        <div class="grid_item"><input class='<%= field.className %> st edit-mode' type='text' name='attr_<%= field.attr %>' /></div>
         <% }); -%>
         <% characterFieldsRow1.forEach(field => { -%>
         <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
         <% }); -%>
         <% characterFieldsRow2.forEach(field => { -%>
-        <div class="grid_item"><input class='<%= field.className %> sheet-st sheet-edit-mode' type='text' name='attr_<%= field.attr %>' /></div>
+        <div class="grid_item"><input class='<%= field.className %> st edit-mode' type='text' name='attr_<%= field.attr %>' /></div>
         <% }); -%>
         <% characterFieldsRow2.forEach(field => { -%>
         <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
@@ -75,7 +75,7 @@ const characterFieldsRow2 = [
         <fieldset class='repeating_<%= section.attr %>'>
             <div class="row">
                 <% section.fields.forEach(field => { -%>
-                <div class="item <%= field.width %>"><input type='text' class="st sheet-edit-mode" name='attr_<%= section.attr %><%= field.name %>' placeholder="<%= field.placeholder %>" /></div>
+                <div class="item w<%= field.width %>"><input type='text' class="st edit-mode" name='attr_<%= section.attr %><%= field.name %>' placeholder="<%= field.placeholder %>" /></div>
                 <% }); -%>
             </div>
             <div class="row">
@@ -83,7 +83,7 @@ const characterFieldsRow2 = [
                 <div class="item <%= field.width %> subtitle"><%= field.label %></div>
                 <% }); -%>
             </div>
-            <textarea class="textarea_1 sheet-edit-mode" name='attr_<%= section.attr %>Notes' placeholder='Notes'></textarea>
+            <textarea class="textarea_1 edit-mode" name='attr_<%= section.attr %>Notes' placeholder='Notes'></textarea>
         </fieldset>
         <% }); -%>
     </div>

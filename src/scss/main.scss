@@ -14,27 +14,27 @@
     background-size: cover;
 }
 
-.charsheet {
+.ui-dialog .tab-content .charsheet {
     @include rays(#fcdf78d4, #faeba2);
 }
 
 /* Columns */
-.sheet-col {
+.ui-dialog .tab-content .charsheet .col {
     width: 265px;
 }
 
-.sheet-dual_col .sheet-col {
+.ui-dialog .tab-content .charsheet .dual_col .col {
     width: 400px;
 }
 
 /* Rows and Items */
-.charsheet .sheet-wrapper .sheet-row {
+.ui-dialog .tab-content .charsheet .wrapper .row {
     height: 24px;
     margin: 0 0 2px;
     position: relative;
 }
 
-.charsheet .sheet-wrapper .sheet-item {
+.ui-dialog .tab-content .charsheet .wrapper .item {
     display: inline-block;
     height: 28px;
     vertical-align: middle;
@@ -42,39 +42,37 @@
     text-align: left;
     padding: 3px 2px;
 }
-.charsheet .sheet-wrapper .sheet-item.sheet-620 { width: 620px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-430 { width: 430px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-375 { width: 375px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-250 { width: 250px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-200 { width: 200px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-190 { width: 190px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-180 { width: 180px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-160 { width: 160px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-150 { width: 150px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-140 { width: 140px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-130 { width: 130px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-120 { width: 120px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-110 { width: 110px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-103 { width: 103px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-100 { width: 100px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-98 { width: 98px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-95 { width: 95px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-90 { width: 90px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-75 { width: 75px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-70 { width: 70px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-50 { width: 50px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-40 { width: 40px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-25 { width: 25px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-24 { width: 24px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-20 { width: 20px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-13 { width: 13px; }
-.charsheet .sheet-wrapper .sheet-item.sheet-5 { width: 5px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w620 { width: 620px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w430 { width: 430px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w375 { width: 375px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w265 { width: 265px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w250 { width: 250px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w200 { width: 200px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w190 { width: 190px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w180 { width: 180px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w160 { width: 160px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w150 { width: 150px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w140 { width: 140px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w130 { width: 130px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w120 { width: 120px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w110 { width: 110px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w100 { width: 100px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w90 { width: 90px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w75 { width: 75px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w70 { width: 70px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w50 { width: 50px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w40 { width: 40px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w25 { width: 25px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w24 { width: 24px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w20 { width: 20px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w13 { width: 13px; }
+.ui-dialog .tab-content .charsheet .wrapper .item.w5 { width: 5px; }
 
-.charsheet .sheet-wrapper .sheet-item .sheet-st {
+.ui-dialog .tab-content .charsheet .wrapper .item .st {
     width: 100%;
 }
-input.sheet-st,
-select.sheet-st {
+.ui-dialog .tab-content .charsheet input.st,
+.ui-dialog .tab-content .charsheet select.st {
     width: 100%;
     height: 23px;
     background: transparent;
@@ -85,7 +83,7 @@ select.sheet-st {
     border-top: none;
 }
 
-input.sheet-total {
+.ui-dialog .tab-content .charsheet input.total {
     width: 20px;
     height: 20px;
     background: transparent;
@@ -98,7 +96,7 @@ input.sheet-total {
     text-align: center;
 }
 
-input.sheet-specialty {
+.ui-dialog .tab-content .charsheet input.specialty {
     width: 100%;
     height: 23px;
     background: transparent;
@@ -110,7 +108,7 @@ input.sheet-specialty {
     font-style: italic;
 }
 
-input.sheet-repeating {
+.ui-dialog .tab-content .charsheet input.repeating {
     width: 100%;
     height: 23px;
     background: transparent;
@@ -122,12 +120,12 @@ input.sheet-repeating {
 }
 
 /* Movement table header styling */
-.charsheet .sheet-movement-table {
+.ui-dialog .tab-content .charsheet .movement-table {
     border-collapse: collapse;
     width: 100%;
 }
 
-.charsheet .sheet-movement-table th {
+.ui-dialog .tab-content .charsheet .movement-table th {
     text-align: center;
     padding: 2px;
     font-weight: bold;
@@ -137,18 +135,18 @@ input.sheet-repeating {
     vertical-align: middle;
 }
 
-.charsheet .sheet-movement-table td {
+.ui-dialog .tab-content .charsheet .movement-table td {
     text-align: center;
     padding: 2px;
 }
 
-h2 {
+.ui-dialog .tab-content .charsheet h2 {
     font-weight: bold;
     font-variant: small-caps;
     text-align: center;
 }
 
-.sheet-label {
+.ui-dialog .tab-content .charsheet .label {
     color: darkred;
     font-variant: small-caps;
     white-space: nowrap;
@@ -156,26 +154,26 @@ h2 {
     font-size: 11px;
 }
 
-.sheet-subtitle {
+.ui-dialog .tab-content .charsheet .subtitle {
     font-weight: bold;
     color: darkred;
     font-variant: small-caps;
     font-size: 11px;
 }
 
-.sheet-title {
+.ui-dialog .tab-content .charsheet .title {
     font-weight: bold;
     color: darkred;
     font-variant: small-caps;
 }
 
-h1.sheet-title {
+.ui-dialog .tab-content .charsheet h1.title {
     background-image: url("https://raw.githubusercontent.com/AndrewHolder/roll20-character-sheets-Testing/831c3fc33fdd10ee5e4d64db31eb7c64f7947420/AEON-Aberrant/AberrantLogo.png");
     background-size: auto;
     margin: 0 auto;
     text-indent: -10000px;
 }
-textarea.sheet-textarea_1 {
+.ui-dialog .tab-content .charsheet textarea.textarea_1 {
     width: 96%;
     border-radius: 5px;
     background: white;
@@ -183,7 +181,7 @@ textarea.sheet-textarea_1 {
     height: 24px;
 }
 
-textarea.sheet-textarea_2 {
+.ui-dialog .tab-content .charsheet textarea.textarea_2 {
     width: 96%;
     border-radius: 5px;
     background: white;
@@ -191,8 +189,8 @@ textarea.sheet-textarea_2 {
     height: 220px;
 }
 
-input.sheet-select_wound,
-select.sheet-select_wound {
+.ui-dialog .tab-content .charsheet input.select_wound,
+.ui-dialog .tab-content .charsheet select.select_wound {
     width: 100%;
     height: 23px;
     background: transparent;
@@ -203,49 +201,49 @@ select.sheet-select_wound {
     border-top: none;
 }
 
-.sheet-hidden {
+.ui-dialog .tab-content .charsheet .hidden {
     display: none;
 }
 
 
 /* Grid Layout */
-div.sheet-grid_details {
+.ui-dialog .tab-content .charsheet div.grid_details {
     display: grid;
     grid-template-columns: 250px 250px 250px;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
 }
 
-div.sheet-grid_details_2 {
+.ui-dialog .tab-content .charsheet div.grid_details_2 {
     display: grid;
     grid-template-columns: 120px 125px 250px 250px;
     grid-column-gap: 5px;
     grid-row-gap: 5px;
 }
 
-div.sheet-grid_item {
+.ui-dialog .tab-content .charsheet div.grid_item {
     padding: 2px;
     height: 24px;
 }
 
-div.sheet-subtitle {
+.ui-dialog .tab-content .charsheet div.subtitle {
     font-size: 10px;
     font-style: italic;
     align-self: start;
 }
 
-.sheet-grid_item_a {
+.ui-dialog .tab-content .charsheet .grid_item_a {
     grid-column: span 2;
 }
 
 /* End of Grid Layout */
-input.sheet-hider:checked ~ div.sheet-hold {
+.ui-dialog .tab-content .charsheet input.hider:checked ~ div.hold {
     display: none;
 }
 
 /* Custom Radio Buttons */
-input.sheet-mdot[type="radio"],
-input.sheet-dot[type="radio"] {
+.ui-dialog .tab-content .charsheet input.mdot[type="radio"],
+.ui-dialog .tab-content .charsheet input.dot[type="radio"] {
     opacity: 0;
     width: 16px;
     height: 16px;
@@ -257,7 +255,7 @@ input.sheet-dot[type="radio"] {
     z-index: 1;
 }
 
-input.sheet-dot[type="radio"] + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type="radio"] + span::before {
     margin-right: 4px;
     border: solid 1px #a8a8a8;
     line-height: 14px;
@@ -275,7 +273,7 @@ input.sheet-dot[type="radio"] + span::before {
 
 /* Temporary Dots */
 
-input.sheet-dot[type="radio"].temporary + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type="radio"].temporary + span::before {
     margin-right: 4px;
     border: solid 1px #a8a8a8;
     line-height: 14px;
@@ -291,12 +289,12 @@ input.sheet-dot[type="radio"].temporary + span::before {
     border-radius: 50%;
 }
 
-input.sheet-dot[type="radio"]:checked ~ input.sheet-dot[type="radio"] + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type="radio"]:checked ~ input.dot[type="radio"] + span::before {
     content: "";
     background: radial-gradient(#f6f6f6, #dfdfdf);
 }
 
-input.sheet-mdot[type="radio"] + span::before {
+.ui-dialog .tab-content .charsheet input.mdot[type="radio"] + span::before {
     margin-right: 4px;
     border: solid 1px #a8a8a8;
     line-height: 14px;
@@ -312,22 +310,22 @@ input.sheet-mdot[type="radio"] + span::before {
     border-radius: 10%;
 }
 
-input.sheet-mdot[type="radio"]:checked ~ input.sheet-mdot[type="radio"] + span::before {
+.ui-dialog .tab-content .charsheet input.mdot[type="radio"]:checked ~ input.mdot[type="radio"] + span::before {
     content: "";
     background: radial-gradient(#f6f6f6, #dfdfdf);
 }
 
 /* Empty Traits */
-input.sheet-zero[type="radio"]:checked + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type="radio"]:checked + span::before {
     opacity: 0;
 }
 
-input.sheet-zero[type="radio"]:hover + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type="radio"]:hover + span::before {
     opacity: 1;
     background: transparent;
 }
 
-input.sheet-zero[type="radio"] + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type="radio"] + span::before {
     font-size: 12px;
     content: "✖";
     opacity: 0.25;
@@ -338,7 +336,7 @@ input.sheet-zero[type="radio"] + span::before {
     font-weight: bold;
 }
 /* Gear Checkbox */
-input.sheet-gear[type="checkbox"] {
+.ui-dialog .tab-content .charsheet input.gear[type="checkbox"] {
     position: relative;
     top: 5px;
     left: 6px;
@@ -350,7 +348,7 @@ input.sheet-gear[type="checkbox"] {
     z-index: 1;
 }
 
-input.sheet-gear[type="checkbox"] + span::before {
+.ui-dialog .tab-content .charsheet input.gear[type="checkbox"] + span::before {
     position: relative;
     top: 4px;
     left: 0;
@@ -371,11 +369,11 @@ input.sheet-gear[type="checkbox"] + span::before {
     border-radius: 3px;
 }
 
-input.sheet-gear[type="checkbox"]:checked + span::before {
+.ui-dialog .tab-content .charsheet input.gear[type="checkbox"]:checked + span::before {
     color: gray;
 }
 /* Strike Checkbox */
-input.sheet-strike[type="checkbox"] {
+.ui-dialog .tab-content .charsheet input.strike[type="checkbox"] {
     opacity: 0;
     width: 15px;
     position: relative;
@@ -386,7 +384,7 @@ input.sheet-strike[type="checkbox"] {
     z-index: 1;
 }
 
-input.sheet-strike[type="checkbox"]::before + span::before {
+.ui-dialog .tab-content .charsheet input.strike[type="checkbox"]::before + span::before {
     margin-right: 4px;
     margin-left: 0;
     line-height: 14px;
@@ -399,7 +397,7 @@ input.sheet-strike[type="checkbox"]::before + span::before {
     position: relative;
 }
 
-span.sheet-strike {
+.ui-dialog .tab-content .charsheet span.strike {
     position: relative;
     left: -10px;
     width: 20px;
@@ -409,14 +407,14 @@ span.sheet-strike {
     font-weight: bold;
 }
 
-input.sheet-strike[type="checkbox"]:checked + span {
+.ui-dialog .tab-content .charsheet input.strike[type="checkbox"]:checked + span {
     color: red;
     text-shadow: none;
     text-decoration: none;
 }
 
 /* Skill Open/Close Toggle */
-input.sheet-skill_open[type="checkbox"] {
+.ui-dialog .tab-content .charsheet input.skill_open[type="checkbox"] {
     position: relative;
     top: 5px;
     left: 6px;
@@ -428,7 +426,7 @@ input.sheet-skill_open[type="checkbox"] {
     z-index: 1;
 }
 
-input.sheet-skill_open[type="checkbox"] + span::before {
+.ui-dialog .tab-content .charsheet input.skill_open[type="checkbox"] + span::before {
     position: relative;
     top: -14px;
     left: -4px;
@@ -447,11 +445,11 @@ input.sheet-skill_open[type="checkbox"] + span::before {
     font-size: 12px;
 }
 
-input.sheet-skill_open[type="checkbox"]:checked + span::before {
+.ui-dialog .tab-content .charsheet input.skill_open[type="checkbox"]:checked + span::before {
     content: "▶ Abilities";
 }
 
-h3.sheet-category-title {
+.ui-dialog .tab-content .charsheet h3.category-title {
     font-variant: small-caps;
     text-align: center;
     color: black;

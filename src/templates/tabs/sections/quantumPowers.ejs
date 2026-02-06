@@ -8,17 +8,17 @@ const quantumPowerRefs = [
     { name: 'Biomanipulation', level: 3, quantum: 6, source: 'Worldwide Phase I pg. 113' },
     { name: 'Bodymorph', level: 2, quantum: 3, source: 'Aberrant pg. 185' },
     { name: 'Boost', level: 2, quantum: 2, source: 'Aberrant pg. 186' },
-    { name: 'Bounce', level: 2, quantum: 1, source: 'Project Utopia pg. 140' },
+    { name: 'Bounce', level: 2, quantum: 1, source: 'Project Utopia pg. w140' },
     { name: 'Chimeric Aberration', level: 2, quantum: 3, source: 'Teragen pg. 126' },
     { name: 'Claws', level: 1, quantum: 1, source: 'Aberrant pg. 186' },
-    { name: 'Clone', level: 3, quantum: 5, source: 'Players Guide pg. 110' },
+    { name: 'Clone', level: 3, quantum: 5, source: 'Players Guide pg. w110' },
     { name: 'Cyberkinesis', level: 3, quantum: 4, source: 'Aberrant pg. 187' },
     { name: 'Deflect/Redirect', level: 1, quantum: 1, source: 'Teragen pg. 126' },
     { name: 'Density Control', level: 2, quantum: 3, source: 'Aberrant pg. 189' },
     { name: 'Disimmunize', level: 2, quantum: 3, source: 'Teragen pg. 127' },
-    { name: 'Disintegration', level: 3, quantum: 5, source: 'Aberrant pg. 190' },
-    { name: 'Disorient', level: 2, quantum: 1, source: 'Aberrant pg. 190' },
-    { name: 'Disrupt', level: 2, quantum: 3, source: 'Aberrant pg. 190' },
+    { name: 'Disintegration', level: 3, quantum: 5, source: 'Aberrant pg. w190' },
+    { name: 'Disorient', level: 2, quantum: 1, source: 'Aberrant pg. w190' },
+    { name: 'Disrupt', level: 2, quantum: 3, source: 'Aberrant pg. w190' },
     { name: 'Domination', level: 2, quantum: 3, source: 'Aberrant pg. 191' },
     { name: 'Elemental Anima', level: 3, quantum: 4, source: 'Aberrant pg. 192' },
     { name: 'Elemental Mastery', level: 3, quantum: 5, source: 'Aberrant pg. 194' },
@@ -81,25 +81,25 @@ const quantumPowerRefs = [
             <div class="col">
 				<h3 class="category-title">Quantum Powers</h3>
                 <!-- Power selector - only visible in edit mode, outside repeating section -->
-                <div class="row sheet-edit-mode">
-                    <div class="item 180">
-                        <select name='attr_power_selector' class="st sheet-edit-mode-only">
+                <div class="row edit-mode">
+                    <div class="item w180">
+                        <select name='attr_power_selector' class="st edit-mode-only">
                             <option value="">Select a power to add...</option>
                             <% quantumPowerRefs.forEach(power => { -%>
                                 <option value="<%= power.name %>"><%= power.name %> (<%= power.source %>)</option>
                             <% }); -%>
                         </select>
                     </div>
-                    <div class="item 100">
-                        <button type='action' name='act_add_quantum_power' class="st sheet-edit-mode">Add Power</button>
+                    <div class="item w100">
+                        <button type='action' name='act_add_quantum_power' class="st edit-mode">Add Power</button>
                     </div>
                 </div>
 				<fieldset class='repeating_Powers'>
                     <div class="row">
-                        <div class="item 20"><button type='roll' class='sheet-background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
-                        <div class="item 5"></div>
-                        <div class="item 150"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
-                        <div class="item 180">
+                        <div class="item w20"><button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
+                        <div class="item w5"></div>
+                        <div class="item w150"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
+                        <div class="item w180">
 							<input type='radio' class="dot zero edit-mode" name='attr_rPower' value=1 checked /><span></span>
 							<input type='radio' class="dot edit-mode" name='attr_rPower' value=2 /><span></span>
 							<input type='radio' class="dot edit-mode" name='attr_rPower' value=3 /><span></span>
@@ -113,44 +113,44 @@ const quantumPowerRefs = [
                         </div>
                     </div>
                     <div class="row">
-                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
-                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rPowerSource' placeholder='Sourcebook & page' /></div>
+                        <div class="item w50"><input type='text' class="st edit-mode" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
+                        <div class="item w250"><input type='text' class="st edit-mode" name='attr_rPowerSource' placeholder='Sourcebook & page' /></div>
                     </div>
                     <div class="row">
-                        <div class="item 50 subtitle">Level</div>
-                        <div class="item 250 subtitle">Sourcebook</div>
+                        <div class="item w50 subtitle">Level</div>
+                        <div class="item w250 subtitle">Sourcebook</div>
                     </div>
                     <div class="row">
-                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rExtraName' value="" /></div>
-                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rMasteryp' value=0 min=0 /></div>
+                        <div class="item w250"><input type='text' class="st edit-mode" name='attr_rExtraName' value="" /></div>
+                        <div class="item w50"><input type='text' class="st edit-mode" name='attr_rMasteryp' value=0 min=0 /></div>
                     </div>
                     <div class="row">
-                        <div class="item 250 subtitle">Extras</div>
-                        <div class="item 50 subtitle">Mastery</div>
+                        <div class="item w250 subtitle">Extras</div>
+                        <div class="item w50 subtitle">Mastery</div>
                     </div>
                     <div class="row">
-                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rPowerTechniques' value="" /></div>
-                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rDicePoolp' value=0 min=0 /></div>
+                        <div class="item w250"><input type='text' class="st edit-mode" name='attr_rPowerTechniques' value="" /></div>
+                        <div class="item w50"><input type='text' class="st edit-mode" name='attr_rDicePoolp' value=0 min=0 /></div>
                     </div>
                     <div class="row">
-                        <div class="item 250 subtitle">Techniques</div>
-                        <div class="item 50 subtitle">Dice Pool</div>
+                        <div class="item w250 subtitle">Techniques</div>
+                        <div class="item w50 subtitle">Dice Pool</div>
                     </div>
                     <div class="row">
-                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rRangep' value="" /></div>
-                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rAreaNotes' value="" /></div>
+                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rRangep' value="" /></div>
+                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rAreaNotes' value="" /></div>
                     </div>
                     <div class="row">
-                        <div class="item 180 subtitle">Range</div>
-                        <div class="item 180 subtitle">Area</div>
+                        <div class="item w180 subtitle">Range</div>
+                        <div class="item w180 subtitle">Area</div>
                     </div>
                     <div class="row">
-                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rWeakNotes' value="" /></div>
-                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rStrengthNotes' value="" /></div>
+                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rWeakNotes' value="" /></div>
+                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rStrengthNotes' value="" /></div>
                     </div>
                     <div class="row">
-                        <div class="item 180 subtitle">Weaknesses</div>
-                        <div class="item 180 subtitle">Strengths</div>
+                        <div class="item w180 subtitle">Weaknesses</div>
+                        <div class="item w180 subtitle">Strengths</div>
                     </div>
                     <textarea class="textarea_1" name='attr_rPowerNotes' placeholder='Notes'></textarea>
 				</fieldset>

@@ -1,37 +1,39 @@
 /* Buttons */
-button {
-    border-radius: 5px;
-}
+.ui-dialog .tab-content .charsheet {
+    button {
+        border-radius: 5px;
+    }
 
-button[type=roll].sheet-background::before,
-button[type=roll].sheet-grid_btn::before,
-button[type=action].sheet-d10-dice::before {
-    font-family: 'dicefontd10';
-    content: '0 ';
-    font-weight: bold;
-    font-size: large;
-}
+    button[type=roll].background::before,
+    button[type=roll].grid_btn::before,
+    button[type=action].d10-dice::before {
+        font-family: 'dicefontd10';
+        content: '0 ';
+        font-weight: bold;
+        font-size: large;
+    }
 
-.sheet-grid_btn,
-.sheet-d10-dice {
-    height: 20px;
-    width: 20px;
-    color: black;
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
-    margin-left: auto;
-}
+    .grid_btn,
+    .d10-dice {
+        height: 20px;
+        width: 20px;
+        color: black;
+        background: radial-gradient(#f6f6f6, #dfdfdf);
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0;
+        margin-left: auto;
+    }
 
-.sheet-background {
-    height: 16px;
-    width: 16px;
-    color: black;
-    background: radial-gradient(#f6f6f6, #dfdfdf);
-    font-weight: bold;
-    border-radius: 5px;
-    padding: 0;
-    margin: 0;
+    .background {
+        height: 16px;
+        width: 16px;
+        color: black;
+        background: radial-gradient(#f6f6f6, #dfdfdf);
+        font-weight: bold;
+        border-radius: 5px;
+        padding: 0;
+        margin: 0;
+    }
 }
