@@ -30,9 +30,8 @@
     </div>
 
         <div class='abilities'>
-		<h2>Attributes and Abilities</h2>
-		<!-- Attributes and Abilities -->
-		<div>
+        <h2>Attributes and Abilities</h2>
+        <div class="grid-3column">
     		<div class="col">
     		    <h3 class="category-title">Physical</h3>
                 <div class="row">
@@ -59,7 +58,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Strength' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Strength"></button>
                 </div>
-                <!-- Strength Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-str" checked/><span></span>
                     <div class="hold">
@@ -147,7 +145,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Dexterity' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Dexterity"></button>
                 </div>
-                <!-- Dexterity Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-dex" checked/><span></span>
                     <div class="hold">
@@ -361,7 +358,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Stamina' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Stamina"></button>
                 </div>
-                <!-- Stamina Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-sta" checked/><span></span>
                     <div class="hold">
@@ -438,7 +434,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Perception' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Perception"></button>
                 </div>
-                <!-- Perception Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-per" checked/><span></span>
                     <div class="hold">
@@ -540,7 +535,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Intelligence' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Intelligence"></button>
                 </div>
-                <!-- Intelligence Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-int" checked/><span></span>
                     <div class="hold">
@@ -796,7 +790,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Wits' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Wits"></button>
                 </div>
-                <!-- Wits Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-wit" checked/><span></span>
                     <div class="hold">
@@ -943,7 +936,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Charisma' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Charisma"></button>
                 </div>
-                <!-- Charisma Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-cha" checked/><span></span>
                     <div class="hold">
@@ -1073,7 +1065,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Manipulation' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Manipulation"></button>
                 </div>
-                <!-- Manipulation Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-man" checked/><span></span>
                     <div class="hold">
@@ -1203,7 +1194,6 @@
                     <input type='radio' class="mdot edit-mode" name='attr_Mega_Appearance' value=5 /><span></span>
                     <button type="action" class="d10-dice grid_btn" name="act_roll_Mega_Appearance"></button>
                 </div>
-                <!-- Appearance Abilities -->
                 <div>
                     <input type="checkbox" class="skill_open hider" name="attr_skill_open-app" checked/><span></span>
                     <div class="hold">
@@ -1270,7 +1260,7 @@
             </div>
         </div>
         <h2>Enhancements</h2>
-        <div class='enhancements'>
+        <div class='grid-3column'>
             <div class="col">
     		    <h4 class="title">Mega Strength Enhancements</h4>
 				<fieldset class='repeating_strengthenhancements'>
@@ -1346,7 +1336,7 @@
 
     	<div class='quantum'>
         <h2>Quantum Powers</h2>	
-        <div class="dual_col">
+        <div class="grid-2column">
             
             <div class="col">
 				<h3 class="category-title">Quantum Powers</h3>
@@ -1596,7 +1586,7 @@
 				</fieldset>
             </div>
         </div>
-        <div class="row">
+        <div class="grid-1column">
             <h2>Quantum Pool</h2>
             <div class="row">
                     <input type='radio' class="dot edit-mode" name='attr_Quantum_pool_max' value=1 /><span></span>
@@ -1709,11 +1699,9 @@
                     <input type='radio' class="mdot" name='attr_Quantum_pool' value=45 /><span></span>
             </div>
         </div>
-        <br/>
-        <br/>
-        <br/>
 	</div>
     	<div class='combat'>
+        <div class="grid-3column">
             <div class="col item w160">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
@@ -1796,7 +1784,8 @@
                                         <input type='radio' class="mdot" name='attr_Temp_Willpower' value=10 /><span></span>
                                     </div>
             </div>
-        <div>
+        </div>
+        <div grid class="grid-1column">
 			<h2>Attacks</h2>
             <table class="movement-table">
                 <thead>
@@ -1897,7 +1886,7 @@
         </div>
                 <div class='health'>
 			<h2>Health</h2>
-    		<div class="dual_col">
+    		<div class="grid-2column">
                 <div class="col">
 				    <h3 class="category-title">Soak</h3>
                     <table class="movement-table">
@@ -2301,7 +2290,8 @@
                 <div class="grid_item"><div class="subtitle">Vice</div></div>
                 <div class="grid_item"><div class="subtitle">Eruption</div></div>
             </div>
-        <div class="col">
+    <div class="grid-3column">
+            <div class="col">
         <h3 class="category-title">Backgrounds</h3>
                 <div class="row">
             <div class="item w100 label"><span title="Aberrant, pg. 139; Players Guide, pg. 76">Allies</span></div>
@@ -2566,40 +2556,42 @@
             </div>
         </fieldset>
     </div>
+                <div class="col">
+                        <h3 class="category-title">Merits</h3>
+            <fieldset class='repeating_rMerit'>
+                <div class="row">
+                                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rMeritName' placeholder="Merit" /></div>
+                                        <div class="item w50"><input type='text' class="st edit-mode" name='attr_rMeritValue' placeholder="Value" /></div>
+                                    </div>
+                <div class="row">
+                                        <div class="item 180 subtitle">Merit</div>
+                                        <div class="item 50 subtitle">Value</div>
+                                    </div>
+                <textarea class="textarea_1 edit-mode" name='attr_rMeritNotes' placeholder='Notes'></textarea>
+            </fieldset>
+                        <h3 class="category-title">Flaws</h3>
+            <fieldset class='repeating_rFlaw'>
+                <div class="row">
+                                        <div class="item w180"><input type='text' class="st edit-mode" name='attr_rFlawName' placeholder="Flaw" /></div>
+                                        <div class="item w50"><input type='text' class="st edit-mode" name='attr_rFlawValue' placeholder="Value" /></div>
+                                    </div>
+                <div class="row">
+                                        <div class="item 180 subtitle">Flaw</div>
+                                        <div class="item 50 subtitle">Value</div>
+                                    </div>
+                <textarea class="textarea_1 edit-mode" name='attr_rFlawNotes' placeholder='Notes'></textarea>
+            </fieldset>
+                    </div>
         <div class="col">
-                <h3 class="category-title">Merits</h3>
-        <fieldset class='repeating_rMerit'>
-            <div class="row">
-                                <div class="item w180"><input type='text' class="st edit-mode" name='attr_rMeritName' placeholder="Merit" /></div>
-                                <div class="item w50"><input type='text' class="st edit-mode" name='attr_rMeritValue' placeholder="Value" /></div>
-                            </div>
-            <div class="row">
-                                <div class="item 180 subtitle">Merit</div>
-                                <div class="item 50 subtitle">Value</div>
-                            </div>
-            <textarea class="textarea_1 edit-mode" name='attr_rMeritNotes' placeholder='Notes'></textarea>
-        </fieldset>
-                <h3 class="category-title">Flaws</h3>
-        <fieldset class='repeating_rFlaw'>
-            <div class="row">
-                                <div class="item w180"><input type='text' class="st edit-mode" name='attr_rFlawName' placeholder="Flaw" /></div>
-                                <div class="item w50"><input type='text' class="st edit-mode" name='attr_rFlawValue' placeholder="Value" /></div>
-                            </div>
-            <div class="row">
-                                <div class="item 180 subtitle">Flaw</div>
-                                <div class="item 50 subtitle">Value</div>
-                            </div>
-            <textarea class="textarea_1 edit-mode" name='attr_rFlawNotes' placeholder='Notes'></textarea>
-        </fieldset>
-            </div>
-    <div class="col">
-        <h3 class="category-title">General Notes</h3>
-        <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+            <h3 class="category-title">General Notes</h3>
+            <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+        </div>
     </div>
 </div>
 
     	<div class='help'>
 		<h2>Help</h2>
+		<div class="grid-3column">
 		<div class="col">
 			<h3>Getting Started</h3>
 			<p>Welcome to the Aberrant Character Sheet. This help section will guide you through using the sheet.</p>
@@ -2632,7 +2624,9 @@
             <h4>Display Chrysalis</h4>
             <p>Enable this option in the config tab to show Chrysalis-related fields on the sheet.</p>
         </div>
-			<h2>Character Creation and Advancement</h2>
+		</div>
+		<h2>Character Creation and Advancement</h2>
+		<div class="grid-3column">
 		<div class="col">
 			
 			<h3>Phase One: Human</h3>
@@ -2885,10 +2879,12 @@
 				<p class="footnote"><strong>Note:</strong> A level of Quantum, Mega-Attribute, enhancement or quantum power can be bought tainted for half cost (rounded up); however, the nova immediately acquires a permanent Taint point, along with all the associated negative effects.</p>
 			</div>
 		</div>
+		</div>
 	</div>
 
         <div class='config'>
 		<h2>Configuration</h2>
+        <div class="grid-2column">
 		<div class="col">
 			<h3>Sheet Configuration</h3>
 			<p>Configure your character sheet preferences and settings here.</p>
@@ -2974,6 +2970,7 @@
             </div>
         </div>
 	</div>
+    </div>
 
 </div>
 

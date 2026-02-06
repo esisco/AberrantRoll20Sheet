@@ -56,39 +56,41 @@ const characterFieldsRow2 = [
         <div class="grid_item"><div class="subtitle"><%= field.label %></div></div>
         <% }); -%>
     </div>
-    <%- include('sections/backgrounds.ejs') -%>
-    <% 
-    const repeatingFields = [
-        { section: 'Merits', attr: 'rMerit', fields: [
-            { name: 'Name', label: 'Merit', width: 180, placeholder: 'Merit' },
-            { name: 'Value', label: 'Value', width: 50, placeholder: 'Value' }
-        ]},
-        { section: 'Flaws', attr: 'rFlaw', fields: [
-            { name: 'Name', label: 'Flaw', width: 180, placeholder: 'Flaw' },
-            { name: 'Value', label: 'Value', width: 50, placeholder: 'Value' }
-        ]}
-    ];
-    -%>
-    <div class="col">
-        <% repeatingFields.forEach(section => { -%>
-        <h3 class="category-title"><%= section.section %></h3>
-        <fieldset class='repeating_<%= section.attr %>'>
-            <div class="row">
-                <% section.fields.forEach(field => { -%>
-                <div class="item w<%= field.width %>"><input type='text' class="st edit-mode" name='attr_<%= section.attr %><%= field.name %>' placeholder="<%= field.placeholder %>" /></div>
-                <% }); -%>
-            </div>
-            <div class="row">
-                <% section.fields.forEach(field => { -%>
-                <div class="item <%= field.width %> subtitle"><%= field.label %></div>
-                <% }); -%>
-            </div>
-            <textarea class="textarea_1 edit-mode" name='attr_<%= section.attr %>Notes' placeholder='Notes'></textarea>
-        </fieldset>
-        <% }); -%>
-    </div>
-    <div class="col">
-        <h3 class="category-title">General Notes</h3>
-        <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+    <div class="grid-3column">
+        <%- include('sections/backgrounds.ejs') -%>
+        <% 
+        const repeatingFields = [
+            { section: 'Merits', attr: 'rMerit', fields: [
+                { name: 'Name', label: 'Merit', width: 180, placeholder: 'Merit' },
+                { name: 'Value', label: 'Value', width: 50, placeholder: 'Value' }
+            ]},
+            { section: 'Flaws', attr: 'rFlaw', fields: [
+                { name: 'Name', label: 'Flaw', width: 180, placeholder: 'Flaw' },
+                { name: 'Value', label: 'Value', width: 50, placeholder: 'Value' }
+            ]}
+        ];
+        -%>
+        <div class="col">
+            <% repeatingFields.forEach(section => { -%>
+            <h3 class="category-title"><%= section.section %></h3>
+            <fieldset class='repeating_<%= section.attr %>'>
+                <div class="row">
+                    <% section.fields.forEach(field => { -%>
+                    <div class="item w<%= field.width %>"><input type='text' class="st edit-mode" name='attr_<%= section.attr %><%= field.name %>' placeholder="<%= field.placeholder %>" /></div>
+                    <% }); -%>
+                </div>
+                <div class="row">
+                    <% section.fields.forEach(field => { -%>
+                    <div class="item <%= field.width %> subtitle"><%= field.label %></div>
+                    <% }); -%>
+                </div>
+                <textarea class="textarea_1 edit-mode" name='attr_<%= section.attr %>Notes' placeholder='Notes'></textarea>
+            </fieldset>
+            <% }); -%>
+        </div>
+        <div class="col">
+            <h3 class="category-title">General Notes</h3>
+            <textarea class="textarea_2" name='attr_MiscNotes' placeholder='General Notes'></textarea>
+        </div>
     </div>
 </div>

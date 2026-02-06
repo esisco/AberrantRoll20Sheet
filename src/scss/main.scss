@@ -20,7 +20,11 @@
 
 /* Columns */
 .ui-dialog .tab-content .charsheet .col {
-    width: 265px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    max-width: 300px;
+    min-width: 200px;
 }
 
 .ui-dialog .tab-content .charsheet .dual_col .col {
@@ -205,38 +209,6 @@
     display: none;
 }
 
-
-/* Grid Layout */
-.ui-dialog .tab-content .charsheet div.grid_details {
-    display: grid;
-    grid-template-columns: 250px 250px 250px;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-
-.ui-dialog .tab-content .charsheet div.grid_details_2 {
-    display: grid;
-    grid-template-columns: 120px 125px 250px 250px;
-    grid-column-gap: 5px;
-    grid-row-gap: 5px;
-}
-
-.ui-dialog .tab-content .charsheet div.grid_item {
-    padding: 2px;
-    height: 24px;
-}
-
-.ui-dialog .tab-content .charsheet div.subtitle {
-    font-size: 10px;
-    font-style: italic;
-    align-self: start;
-}
-
-.ui-dialog .tab-content .charsheet .grid_item_a {
-    grid-column: span 2;
-}
-
-/* End of Grid Layout */
 .ui-dialog .tab-content .charsheet input.hider:checked ~ div.hold {
     display: none;
 }

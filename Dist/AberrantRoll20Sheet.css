@@ -8,7 +8,11 @@
 
 /* Columns */
 .ui-dialog .tab-content .charsheet .col {
-  width: 265px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 300px;
+  min-width: 250px;
 }
 
 .ui-dialog .tab-content .charsheet .dual_col .col {
@@ -270,37 +274,6 @@
   display: none;
 }
 
-/* Grid Layout */
-.ui-dialog .tab-content .charsheet div.grid_details {
-  display: grid;
-  grid-template-columns: 250px 250px 250px;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-}
-
-.ui-dialog .tab-content .charsheet div.grid_details_2 {
-  display: grid;
-  grid-template-columns: 120px 125px 250px 250px;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-}
-
-.ui-dialog .tab-content .charsheet div.grid_item {
-  padding: 2px;
-  height: 24px;
-}
-
-.ui-dialog .tab-content .charsheet div.subtitle {
-  font-size: 10px;
-  font-style: italic;
-  align-self: start;
-}
-
-.ui-dialog .tab-content .charsheet .grid_item_a {
-  grid-column: span 2;
-}
-
-/* End of Grid Layout */
 .ui-dialog .tab-content .charsheet input.hider:checked ~ div.hold {
   display: none;
 }
@@ -995,4 +968,71 @@
 .ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * button.edit-mode[type=action] {
   pointer-events: auto !important;
   cursor: pointer !important;
+}
+
+.ui-dialog .tab-content .charsheet .grid-1column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.ui-dialog .tab-content .charsheet .grid-2column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-2column {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-3column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-3column {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-2column > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 375px;
+  max-width: 450px;
+}
+.ui-dialog .tab-content .charsheet .grid-3column > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 250px;
+  max-width: 300px;
+}
+.ui-dialog .tab-content .charsheet div.grid_details {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.ui-dialog .tab-content .charsheet div.grid_details_2 {
+  display: grid;
+  grid-template-columns: 120px 125px 250px 250px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.ui-dialog .tab-content .charsheet div.grid_item {
+  padding: 2px;
+  height: 24px;
+}
+.ui-dialog .tab-content .charsheet div.subtitle {
+  font-size: 10px;
+  font-style: italic;
+  align-self: start;
+}
+.ui-dialog .tab-content .charsheet .grid_item_a {
+  grid-column: span 2;
 }
