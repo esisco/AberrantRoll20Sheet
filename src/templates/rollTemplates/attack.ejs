@@ -1,24 +1,24 @@
 <rolltemplate class="sheet-rolltemplate-attack">
-    <div class="container">
+    <div class="sheet-container">
         <div><h1>{{name}}</h1></div>
-        <div><span class="subheader">{{subtag}}</span></div>
-        <div class="dice-divider"></div>
+        <div><span class="sheet-subheader">{{subtag}}</span></div>
+        <div class="sheet-dice-divider"></div>
         {{#attack}}
-        <div class="rowcolor"><span class="tcat">Attack: </span>{{attack}} Success(es)</div>
+        <div class="sheet-rowcolor"><span class="tcat">Attack: </span>{{attack}} Success(es)</div>
         {{/attack}}
         {{#attacknote}}
-            <div class="attack-note">
+            <div class="sheet-attack-note">
                 {{attacknote}} 
             </div>
         {{/attacknote}}
         {{#damage}}
-            <div class="damage-section">
+            <div class="sheet-damage-section">
                 <span class="tcat">Damage: </span>
             </div>
-            <div class="damage-result">{{damage}}</div>
+            <div class="sheet-damage-result">{{damage}}</div>
         {{/damage}}
         {{#note}}
-            <div class="note">
+            <div class="sheet-note">
                 {{note}} 
             </div>
         {{/note}}

@@ -146,21 +146,24 @@ $damage-result-bg: #ffe6e6;
 }
 
 // Templates
-.sheet-rolltemplate-base,
-.sheet-rolltemplate-attack,
-.sheet-rolltemplate-initiative,
-.sheet-rolltemplate-megaroll {
-    .sheet-container {
-        @include rolltemplate-container();
+// .ui-dialog .tab-content .charsheet {
+
+    .sheet-rolltemplate-base,
+    .sheet-rolltemplate-attack,
+    .sheet-rolltemplate-initiative,
+    .sheet-rolltemplate-megaroll {
+        .sheet-container {
+            @include rolltemplate-container();
+        }
+
+        @include rolltemplate-common;
     }
 
-    @include rolltemplate-common;
-}
+    .sheet-rolltemplate-invisible {
+        .sheet-container {
+            display: none;
+        }
 
-.sheet-rolltemplate-invisible {
-    .sheet-container {
         display: none;
     }
-
-    display: none;
-}
+// }
