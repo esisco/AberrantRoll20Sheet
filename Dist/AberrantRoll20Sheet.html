@@ -1701,31 +1701,31 @@
         </div>
 	</div>
     	<div class='combat'>
-        <div class="grid-3column">
-            <div class="col item w160">
+        <div class="grid-combat-top">
+            <div class="col">
                 <div class="row">
                     <h3 class="category-title">Initiative</h3>
-                    <table class="movement-table">
-                        <thead>
-                            <tr>
-                                <th>Base</th>
-                                <th>Bonus</th>
-                                <th>Total</th>
-                                <th>Roll</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td><input type='text' class="st" name='attr_init_base' value='@{Dexterity}+@{Mega_Dexterity}+@{Wits}+@{Mega_Wits}' disabled /></td>
-                                <td><input type='text' class="st edit-mode" name='attr_Initiative_bonus' value=0 /></td>
-                                <td><input type='text' class="st" name='attr_Initiative' value='@{init_base}+@{Initiative_bonus}' disabled/></td>
-                                <td><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></td>
-                            </tr>
-                        </tbody>
-                    </table>
                 </div>
+                <table class="movement-table">
+                    <thead>
+                        <tr>
+                            <th>Base</th>
+                            <th>Bonus</th>
+                            <th>Total</th>
+                            <th>Roll</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type='text' class="st" name='attr_init_base' value='@{Dexterity}+@{Mega_Dexterity}+@{Wits}+@{Mega_Wits}' disabled /></td>
+                            <td><input type='text' class="st edit-mode" name='attr_Initiative_bonus' value=0 /></td>
+                            <td><input type='text' class="st" name='attr_Initiative' value='@{init_base}+@{Initiative_bonus}' disabled/></td>
+                            <td><button type='roll' class="grid_btn" name="roll_init" value="&{template:initiative} {{name=@{character_name} }} {{roll=[[ 1d10+@{Initiative} &{tracker} ]] }}"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div class="col item w375">
+            <div class="col">
                 <div class="row">
                     <h3 class="category-title">Movement</h3>
                 </div>
@@ -1752,7 +1752,7 @@
                     </tbody>
                 </table>
             </div>
-            <div class="col item w265">
+            <div class="col">
 				<h3 class="category-title">Willpower</h3>
 				<div class="row">
 				    <div class="item w20"></div>

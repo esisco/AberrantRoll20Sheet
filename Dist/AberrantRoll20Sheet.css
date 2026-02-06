@@ -1002,6 +1002,13 @@
     grid-template-columns: 1fr;
   }
 }
+.ui-dialog .tab-content .charsheet .grid-2column > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 375px;
+  max-width: 450px;
+}
 .ui-dialog .tab-content .charsheet .grid-3column {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -1013,19 +1020,31 @@
     grid-template-columns: 1fr;
   }
 }
-.ui-dialog .tab-content .charsheet .grid-2column > .col {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  min-width: 375px;
-  max-width: 450px;
-}
 .ui-dialog .tab-content .charsheet .grid-3column > .col {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
   min-width: 250px;
   max-width: 300px;
+}
+.ui-dialog .tab-content .charsheet .grid-combat-top {
+  display: grid;
+  grid-template-columns: 160px auto 265px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-combat-top {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-combat-top > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
 }
 .ui-dialog .tab-content .charsheet div.grid_details {
   display: grid;

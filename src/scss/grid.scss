@@ -16,6 +16,14 @@
         @media (max-width: 825px) {
             grid-template-columns: 1fr;
         }
+
+        &>.col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 375px;
+            max-width: 450px;
+        }
     }
 
     .grid-3column {
@@ -27,22 +35,34 @@
         @media (max-width: 825px) {
             grid-template-columns: 1fr;
         }
+
+        &>.col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 250px;
+            max-width: 300px;
+        }
     }
 
-    .grid-2column>.col {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        min-width: 375px;
-        max-width: 450px;
-    }
+    .grid-combat-top {
+        display: grid;
+        grid-template-columns: 160px auto 265px;
+        gap: 1rem;
+        margin-bottom: 2rem;
 
-    .grid-3column>.col {
-        display: flex;
-        flex-direction: column;
-        gap: 0.5rem;
-        min-width: 250px;
-        max-width: 300px;
+        @media (max-width: 825px) {
+            grid-template-columns: 1fr;
+        }
+
+        &>.col {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            min-width: 150px;
+            max-width: 100%;
+            width: 100%;
+        }
     }
 
     div.grid_details {
