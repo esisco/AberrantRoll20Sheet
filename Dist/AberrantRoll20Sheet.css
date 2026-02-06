@@ -720,6 +720,13 @@ h3.sheet-category-title {
   font-weight: bold;
 }
 
+.sheet-rolltemplate-invisible .sheet-container {
+  display: none;
+}
+.sheet-rolltemplate-invisible {
+  display: none;
+}
+
 /* Tabs */
 .charsheet .sheet-abilities,
 .charsheet .sheet-info,

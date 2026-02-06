@@ -3,65 +3,78 @@
         <div class="dual_col">
             <%- include('sections/quantumPowers.ejs') -%>
             <div class="col">
-                <h3>Taint</h3>
+                <h3 class="category-title">Taint</h3>
 				<div class="row">
-                    <input type='radio' class="dot zero" name='attr_Taint_max' value=0 checked /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=1 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=5 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Taint_max' value=10 /><span></span>
+                    <input type='radio' class="dot zero sheet-edit-mode" name='attr_taint' value=0 checked /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=1 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=2 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=3 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=4 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=5 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=6 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=7 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=8 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=9 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_taint' value=10 /><span></span>
 				    <div class="item 24"><button type='roll' class='sheet-background d10-dice' value="&{template:base} {{subtag= @{character_name} }} {{name=Taint }} {{roll= [[ (?{Modifier?|0} +@{Taint_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
                 <div class="row">
-                    <input type='radio' class="mdot zero" name='attr_Taint' value=0 checked /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=1 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=2 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=3 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=4 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=5 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=6 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=7 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=8 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=9 /><span></span>
-                    <input type='radio' class="mdot" name='attr_Taint' value=10 /><span></span>
+                    <input type='radio' class="mdot zero" name='attr_taint_temp' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_taint_temp' value=10 /><span></span>
                 </div>
-                <h3>Chrysalis</h3>
+                <h3 class="category-title">Chrysalis</h3>
 				<div class="row">
-                    <input type='radio' class="dot zero" name='attr_Chrysalis_max' value=0 checked /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=1 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=5 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Chrysalis_max' value=10 /><span></span>
-                    <div class="item 24"><button type='roll' class='sheet-background d10-dice'' value="&{template:base} {{subtag= @{character_name} }}  {{name=Chrysalis }} {{roll= [[ (?{Modifier?|0} +@{Chrysalis_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                    <input type='radio' class="dot zero sheet-edit-mode" name='attr_chrysalis' value=0 checked /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=1 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=2 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=3 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=4 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=5 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=6 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=7 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=8 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=9 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_chrysalis' value=10 /><span></span>
+                    <div class="item 24"><button type='roll' class='sheet-background d10-dice'' value="&{template:base} {{subtag= @{character_name} }}  {{name=Chrysalis }} {{roll= [[ (?{Modifier?|0} +@{chrysalis})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
-                <h3>Quantum</h3>
+                <div class="row">
+                    <input type='radio' class="mdot zero" name='attr_chrysalis_temp' value=0 checked /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=1 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=2 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=3 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=4 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=5 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=6 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=7 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=8 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=9 /><span></span>
+                    <input type='radio' class="mdot" name='attr_chrysalis_temp' value=10 /><span></span>
+                </div>
+                <h3 class="category-title">Quantum</h3>
 				<div class="row">
-                    <input type='radio' class="dot zero" name='attr_Quantum_max' value=0 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=1 checked /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=5 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_max' value=10 /><span></span>
+                    <input type='radio' class="dot zero sheet-edit-mode" name='attr_Quantum_max' value=0 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=1 checked /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=2 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=3 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=4 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=5 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=6 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=7 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=8 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=9 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_max' value=10 /><span></span>
                     <div class="item 24"><button type='roll' class='sheet-background d10-dice'' value="&{template:base} {{subtag= @{character_name} }} {{name=Quantum }} {{roll= [[ (?{Modifier?|0} +@{Quantum_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
-                <h3>Body Modifications</h3>
+                <h3 class="category-title">Body Modifications</h3>
                 <fieldset class='repeating_rbAberrations'>
                     <div class="row">
                         <div class="item 250"><input type='text' class="st" name='attr_rbBModName' placeholder="Aberration" /></div>
@@ -73,7 +86,7 @@
                     </div>
                     <textarea class="textarea_1" name='attr_rbBodyModificationNotes' placeholder='Notes'></textarea>
 				</fieldset>
-                <h3>Aberrations</h3>
+                <h3 class="category-title">Aberrations</h3>
                 <fieldset class='repeating_rAberrations'>
                     <div class="row">
                         <div class="item 250"><input type='text' class="st" name='attr_rBModName' placeholder="Aberration" /></div>
@@ -90,59 +103,59 @@
         <div class="row">
             <h2>Quantum Pool</h2>
             <div class="row">
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=1 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=2 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=3 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=4 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=5 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=1 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=2 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=3 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=4 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=5 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=6 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=7 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=8 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=9 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=10 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=6 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=7 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=8 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=9 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=10 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=11 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=12 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=13 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=14 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=15 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=11 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=12 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=13 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=14 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=15 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=16 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=17 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=18 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=19 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=20 checked /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=16 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=17 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=18 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=19 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=20 checked /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=21 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=22 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=23 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=24 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=25 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=21 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=22 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=23 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=24 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=25 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=26 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=27 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=28 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=29 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=30 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=26 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=27 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=28 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=29 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=30 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=31 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=32 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=33 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=34 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=35 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=31 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=32 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=33 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=34 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=35 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=36 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=37 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=38 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=39 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=40 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=36 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=37 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=38 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=39 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=40 /><span></span>
                     &nbsp;
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=41 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=42 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=43 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=44 /><span></span>
-                    <input type='radio' class="dot" name='attr_Quantum_pool_max' value=45 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=41 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=42 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=43 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=44 /><span></span>
+                    <input type='radio' class="dot sheet-edit-mode" name='attr_Quantum_pool_max' value=45 /><span></span>
             </div>
             <div class="row">
                     <input type='radio' class="mdot" name='attr_Quantum_pool' value=1 /><span></span>

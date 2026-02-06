@@ -216,7 +216,7 @@ const attributeColumns = [
 <% [['Strength', 'Dexterity', 'Stamina'], ['Perception', 'Intelligence', 'Wits'], ['Charisma', 'Manipulation', 'Appearance']].forEach(col => { -%>
             <div class="col">
 <% col.forEach(attrName => { -%>
-    		    <h4>Mega <%= attrName %> Enhancements</h4>
+    		    <h4 class="title">Mega <%= attrName %> Enhancements</h4>
 				<fieldset class='repeating_<%= attrName.toLowerCase() %>enhancements'>
                     <div class="row">
                         <div class="item 240"><input type='text' class="st sheet-edit-mode" name='attr_rEnhName' placeholder="Enhancement" /></div>

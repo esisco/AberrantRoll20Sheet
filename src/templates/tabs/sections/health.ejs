@@ -27,45 +27,55 @@ const woundOptions = ['', '/', 'X', '*'];
 			<h2>Health</h2>
     		<div class="dual_col">
                 <div class="col">
-				    <h3>Soak</h3>
-                    <div class="row">
-                        <div class="item 100">Armor</div>
-                        <div class="item 50">Bashing</div>
-                        <div class="item 50">Lethal</div>
-                        <div class="item 75">Aggravated</div>
-                        <div class="item 50">Penalty</div>
-                    </div>
-                    <div class="row">
-                        <div class="item 100">Natural Soak</div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Bashing_Soak' value=1 min=1 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Natural_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Natural_Aggravated_Penalty' value=0 readonly /></div>
-                    </div>
-                    <% armorSlots.forEach(armor => { -%>
-                    <div class="row">
-                        <div class="item 100"><% if (armor.name) { %><%= armor.name %><% } else { %><input type='text' class="st" name='attr_Armor<%= armor.id %>_Name'/><% } %></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Bashing_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Lethal_Soak' value=0 min=0 /></div>
-                        <div class="item 75"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Aggravated_Soak' value=0 min=0 /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Penalty' value=0 min=0<% if (armor.id === 1) { %> readonly<% } %> /></div>
-                    </div>
-                    <% }); -%>
-                    <div class="row">
-                        <div class="item 100">Total</div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Bashing_Soak}<% }); %>" disabled/></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Lethal_Soak}<% }); %>" disabled/></div>
-                        <div class="item 75" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Aggravated_Soak}<% }); %>" disabled /></div>
-                        <div class="item 50" ><input type='text' class="st" name='attr_Penalty' value="<% armorSlots.forEach((a, i) => { %><% if (i > 0) { %>+<% } %>@{Armor<%= a.id %>_Penalty}<% }); %>" disabled/></div>
-					</div>
+				    <h3 class="category-title">Soak</h3>
+                    <table class="movement-table">
+                        <thead>
+                            <tr>
+                                <th class="item 100">Armor</th>
+                                <th class="item 50">Bashing</th>
+                                <th class="item 50">Lethal</th>
+                                <th class="item 70">Aggravated</th>
+                                <th class="item 50">Penalty</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="item 100">Natural Soak</td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Natural_Bashing_Soak' value=1 min=1 /></td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Natural_Lethal_Soak' value=0 min=0 /></td>
+                                <td class="item 70"><input type='text' class="st" name='attr_Natural_Aggravated_Soak' value=0 min=0 /></td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Natural_Aggravated_Penalty' value=0 readonly /></td>
+                            </tr>
+                            <% armorSlots.forEach(armor => { -%>
+                            <tr>
+                                <td class="item 100"><% if (armor.name) { %><%= armor.name %><% } else { %><input type='text' class="st" name='attr_Armor<%= armor.id %>_Name'/><% } %></td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Bashing_Soak' value=0 min=0 /></td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Lethal_Soak' value=0 min=0 /></td>
+                                <td class="item 70"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Aggravated_Soak' value=0 min=0 /></td>
+                                <td class="item 50"><input type='text' class="st" name='attr_Armor<%= armor.id %>_Penalty' value=0 min=0<% if (armor.id === 1) { %> readonly<% } %> /></td>
+                            </tr>
+                            <% }); -%>
+                            <tr>
+                                <td class="item 100">Total</td>
+                                <td class="item 50" ><input type='text' class="st" name='attr_Bashing_Soak' value="@{Natural_Bashing_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Bashing_Soak}<% }); %>" disabled/></td>
+                                <td class="item 50" ><input type='text' class="st" name='attr_Lethal_Soak' value="@{Natural_Lethal_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Lethal_Soak}<% }); %>" disabled/></td>
+                                <td class="item 70" ><input type='text' class="st" name='attr_Aggravated_Soak' value="@{Natural_Aggravated_Soak}<% armorSlots.forEach(a => { %>+@{Armor<%= a.id %>_Aggravated_Soak}<% }); %>" disabled /></td>
+                                <td class="item 50" ><input type='text' class="st" name='attr_Penalty' value="<% armorSlots.forEach((a, i) => { %><% if (i > 0) { %>+<% } %>@{Armor<%= a.id %>_Penalty}<% }); %>" disabled/></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
                 <div class="col">
-				    <h3>Injuries</h3>
-                    <div class="row">
-                        <div class="item 120">Injury</div>
-                        <div class="item 50" >Type</div>
-                        <div class="item 50" >Penalty</div>
-                    </div>
+				    <h3 class="category-title">Injuries</h3>
+                    <table class="movement-table">
+                        <thead>
+                            <tr>
+                                <th class="item 120">Injury</th>
+                                <th class="item 50">Type</th>
+                                <th class="item 50">Penalty</th>
+                            </tr>
+                        </thead>
+                    </table>
                     <% injuryTypes.forEach(injury => { -%>
                     <div class="row">
                         <div class="item 120"><%= injury.name %></div>

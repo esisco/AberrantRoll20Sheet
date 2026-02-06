@@ -156,3 +156,11 @@ $damage-result-bg: #ffe6e6;
 
     @include rolltemplate-common;
 }
+
+.sheet-rolltemplate-invisible {
+    .sheet-container {
+        display: none;
+    }
+
+    display: none;
+}

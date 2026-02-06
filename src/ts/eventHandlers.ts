@@ -130,11 +130,12 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
         const characterName = values['character_name'] || 'Unknown';
         const weaponName = values['repeating_weapons_wname'] || 'Damage';
         // const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ (?{Modifier?|0} + ${damage} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }}`;
-        const results = await startRoll('{{modifiers=[[?{Target Soak?|0}*?{Additional Dice?|0}{}]] }}');
+        const results = await startRoll('&{template:invisible} {{modifiers=[[?{Target Soak?|0}*?{Additional Dice?|0}{}]] }}');
         const modifiers = results.results.modifiers.expression.match(/(\d+)\*?/g) || [];
         let soak = parseInt(modifiers[0] || '0');
         const additionalDice = parseInt(modifiers[1] || '0');
         console.log("Soak value entered:", soak, "Additional dice:", additionalDice);
+        finishRoll(results.rollId, {});
 
         let damage = parseInt(values['repeating_weapons_wdamtotal'] || '0') + (additionalDice || 0);
         let damageAdds = parseInt(values['repeating_weapons_wdam_auto'] || '0');

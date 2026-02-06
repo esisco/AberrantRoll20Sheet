@@ -79,7 +79,7 @@ const quantumPowerRefs = [
 ];
 %>
             <div class="col">
-				<h3>Quantum Powers</h3>
+				<h3 class="category-title">Quantum Powers</h3>
                 <!-- Power selector - only visible in edit mode, outside repeating section -->
                 <div class="row sheet-edit-mode">
                     <div class="item 180">
@@ -100,53 +100,53 @@ const quantumPowerRefs = [
                         <div class="item 5"></div>
                         <div class="item 150"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
                         <div class="item 180">
-							<input type='radio' class="dot zero" name='attr_rPower' value=1 checked /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=2 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=3 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=4 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=5 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=6 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=7 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=8 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=9 /><span></span>
-							<input type='radio' class="dot" name='attr_rPower' value=10 /><span></span>
+							<input type='radio' class="dot zero edit-mode" name='attr_rPower' value=1 checked /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=2 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=3 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=4 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=5 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=6 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=7 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=8 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=9 /><span></span>
+							<input type='radio' class="dot edit-mode" name='attr_rPower' value=10 /><span></span>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="item 50"><input type='text' class="st" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
-                        <div class="item 250"><input type='text' class="st" name='attr_rPowerSource' placeholder='Sourcebook & page' /></div>
+                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rPowerLevel' value=1 min=1 max=6 /></div>
+                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rPowerSource' placeholder='Sourcebook & page' /></div>
                     </div>
                     <div class="row">
                         <div class="item 50 subtitle">Level</div>
                         <div class="item 250 subtitle">Sourcebook</div>
                     </div>
                     <div class="row">
-                        <div class="item 250"><input type='text' class="st" name='attr_rExtraName' value="" /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_rMasteryp' value=0 min=0 /></div>
+                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rExtraName' value="" /></div>
+                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rMasteryp' value=0 min=0 /></div>
                     </div>
                     <div class="row">
                         <div class="item 250 subtitle">Extras</div>
                         <div class="item 50 subtitle">Mastery</div>
                     </div>
                     <div class="row">
-                        <div class="item 250"><input type='text' class="st" name='attr_rPowerTechniques' value="" /></div>
-                        <div class="item 50"><input type='text' class="st" name='attr_rDicePoolp' value=0 min=0 /></div>
+                        <div class="item 250"><input type='text' class="st edit-mode" name='attr_rPowerTechniques' value="" /></div>
+                        <div class="item 50"><input type='text' class="st edit-mode" name='attr_rDicePoolp' value=0 min=0 /></div>
                     </div>
                     <div class="row">
                         <div class="item 250 subtitle">Techniques</div>
                         <div class="item 50 subtitle">Dice Pool</div>
                     </div>
                     <div class="row">
-                        <div class="item 180"><input type='text' class="st" name='attr_rRangep' value="" /></div>
-                        <div class="item 180"><input type='text' class="st" name='attr_rAreaNotes' value="" /></div>
+                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rRangep' value="" /></div>
+                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rAreaNotes' value="" /></div>
                     </div>
                     <div class="row">
                         <div class="item 180 subtitle">Range</div>
                         <div class="item 180 subtitle">Area</div>
                     </div>
                     <div class="row">
-                        <div class="item 180"><input type='text' class="st" name='attr_rWeakNotes' value="" /></div>
-                        <div class="item 180"><input type='text' class="st" name='attr_rStrengthNotes' value="" /></div>
+                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rWeakNotes' value="" /></div>
+                        <div class="item 180"><input type='text' class="st edit-mode" name='attr_rStrengthNotes' value="" /></div>
                     </div>
                     <div class="row">
                         <div class="item 180 subtitle">Weaknesses</div>
