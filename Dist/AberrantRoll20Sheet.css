@@ -566,6 +566,7 @@
 
 .sheet-rolltemplate-base .sheet-container,
 .sheet-rolltemplate-attack .sheet-container,
+.sheet-rolltemplate-damage .sheet-container,
 .sheet-rolltemplate-initiative .sheet-container,
 .sheet-rolltemplate-megaroll .sheet-container {
   background-color: white;
@@ -580,6 +581,7 @@
 }
 .sheet-rolltemplate-base .sheet-container h1,
 .sheet-rolltemplate-attack .sheet-container h1,
+.sheet-rolltemplate-damage .sheet-container h1,
 .sheet-rolltemplate-initiative .sheet-container h1,
 .sheet-rolltemplate-megaroll .sheet-container h1 {
   color: darkred;
@@ -590,12 +592,14 @@
 }
 .sheet-rolltemplate-base div,
 .sheet-rolltemplate-attack div,
+.sheet-rolltemplate-damage div,
 .sheet-rolltemplate-initiative div,
 .sheet-rolltemplate-megaroll div {
   padding: 2px;
 }
 .sheet-rolltemplate-base span,
 .sheet-rolltemplate-attack span,
+.sheet-rolltemplate-damage span,
 .sheet-rolltemplate-initiative span,
 .sheet-rolltemplate-megaroll span {
   color: #7e2d40;
@@ -608,6 +612,7 @@
 }
 .sheet-rolltemplate-base .sheet-subheader,
 .sheet-rolltemplate-attack .sheet-subheader,
+.sheet-rolltemplate-damage .sheet-subheader,
 .sheet-rolltemplate-initiative .sheet-subheader,
 .sheet-rolltemplate-megaroll .sheet-subheader {
   color: #000;
@@ -616,18 +621,20 @@
 }
 .sheet-rolltemplate-base .sheet-dice-divider,
 .sheet-rolltemplate-attack .sheet-dice-divider,
+.sheet-rolltemplate-damage .sheet-dice-divider,
 .sheet-rolltemplate-initiative .sheet-dice-divider,
 .sheet-rolltemplate-megaroll .sheet-dice-divider {
   position: relative;
   text-align: center;
   height: 2px;
-  background: black;
-  margin: 14px 4px;
+  background: linear-gradient(to right, black 0, black 40%, transparent 40%, transparent 60%, black 60%, black 100%);
+  margin: 8px 4px;
   padding: 0 !important;
   overflow: visible;
 }
 .sheet-rolltemplate-base .sheet-dice-divider:before,
 .sheet-rolltemplate-attack .sheet-dice-divider:before,
+.sheet-rolltemplate-damage .sheet-dice-divider:before,
 .sheet-rolltemplate-initiative .sheet-dice-divider:before,
 .sheet-rolltemplate-megaroll .sheet-dice-divider:before {
   content: "J";
@@ -635,11 +642,8 @@
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  background-image: radial-gradient(#e0e0e0 33%, transparent 34%), radial-gradient(#e0e0e0 33%, transparent 34%);
-  background-size: 5px 5px;
-  background-position: 0 0, 2.5px 2.5px;
+  transform: translate(-50%, -60%);
+  background: transparent;
   padding: 0 10px;
   font-size: 2.5em;
   color: black;
@@ -647,12 +651,14 @@
 }
 .sheet-rolltemplate-base .sheet-tcat,
 .sheet-rolltemplate-attack .sheet-tcat,
+.sheet-rolltemplate-damage .sheet-tcat,
 .sheet-rolltemplate-initiative .sheet-tcat,
 .sheet-rolltemplate-megaroll .sheet-tcat {
   font-style: italic;
 }
 .sheet-rolltemplate-base .inlinerollresult,
 .sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-damage .inlinerollresult,
 .sheet-rolltemplate-initiative .inlinerollresult,
 .sheet-rolltemplate-megaroll .inlinerollresult {
   background-color: transparent;
@@ -660,6 +666,7 @@
 }
 .sheet-rolltemplate-base .inlinerollresult.fullcrit,
 .sheet-rolltemplate-attack .inlinerollresult.fullcrit,
+.sheet-rolltemplate-damage .inlinerollresult.fullcrit,
 .sheet-rolltemplate-initiative .inlinerollresult.fullcrit,
 .sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
   color: #3fb315;
@@ -668,6 +675,7 @@
 }
 .sheet-rolltemplate-base .inlinerollresult.fullfail,
 .sheet-rolltemplate-attack .inlinerollresult.fullfail,
+.sheet-rolltemplate-damage .inlinerollresult.fullfail,
 .sheet-rolltemplate-initiative .inlinerollresult.fullfail,
 .sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
   color: #b31515;
@@ -676,6 +684,7 @@
 }
 .sheet-rolltemplate-base .inlinerollresult.importantroll,
 .sheet-rolltemplate-attack .inlinerollresult.importantroll,
+.sheet-rolltemplate-damage .inlinerollresult.importantroll,
 .sheet-rolltemplate-initiative .inlinerollresult.importantroll,
 .sheet-rolltemplate-megaroll .inlinerollresult.importantroll {
   color: #4a57ed;
@@ -684,6 +693,7 @@
 }
 .sheet-rolltemplate-base .inlinerollresult.importandivoll,
 .sheet-rolltemplate-attack .inlinerollresult.importandivoll,
+.sheet-rolltemplate-damage .inlinerollresult.importandivoll,
 .sheet-rolltemplate-initiative .inlinerollresult.importandivoll,
 .sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
   color: #4a57ed;
@@ -692,12 +702,49 @@
 }
 .sheet-rolltemplate-base .sheet-rowcolor2,
 .sheet-rolltemplate-attack .sheet-rowcolor2,
+.sheet-rolltemplate-damage .sheet-rowcolor2,
 .sheet-rolltemplate-initiative .sheet-rowcolor2,
 .sheet-rolltemplate-megaroll .sheet-rowcolor2 {
   color: red;
   font-size: 1em;
   font-style: italic;
   font-weight: bold;
+}
+
+.sheet-rolltemplate-base .sheet-mega-roll {
+  display: flex;
+  justify-content: center;
+}
+.sheet-rolltemplate-base .sheet-mega-roll a[href^="~"] {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  background-color: blueviolet;
+  border: 1px solid purple;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+.sheet-rolltemplate-base .sheet-mega-roll a[href^="~"]:hover {
+  background-color: #a00000;
+  border-color: #700000;
+}
+
+.sheet-rolltemplate-attack .sheet-damage-roll {
+  display: flex;
+  justify-content: center;
+}
+.sheet-rolltemplate-attack .sheet-damage-roll a[href^="~"] {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  background-color: blueviolet;
+  border: 1px solid purple;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+.sheet-rolltemplate-attack .sheet-damage-roll a[href^="~"]:hover {
+  background-color: #a00000;
+  border-color: #700000;
 }
 
 .sheet-rolltemplate-invisible .sheet-container {

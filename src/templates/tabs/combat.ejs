@@ -2,8 +2,8 @@
 // Movement types configuration
 const movementTypes = [
     { name: 'Walk', attr: 'Walk', value: 7, disabled: false },
-    { name: 'Run', attr: 'Run', value: '@{Dexterity}+12+@{Mega_Dexterity}', disabled: true },
-    { name: 'Sprint', attr: 'Run', value: '@{Dexterity}*3+20+@{Mega_Dexterity}', disabled: true }
+    { name: 'Run', attr: 'Run', value: '@{Dexterity}+@{Mega_Dexterity}+12', disabled: true },
+    { name: 'Sprint', attr: 'Run', value: '(@{Dexterity} + @{Mega_Dexterity})*3+20', disabled: true }
 ];
 -%>
 	<div class='combat'>
@@ -49,7 +49,7 @@ const movementTypes = [
                     <tbody>
                         <tr>
                             <% movementTypes.forEach(move => { -%>
-                            <td><input type='text' class="st" name='attr_<%= move.attr %>' value=<%= move.value %><%= move.disabled ? ' disabled' : '' %> /></td>
+                            <td><input type='text' class="st" name='attr_<%= move.attr %>' value='<%= move.value %>' <%= move.disabled ? ' disabled' : '' %> /></td>
                             <% }); -%>
                             <td><input type='text' class="st edit-mode" name='attr_moveColumn1Value' value=0 /></td>
                             <td><input type='text' class="st edit-mode" name='attr_moveColumn2Value' value=0 /></td>
@@ -99,10 +99,10 @@ const movementTypes = [
                             <td class="item w140"><input type='text' class="st edit-mode" name='attr_wname'/></td>
                             <td class="item w40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-attack"></button></td>
                             <td class="item w50"><input type='text' class="st" name='attr_wtotalacc' value="0" readonly/></td>
-                            <td class="item w70"><input type='text' class="st edit-mode" name='attr_wdifficulty' /></td>
+                            <td class="item w70"><input type='text' class="st edit-mode" name='attr_wdifficulty' value="0"/></td>
                             <td class="item w40" style="align-content: center;"><button type="action" class="d10-dice grid_btn" name="act_roll-damage"></button></td>
                             <td class="item w70"><input type='text' class="hidden" name='attr_wdamtotal' value="0" readonly/><input type='text' class="st" name='attr_wdamdisplay' value="0" readonly/></td>
-                            <td class="item w50"><input type='text' class="st edit-mode" name='attr_range'/></td>
+                            <td class="item w50"><input type='text' class="st edit-mode" name='attr_range' value="0"/></td>
                             <td class="item w70" style="align-content: center;"><input type="checkbox" class="gear" name="attr_weapon_open" value="1" checked/><span></span></td>
                         </tr>
                     </tbody>

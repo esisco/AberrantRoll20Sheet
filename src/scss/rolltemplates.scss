@@ -24,11 +24,11 @@ $crit-color: #3fb315;
 $fail-color: #b31515;
 $important-color: #4a57ed;
 
-$damage-btn-bg: #8b0000;
-$damage-btn-border: #5a0000;
+$damage-btn-text-color: white;
+$damage-btn-bg: blueviolet;
+$damage-btn-border: purple;
 $damage-btn-hover: #a00000;
 $damage-btn-border-hover: #700000;
-$damage-result-bg: #ffe6e6;
 
 // ============================================
 // MIXINS
@@ -84,8 +84,14 @@ $damage-result-bg: #ffe6e6;
         position: relative;
         text-align: center;
         height: 2px;
-        background: black;
-        margin: 14px 4px;
+        background: linear-gradient(to right,
+                black 0,
+                black 40%,
+                transparent 40%,
+                transparent 60%,
+                black 60%,
+                black 100%);
+        margin: 8px 4px;
         padding: 0 !important;
         overflow: visible;
 
@@ -95,8 +101,8 @@ $damage-result-bg: #ffe6e6;
             position: absolute;
             left: 50%;
             top: 50%;
-            transform: translate(-50%, -50%);
-            @include halftone(#e0e0e0, white);
+            transform: translate(-50%, -60%);
+            background: transparent;
             padding: 0 10px;
             font-size: 2.5em;
             color: black;
@@ -146,24 +152,66 @@ $damage-result-bg: #ffe6e6;
 }
 
 // Templates
-// .ui-dialog .tab-content .charsheet {
-
-    .sheet-rolltemplate-base,
-    .sheet-rolltemplate-attack,
-    .sheet-rolltemplate-initiative,
-    .sheet-rolltemplate-megaroll {
-        .sheet-container {
-            @include rolltemplate-container();
-        }
-
-        @include rolltemplate-common;
+.sheet-rolltemplate-base,
+.sheet-rolltemplate-attack,
+.sheet-rolltemplate-damage,
+.sheet-rolltemplate-initiative,
+.sheet-rolltemplate-megaroll {
+    .sheet-container {
+        @include rolltemplate-container();
     }
 
-    .sheet-rolltemplate-invisible {
-        .sheet-container {
-            display: none;
-        }
+    @include rolltemplate-common;
+}
 
+.sheet-rolltemplate-base {
+    .sheet-mega-roll {
+        display: flex;
+        justify-content: center;
+
+        a[href^="~"] {
+            display: inline-block;
+            color: $damage-btn-text-color;
+            border-radius: 10px;
+            background-color: $damage-btn-bg;
+            border: 1px solid $damage-btn-border;
+            padding: 2px 8px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $damage-btn-hover;
+                border-color: $damage-btn-border-hover;
+            }
+        }
+    }
+}
+
+.sheet-rolltemplate-attack {
+    .sheet-damage-roll {
+        display: flex;
+        justify-content: center;
+
+        a[href^="~"] {
+            display: inline-block;
+            color: $damage-btn-text-color;
+            border-radius: 10px;
+            background-color: $damage-btn-bg;
+            border: 1px solid $damage-btn-border;
+            padding: 2px 8px;
+            text-decoration: none;
+
+            &:hover {
+                background-color: $damage-btn-hover;
+                border-color: $damage-btn-border-hover;
+            }
+        }
+    }
+}
+
+.sheet-rolltemplate-invisible {
+    .sheet-container {
         display: none;
     }
-// }
+
+    display: none;
+}

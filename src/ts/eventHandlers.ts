@@ -103,12 +103,14 @@ on("clicked:repeating_weapons:roll-attack", function(eventInfo) {
     const rowId = match[1];
     console.log("Row ID for attack roll:", rowId);
 
-    getAttrs([`repeating_weapons_wtotalacc`, `repeating_weapons_wname`, 'character_name'], (values) => {
+    getAttrs([`repeating_weapons_wtotalacc`, `repeating_weapons_wname`, 'character_name', `repeating_weapons_range`, `repeating_weapons_wdifficulty`], (values) => {
         const attackBonus = parseInt(values[`repeating_weapons_wtotalacc`] || '0');
         const characterName = values['character_name'] || 'Unknown';
         const weaponName = values[`repeating_weapons_wname`] || 'Attack';
+        const range = parseInt(values[`repeating_weapons_range`] || '0');
+        const difficulty = parseInt(values[`repeating_weapons_wdifficulty`] || '0');
 
-        const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
+        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
         startRoll(roll, (results) => {
             console.log("Attack roll results:", results);
             finishRoll(results.rollId, {});
@@ -126,10 +128,10 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
     const rowId = match[1];
     console.log("Row ID for damage roll:", rowId);
 
-    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wdam_auto', 'repeating_weapons_wname', 'mega_strength', 'character_name'], async (values) => {
+    getAttrs(['repeating_weapons_wdamtotal', 'repeating_weapons_wstr', 'repeating_weapons_wdam_auto', 'repeating_weapons_wname', 'mega_strength', 'character_name', 'repeating_weapons_wdam_type'], async (values) => {
         const characterName = values['character_name'] || 'Unknown';
-        const weaponName = values['repeating_weapons_wname'] || 'Damage';
-        // const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ (?{Modifier?|0} + ${damage} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }}`;
+        const weaponName = values['repeating_weapons_wname'] || 'Attack';
+        const damageType = values['repeating_weapons_wdam_type'] || 'Bashing';
         const results = await startRoll('&{template:invisible} {{modifiers=[[?{Target Soak?|0}*?{Additional Dice?|0}{}]] }}');
         const modifiers = results.results.modifiers.expression.match(/(\d+)\*?/g) || [];
         let soak = parseInt(modifiers[0] || '0');
@@ -153,11 +155,12 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
             }
             damage = Math.max(1, damage - soak);
         }
-        const roll = `&{template:base} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7f1!>10s+${damageAdds} ]] }}`;
-        
+
+        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7f1!>10s+${damageAdds} ]] }}`;
         const damageResults = await startRoll(roll);
         console.log("Damage roll results:", damageResults);
-        finishRoll(damageResults.rollId, {});
+        const damageReport = damageResults.results.damage.result > 0 ? `inflicts ${damageResults.results.damage.result.toString()} levels of ${damageType} damage` : 'fails to inflict any damage';
+        finishRoll(damageResults.rollId, { damage: `${characterName} ${damageReport}!` });
     });
 });
 

@@ -1,0 +1,15 @@
+<rolltemplate class="sheet-rolltemplate-damage">
+    <div class="sheet-container">
+        <div>
+            <h1>Damage: {{name}}</h1>
+        </div>
+        <div><span class="sheet-subheader">{{subtag}}</span></div>
+        <div class="sheet-dice-divider"></div>
+        {{#damage}}
+            <div>{{computed::damage}}</div>
+        {{/damage}}
+        {{#note}}
+            <div>{{note}}</div>
+        {{/note}}
+    </div>
+</rolltemplate>
