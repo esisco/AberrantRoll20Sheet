@@ -1,0 +1,47 @@
+<%
+// Define backgrounds from the image data
+const backgrounds = [
+    { name: 'Allies', source: 'Aberrant, pg. 139; Players Guide, pg. 76' },
+    { name: 'Attunement', source: 'Aberrant, pg. 139; Players Guide, pg. 77' },
+    { name: 'Backing', source: 'Aberrant, pg. w140; Players Guide, pg. 78' },
+    { name: 'Cipher', source: 'Aberrant, pg. w140; Players Guide, pg. 78' },
+    { name: 'Contacts', source: 'Aberrant, pg. w140; Players Guide, pg. 79' },
+    { name: 'Dormancy', source: 'Aberrant, pg. 141; Players Guide, pg. 80' },
+    { name: 'Equipment', source: 'The Directive, pg. 53' },
+    { name: 'Eufiber', source: 'Aberrant, pg. 141; Players Guide, pg. 80' },
+    { name: 'Favors', source: 'The Directive, pg. 54' },
+    { name: 'Followers', source: 'Aberrant, pg. 142; Players Guide, pg. 83' },
+    { name: 'Influence', source: 'Aberrant, pg. 142; Players Guide, pg. 83' },
+    { name: 'Mentor', source: 'Aberrant, pg. 142; Players Guide, pg. 84' },
+    { name: 'Node', source: 'Aberrant, pg. 143; Players Guide, pg. 84' },
+    { name: 'Rank', source: 'The Directive, pg. 54' },
+    { name: 'Resources', source: 'Aberrant, pg. 144; Players Guide, pg. 86' }
+];
+-%>
+    <div class="col">
+        <h3 class="category-title">Backgrounds</h3>
+        <% backgrounds.forEach(bg => { -%>
+        <div class="row">
+            <div class="item w100 label"><span title="<%= bg.source %>"><%= bg.name %></span></div>
+        </div>
+        <div class="row">
+            <% for (let i = 0; i <= 10; i++) { -%>
+            <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %> edit-mode" name='attr_<%= bg.name %>' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+            <% } -%>
+        </div>
+        <% }); -%>
+        <fieldset class='repeating_backgrounds'>
+            <div class="row">
+                <div class="item w40"><button type='roll' class='background edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item w200"><input type='text' class='specialty edit-mode' name='attr_rBackName' placeholder='Background'></div>
+            </div>
+            <div class="row">
+                <% for (let i = 0; i <= 10; i++) { -%>
+                <input type='radio' class="dot<%= i === 0 ? ' zero' : '' %> edit-mode" name='attr_rBack' value=<%= i %><%= i === 0 ? ' checked' : '' %> /><span></span>
+                <% } -%>
+            </div>
+            <div class="row">
+                <div class="item w240"><input type='text' class='specialty edit-mode' name='attr_rBackEnh' placeholder='Enhancement'></div>
+            </div>
+        </fieldset>
+    </div>

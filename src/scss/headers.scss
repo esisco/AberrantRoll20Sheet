@@ -1,6 +1,6 @@
 /* Header Banner */
 
-.charsheet .sheet-header {
+.ui-dialog .tab-content .charsheet .header {
     height: 100px;
     background-color: #c514a8;
     position: relative;
@@ -10,7 +10,7 @@
     border: 2px solid black;
 }
 
-.charsheet .sheet-header .row {
+.ui-dialog .tab-content .charsheet .header .row {
     display: flex !important;
     flex-direction: row !important;
     flex-wrap: nowrap !important;
@@ -20,34 +20,48 @@
     position: relative;
 }
 
-.charsheet .sheet-header img.sheet-character-avatar {
+.ui-dialog .tab-content .charsheet .header img.character-avatar {
     height: 100px;
     width: 100px;
     object-fit: contain;
+    position: absolute;
+    left: 0;
+    top: 0;
     flex-shrink: 0;
     border-right: 2px solid black;
     border-bottom: 0;
     background-color: white;
+    z-index: 2;
 }
 
-.charsheet .sheet-header .sheet-character-detail {
+.ui-dialog .tab-content .charsheet .header .character-detail {
     display: inline-block;
+    position: absolute;
+    left: 110px;
+    top: 50%;
+    transform: translateY(-50%);
     flex: 1;
     text-align: left;
     padding-left: 10px;
     font-variant: small-caps;
     font-weight: bold;
+    z-index: 3;
 }
 
-.charsheet .sheet-header .sheet-logo-col {
+.ui-dialog .tab-content .charsheet .header .logo-col {
     display: inline-block;
     position: absolute;
     right: 0;
     top: 0;
     max-width: 400px;
+    z-index: 1;
+
+    @media (max-width: 550px) {
+        display: none;
+    }
 }
 
-.charsheet .sheet-logo {
+.ui-dialog .tab-content .charsheet .logo {
     display: inline-block;
     height: 100px;
     width: auto;

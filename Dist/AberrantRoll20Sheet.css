@@ -1,24 +1,32 @@
-.charsheet {
-  background: radial-gradient(#f7f7f7, #faeba2);
+/* Roll Templates */
+@import url("https://fonts.googleapis.com/css?family=Bangers|Dekko|Lato:900|Rock+Salt");
+.ui-dialog .tab-content .charsheet {
+  background-color: #faeba2;
+  background-image: radial-gradient(circle at 10% 15%, #faeba2 0%, transparent 50%), repeating-conic-gradient(from 47deg at 10% 15%, transparent 0deg 10deg, rgba(252, 223, 120, 0.831372549) 10deg 15deg, transparent 15deg 20deg, rgba(252, 223, 120, 0.831372549) 20deg 30deg, transparent 30deg 35deg, rgba(252, 223, 120, 0.831372549) 35deg 45deg);
+  background-size: cover;
 }
 
 /* Columns */
-.sheet-col {
-  width: 250px;
+.ui-dialog .tab-content .charsheet .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 300px;
+  min-width: 200px;
 }
 
-.sheet-dual_col .sheet-col {
+.ui-dialog .tab-content .charsheet .dual_col .col {
   width: 400px;
 }
 
 /* Rows and Items */
-.charsheet .sheet-wrapper .sheet-row {
+.ui-dialog .tab-content .charsheet .wrapper .row {
   height: 24px;
   margin: 0 0 2px;
   position: relative;
 }
 
-.charsheet .sheet-wrapper .sheet-item {
+.ui-dialog .tab-content .charsheet .wrapper .item {
   display: inline-block;
   height: 28px;
   vertical-align: middle;
@@ -27,104 +35,112 @@
   padding: 3px 2px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-620 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w620 {
   width: 620px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-250 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w430 {
+  width: 430px;
+}
+
+.ui-dialog .tab-content .charsheet .wrapper .item.w375 {
+  width: 375px;
+}
+
+.ui-dialog .tab-content .charsheet .wrapper .item.w265 {
+  width: 265px;
+}
+
+.ui-dialog .tab-content .charsheet .wrapper .item.w250 {
   width: 250px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-200 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w200 {
   width: 200px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-190 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w190 {
   width: 190px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-180 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w180 {
   width: 180px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-150 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w160 {
+  width: 160px;
+}
+
+.ui-dialog .tab-content .charsheet .wrapper .item.w150 {
   width: 150px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-140 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w140 {
   width: 140px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-130 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w130 {
   width: 130px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-120 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w120 {
   width: 120px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-110 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w110 {
   width: 110px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-103 {
-  width: 103px;
-}
-
-.charsheet .sheet-wrapper .sheet-item.sheet-100 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w100 {
   width: 100px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-98 {
-  width: 98px;
-}
-
-.charsheet .sheet-wrapper .sheet-item.sheet-95 {
-  width: 95px;
-}
-
-.charsheet .sheet-wrapper .sheet-item.sheet-90 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w90 {
   width: 90px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-75 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w75 {
   width: 75px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-70 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w70 {
   width: 70px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-50 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w50 {
   width: 50px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-25 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w40 {
+  width: 40px;
+}
+
+.ui-dialog .tab-content .charsheet .wrapper .item.w25 {
   width: 25px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-24 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w24 {
   width: 24px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-20 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w20 {
   width: 20px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-13 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w13 {
   width: 13px;
 }
 
-.charsheet .sheet-wrapper .sheet-item.sheet-5 {
+.ui-dialog .tab-content .charsheet .wrapper .item.w5 {
   width: 5px;
 }
 
-.charsheet .sheet-wrapper .sheet-item .sheet-st {
+.ui-dialog .tab-content .charsheet .wrapper .item .st {
   width: 100%;
 }
 
-input.sheet-st,
-select.sheet-st {
+.ui-dialog .tab-content .charsheet input.st,
+.ui-dialog .tab-content .charsheet select.st {
   width: 100%;
   height: 23px;
   background: transparent;
@@ -135,7 +151,7 @@ select.sheet-st {
   border-top: none;
 }
 
-input.sheet-total {
+.ui-dialog .tab-content .charsheet input.total {
   width: 20px;
   height: 20px;
   background: transparent;
@@ -148,7 +164,7 @@ input.sheet-total {
   text-align: center;
 }
 
-input.sheet-specialty {
+.ui-dialog .tab-content .charsheet input.specialty {
   width: 100%;
   height: 23px;
   background: transparent;
@@ -160,7 +176,7 @@ input.sheet-specialty {
   font-style: italic;
 }
 
-input.sheet-repeating {
+.ui-dialog .tab-content .charsheet input.repeating {
   width: 100%;
   height: 23px;
   background: transparent;
@@ -171,13 +187,34 @@ input.sheet-repeating {
   border-top: none;
 }
 
-h2 {
+/* Movement table header styling */
+.ui-dialog .tab-content .charsheet .movement-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.ui-dialog .tab-content .charsheet .movement-table th {
+  text-align: center;
+  padding: 2px;
+  font-weight: bold;
+  font-size: smaller;
+  color: black;
+  font-variant: small-caps;
+  vertical-align: middle;
+}
+
+.ui-dialog .tab-content .charsheet .movement-table td {
+  text-align: center;
+  padding: 2px;
+}
+
+.ui-dialog .tab-content .charsheet h2 {
   font-weight: bold;
   font-variant: small-caps;
   text-align: center;
 }
 
-.sheet-label {
+.ui-dialog .tab-content .charsheet .label {
   color: darkred;
   font-variant: small-caps;
   white-space: nowrap;
@@ -185,27 +222,27 @@ h2 {
   font-size: 11px;
 }
 
-.sheet-subtitle {
+.ui-dialog .tab-content .charsheet .subtitle {
   font-weight: bold;
   color: darkred;
   font-variant: small-caps;
   font-size: 11px;
 }
 
-.sheet-title {
+.ui-dialog .tab-content .charsheet .title {
   font-weight: bold;
   color: darkred;
   font-variant: small-caps;
 }
 
-h1.sheet-title {
+.ui-dialog .tab-content .charsheet h1.title {
   background-image: url("https://raw.githubusercontent.com/AndrewHolder/roll20-character-sheets-Testing/831c3fc33fdd10ee5e4d64db31eb7c64f7947420/AEON-Aberrant/AberrantLogo.png");
   background-size: auto;
   margin: 0 auto;
   text-indent: -10000px;
 }
 
-textarea.sheet-textarea_1 {
+.ui-dialog .tab-content .charsheet textarea.textarea_1 {
   width: 96%;
   border-radius: 5px;
   background: white;
@@ -213,7 +250,7 @@ textarea.sheet-textarea_1 {
   height: 24px;
 }
 
-textarea.sheet-textarea_2 {
+.ui-dialog .tab-content .charsheet textarea.textarea_2 {
   width: 96%;
   border-radius: 5px;
   background: white;
@@ -221,8 +258,8 @@ textarea.sheet-textarea_2 {
   height: 220px;
 }
 
-input.sheet-select_wound,
-select.sheet-select_wound {
+.ui-dialog .tab-content .charsheet input.select_wound,
+.ui-dialog .tab-content .charsheet select.select_wound {
   width: 100%;
   height: 23px;
   background: transparent;
@@ -233,48 +270,17 @@ select.sheet-select_wound {
   border-top: none;
 }
 
-.sheet-hidden {
+.ui-dialog .tab-content .charsheet .hidden {
   display: none;
 }
 
-/* Grid Layout */
-div.sheet-grid_details {
-  display: grid;
-  grid-template-columns: 250px 250px 250px;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-}
-
-div.sheet-grid_details_2 {
-  display: grid;
-  grid-template-columns: 120px 125px 250px 250px;
-  grid-column-gap: 5px;
-  grid-row-gap: 5px;
-}
-
-div.sheet-grid_item {
-  padding: 2px;
-  height: 24px;
-}
-
-div.sheet-subtitle {
-  font-size: 10px;
-  font-style: italic;
-  align-self: start;
-}
-
-.sheet-grid_item_a {
-  grid-column: span 2;
-}
-
-/* End of Grid Layout */
-input.sheet-hider:checked ~ div.sheet-hold {
+.ui-dialog .tab-content .charsheet input.hider:checked ~ div.hold {
   display: none;
 }
 
 /* Custom Radio Buttons */
-input.sheet-mdot[type=radio],
-input.sheet-dot[type=radio] {
+.ui-dialog .tab-content .charsheet input.mdot[type=radio],
+.ui-dialog .tab-content .charsheet input.dot[type=radio] {
   opacity: 0;
   width: 16px;
   height: 16px;
@@ -286,7 +292,7 @@ input.sheet-dot[type=radio] {
   z-index: 1;
 }
 
-input.sheet-dot[type=radio] + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type=radio] + span::before {
   margin-right: 4px;
   border: solid 1px #a8a8a8;
   line-height: 14px;
@@ -303,7 +309,7 @@ input.sheet-dot[type=radio] + span::before {
 }
 
 /* Temporary Dots */
-input.sheet-dot[type=radio].temporary + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type=radio].temporary + span::before {
   margin-right: 4px;
   border: solid 1px #a8a8a8;
   line-height: 14px;
@@ -319,12 +325,12 @@ input.sheet-dot[type=radio].temporary + span::before {
   border-radius: 50%;
 }
 
-input.sheet-dot[type=radio]:checked ~ input.sheet-dot[type=radio] + span::before {
+.ui-dialog .tab-content .charsheet input.dot[type=radio]:checked ~ input.dot[type=radio] + span::before {
   content: "";
   background: radial-gradient(#f6f6f6, #dfdfdf);
 }
 
-input.sheet-mdot[type=radio] + span::before {
+.ui-dialog .tab-content .charsheet input.mdot[type=radio] + span::before {
   margin-right: 4px;
   border: solid 1px #a8a8a8;
   line-height: 14px;
@@ -340,22 +346,22 @@ input.sheet-mdot[type=radio] + span::before {
   border-radius: 10%;
 }
 
-input.sheet-mdot[type=radio]:checked ~ input.sheet-mdot[type=radio] + span::before {
+.ui-dialog .tab-content .charsheet input.mdot[type=radio]:checked ~ input.mdot[type=radio] + span::before {
   content: "";
   background: radial-gradient(#f6f6f6, #dfdfdf);
 }
 
 /* Empty Traits */
-input.sheet-zero[type=radio]:checked + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type=radio]:checked + span::before {
   opacity: 0;
 }
 
-input.sheet-zero[type=radio]:hover + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type=radio]:hover + span::before {
   opacity: 1;
   background: transparent;
 }
 
-input.sheet-zero[type=radio] + span::before {
+.ui-dialog .tab-content .charsheet input.zero[type=radio] + span::before {
   font-size: 12px;
   content: "✖";
   opacity: 0.25;
@@ -367,7 +373,7 @@ input.sheet-zero[type=radio] + span::before {
 }
 
 /* Gear Checkbox */
-input.sheet-gear[type=checkbox] {
+.ui-dialog .tab-content .charsheet input.gear[type=checkbox] {
   position: relative;
   top: 5px;
   left: 6px;
@@ -379,7 +385,7 @@ input.sheet-gear[type=checkbox] {
   z-index: 1;
 }
 
-input.sheet-gear[type=checkbox] + span::before {
+.ui-dialog .tab-content .charsheet input.gear[type=checkbox] + span::before {
   position: relative;
   top: 4px;
   left: 0;
@@ -400,14 +406,14 @@ input.sheet-gear[type=checkbox] + span::before {
   border-radius: 3px;
 }
 
-input.sheet-gear[type=checkbox]:checked + span::before {
+.ui-dialog .tab-content .charsheet input.gear[type=checkbox]:checked + span::before {
   color: gray;
 }
 
 /* Strike Checkbox */
-input.sheet-strike[type=checkbox] {
+.ui-dialog .tab-content .charsheet input.strike[type=checkbox] {
   opacity: 0;
-  width: 25px;
+  width: 15px;
   position: relative;
   top: 0;
   left: 0;
@@ -416,7 +422,7 @@ input.sheet-strike[type=checkbox] {
   z-index: 1;
 }
 
-input.sheet-strike[type=checkbox]::before + span::before {
+.ui-dialog .tab-content .charsheet input.strike[type=checkbox]::before + span::before {
   margin-right: 4px;
   margin-left: 0;
   line-height: 14px;
@@ -429,7 +435,7 @@ input.sheet-strike[type=checkbox]::before + span::before {
   position: relative;
 }
 
-span.sheet-strike {
+.ui-dialog .tab-content .charsheet span.strike {
   position: relative;
   left: -10px;
   width: 20px;
@@ -439,14 +445,14 @@ span.sheet-strike {
   font-weight: bold;
 }
 
-input.sheet-strike[type=checkbox]:checked + span {
+.ui-dialog .tab-content .charsheet input.strike[type=checkbox]:checked + span {
   color: red;
   text-shadow: none;
   text-decoration: none;
 }
 
 /* Skill Open/Close Toggle */
-input.sheet-skill_open[type=checkbox] {
+.ui-dialog .tab-content .charsheet input.skill_open[type=checkbox] {
   position: relative;
   top: 5px;
   left: 6px;
@@ -458,7 +464,7 @@ input.sheet-skill_open[type=checkbox] {
   z-index: 1;
 }
 
-input.sheet-skill_open[type=checkbox] + span::before {
+.ui-dialog .tab-content .charsheet input.skill_open[type=checkbox] + span::before {
   position: relative;
   top: -14px;
   left: -4px;
@@ -466,23 +472,29 @@ input.sheet-skill_open[type=checkbox] + span::before {
   border: none;
   border-radius: 4px;
   line-height: 14px;
-  text-align: center;
+  text-align: left;
   display: inline-block;
   vertical-align: middle;
   background: darkred;
   color: white;
-  content: "Skill Close";
+  content: "▼ Abilities";
   height: 16px;
   width: 250px;
   font-size: 12px;
 }
 
-input.sheet-skill_open[type=checkbox]:checked + span::before {
-  content: "Skill Open";
+.ui-dialog .tab-content .charsheet input.skill_open[type=checkbox]:checked + span::before {
+  content: "▶ Abilities";
+}
+
+.ui-dialog .tab-content .charsheet h3.category-title {
+  font-variant: small-caps;
+  text-align: center;
+  color: black;
 }
 
 /* Header Banner */
-.charsheet .sheet-header {
+.ui-dialog .tab-content .charsheet .header {
   height: 100px;
   background-color: #c514a8;
   position: relative;
@@ -492,7 +504,7 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   border: 2px solid black;
 }
 
-.charsheet .sheet-header .row {
+.ui-dialog .tab-content .charsheet .header .row {
   display: flex !important;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
@@ -502,34 +514,49 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   position: relative;
 }
 
-.charsheet .sheet-header img.sheet-character-avatar {
+.ui-dialog .tab-content .charsheet .header img.character-avatar {
   height: 100px;
   width: 100px;
   object-fit: contain;
+  position: absolute;
+  left: 0;
+  top: 0;
   flex-shrink: 0;
   border-right: 2px solid black;
   border-bottom: 0;
   background-color: white;
+  z-index: 2;
 }
 
-.charsheet .sheet-header .sheet-character-detail {
+.ui-dialog .tab-content .charsheet .header .character-detail {
   display: inline-block;
+  position: absolute;
+  left: 110px;
+  top: 50%;
+  transform: translateY(-50%);
   flex: 1;
   text-align: left;
   padding-left: 10px;
   font-variant: small-caps;
   font-weight: bold;
+  z-index: 3;
 }
 
-.charsheet .sheet-header .sheet-logo-col {
+.ui-dialog .tab-content .charsheet .header .logo-col {
   display: inline-block;
   position: absolute;
   right: 0;
   top: 0;
   max-width: 400px;
+  z-index: 1;
+}
+@media (max-width: 550px) {
+  .ui-dialog .tab-content .charsheet .header .logo-col {
+    display: none;
+  }
 }
 
-.charsheet .sheet-logo {
+.ui-dialog .tab-content .charsheet .logo {
   display: inline-block;
   height: 100px;
   width: auto;
@@ -537,213 +564,146 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   object-fit: contain;
 }
 
-/* Roll Templates */
-.sheet-rolltemplate-base .sheet-container {
-  background-color: #fff;
-  border: 1px solid;
-  padding: 2px;
-  width: 189px;
-}
-
-.sheet-rolltemplate-base .sheet-container h1 {
-  color: darkred;
-  font-size: 1.2em;
-  font-variant: small-caps;
-  line-height: 20px;
-}
-
-.sheet-rolltemplate-base div {
-  padding: 2px;
-}
-
-.sheet-rolltemplate-base span {
-  color: #7e2d40;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.2em;
-  font-variant: small-caps;
-  line-height: 1.6em;
-  padding-left: 5px;
-  text-align: left;
-}
-
-.sheet-rolltemplate-base .sheet-subheader {
-  color: #000;
-  font-size: 1em;
-  font-style: italic;
-}
-
-.sheet-rolltemplate-base .sheet-arrow-right {
-  border-bottom: 2px solid transparent;
-  border-left: 180px solid black;
-  border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-base .sheet-tcat {
-  font-style: italic;
-}
-
-.sheet-rolltemplate-base .inlinerollresult {
-  background-color: #fff;
-  border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.fullcrit {
-  color: #3fb315;
-  border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.fullfail {
-  color: #b31515;
-  border: none;
-}
-
-.sheet-rolltemplate-base .inlinerollresult.importandivoll {
-  color: #4a57ed;
-  border: none;
-}
-
-.sheet-rolltemplate-base .sheet-rowcolor2 {
-  color: red;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: bold;
-}
-
-.sheet-rolltemplate-initiative .sheet-container {
-  background-color: #fff;
-  border: 1px solid;
-  padding: 2px;
-  width: 189px;
-}
-
-.sheet-rolltemplate-initiative .sheet-container h1 {
-  color: darkred;
-  font-size: 1.2em;
-  font-variant: small-caps;
-  line-height: 20px;
-}
-
-.sheet-rolltemplate-initiative div {
-  padding: 2px;
-}
-
-.sheet-rolltemplate-initiative span {
-  color: #7e2d40;
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1.2em;
-  font-variant: small-caps;
-  line-height: 1.6em;
-  padding-left: 5px;
-  text-align: left;
-}
-
-.sheet-rolltemplate-initiative .sheet-subheader {
-  color: #000;
-  font-size: 1em;
-  font-style: italic;
-}
-
-.sheet-rolltemplate-initiative .sheet-arrow-right {
-  border-bottom: 2px solid transparent;
-  border-left: 180px solid black;
-  border-top: 2px solid transparent;
-}
-
-.sheet-rolltemplate-initiative .sheet-tcat {
-  font-style: italic;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult {
-  background-color: #fff;
-  border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.fullcrit {
-  color: #3fb315;
-  border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.fullfail {
-  color: #b31515;
-  border: none;
-}
-
-.sheet-rolltemplate-initiative .inlinerollresult.importandivoll {
-  color: #4a57ed;
-  border: none;
-}
-
-.sheet-rolltemplate-initiative .sheet-rowcolor2 {
-  color: red;
-  font-size: 1em;
-  font-style: italic;
-  font-weight: bold;
-}
-
+.sheet-rolltemplate-base .sheet-container,
+.sheet-rolltemplate-attack .sheet-container,
+.sheet-rolltemplate-damage .sheet-container,
+.sheet-rolltemplate-initiative .sheet-container,
 .sheet-rolltemplate-megaroll .sheet-container {
-  background-color: #fff;
-  border: 1px solid;
+  background-color: white;
+  background-image: radial-gradient(#e0e0e0 33%, transparent 34%), radial-gradient(#e0e0e0 33%, transparent 34%);
+  background-size: 5px 5px;
+  background-position: 0 0, 2.5px 2.5px;
+  border: 2px solid;
   padding: 2px;
   width: 189px;
+  font-family: "Bangers", cursive;
+  filter: drop-shadow(5px 5px 0 black);
 }
-
+.sheet-rolltemplate-base .sheet-container h1,
+.sheet-rolltemplate-attack .sheet-container h1,
+.sheet-rolltemplate-damage .sheet-container h1,
+.sheet-rolltemplate-initiative .sheet-container h1,
 .sheet-rolltemplate-megaroll .sheet-container h1 {
   color: darkred;
-  font-size: 1.2em;
+  font-family: "Bangers", cursive;
+  font-size: 1.4em;
   font-variant: small-caps;
   line-height: 20px;
 }
-
+.sheet-rolltemplate-base div,
+.sheet-rolltemplate-attack div,
+.sheet-rolltemplate-damage div,
+.sheet-rolltemplate-initiative div,
 .sheet-rolltemplate-megaroll div {
   padding: 2px;
 }
-
+.sheet-rolltemplate-base span,
+.sheet-rolltemplate-attack span,
+.sheet-rolltemplate-damage span,
+.sheet-rolltemplate-initiative span,
 .sheet-rolltemplate-megaroll span {
   color: #7e2d40;
-  font-family: "Times New Roman", Times, serif;
+  font-family: inherit;
   font-size: 1.2em;
   font-variant: small-caps;
   line-height: 1.6em;
   padding-left: 5px;
   text-align: left;
 }
-
+.sheet-rolltemplate-base .sheet-subheader,
+.sheet-rolltemplate-attack .sheet-subheader,
+.sheet-rolltemplate-damage .sheet-subheader,
+.sheet-rolltemplate-initiative .sheet-subheader,
 .sheet-rolltemplate-megaroll .sheet-subheader {
   color: #000;
   font-size: 1em;
-  font-style: italic;
+  font-family: "Rock Salt", cursive;
 }
-
-.sheet-rolltemplate-megaroll .sheet-arrow-right {
-  border-bottom: 2px solid transparent;
-  border-left: 180px solid black;
-  border-top: 2px solid transparent;
+.sheet-rolltemplate-base .sheet-dice-divider,
+.sheet-rolltemplate-attack .sheet-dice-divider,
+.sheet-rolltemplate-damage .sheet-dice-divider,
+.sheet-rolltemplate-initiative .sheet-dice-divider,
+.sheet-rolltemplate-megaroll .sheet-dice-divider {
+  position: relative;
+  text-align: center;
+  height: 2px;
+  background: linear-gradient(to right, black 0, black 40%, transparent 40%, transparent 60%, black 60%, black 100%);
+  margin: 8px 4px;
+  padding: 0 !important;
+  overflow: visible;
 }
-
+.sheet-rolltemplate-base .sheet-dice-divider:before,
+.sheet-rolltemplate-attack .sheet-dice-divider:before,
+.sheet-rolltemplate-damage .sheet-dice-divider:before,
+.sheet-rolltemplate-initiative .sheet-dice-divider:before,
+.sheet-rolltemplate-megaroll .sheet-dice-divider:before {
+  content: "J";
+  font-family: "dicefontd10";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -60%);
+  background: transparent;
+  padding: 0 10px;
+  font-size: 2.5em;
+  color: black;
+  line-height: 1;
+}
+.sheet-rolltemplate-base .sheet-tcat,
+.sheet-rolltemplate-attack .sheet-tcat,
+.sheet-rolltemplate-damage .sheet-tcat,
+.sheet-rolltemplate-initiative .sheet-tcat,
 .sheet-rolltemplate-megaroll .sheet-tcat {
   font-style: italic;
 }
-
+.sheet-rolltemplate-base .inlinerollresult,
+.sheet-rolltemplate-attack .inlinerollresult,
+.sheet-rolltemplate-damage .inlinerollresult,
+.sheet-rolltemplate-initiative .inlinerollresult,
 .sheet-rolltemplate-megaroll .inlinerollresult {
-  background-color: #fff;
+  background-color: transparent;
   border: none;
 }
-
+.sheet-rolltemplate-base .inlinerollresult.fullcrit,
+.sheet-rolltemplate-attack .inlinerollresult.fullcrit,
+.sheet-rolltemplate-damage .inlinerollresult.fullcrit,
+.sheet-rolltemplate-initiative .inlinerollresult.fullcrit,
 .sheet-rolltemplate-megaroll .inlinerollresult.fullcrit {
   color: #3fb315;
+  background-color: transparent;
   border: none;
 }
-
+.sheet-rolltemplate-base .inlinerollresult.fullfail,
+.sheet-rolltemplate-attack .inlinerollresult.fullfail,
+.sheet-rolltemplate-damage .inlinerollresult.fullfail,
+.sheet-rolltemplate-initiative .inlinerollresult.fullfail,
 .sheet-rolltemplate-megaroll .inlinerollresult.fullfail {
   color: #b31515;
+  background-color: transparent;
   border: none;
 }
-
+.sheet-rolltemplate-base .inlinerollresult.importantroll,
+.sheet-rolltemplate-attack .inlinerollresult.importantroll,
+.sheet-rolltemplate-damage .inlinerollresult.importantroll,
+.sheet-rolltemplate-initiative .inlinerollresult.importantroll,
+.sheet-rolltemplate-megaroll .inlinerollresult.importantroll {
+  color: #4a57ed;
+  background-color: transparent;
+  border: none;
+}
+.sheet-rolltemplate-base .inlinerollresult.importandivoll,
+.sheet-rolltemplate-attack .inlinerollresult.importandivoll,
+.sheet-rolltemplate-damage .inlinerollresult.importandivoll,
+.sheet-rolltemplate-initiative .inlinerollresult.importandivoll,
 .sheet-rolltemplate-megaroll .inlinerollresult.importandivoll {
   color: #4a57ed;
+  background-color: transparent;
   border: none;
 }
-
+.sheet-rolltemplate-base .sheet-rowcolor2,
+.sheet-rolltemplate-attack .sheet-rowcolor2,
+.sheet-rolltemplate-damage .sheet-rowcolor2,
+.sheet-rolltemplate-initiative .sheet-rowcolor2,
 .sheet-rolltemplate-megaroll .sheet-rowcolor2 {
   color: red;
   font-size: 1em;
@@ -751,50 +711,125 @@ input.sheet-skill_open[type=checkbox]:checked + span::before {
   font-weight: bold;
 }
 
-/* Tabs */
-.charsheet .sheet-abilities,
-.charsheet .sheet-info,
-.charsheet .sheet-quantum,
-.charsheet .sheet-combat {
+.sheet-rolltemplate-base .sheet-mega-roll {
+  display: flex;
+  justify-content: center;
+}
+.sheet-rolltemplate-base .sheet-mega-roll a[href^="~"] {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  background-color: blueviolet;
+  border: 1px solid purple;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+.sheet-rolltemplate-base .sheet-mega-roll a[href^="~"]:hover {
+  background-color: #a00000;
+  border-color: #700000;
+}
+
+.sheet-rolltemplate-attack .sheet-damage-roll {
+  display: flex;
+  justify-content: center;
+}
+.sheet-rolltemplate-attack .sheet-damage-roll a[href^="~"] {
+  display: inline-block;
+  color: white;
+  border-radius: 10px;
+  background-color: blueviolet;
+  border: 1px solid purple;
+  padding: 2px 8px;
+  text-decoration: none;
+}
+.sheet-rolltemplate-attack .sheet-damage-roll a[href^="~"]:hover {
+  background-color: #a00000;
+  border-color: #700000;
+}
+
+.sheet-rolltemplate-invisible .sheet-container {
+  display: none;
+}
+.sheet-rolltemplate-invisible {
   display: none;
 }
 
+/* Tabs */
+.ui-dialog .tab-content .charsheet .abilities,
+.ui-dialog .tab-content .charsheet .info,
+.ui-dialog .tab-content .charsheet .quantum,
+.ui-dialog .tab-content .charsheet .combat,
+.ui-dialog .tab-content .charsheet .help,
+.ui-dialog .tab-content .charsheet .config {
+  display: none;
+}
+
+/* Tab navigation layout */
+.ui-dialog .tab-content .charsheet .tab-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ui-dialog .tab-content .charsheet .tab-left {
+  display: flex;
+  gap: 4px;
+}
+
+.ui-dialog .tab-content .charsheet .tab-right {
+  display: flex;
+  gap: 4px;
+}
+
 /* Active button styling */
-.charsheet .sheet-tabstoggle[value=abilities] ~ div .sheet-button0 {
+.ui-dialog .tab-content .charsheet .tabstoggle[value=abilities] ~ div .button0 {
   outline: 2px solid red;
 }
 
-.charsheet .sheet-tabstoggle[value=quantum] ~ div .sheet-button1 {
+.ui-dialog .tab-content .charsheet .tabstoggle[value=quantum] ~ div .button1 {
   outline: 2px solid red;
 }
 
-.charsheet .sheet-tabstoggle[value=combat] ~ div .sheet-button2 {
+.ui-dialog .tab-content .charsheet .tabstoggle[value=combat] ~ div .button2 {
   outline: 2px solid red;
 }
 
-.charsheet .sheet-tabstoggle[value=info] ~ div .sheet-button3 {
+.ui-dialog .tab-content .charsheet .tabstoggle[value=info] ~ div .button3 {
+  outline: 2px solid red;
+}
+
+.ui-dialog .tab-content .charsheet .tabstoggle[value=help] ~ div .button4 {
+  outline: 2px solid red;
+}
+
+.ui-dialog .tab-content .charsheet .tabstoggle[value=config] ~ div .button5 {
   outline: 2px solid red;
 }
 
 /* Show selected tab */
-.charsheet .sheet-tabstoggle[value=abilities] ~ div.sheet-abilities,
-.charsheet .sheet-tabstoggle[value=quantum] ~ div.sheet-quantum,
-.charsheet .sheet-tabstoggle[value=combat] ~ div.sheet-combat,
-.charsheet .sheet-tabstoggle[value=info] ~ div.sheet-info {
+.ui-dialog .tab-content .charsheet .tabstoggle[value=abilities] ~ div.abilities,
+.ui-dialog .tab-content .charsheet .tabstoggle[value=quantum] ~ div.quantum,
+.ui-dialog .tab-content .charsheet .tabstoggle[value=combat] ~ div.combat,
+.ui-dialog .tab-content .charsheet .tabstoggle[value=info] ~ div.info,
+.ui-dialog .tab-content .charsheet .tabstoggle[value=help] ~ div.help,
+.ui-dialog .tab-content .charsheet .tabstoggle[value=config] ~ div.config {
   display: block;
 }
 
 /* Buttons */
-button {
+.ui-dialog .tab-content .charsheet button {
   border-radius: 5px;
 }
-
-button[type=roll].sheet-background::before,
-button[type=roll].sheet-grid_btn::before {
-  content: "";
+.ui-dialog .tab-content .charsheet button[type=roll].background::before,
+.ui-dialog .tab-content .charsheet button[type=roll].grid_btn::before,
+.ui-dialog .tab-content .charsheet button[type=action].d10-dice::before {
+  font-family: "dicefontd10";
+  content: "0 ";
+  font-weight: bold;
+  font-size: large;
 }
-
-.sheet-grid_btn {
+.ui-dialog .tab-content .charsheet .grid_btn,
+.ui-dialog .tab-content .charsheet .d10-dice {
   height: 20px;
   width: 20px;
   color: black;
@@ -803,9 +838,9 @@ button[type=roll].sheet-grid_btn::before {
   border-radius: 5px;
   padding: 0;
   margin: 0;
+  margin-left: auto;
 }
-
-.sheet-background {
+.ui-dialog .tab-content .charsheet .background {
   height: 16px;
   width: 16px;
   color: black;
@@ -816,36 +851,25 @@ button[type=roll].sheet-grid_btn::before {
   margin: 0;
 }
 
-button[type=action].sheet-d10-dice::before {
-  font-family: "dicefontd10";
-  content: "0 ";
-  font-weight: bold;
-  font-size: large;
-}
-
 /* Repeating Blocks */
-.repcontrol {
+.ui-dialog .tab-content .charsheet .repcontrol {
   min-height: 27px;
 }
-
-.repcontrol .btn {
+.ui-dialog .tab-content .charsheet .repcontrol .btn {
   border: medium none;
-  color: white !important;
+  color: gray !important;
   background: none;
   box-shadow: none;
 }
-
-.repcontrol .btn:focus {
+.ui-dialog .tab-content .charsheet .repcontrol .btn:focus {
   outline: 0;
 }
-
-.sheet-saving-throw-container .repcontrol .repcontrol_edit,
-.sheet-saving-throw-container .repcontrol .repcontrol_add {
+.ui-dialog .tab-content .charsheet .saving-throw-container .repcontrol .repcontrol_edit,
+.ui-dialog .tab-content .charsheet .saving-throw-container .repcontrol .repcontrol_add {
   padding-left: 4px;
   padding-right: 4px;
 }
-
-.repcontrol .repcontrol_edit:after {
+.ui-dialog .tab-content .charsheet .repcontrol .repcontrol_edit:after {
   content: "(";
   visibility: visible;
   font-family: pictos;
@@ -858,12 +882,10 @@ button[type=action].sheet-d10-dice::before {
   padding: 2px 4px;
   color: black;
 }
-
-.editmode ~ .repcontrol .repcontrol_edit:after {
+.ui-dialog .tab-content .charsheet .editmode ~ .repcontrol .repcontrol_edit:after {
   content: ")";
 }
-
-.repcontrol .repcontrol_add:before {
+.ui-dialog .tab-content .charsheet .repcontrol .repcontrol_add:before {
   content: "&";
   visibility: visible;
   font-family: pictos;
@@ -876,21 +898,24 @@ button[type=action].sheet-d10-dice::before {
   padding: 2px 4px;
   color: black;
 }
-
-.repcontrol .repcontrol_edit:hover:after,
-.repcontrol .repcontrol_add:hover:before {
+.ui-dialog .tab-content .charsheet .repcontrol .repcontrol_edit:hover:after,
+.ui-dialog .tab-content .charsheet .repcontrol .repcontrol_add:hover:before {
   background-color: #efefef;
 }
-
-.sheet-resources .repcontrol {
+.ui-dialog .tab-content .charsheet .resources .repcontrol {
   margin-top: -10px;
 }
-
-.itemcontrol {
+.ui-dialog .tab-content .charsheet .itemcontrol {
   z-index: 10;
 }
-
-.itemcontrol .repcontrol_del {
+.ui-dialog .tab-content .charsheet .itemcontrol .repcontrol_del {
+  font-size: 10px;
+  margin-top: 3px;
+  padding: 0;
+  height: 18px;
+  width: 18px;
+}
+.ui-dialog .tab-content .charsheet .itemcontrol .repcontrol_move {
   font-size: 10px;
   margin-top: 3px;
   padding: 0;
@@ -898,10 +923,197 @@ button[type=action].sheet-d10-dice::before {
   width: 18px;
 }
 
-.itemcontrol .repcontrol_move {
+/* Help Page Styles */
+.ui-dialog .tab-content .charsheet .help .intro-text {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.ui-dialog .tab-content .charsheet .help .step-section {
+  margin-bottom: 15px;
+}
+.ui-dialog .tab-content .charsheet .help .step-content {
+  margin-left: 15px;
+}
+.ui-dialog .tab-content .charsheet .help .info-box {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 15px 0;
+  background: rgba(255, 255, 255, 0.3);
+}
+.ui-dialog .tab-content .charsheet .help .costs-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table.with-spacing {
+  margin-bottom: 15px;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table.small-spacing {
+  margin-bottom: 10px;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table td {
+  padding: 2px 0;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table td.table-header {
+  font-weight: bold;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table td.align-right {
+  text-align: right;
+}
+.ui-dialog .tab-content .charsheet .help .costs-table tr:first-child td {
+  padding-bottom: 5px;
+}
+.ui-dialog .tab-content .charsheet .help .footnote {
   font-size: 10px;
-  margin-top: 3px;
-  padding: 0;
-  height: 18px;
-  width: 18px;
+  line-height: 1.4;
+}
+.ui-dialog .tab-content .charsheet .help .footnote.footnote-spacing {
+  margin-top: 5px;
+}
+
+/* Edit Mode Styles */
+/* When edit mode is disabled (checkbox not checked), make inputs read-only and hide interactive elements */
+/* When edit mode is enabled (checkbox is checked), all elements function normally */
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * input.edit-mode[type=text],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * input.edit-mode[type=number],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * textarea.edit-mode,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * select.edit-mode {
+  /* Make input fields with edit-mode class read-only and styled as non-editable */
+  pointer-events: none !important;
+  cursor: default !important;
+  background-color: transparent;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * input.edit-mode[type=radio],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * input.edit-mode[type=checkbox] {
+  /* Make radio buttons and checkboxes with edit-mode class non-interactive */
+  pointer-events: none !important;
+  cursor: default !important;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * button.edit-mode[type=roll],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * button.edit-mode[type=action] {
+  /* Hide buttons with edit-mode class when edit mode is off */
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * div.edit-mode-only,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .edit-mode-only {
+  /* Hide elements with edit-mode class when edit mode is off */
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol .repcontrol_edit,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol .repcontrol_del,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol .repcontrol_add,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repcontrol .repcontrol_move,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repitem .itemcontrol,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repitem .itemcontrol .repcontrol_edit,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repitem .itemcontrol .repcontrol_del,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repitem .itemcontrol .repcontrol_move,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * .repitem .itemcontrol .repcontrol_add,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_add,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_edit,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_del,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:not(:checked) ~ * fieldset .repcontrol .repcontrol_move {
+  /* Hide repeating section controls in fieldsets when edit mode is off */
+  /* Hide repeating controls regardless of placement */
+  display: none !important;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * input.edit-mode[type=text],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * input.edit-mode[type=number],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * textarea.edit-mode,
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * select.edit-mode {
+  pointer-events: auto !important;
+  cursor: auto !important;
+}
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * input.edit-mode[type=radio],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * input.edit-mode[type=checkbox],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * button.edit-mode[type=roll],
+.ui-dialog .tab-content .charsheet input[name=attr_edit_mode]:checked ~ * button.edit-mode[type=action] {
+  pointer-events: auto !important;
+  cursor: pointer !important;
+}
+
+.ui-dialog .tab-content .charsheet .grid-1column {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.ui-dialog .tab-content .charsheet .grid-2column {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-2column {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-2column > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 375px;
+  max-width: 450px;
+}
+.ui-dialog .tab-content .charsheet .grid-3column {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-3column {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-3column > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 250px;
+  max-width: 300px;
+}
+.ui-dialog .tab-content .charsheet .grid-combat-top {
+  display: grid;
+  grid-template-columns: 160px auto 265px;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 825px) {
+  .ui-dialog .tab-content .charsheet .grid-combat-top {
+    grid-template-columns: 1fr;
+  }
+}
+.ui-dialog .tab-content .charsheet .grid-combat-top > .col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+}
+.ui-dialog .tab-content .charsheet div.grid_details {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.ui-dialog .tab-content .charsheet div.grid_details_2 {
+  display: grid;
+  grid-template-columns: 120px 125px 250px 250px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+}
+.ui-dialog .tab-content .charsheet div.grid_item {
+  padding: 2px;
+  height: 24px;
+}
+.ui-dialog .tab-content .charsheet div.subtitle {
+  font-size: 10px;
+  font-style: italic;
+  align-self: start;
+}
+.ui-dialog .tab-content .charsheet .grid_item_a {
+  grid-column: span 2;
 }

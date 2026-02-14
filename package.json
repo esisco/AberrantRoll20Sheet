@@ -4,7 +4,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npm run build:html && npm run build:css",
-    "build:html": "tsc && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html",
+    "build:events": "tsc --removeComments --target esnext --outFile src/scripts/eventHandlers.js src/ts/eventHandlers.ts src/ts/common/QuantumPowers.ts src/ts/types/Roll20.d.ts",
+    "build:html": "npm run build:events && npx ejs ./src/templates/main.ejs -o ./dist/AberrantRoll20Sheet.html",
     "build:css": "npx sass --no-source-map --no-charset src/scss/index.scss dist/AberrantRoll20Sheet.css"
   },
   "repository": {

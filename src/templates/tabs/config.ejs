@@ -1,0 +1,75 @@
+<%
+// Custom movement column options
+const customMoveOptions = ['Flight', 'Swim', 'Hyperrun', 'Hyperflight', 'Hyperswim', 'Teleport', 'Burrowing', 'Climbing', 'Other'];
+-%>
+    <div class='config'>
+		<h2>Configuration</h2>
+        <div class="grid-2column">
+		<div class="col">
+			<h3>Sheet Configuration</h3>
+			<p>Configure your character sheet preferences and settings here.</p>
+			
+			<h3>Character Settings</h3>
+			<div class="row">
+				<label>
+					<input type="checkbox" name="attr_edit_mode" value="1" class="edit-mode-toggle" />
+					Enable Edit Mode
+				</label>
+			</div>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				When edit mode is enabled, you can modify character details directly on the sheet.
+			</p>
+			<div class="row">
+				<label>
+					<input type="checkbox" name="attr_mega_over_5" value="0" />
+					Allow Mega Attributes Over 5
+				</label>
+			</div>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				Enable this option to allow mega attributes to exceed 5.
+			</p>
+			<div class="row">
+				<label>
+					<input type="checkbox" name="attr_show_chrysalis" value="0" />
+					Show Chrysalis Fields
+				</label>
+			</div>
+			<p style="font-size: 11px; font-style: italic; margin-left: 15px; margin-top: 5px;">
+				Enable this option to show Chrysalis-related fields on the sheet.
+			</p>
+		</div>
+        <div class="col">
+            <h3>Movement Custom Columns:</h3>
+            <div class="row">
+                <div class="item w100">Column 4:</div>
+                <div class="item w100">
+                    <select name='attr_moveColumn1Name' class='st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Flight' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item w100">Column 5:</div>
+                <div class="item w100">
+                    <select name='attr_moveColumn2Name' class='st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Swim' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="item w100">Column 6:</div>
+                <div class="item w100">
+                    <select name='attr_moveColumn3Name' class='st'>
+                        <% customMoveOptions.forEach(opt => { -%>
+                        <option value='<%= opt %>'<%= opt === 'Other' ? ' selected' : '' %>><%= opt %></option>
+                        <% }); -%>
+                    </select>
+                </div>
+            </div>
+        </div>
+	</div>
+    </div>

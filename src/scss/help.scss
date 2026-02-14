@@ -1,0 +1,62 @@
+/* Help Page Styles */
+.ui-dialog .tab-content .charsheet {
+    .help {
+        .intro-text {
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        .step-section {
+            margin-bottom: 15px;
+        }
+
+        .step-content {
+            margin-left: 15px;
+        }
+
+        .info-box {
+            border: 2px solid #ccc;
+            padding: 10px;
+            margin: 15px 0;
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        .costs-table {
+            width: 100%;
+            border-collapse: collapse;
+
+            &.with-spacing {
+                margin-bottom: 15px;
+            }
+
+            &.small-spacing {
+                margin-bottom: 10px;
+            }
+
+            td {
+                padding: 2px 0;
+
+                &.table-header {
+                    font-weight: bold;
+                }
+
+                &.align-right {
+                    text-align: right;
+                }
+            }
+
+            tr:first-child td {
+                padding-bottom: 5px;
+            }
+        }
+
+        .footnote {
+            font-size: 10px;
+            line-height: 1.4;
+
+            &.footnote-spacing {
+                margin-top: 5px;
+            }
+        }
+    }
+}

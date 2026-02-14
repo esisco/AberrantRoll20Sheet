@@ -1,25 +1,37 @@
+<input type="checkbox" name="attr_edit_mode" value="1" style="display:none;" />
 <div class='wrapper'>
     <%- include('header'); %>
-    <input type="hidden" class="sheet-tabstoggle" name="attr_sheetTab" value="abilities" />
-    <div>
-        <button type="action" name="act_abilities" class="sheet-button0">Abilities</button>
-        <button type="action" name="act_quantum" class="sheet-button1">Quantum</button>
-        <button type="action" name="act_combat" class="sheet-button2">Combat</button>
-        <button type="action" name="act_info" class="sheet-button3">Info</button>
+    <input type="hidden" class="tabstoggle" name="attr_sheetTab" value="abilities" />
+    <div class="tab-nav">
+        <div class="tab-left">
+            <button type="action" name="act_abilities" class="button0">Abilities</button>
+            <button type="action" name="act_quantum" class="button1">Quantum</button>
+            <button type="action" name="act_combat" class="button2">Combat</button>
+            <button type="action" name="act_info" class="button3">Info</button>
+        </div>
+        <div class="tab-right">
+            <button type="action" name="act_help" class="button4" title="Help">?</button>
+            <button type="action" name="act_config" class="button5" title="Configuration">⚙</button>
+        </div>
     </div>
 
     <%- include('tabs/abilities'); %>
     <%- include('tabs/quantum'); %>
     <%- include('tabs/combat'); %>
     <%- include('tabs/info'); %>
+    <%- include('tabs/help'); %>
+    <%- include('tabs/config'); %>
 </div>
 
 <%- include('rollTemplates/base') %>
 <%- include('rollTemplates/initiative') %>
 <%- include('rollTemplates/mega') %>
+<%- include('rollTemplates/attack') %>
+<%- include('rollTemplates/invisible') %>
+<%- include('rollTemplates/damage') %>
 
 <script type="text/worker">
 
-<%- include('../scripts/AberrantRoll20Sheet.js') %>
+<%- include('../scripts/eventHandlers.js') %>
 
 </script>

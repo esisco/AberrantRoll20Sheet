@@ -1,21 +1,44 @@
 /* Tabs */
-.charsheet .sheet-abilities,
-.charsheet .sheet-info,
-.charsheet .sheet-quantum,
-.charsheet .sheet-combat {
+.ui-dialog .tab-content .charsheet .abilities,
+.ui-dialog .tab-content .charsheet .info,
+.ui-dialog .tab-content .charsheet .quantum,
+.ui-dialog .tab-content .charsheet .combat,
+.ui-dialog .tab-content .charsheet .help,
+.ui-dialog .tab-content .charsheet .config {
     display: none;
 }
 
+/* Tab navigation layout */
+.ui-dialog .tab-content .charsheet .tab-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ui-dialog .tab-content .charsheet .tab-left {
+    display: flex;
+    gap: 4px;
+}
+
+.ui-dialog .tab-content .charsheet .tab-right {
+    display: flex;
+    gap: 4px;
+}
+
 /* Active button styling */
-.charsheet .sheet-tabstoggle[value="abilities"] ~ div .sheet-button0 { outline: 2px solid red; }
-.charsheet .sheet-tabstoggle[value="quantum"] ~ div .sheet-button1 { outline: 2px solid red; }
-.charsheet .sheet-tabstoggle[value="combat"] ~ div .sheet-button2 { outline: 2px solid red; }
-.charsheet .sheet-tabstoggle[value="info"] ~ div .sheet-button3 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="abilities"] ~ div .button0 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="quantum"] ~ div .button1 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="combat"] ~ div .button2 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="info"] ~ div .button3 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="help"] ~ div .button4 { outline: 2px solid red; }
+.ui-dialog .tab-content .charsheet .tabstoggle[value="config"] ~ div .button5 { outline: 2px solid red; }
 
 /* Show selected tab */
-.charsheet .sheet-tabstoggle[value="abilities"] ~ div.sheet-abilities,
-.charsheet .sheet-tabstoggle[value="quantum"] ~ div.sheet-quantum,
-.charsheet .sheet-tabstoggle[value="combat"] ~ div.sheet-combat,
-.charsheet .sheet-tabstoggle[value="info"] ~ div.sheet-info {
+.ui-dialog .tab-content .charsheet .tabstoggle[value="abilities"] ~ div.abilities,
+.ui-dialog .tab-content .charsheet .tabstoggle[value="quantum"] ~ div.quantum,
+.ui-dialog .tab-content .charsheet .tabstoggle[value="combat"] ~ div.combat,
+.ui-dialog .tab-content .charsheet .tabstoggle[value="info"] ~ div.info,
+.ui-dialog .tab-content .charsheet .tabstoggle[value="help"] ~ div.help,
+.ui-dialog .tab-content .charsheet .tabstoggle[value="config"] ~ div.config {
     display: block;
 }

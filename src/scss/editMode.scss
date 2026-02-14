@@ -1,0 +1,76 @@
+/* Edit Mode Styles */
+/* When edit mode is disabled (checkbox not checked), make inputs read-only and hide interactive elements */
+/* When edit mode is enabled (checkbox is checked), all elements function normally */
+.ui-dialog .tab-content .charsheet {
+    input[name="attr_edit_mode"]:not(:checked) {
+
+        ~* input.edit-mode[type="text"],
+        ~* input.edit-mode[type="number"],
+        ~* textarea.edit-mode,
+        ~* select.edit-mode {
+            /* Make input fields with edit-mode class read-only and styled as non-editable */
+            pointer-events: none !important;
+            cursor: default !important;
+            background-color: transparent;
+        }
+
+        ~* input.edit-mode[type="radio"],
+        ~* input.edit-mode[type="checkbox"] {
+            /* Make radio buttons and checkboxes with edit-mode class non-interactive */
+            pointer-events: none !important;
+            cursor: default !important;
+        }
+
+        ~* button.edit-mode[type="roll"],
+        ~* button.edit-mode[type="action"] {
+            /* Hide buttons with edit-mode class when edit mode is off */
+            display: none !important;
+        }
+
+        ~* div.edit-mode-only,
+        ~* .edit-mode-only {
+            /* Hide elements with edit-mode class when edit mode is off */
+            display: none !important;
+        }
+
+        ~* .repcontrol,
+        ~* .repcontrol .repcontrol_edit,
+        ~* .repcontrol .repcontrol_del,
+        ~* .repcontrol .repcontrol_add,
+        ~* .repcontrol .repcontrol_move,
+        ~* .repitem .itemcontrol,
+        ~* .repitem .itemcontrol .repcontrol_edit,
+        ~* .repitem .itemcontrol .repcontrol_del,
+        ~* .repitem .itemcontrol .repcontrol_move,
+        ~* .repitem .itemcontrol .repcontrol_add,
+        ~* fieldset .repcontrol,
+        ~* fieldset .repcontrol .repcontrol_add,
+        ~* fieldset .repcontrol .repcontrol_edit,
+        ~* fieldset .repcontrol .repcontrol_del,
+        ~* fieldset .repcontrol .repcontrol_move {
+            /* Hide repeating section controls in fieldsets when edit mode is off */
+            /* Hide repeating controls regardless of placement */
+            display: none !important;
+        }
+    }
+
+    input[name="attr_edit_mode"]:checked {
+
+        ~* input.edit-mode[type="text"],
+        ~* input.edit-mode[type="number"],
+        ~* textarea.edit-mode,
+        ~* select.edit-mode {
+            pointer-events: auto !important;
+            cursor: auto !important;
+            // background: white !important;
+        }
+
+        ~* input.edit-mode[type="radio"],
+        ~* input.edit-mode[type="checkbox"],
+        ~* button.edit-mode[type="roll"],
+        ~* button.edit-mode[type="action"] {
+            pointer-events: auto !important;
+            cursor: pointer !important;
+        }
+    }
+}
