@@ -186,7 +186,7 @@ const attributeColumns = [
                             <input type='radio' class="dot edit-mode" name='attr_<%= skillName %>' value=<%= i %> /><span></span>
 <% } -%>
                             =<input type='text' class='total' name='attr_<%= skillName %>_Total' value="@{<%= attrName %>}+@{<%= skillName %>}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_<%= skillName %>" value="&{template:base} {{subtag= @{character_name} }} {{name= <%= displayName %> }} {{roll= [[ (?{Modifier?|0} +@{<%= skillName %>_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= skillName %>_Specialty}}} <%= megaRoll %>"></button>
+                            <button type='roll' class="grid_btn" name="roll_<%= skillName %>" value="&{template:base} {{subtag= @{character_name} }} {{name= <%= displayName %> }} {{roll= [[ (?{Modifier?|0} +@{<%= skillName %>_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= skillName %>_Specialty}}} <%= megaRoll %>"></button>
                         </div>
 <% }); -%>
                         <fieldset class='repeating_<%= attrName.toLowerCase() %>'>
@@ -200,7 +200,7 @@ const attributeColumns = [
         						<input type='radio' class="dot edit-mode" name='attr_<%= attr.repeatPrefix %>' value=<%= i %> /><span></span>
 <% } -%>
                                 =<input type='text' class='total' name='attr_<%= attr.repeatPrefix %>_Total' value="@{<%= attrName %>}+@{<%= attr.repeatPrefix %>}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_<%= attr.repeatPrefix %>_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{<%= attr.repeatPrefix %>Name} }} {{roll= [[ (?{Modifier?|0} +@{<%= attr.repeatPrefix %>_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= attr.repeatPrefix %>Specialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_<%= attr.repeatPrefix %>_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{<%= attr.repeatPrefix %>Name} }} {{roll= [[ (?{Modifier?|0} +@{<%= attr.repeatPrefix %>_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{<%= attr.repeatPrefix %>Specialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
