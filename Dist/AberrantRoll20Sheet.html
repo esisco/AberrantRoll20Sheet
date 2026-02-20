@@ -73,7 +73,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Brawl' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Brawl' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Brawl_Total' value="@{Strength}+@{Brawl}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Brawl" value="&{template:base} {{subtag= @{character_name} }} {{name= Brawl }} {{roll= [[ (?{Modifier?|0} +@{Brawl_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Brawl_Specialty}}} "></button>
+                            <button type='roll' class="grid_btn" name="roll_Brawl" value="&{template:base} {{subtag= @{character_name} }} {{name= Brawl }} {{roll= [[ (?{Modifier?|0} +@{Brawl_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Brawl_Specialty}}} "></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Might</span></div>
@@ -87,7 +87,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Might' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Might' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Might_Total' value="@{Strength}+@{Might}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Might" value="&{template:base} {{subtag= @{character_name} }} {{name= Might }} {{roll= [[ (?{Modifier?|0} +@{Might_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Might_Specialty}}} "></button>
+                            <button type='roll' class="grid_btn" name="roll_Might" value="&{template:base} {{subtag= @{character_name} }} {{name= Might }} {{roll= [[ (?{Modifier?|0} +@{Might_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Might_Specialty}}} "></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 87">Throwing</span></div>
@@ -101,7 +101,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Throwing' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Throwing' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Throwing_Total' value="@{Strength}+@{Throwing}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Throwing" value="&{template:base} {{subtag= @{character_name} }} {{name= Throwing }} {{roll= [[ (?{Modifier?|0} +@{Throwing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Throwing_Specialty}}} {{mega=[Mega Strength: @{Mega_Strength}](~roll_Mega_Strength) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Throwing" value="&{template:base} {{subtag= @{character_name} }} {{name= Throwing }} {{roll= [[ (?{Modifier?|0} +@{Throwing_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Throwing_Specialty}}} {{mega=[Mega Strength: @{Mega_Strength}](~roll_Mega_Strength) }}"></button>
                         </div>
                         <fieldset class='repeating_strength'>
                             <div class="row">
@@ -116,7 +116,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rStr' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rStr' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rStr_Total' value="@{Strength}+@{rStr}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rStr_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rStrName} }} {{roll= [[ (?{Modifier?|0} +@{rStr_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStrSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rStr_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rStrName} }} {{roll= [[ (?{Modifier?|0} +@{rStr_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStrSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -160,7 +160,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Archery' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Archery' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Archery_Total' value="@{Dexterity}+@{Archery}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Archery" value="&{template:base} {{subtag= @{character_name} }} {{name= Archery }} {{roll= [[ (?{Modifier?|0} +@{Archery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Archery_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Archery" value="&{template:base} {{subtag= @{character_name} }} {{name= Archery }} {{roll= [[ (?{Modifier?|0} +@{Archery_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Archery_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Athletics</span></div>
@@ -174,7 +174,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Athletics' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Athletics' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Athletics_Total' value="@{Dexterity}+@{Athletics}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Athletics" value="&{template:base} {{subtag= @{character_name} }} {{name= Athletics }} {{roll= [[ (?{Modifier?|0} +@{Athletics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Athletics_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Athletics" value="&{template:base} {{subtag= @{character_name} }} {{name= Athletics }} {{roll= [[ (?{Modifier?|0} +@{Athletics_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Athletics_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Drive</span></div>
@@ -188,7 +188,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Drive' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Drive' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Drive_Total' value="@{Dexterity}+@{Drive}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Drive" value="&{template:base} {{subtag= @{character_name} }} {{name= Drive }} {{roll= [[ (?{Modifier?|0} +@{Drive_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Drive_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Drive" value="&{template:base} {{subtag= @{character_name} }} {{name= Drive }} {{roll= [[ (?{Modifier?|0} +@{Drive_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Drive_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Firearms</span></div>
@@ -202,7 +202,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Firearms' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Firearms' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Firearms_Total' value="@{Dexterity}+@{Firearms}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Firearms" value="&{template:base} {{subtag= @{character_name} }} {{name= Firearms }} {{roll= [[ (?{Modifier?|0} +@{Firearms_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Firearms_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Firearms" value="&{template:base} {{subtag= @{character_name} }} {{name= Firearms }} {{roll= [[ (?{Modifier?|0} +@{Firearms_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Firearms_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 87">Gunnery</span></div>
@@ -216,7 +216,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Gunnery' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Gunnery' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Gunnery_Total' value="@{Dexterity}+@{Gunnery}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Gunnery" value="&{template:base} {{subtag= @{character_name} }} {{name= Gunnery }} {{roll= [[ (?{Modifier?|0} +@{Gunnery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gunnery_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Gunnery" value="&{template:base} {{subtag= @{character_name} }} {{name= Gunnery }} {{roll= [[ (?{Modifier?|0} +@{Gunnery_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gunnery_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 87">Heavy Weapons</span></div>
@@ -230,7 +230,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Heavy_Weapons' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Heavy_Weapons' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Heavy_Weapons_Total' value="@{Dexterity}+@{Heavy_Weapons}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Heavy_Weapons" value="&{template:base} {{subtag= @{character_name} }} {{name= Heavy Weapons }} {{roll= [[ (?{Modifier?|0} +@{Heavy_Weapons_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Heavy_Weapons_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Heavy_Weapons" value="&{template:base} {{subtag= @{character_name} }} {{name= Heavy Weapons }} {{roll= [[ (?{Modifier?|0} +@{Heavy_Weapons_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Heavy_Weapons_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Legerdemain</span></div>
@@ -244,7 +244,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Legerdemain' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Legerdemain' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Legerdemain_Total' value="@{Dexterity}+@{Legerdemain}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Legerdemain" value="&{template:base} {{subtag= @{character_name} }} {{name= Legerdemain }} {{roll= [[ (?{Modifier?|0} +@{Legerdemain_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Legerdemain_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Legerdemain" value="&{template:base} {{subtag= @{character_name} }} {{name= Legerdemain }} {{roll= [[ (?{Modifier?|0} +@{Legerdemain_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Legerdemain_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 136">Martial Arts</span></div>
@@ -258,7 +258,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Martial_Arts' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Martial_Arts' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Martial_Arts_Total' value="@{Dexterity}+@{Martial_Arts}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Martial_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Martial Arts }} {{roll= [[ (?{Modifier?|0} +@{Martial_Arts_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Martial_Arts_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Martial_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Martial Arts }} {{roll= [[ (?{Modifier?|0} +@{Martial_Arts_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Martial_Arts_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Melee</span></div>
@@ -272,7 +272,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Melee' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Melee' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Melee_Total' value="@{Dexterity}+@{Melee}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Melee" value="&{template:base} {{subtag= @{character_name} }} {{name= Melee }} {{roll= [[ (?{Modifier?|0} +@{Melee_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Melee_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Melee" value="&{template:base} {{subtag= @{character_name} }} {{name= Melee }} {{roll= [[ (?{Modifier?|0} +@{Melee_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Melee_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Pilot</span></div>
@@ -286,7 +286,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Pilot' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Pilot' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Pilot_Total' value="@{Dexterity}+@{Pilot}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Pilot" value="&{template:base} {{subtag= @{character_name} }} {{name= Pilot }} {{roll= [[ (?{Modifier?|0} +@{Pilot_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Pilot_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Pilot" value="&{template:base} {{subtag= @{character_name} }} {{name= Pilot }} {{roll= [[ (?{Modifier?|0} +@{Pilot_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Pilot_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 87">Ride</span></div>
@@ -300,7 +300,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Ride' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Ride' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Ride_Total' value="@{Dexterity}+@{Ride}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Ride" value="&{template:base} {{subtag= @{character_name} }} {{name= Ride }} {{roll= [[ (?{Modifier?|0} +@{Ride_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Ride_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Ride" value="&{template:base} {{subtag= @{character_name} }} {{name= Ride }} {{roll= [[ (?{Modifier?|0} +@{Ride_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Ride_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Stealth</span></div>
@@ -314,7 +314,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Stealth' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Stealth' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Stealth_Total' value="@{Dexterity}+@{Stealth}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Stealth" value="&{template:base} {{subtag= @{character_name} }} {{name= Stealth }} {{roll= [[ (?{Modifier?|0} +@{Stealth_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Stealth_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Stealth" value="&{template:base} {{subtag= @{character_name} }} {{name= Stealth }} {{roll= [[ (?{Modifier?|0} +@{Stealth_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Stealth_Specialty}}} {{mega=[Mega Dexterity: @{Mega_Dexterity}](~roll_Mega_Dexterity) }}"></button>
                         </div>
                         <fieldset class='repeating_dexterity'>
                             <div class="row">
@@ -329,7 +329,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rDex' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rDex' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rDex_Total' value="@{Dexterity}+@{rDex}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rDex_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rDexName} }} {{roll= [[ (?{Modifier?|0} +@{rDex_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rDexSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rDex_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rDexName} }} {{roll= [[ (?{Modifier?|0} +@{rDex_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rDexSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -373,7 +373,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Endurance' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Endurance' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Endurance_Total' value="@{Stamina}+@{Endurance}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Endurance" value="&{template:base} {{subtag= @{character_name} }} {{name= Endurance }} {{roll= [[ (?{Modifier?|0} +@{Endurance_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Endurance_Specialty}}} {{mega=[Mega Stamina: @{Mega_Stamina}](~roll_Mega_Stamina) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Endurance" value="&{template:base} {{subtag= @{character_name} }} {{name= Endurance }} {{roll= [[ (?{Modifier?|0} +@{Endurance_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Endurance_Specialty}}} {{mega=[Mega Stamina: @{Mega_Stamina}](~roll_Mega_Stamina) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Resistance</span></div>
@@ -387,7 +387,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Resistance' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Resistance' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Resistance_Total' value="@{Stamina}+@{Resistance}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Resistance" value="&{template:base} {{subtag= @{character_name} }} {{name= Resistance }} {{roll= [[ (?{Modifier?|0} +@{Resistance_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Resistance_Specialty}}} {{mega=[Mega Stamina: @{Mega_Stamina}](~roll_Mega_Stamina) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Resistance" value="&{template:base} {{subtag= @{character_name} }} {{name= Resistance }} {{roll= [[ (?{Modifier?|0} +@{Resistance_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Resistance_Specialty}}} {{mega=[Mega Stamina: @{Mega_Stamina}](~roll_Mega_Stamina) }}"></button>
                         </div>
                         <fieldset class='repeating_stamina'>
                             <div class="row">
@@ -402,7 +402,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rSta' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rSta' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rSta_Total' value="@{Stamina}+@{rSta}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rSta_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rStaName} }} {{roll= [[ (?{Modifier?|0} +@{rSta_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStaSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rSta_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rStaName} }} {{roll= [[ (?{Modifier?|0} +@{rSta_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rStaSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -449,7 +449,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Artillery' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Artillery' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Artillery_Total' value="@{Perception}+@{Artillery}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Artillery" value="&{template:base} {{subtag= @{character_name} }} {{name= Artillery }} {{roll= [[ (?{Modifier?|0} +@{Artillery_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Artillery_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Artillery" value="&{template:base} {{subtag= @{character_name} }} {{name= Artillery }} {{roll= [[ (?{Modifier?|0} +@{Artillery_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Artillery_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Awareness</span></div>
@@ -463,7 +463,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Awareness' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Awareness' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Awareness_Total' value="@{Perception}+@{Awareness}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Awareness" value="&{template:base} {{subtag= @{character_name} }} {{name= Awareness }} {{roll= [[ (?{Modifier?|0} +@{Awareness_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Awareness_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Awareness" value="&{template:base} {{subtag= @{character_name} }} {{name= Awareness }} {{roll= [[ (?{Modifier?|0} +@{Awareness_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Awareness_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Investigation</span></div>
@@ -477,7 +477,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Investigation' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Investigation' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Investigation_Total' value="@{Perception}+@{Investigation}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Investigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Investigation }} {{roll= [[ (?{Modifier?|0} +@{Investigation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Investigation_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Investigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Investigation }} {{roll= [[ (?{Modifier?|0} +@{Investigation_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Investigation_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Navigation</span></div>
@@ -491,7 +491,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Navigation' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Navigation' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Navigation_Total' value="@{Perception}+@{Navigation}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Navigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Navigation }} {{roll= [[ (?{Modifier?|0} +@{Navigation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Navigation_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Navigation" value="&{template:base} {{subtag= @{character_name} }} {{name= Navigation }} {{roll= [[ (?{Modifier?|0} +@{Navigation_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Navigation_Specialty}}} {{mega=[Mega Perception: @{Mega_Perception}](~roll_Mega_Perception) }}"></button>
                         </div>
                         <fieldset class='repeating_perception'>
                             <div class="row">
@@ -506,7 +506,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rPer' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rPer' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rPer_Total' value="@{Perception}+@{rPer}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rPer_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPerName} }} {{roll= [[ (?{Modifier?|0} +@{rPer_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPerSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rPer_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPerName} }} {{roll= [[ (?{Modifier?|0} +@{rPer_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPerSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -550,7 +550,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Academics' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Academics' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Academics_Total' value="@{Intelligence}+@{Academics}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Academics" value="&{template:base} {{subtag= @{character_name} }} {{name= Academics }} {{roll= [[ (?{Modifier?|0} +@{Academics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Academics_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Academics" value="&{template:base} {{subtag= @{character_name} }} {{name= Academics }} {{roll= [[ (?{Modifier?|0} +@{Academics_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Academics_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="The Directive, pg. 55">Analysis</span></div>
@@ -564,7 +564,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Analysis' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Analysis' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Analysis_Total' value="@{Intelligence}+@{Analysis}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Analysis" value="&{template:base} {{subtag= @{character_name} }} {{name= Analysis }} {{roll= [[ (?{Modifier?|0} +@{Analysis_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Analysis_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Analysis" value="&{template:base} {{subtag= @{character_name} }} {{name= Analysis }} {{roll= [[ (?{Modifier?|0} +@{Analysis_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Analysis_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Bureaucracy</span></div>
@@ -578,7 +578,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Bureaucracy' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Bureaucracy' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Bureaucracy_Total' value="@{Intelligence}+@{Bureaucracy}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Bureaucracy" value="&{template:base} {{subtag= @{character_name} }} {{name= Bureaucracy }} {{roll= [[ (?{Modifier?|0} +@{Bureaucracy_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Bureaucracy_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Bureaucracy" value="&{template:base} {{subtag= @{character_name} }} {{name= Bureaucracy }} {{roll= [[ (?{Modifier?|0} +@{Bureaucracy_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Bureaucracy_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Computer</span></div>
@@ -592,7 +592,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Computer' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Computer' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Computer_Total' value="@{Intelligence}+@{Computer}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Computer" value="&{template:base} {{subtag= @{character_name} }} {{name= Computer }} {{roll= [[ (?{Modifier?|0} +@{Computer_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Computer_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Computer" value="&{template:base} {{subtag= @{character_name} }} {{name= Computer }} {{roll= [[ (?{Modifier?|0} +@{Computer_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Computer_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Demolitions</span></div>
@@ -606,7 +606,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Demolitions' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Demolitions' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Demolitions_Total' value="@{Intelligence}+@{Demolitions}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Demolitions" value="&{template:base} {{subtag= @{character_name} }} {{name= Demolitions }} {{roll= [[ (?{Modifier?|0} +@{Demolitions_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Demolitions_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Demolitions" value="&{template:base} {{subtag= @{character_name} }} {{name= Demolitions }} {{roll= [[ (?{Modifier?|0} +@{Demolitions_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Demolitions_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Engineering</span></div>
@@ -620,7 +620,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Engineering' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Engineering' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Engineering_Total' value="@{Intelligence}+@{Engineering}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Engineering" value="&{template:base} {{subtag= @{character_name} }} {{name= Engineering }} {{roll= [[ (?{Modifier?|0} +@{Engineering_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Engineering_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Engineering" value="&{template:base} {{subtag= @{character_name} }} {{name= Engineering }} {{roll= [[ (?{Modifier?|0} +@{Engineering_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Engineering_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Gambling</span></div>
@@ -634,7 +634,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Gambling' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Gambling' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Gambling_Total' value="@{Intelligence}+@{Gambling}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Gambling" value="&{template:base} {{subtag= @{character_name} }} {{name= Gambling }} {{roll= [[ (?{Modifier?|0} +@{Gambling_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gambling_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Gambling" value="&{template:base} {{subtag= @{character_name} }} {{name= Gambling }} {{roll= [[ (?{Modifier?|0} +@{Gambling_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Gambling_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Intrusion</span></div>
@@ -648,7 +648,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Intrusion' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Intrusion' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Intrusion_Total' value="@{Intelligence}+@{Intrusion}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Intrusion" value="&{template:base} {{subtag= @{character_name} }} {{name= Intrusion }} {{roll= [[ (?{Modifier?|0} +@{Intrusion_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intrusion_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Intrusion" value="&{template:base} {{subtag= @{character_name} }} {{name= Intrusion }} {{roll= [[ (?{Modifier?|0} +@{Intrusion_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intrusion_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 137">Linguistics</span></div>
@@ -662,7 +662,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Linguistics' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Linguistics' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Linguistics_Total' value="@{Intelligence}+@{Linguistics}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Linguistics" value="&{template:base} {{subtag= @{character_name} }} {{name= Linguistics }} {{roll= [[ (?{Modifier?|0} +@{Linguistics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Linguistics_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Linguistics" value="&{template:base} {{subtag= @{character_name} }} {{name= Linguistics }} {{roll= [[ (?{Modifier?|0} +@{Linguistics_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Linguistics_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Medicine</span></div>
@@ -676,7 +676,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Medicine' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Medicine' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Medicine_Total' value="@{Intelligence}+@{Medicine}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Medicine" value="&{template:base} {{subtag= @{character_name} }} {{name= Medicine }} {{roll= [[ (?{Modifier?|0} +@{Medicine_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Medicine_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Medicine" value="&{template:base} {{subtag= @{character_name} }} {{name= Medicine }} {{roll= [[ (?{Modifier?|0} +@{Medicine_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Medicine_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="ReignOfEvil.com, pg. 19-21">Occult</span></div>
@@ -690,7 +690,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Occult' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Occult' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Occult_Total' value="@{Intelligence}+@{Occult}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Occult" value="&{template:base} {{subtag= @{character_name} }} {{name= Occult }} {{roll= [[ (?{Modifier?|0} +@{Occult_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Occult_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Occult" value="&{template:base} {{subtag= @{character_name} }} {{name= Occult }} {{roll= [[ (?{Modifier?|0} +@{Occult_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Occult_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Science</span></div>
@@ -704,7 +704,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Science' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Science' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Science_Total' value="@{Intelligence}+@{Science}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Science" value="&{template:base} {{subtag= @{character_name} }} {{name= Science }} {{roll= [[ (?{Modifier?|0} +@{Science_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Science_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Science" value="&{template:base} {{subtag= @{character_name} }} {{name= Science }} {{roll= [[ (?{Modifier?|0} +@{Science_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Science_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Survival</span></div>
@@ -718,7 +718,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Survival' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Survival' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Survival_Total' value="@{Intelligence}+@{Survival}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Survival" value="&{template:base} {{subtag= @{character_name} }} {{name= Survival }} {{roll= [[ (?{Modifier?|0} +@{Survival_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Survival_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Survival" value="&{template:base} {{subtag= @{character_name} }} {{name= Survival }} {{roll= [[ (?{Modifier?|0} +@{Survival_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Survival_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="The Directive, pg. 55">Tradecraft</span></div>
@@ -732,7 +732,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Tradecraft' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Tradecraft' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Tradecraft_Total' value="@{Intelligence}+@{Tradecraft}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Tradecraft" value="&{template:base} {{subtag= @{character_name} }} {{name= Tradecraft }} {{roll= [[ (?{Modifier?|0} +@{Tradecraft_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tradecraft_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Tradecraft" value="&{template:base} {{subtag= @{character_name} }} {{name= Tradecraft }} {{roll= [[ (?{Modifier?|0} +@{Tradecraft_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tradecraft_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="The Directive, pg. 55">Thought Discipline</span></div>
@@ -746,7 +746,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Thought_Discipline' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Thought_Discipline' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Thought_Discipline_Total' value="@{Intelligence}+@{Thought_Discipline}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Thought_Discipline" value="&{template:base} {{subtag= @{character_name} }} {{name= Thought Discipline }} {{roll= [[ (?{Modifier?|0} +@{Thought_Discipline_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Thought_Discipline_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Thought_Discipline" value="&{template:base} {{subtag= @{character_name} }} {{name= Thought Discipline }} {{roll= [[ (?{Modifier?|0} +@{Thought_Discipline_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Thought_Discipline_Specialty}}} {{mega=[Mega Intelligence: @{Mega_Intelligence}](~roll_Mega_Intelligence) }}"></button>
                         </div>
                         <fieldset class='repeating_intelligence'>
                             <div class="row">
@@ -761,7 +761,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rInt' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rInt' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rInt_Total' value="@{Intelligence}+@{rInt}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rInt_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rIntName} }} {{roll= [[ (?{Modifier?|0} +@{rInt_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rIntSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rInt_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rIntName} }} {{roll= [[ (?{Modifier?|0} +@{rInt_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rIntSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -805,7 +805,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Arts' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Arts' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Arts_Total' value="@{Wits}+@{Arts}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Arts }} {{roll= [[ (?{Modifier?|0} +@{Arts_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Arts_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Arts" value="&{template:base} {{subtag= @{character_name} }} {{name= Arts }} {{roll= [[ (?{Modifier?|0} +@{Arts_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Arts_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Biz</span></div>
@@ -819,7 +819,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Biz' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Biz' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Biz_Total' value="@{Wits}+@{Biz}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Biz" value="&{template:base} {{subtag= @{character_name} }} {{name= Biz }} {{roll= [[ (?{Modifier?|0} +@{Biz_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Biz_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Biz" value="&{template:base} {{subtag= @{character_name} }} {{name= Biz }} {{roll= [[ (?{Modifier?|0} +@{Biz_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Biz_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Meditation</span></div>
@@ -833,7 +833,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Meditation' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Meditation' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Meditation_Total' value="@{Wits}+@{Meditation}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Meditation" value="&{template:base} {{subtag= @{character_name} }} {{name= Meditation }} {{roll= [[ (?{Modifier?|0} +@{Meditation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Meditation_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Meditation" value="&{template:base} {{subtag= @{character_name} }} {{name= Meditation }} {{roll= [[ (?{Modifier?|0} +@{Meditation_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Meditation_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Rapport</span></div>
@@ -847,7 +847,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Rapport' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Rapport' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Rapport_Total' value="@{Wits}+@{Rapport}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Rapport" value="&{template:base} {{subtag= @{character_name} }} {{name= Rapport }} {{roll= [[ (?{Modifier?|0} +@{Rapport_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Rapport_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Rapport" value="&{template:base} {{subtag= @{character_name} }} {{name= Rapport }} {{roll= [[ (?{Modifier?|0} +@{Rapport_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Rapport_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="The Directive, pg. 55">Shadowing</span></div>
@@ -861,7 +861,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Shadowing' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Shadowing' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Shadowing_Total' value="@{Wits}+@{Shadowing}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Shadowing" value="&{template:base} {{subtag= @{character_name} }} {{name= Shadowing }} {{roll= [[ (?{Modifier?|0} +@{Shadowing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Shadowing_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Shadowing" value="&{template:base} {{subtag= @{character_name} }} {{name= Shadowing }} {{roll= [[ (?{Modifier?|0} +@{Shadowing_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Shadowing_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Tactics</span></div>
@@ -875,7 +875,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Tactics' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Tactics' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Tactics_Total' value="@{Wits}+@{Tactics}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Tactics" value="&{template:base} {{subtag= @{character_name} }} {{name= Tactics }} {{roll= [[ (?{Modifier?|0} +@{Tactics_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tactics_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Tactics" value="&{template:base} {{subtag= @{character_name} }} {{name= Tactics }} {{roll= [[ (?{Modifier?|0} +@{Tactics_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Tactics_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 88">Weave</span></div>
@@ -889,7 +889,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Weave' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Weave' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Weave_Total' value="@{Wits}+@{Weave}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Weave" value="&{template:base} {{subtag= @{character_name} }} {{name= Weave }} {{roll= [[ (?{Modifier?|0} +@{Weave_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Weave_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Weave" value="&{template:base} {{subtag= @{character_name} }} {{name= Weave }} {{roll= [[ (?{Modifier?|0} +@{Weave_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Weave_Specialty}}} {{mega=[Mega Wits: @{Mega_Wits}](~roll_Mega_Wits) }}"></button>
                         </div>
                         <fieldset class='repeating_wits'>
                             <div class="row">
@@ -904,7 +904,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rWit' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rWit' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rWit_Total' value="@{Wits}+@{rWit}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rWit_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rWitName} }} {{roll= [[ (?{Modifier?|0} +@{rWit_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rWitSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rWit_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rWitName} }} {{roll= [[ (?{Modifier?|0} +@{rWit_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rWitSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -951,7 +951,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Animal_Training' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Animal_Training' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Animal_Training_Total' value="@{Charisma}+@{Animal_Training}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Animal_Training" value="&{template:base} {{subtag= @{character_name} }} {{name= Animal Training }} {{roll= [[ (?{Modifier?|0} +@{Animal_Training_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Animal_Training_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Animal_Training" value="&{template:base} {{subtag= @{character_name} }} {{name= Animal Training }} {{roll= [[ (?{Modifier?|0} +@{Animal_Training_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Animal_Training_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 90">Carousing</span></div>
@@ -965,7 +965,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Carousing' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Carousing' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Carousing_Total' value="@{Charisma}+@{Carousing}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Carousing" value="&{template:base} {{subtag= @{character_name} }} {{name= Carousing }} {{roll= [[ (?{Modifier?|0} +@{Carousing_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Carousing_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Carousing" value="&{template:base} {{subtag= @{character_name} }} {{name= Carousing }} {{roll= [[ (?{Modifier?|0} +@{Carousing_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Carousing_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 139">Command</span></div>
@@ -979,7 +979,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Command' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Command' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Command_Total' value="@{Charisma}+@{Command}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Command" value="&{template:base} {{subtag= @{character_name} }} {{name= Command }} {{roll= [[ (?{Modifier?|0} +@{Command_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Command_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Command" value="&{template:base} {{subtag= @{character_name} }} {{name= Command }} {{roll= [[ (?{Modifier?|0} +@{Command_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Command_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 139">Etiquette</span></div>
@@ -993,7 +993,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Etiquette' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Etiquette' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Etiquette_Total' value="@{Charisma}+@{Etiquette}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Etiquette" value="&{template:base} {{subtag= @{character_name} }} {{name= Etiquette }} {{roll= [[ (?{Modifier?|0} +@{Etiquette_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Etiquette_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Etiquette" value="&{template:base} {{subtag= @{character_name} }} {{name= Etiquette }} {{roll= [[ (?{Modifier?|0} +@{Etiquette_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Etiquette_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 90">Instruction</span></div>
@@ -1007,7 +1007,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Instruction' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Instruction' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Instruction_Total' value="@{Charisma}+@{Instruction}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Instruction" value="&{template:base} {{subtag= @{character_name} }} {{name= Instruction }} {{roll= [[ (?{Modifier?|0} +@{Instruction_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Instruction_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Instruction" value="&{template:base} {{subtag= @{character_name} }} {{name= Instruction }} {{roll= [[ (?{Modifier?|0} +@{Instruction_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Instruction_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 139">Perform</span></div>
@@ -1021,7 +1021,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Perform' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Perform' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Perform_Total' value="@{Charisma}+@{Perform}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Perform" value="&{template:base} {{subtag= @{character_name} }} {{name= Perform }} {{roll= [[ (?{Modifier?|0} +@{Perform_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Perform_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Perform" value="&{template:base} {{subtag= @{character_name} }} {{name= Perform }} {{roll= [[ (?{Modifier?|0} +@{Perform_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Perform_Specialty}}} {{mega=[Mega Charisma: @{Mega_Charisma}](~roll_Mega_Charisma) }}"></button>
                         </div>
                         <fieldset class='repeating_charisma'>
                             <div class="row">
@@ -1036,7 +1036,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rCha' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rCha' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rCha_Total' value="@{Charisma}+@{rCha}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rCha_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rChaName} }} {{roll= [[ (?{Modifier?|0} +@{rCha_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rChaSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rCha_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rChaName} }} {{roll= [[ (?{Modifier?|0} +@{rCha_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rChaSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -1080,7 +1080,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Diplomacy' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Diplomacy' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Diplomacy_Total' value="@{Manipulation}+@{Diplomacy}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Diplomacy" value="&{template:base} {{subtag= @{character_name} }} {{name= Diplomacy }} {{roll= [[ (?{Modifier?|0} +@{Diplomacy_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Diplomacy_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Diplomacy" value="&{template:base} {{subtag= @{character_name} }} {{name= Diplomacy }} {{roll= [[ (?{Modifier?|0} +@{Diplomacy_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Diplomacy_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 89">Hypnosis</span></div>
@@ -1094,7 +1094,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Hypnosis' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Hypnosis' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Hypnosis_Total' value="@{Manipulation}+@{Hypnosis}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Hypnosis" value="&{template:base} {{subtag= @{character_name} }} {{name= Hypnosis }} {{roll= [[ (?{Modifier?|0} +@{Hypnosis_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Hypnosis_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Hypnosis" value="&{template:base} {{subtag= @{character_name} }} {{name= Hypnosis }} {{roll= [[ (?{Modifier?|0} +@{Hypnosis_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Hypnosis_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Interrogation</span></div>
@@ -1108,7 +1108,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Interrogation' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Interrogation' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Interrogation_Total' value="@{Manipulation}+@{Interrogation}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Interrogation" value="&{template:base} {{subtag= @{character_name} }} {{name= Interrogation }} {{roll= [[ (?{Modifier?|0} +@{Interrogation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Interrogation_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Interrogation" value="&{template:base} {{subtag= @{character_name} }} {{name= Interrogation }} {{roll= [[ (?{Modifier?|0} +@{Interrogation_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Interrogation_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Player&#39;s Guide, pg. 89">Seduction</span></div>
@@ -1122,7 +1122,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Seduction' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Seduction' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Seduction_Total' value="@{Manipulation}+@{Seduction}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Seduction" value="&{template:base} {{subtag= @{character_name} }} {{name= Seduction }} {{roll= [[ (?{Modifier?|0} +@{Seduction_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Seduction_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Seduction" value="&{template:base} {{subtag= @{character_name} }} {{name= Seduction }} {{roll= [[ (?{Modifier?|0} +@{Seduction_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Seduction_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Streetwise</span></div>
@@ -1136,7 +1136,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Streetwise' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Streetwise' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Streetwise_Total' value="@{Manipulation}+@{Streetwise}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Streetwise" value="&{template:base} {{subtag= @{character_name} }} {{name= Streetwise }} {{roll= [[ (?{Modifier?|0} +@{Streetwise_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Streetwise_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Streetwise" value="&{template:base} {{subtag= @{character_name} }} {{name= Streetwise }} {{roll= [[ (?{Modifier?|0} +@{Streetwise_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Streetwise_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Subterfuge</span></div>
@@ -1150,7 +1150,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Subterfuge' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Subterfuge' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Subterfuge_Total' value="@{Manipulation}+@{Subterfuge}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Subterfuge" value="&{template:base} {{subtag= @{character_name} }} {{name= Subterfuge }} {{roll= [[ (?{Modifier?|0} +@{Subterfuge_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Subterfuge_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Subterfuge" value="&{template:base} {{subtag= @{character_name} }} {{name= Subterfuge }} {{roll= [[ (?{Modifier?|0} +@{Subterfuge_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Subterfuge_Specialty}}} {{mega=[Mega Manipulation: @{Mega_Manipulation}](~roll_Mega_Manipulation) }}"></button>
                         </div>
                         <fieldset class='repeating_manipulation'>
                             <div class="row">
@@ -1165,7 +1165,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rMan' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rMan' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rMan_Total' value="@{Manipulation}+@{rMan}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rMan_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rManName} }} {{roll= [[ (?{Modifier?|0} +@{rMan_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rManSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rMan_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rManName} }} {{roll= [[ (?{Modifier?|0} +@{rMan_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rManSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -1209,7 +1209,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Disguise' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Disguise' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Disguise_Total' value="@{Appearance}+@{Disguise}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Disguise" value="&{template:base} {{subtag= @{character_name} }} {{name= Disguise }} {{roll= [[ (?{Modifier?|0} +@{Disguise_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Disguise_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Disguise" value="&{template:base} {{subtag= @{character_name} }} {{name= Disguise }} {{roll= [[ (?{Modifier?|0} +@{Disguise_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Disguise_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Intimidation</span></div>
@@ -1223,7 +1223,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Intimidation' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Intimidation' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Intimidation_Total' value="@{Appearance}+@{Intimidation}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Intimidation" value="&{template:base} {{subtag= @{character_name} }} {{name= Intimidation }} {{roll= [[ (?{Modifier?|0} +@{Intimidation_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intimidation_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Intimidation" value="&{template:base} {{subtag= @{character_name} }} {{name= Intimidation }} {{roll= [[ (?{Modifier?|0} +@{Intimidation_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Intimidation_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
                         </div>
                         <div class="row">
                             <div class="item w100 label"><span title="Aberrant, pg. 138">Style</span></div>
@@ -1237,7 +1237,7 @@
                             <input type='radio' class="dot edit-mode" name='attr_Style' value=4 /><span></span>
                             <input type='radio' class="dot edit-mode" name='attr_Style' value=5 /><span></span>
                             =<input type='text' class='total' name='attr_Style_Total' value="@{Appearance}+@{Style}" disabled />
-                            <button type='roll' class="grid_btn" name="roll_Style" value="&{template:base} {{subtag= @{character_name} }} {{name= Style }} {{roll= [[ (?{Modifier?|0} +@{Style_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Style_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
+                            <button type='roll' class="grid_btn" name="roll_Style" value="&{template:base} {{subtag= @{character_name} }} {{name= Style }} {{roll= [[ (?{Modifier?|0} +@{Style_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{Style_Specialty}}} {{mega=[Mega Appearance: @{Mega_Appearance}](~roll_Mega_Appearance) }}"></button>
                         </div>
                         <fieldset class='repeating_appearance'>
                             <div class="row">
@@ -1252,7 +1252,7 @@
         						<input type='radio' class="dot edit-mode" name='attr_rApp' value=4 /><span></span>
         						<input type='radio' class="dot edit-mode" name='attr_rApp' value=5 /><span></span>
                                 =<input type='text' class='total' name='attr_rApp_Total' value="@{Appearance}+@{rApp}" disabled />
-                                <button type='roll' class="grid_btn" name="roll_rApp_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rAppName} }} {{roll= [[ (?{Modifier?|0} +@{rApp_Total})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rAppSpecialty}}}"></button>
+                                <button type='roll' class="grid_btn" name="roll_rApp_skill" value="&{template:base} {{subtag= @{character_name} }} {{name= @{rAppName} }} {{roll= [[ (?{Modifier?|0} +@{rApp_Total})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rAppSpecialty}}}"></button>
         					</div>
         				</fieldset>
         			</div>
@@ -1429,7 +1429,7 @@
                 </div>
 				<fieldset class='repeating_Powers'>
                     <div class="row">
-                        <div class="item w20"><button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
+                        <div class="item w20"><button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rPowerName} }} {{roll= [[ (?{Modifier?|0} +@{rDicePoolp})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rPowerNotes}}}"></button></div>
                         <div class="item w5"></div>
                         <div class="item w150"><input type='text' class="st" name='attr_rPowerName' placeholder='Power Name'/></div>
                         <div class="item w180">
@@ -1502,7 +1502,7 @@
                     <input type='radio' class="dot edit-mode" name='attr_taint' value=8 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_taint' value=9 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_taint' value=10 /><span></span>
-				    <div class="item w24"><button type='roll' class='background d10-dice' value="&{template:base} {{subtag= @{character_name} }} {{name=Taint }} {{roll= [[ (?{Modifier?|0} +@{Taint_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+				    <div class="item w24"><button type='roll' class='background d10-dice' value="&{template:base} {{subtag= @{character_name} }} {{name=Taint }} {{roll= [[ (?{Modifier?|0} +@{Taint_max})d10>7!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
                 <div class="row">
                     <input type='radio' class="mdot zero" name='attr_taint_temp' value=0 checked /><span></span>
@@ -1530,7 +1530,7 @@
                     <input type='radio' class="dot edit-mode" name='attr_chrysalis' value=8 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_chrysalis' value=9 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_chrysalis' value=10 /><span></span>
-                    <div class="item w24"><button type='roll' class='background d10-dice'' value="&{template:base} {{subtag= @{character_name} }}  {{name=Chrysalis }} {{roll= [[ (?{Modifier?|0} +@{chrysalis})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                    <div class="item w24"><button type='roll' class='background d10-dice'' value="&{template:base} {{subtag= @{character_name} }}  {{name=Chrysalis }} {{roll= [[ (?{Modifier?|0} +@{chrysalis})d10>7!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
                 <div class="row">
                     <input type='radio' class="mdot zero" name='attr_chrysalis_temp' value=0 checked /><span></span>
@@ -1558,7 +1558,7 @@
                     <input type='radio' class="dot edit-mode" name='attr_Quantum_max' value=8 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_Quantum_max' value=9 /><span></span>
                     <input type='radio' class="dot edit-mode" name='attr_Quantum_max' value=10 /><span></span>
-                    <div class="item w24"><button type='roll' class='background d10-dice'' value="&{template:base} {{subtag= @{character_name} }} {{name=Quantum }} {{roll= [[ (?{Modifier?|0} +@{Quantum_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
+                    <div class="item w24"><button type='roll' class='background d10-dice'' value="&{template:base} {{subtag= @{character_name} }} {{name=Quantum }} {{roll= [[ (?{Modifier?|0} +@{Quantum_max})d10>7!>10s+?{Bonus Successes?|0 }]] }}"></button></div>
                 </div>
                 <h3 class="category-title">Body Modifications</h3>
                 <fieldset class='repeating_rbAberrations'>
@@ -1767,7 +1767,7 @@
                                         <input type='radio' class="dot edit-mode" name='attr_Willpower_max' value=8 /><span></span>
                                         <input type='radio' class="dot edit-mode" name='attr_Willpower_max' value=9 /><span></span>
                                         <input type='radio' class="dot edit-mode" name='attr_Willpower_max' value=10 /><span></span>
-                                        <button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7f1!>10s+?{Bonus Successes?|0 }]] }}"></button>
+                                        <button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7!>10s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
                 <div class="row">
                     <div class="item w20"></div>
@@ -2535,7 +2535,7 @@
                     </div>
                 <fieldset class='repeating_backgrounds'>
             <div class="row">
-                <div class="item w40"><button type='roll' class='background edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item w40"><button type='roll' class='background edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
                 <div class="item w200"><input type='text' class='specialty edit-mode' name='attr_rBackName' placeholder='Background'></div>
             </div>
             <div class="row">
@@ -3109,6 +3109,72 @@ buttonlist.forEach(button => {
         });
     });
 });
+function updateWeaponAttack(rowId) {
+    const prefix = `repeating_weapons_${rowId}_`;
+    getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
+        'Dexterity', 'Strength', 'Athletics', 'Brawl', 'Firearms', 'Melee',
+        'Throwing', 'Martial_Arts', 'Archery', 'Gunnery', 'Heavy_Weapons'], (values) => {
+        const accuracy = parseInt(values[`${prefix}wacc`] || '0');
+        const dexterity = parseInt(values['Dexterity'] || '0');
+        const strength = parseInt(values['Strength'] || '0');
+        const skillName = values[`${prefix}wskill`].replace(' ', '_');
+        const skillValue = parseInt(values[skillName] || '0');
+        switch (skillName) {
+            case 'Brawl':
+            case 'Throwing':
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + strength + skillValue
+                });
+                break;
+            case 'Athletics':
+            case 'Archery':
+            case 'Firearms':
+            case 'Gunnery':
+            case 'Heavy_Weapons':
+            case 'Martial_Arts':
+            case 'Melee':
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
+                });
+                break;
+            default:
+                console.error("Unknown skill:", values[`${prefix}wskill`]);
+                break;
+        }
+    });
+}
+;
+function updateWeaponDamage(rowId) {
+    const prefix = `repeating_weapons_${rowId}_`;
+    getAttrs([`${prefix}wstr`, `${prefix}wdam`, `${prefix}wdam_auto`, 'strength', 'mega_strength'], (values) => {
+        const attackDamage = parseInt(values[`${prefix}wdam`] || '0');
+        const autoDamage = parseInt(values[`${prefix}wdam_auto`] || '0');
+        if (values[`${prefix}wstr`] === '1') {
+            const strength = parseInt(values[`strength`] || '0');
+            const megaStrength = parseInt(values[`mega_strength`] || '0');
+            setAttrs({
+                [`${prefix}wdamtotal`]: strength + attackDamage,
+                [`${prefix}wdamdisplay`]: `[${autoDamage + (megaStrength * 5)}] + ${attackDamage + strength}`
+            });
+        }
+        else {
+            setAttrs({
+                [`${prefix}wdamtotal`]: attackDamage,
+                [`${prefix}wdamdisplay`]: `[${autoDamage}] + ${attackDamage}`
+            });
+        }
+    });
+}
+;
+on('change:strength change:mega_strength change:dexterity change:mega_dexterity change:athletics change:brawl change:firearms change:melee change:throwing change:martial_arts change:archery change:gunnery change:heavy_weapons', function () {
+    console.log("Attribute or skill changed, updating attack bonuses.");
+    getSectionIDs('repeating_weapons', (idArray) => {
+        idArray.forEach(rowId => {
+            updateWeaponAttack(rowId);
+            updateWeaponDamage(rowId);
+        });
+    });
+});
 on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function () {
     console.log("Weapon skill changed, updating attack bonus.");
     const prefix = `repeating_weapons_`;
@@ -3179,7 +3245,7 @@ on("clicked:repeating_weapons:roll-attack", function (eventInfo) {
         const weaponName = values[`repeating_weapons_wname`] || 'Attack';
         const range = parseInt(values[`repeating_weapons_range`] || '0');
         const difficulty = parseInt(values[`repeating_weapons_wdifficulty`] || '0');
-        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
+        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
         startRoll(roll, (results) => {
             console.log("Attack roll results:", results);
             finishRoll(results.rollId, {});
@@ -3221,7 +3287,7 @@ on("clicked:repeating_weapons:roll-damage", function (eventInfo) {
             }
             damage = Math.max(1, damage - soak);
         }
-        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7f1!>10s+${damageAdds} ]] }}`;
+        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7!>10s+${damageAdds} ]] }}`;
         const damageResults = await startRoll(roll);
         console.log("Damage roll results:", damageResults);
         const damageReport = damageResults.results.damage.result > 0 ? `inflicts ${damageResults.results.damage.result.toString()} levels of ${damageType} damage` : 'fails to inflict any damage';
@@ -3402,7 +3468,7 @@ var QuantumPowerData;
             duration: "Maintenance",
             effect: "Allows character to take on aspects of one specific type of matter or energy.",
             multipleActions: true,
-            summary: "Bodymorph 1s a powerful ability possessed by only a few novas. lt allows the nova to transform her body into a specific type of matter or energy. For example, she could transform her body to rock, to fire, to wind or to computer chips and circuitry. The player must choose what f°\\m that the character can assume when he buys the power. The Bodymorph power provides certain base ab1l1ties. depending on the form chosen; thereafter, Bodymorph dots essentially simulate enhancements or dots of other Level One and Two powers; when transforming, all Bodymorph powers activate simultaneously when the character pays the quantum cost to transform. The character may transform herself automatically. However, the character's dots in Bodymorph define how effective the change 1s. lt 1s up to the player to define where his character's Bodymorph dots are allocated. subject to Storyteller approval, but once they are defined, they cannot be changed. For example, when creating a character with a rock body, a player might buy Bodymorph 4 and assign one dot to Armor and three to Density Control (Increase). He cannot change that allocation later. Of course, if he buys another level of Bodymorph with experience points he can decide where that dot 1s allocated at that time. IF a nova wishes to use Bodymorph as a defense against an incoming attack (for example, to tum to flame to avoid being damaged by a flame blast), he may do so. This form of defense does not require an action, but it 1s easier if an action 1s available. If the character does not have a delayed action to use to do this, he must spend a point of Willpower instead. He then rolls Stamina + Bodymorph; even one success allows him to assume his alternative form in time to absorb some of the force of the attack, and each success reduces the damage the attack inflicts by one level. Here are some guidelines for the general properties of most forms: • Stone/metal/hard solid: The character automatically 1nf11cts two extra dice of damage with Brawl and Martial Arts attacks, and all attacks directed at the character mcur a difficulty penalty of one to hit him. Bodymorph dots often translate into levels of Density Control (lncrease), Armor or Claws • Liquid/amorphous: The character automatically gains the ability to breathe and exist In water, may move through water at twice normal running speed, gains the Flex1b1lity enhancement (p. 159). and may use the Asphyx1at1on combat maneuver (p. 246). Among other things, Bodymorph dots can translate into equivalent dots of Density Control (Decrease), Poison or lmmolate (for characters who tum into acid). At least one Bodymorph dot must be assigned to Density Control (Decrease) • Gas: While transformed, the character may automatically move through air at the character's normal running speed, gains +I soak vs. physical damage (fists, bullets, etc.). gains the Flexibility enhancement (p. 159), and may use the Asphyxiation combat maneuver(p. 246). Among other things, Bodymorph dots can translate into equivalent dots of Density Control (Decrease), Poison, Flight or Storm (allows the character to become a whirling tornado, thus infhctmg the equivalent of the Storm technique [p. 196] in her immediate vicinity). At least one Bodymorph dot must be assigned to Density Control (Decrease). • Energy: While transformed, the character inflicts lethal damage with Brawl and Martial Arts attacks, and attacks directed at her incur a difficulty penalty of one to strike her. Bodymorph dots might be assigned to Immolate, Invulnerability (to the appropriate energy type). the EMP technique of Magnetic Mastery (p. 206), the Electromagnetic V1s1on enhancement (p. 162), Force Field, or Density Control (Decrease) dots. These are general guidelines only; players can allow Bodymorph dots to represent a number of powers (or even invent their own) subject to the Storyteller's approval. Many of the techniques listed under Elemental Anima and Elemental Mastery are suitable as Bodymorph powers. However, all Bodymorph powers are available only while the character 1s transformed. Ultimately, the Storyteller must arbitrate the use of this power. For Example: Houston Tornado 2 buys four dots of the Bodymorph (A,r) power. defining this as the ab,l,ty to turn mto wind She automat,cally may move through the air at running speed and use the Asphyx1at1on com- CHAPTER FIVE. QUANTUM POWERS • 185 bat maneuver (forcing air out of her foe's lungs); furthermore, she gains + I soak versus physical attacks and may use the Flexibility enhancement. Now HT2 assigns her four dots to Density Decrease, Density Decrease, Density Decrease and Storm. Whenever HT2 is in wind Form, she can make herself much harder to hurt (can activate up to three levels of Density Decrease) and can spin herself into a localized whirlwind (can activate the Storm technique as though she had one dot in Elemental Mastery). However, these powers work only while transformed, and the character must pay the Bodymorph quantum cost to activate them."
+            summary: "Bodymorph 1s a powerful ability possessed by only a few novas. lt allows the nova to transform her body into a specific type of matter or energy. For example, she could transform her body to rock, to fire, to wind or to computer chips and circuitry. The player must choose what f°\\m that the character can assume when he buys the power. The Bodymorph power provides certain base ab1l1ties. depending on the form chosen; thereafter, Bodymorph dots essentially simulate enhancements or dots of other Level One and Two powers; when transforming, all Bodymorph powers activate simultaneously when the character pays the quantum cost to transform. The character may transform herself automatically. However, the character's dots in Bodymorph define how effective the change 1s. lt 1s up to the player to define where his character's Bodymorph dots are allocated. subject to Storyteller approval, but once they are defined, they cannot be changed. For example, when creating a character with a rock body, a player might buy Bodymorph 4 and assign one dot to Armor and three to Density Control (Increase). He cannot change that allocation later. Of course, if he buys another level of Bodymorph with experience points he can decide where that dot 1s allocated at that time. IF a nova wishes to use Bodymorph as a defense against an incoming attack (for example, to tum to flame to avoid being damaged by a flame blast), he may do so. This form of defense does not require an action, but it 1s easier if an action 1s available. If the character does not have a delayed action to use to do this, he must spend a point of Willpower instead. He then rolls Stamina + Bodymorph; even one success allows him to assume his alternative form in time to absorb some of the force of the attack, and each success reduces the damage the attack inflicts by one level. Here are some guidelines for the general properties of most forms: • Stone/metal/hard solid: The character automatically inflicts two extra dice of damage with Brawl and Martial Arts attacks, and all attacks directed at the character mcur a difficulty penalty of one to hit him. Bodymorph dots often translate into levels of Density Control (lncrease), Armor or Claws • Liquid/amorphous: The character automatically gains the ability to breathe and exist In water, may move through water at twice normal running speed, gains the Flex1b1lity enhancement (p. 159). and may use the Asphyx1at1on combat maneuver (p. 246). Among other things, Bodymorph dots can translate into equivalent dots of Density Control (Decrease), Poison or lmmolate (for characters who tum into acid). At least one Bodymorph dot must be assigned to Density Control (Decrease) • Gas: While transformed, the character may automatically move through air at the character's normal running speed, gains +I soak vs. physical damage (fists, bullets, etc.). gains the Flexibility enhancement (p. 159), and may use the Asphyxiation combat maneuver(p. 246). Among other things, Bodymorph dots can translate into equivalent dots of Density Control (Decrease), Poison, Flight or Storm (allows the character to become a whirling tornado, thus infhctmg the equivalent of the Storm technique [p. 196] in her immediate vicinity). At least one Bodymorph dot must be assigned to Density Control (Decrease). • Energy: While transformed, the character inflicts lethal damage with Brawl and Martial Arts attacks, and attacks directed at her incur a difficulty penalty of one to strike her. Bodymorph dots might be assigned to Immolate, Invulnerability (to the appropriate energy type). the EMP technique of Magnetic Mastery (p. 206), the Electromagnetic V1s1on enhancement (p. 162), Force Field, or Density Control (Decrease) dots. These are general guidelines only; players can allow Bodymorph dots to represent a number of powers (or even invent their own) subject to the Storyteller's approval. Many of the techniques listed under Elemental Anima and Elemental Mastery are suitable as Bodymorph powers. However, all Bodymorph powers are available only while the character 1s transformed. Ultimately, the Storyteller must arbitrate the use of this power. For Example: Houston Tornado 2 buys four dots of the Bodymorph (A,r) power. defining this as the ab,l,ty to turn mto wind She automat,cally may move through the air at running speed and use the Asphyx1at1on com- CHAPTER FIVE. QUANTUM POWERS • 185 bat maneuver (forcing air out of her foe's lungs); furthermore, she gains + I soak versus physical attacks and may use the Flexibility enhancement. Now HT2 assigns her four dots to Density Decrease, Density Decrease, Density Decrease and Storm. Whenever HT2 is in wind Form, she can make herself much harder to hurt (can activate up to three levels of Density Decrease) and can spin herself into a localized whirlwind (can activate the Storm technique as though she had one dot in Elemental Mastery). However, these powers work only while transformed, and the character must pay the Bodymorph quantum cost to activate them."
         },
         {
             name: "Boost",

@@ -32,7 +32,7 @@ const backgrounds = [
         <% }); -%>
         <fieldset class='repeating_backgrounds'>
             <div class="row">
-                <div class="item w40"><button type='roll' class='background edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
+                <div class="item w40"><button type='roll' class='background edit-mode' value="&{template:base} {{subtag= @{character_name} }} {{name= @{rBackName} }} {{roll= [[ (?{Modifier?|0} +@{rBack})d10>7!>10s+?{Bonus Successes?|0 }]] }} {{note= @{rBackEnh} }}"></button></div>
                 <div class="item w200"><input type='text' class='specialty edit-mode' name='attr_rBackName' placeholder='Background'></div>
             </div>
             <div class="row">

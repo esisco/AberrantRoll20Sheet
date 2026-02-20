@@ -34,6 +34,74 @@ buttonlist.forEach(button => {
     });
 });
 
+function updateWeaponAttack(rowId: string) {
+    const prefix = `repeating_weapons_${rowId}_`;
+        getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
+        'Dexterity', 'Strength', 'Athletics', 'Brawl', 'Firearms', 'Melee',
+        'Throwing', 'Martial_Arts', 'Archery', 'Gunnery', 'Heavy_Weapons'], (values) => {
+        const accuracy = parseInt(values[`${prefix}wacc`] || '0');
+        const dexterity = parseInt(values['Dexterity'] || '0');
+        const strength = parseInt(values['Strength'] || '0');
+        const skillName = values[`${prefix}wskill`].replace(' ', '_');
+        const skillValue = parseInt(values[skillName] || '0');
+        switch (skillName) {
+            case 'Brawl':
+            case 'Throwing':
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + strength + skillValue
+                });
+                break;
+            case 'Athletics':
+            case 'Archery':
+            case 'Firearms':
+            case 'Gunnery':
+            case 'Heavy_Weapons':
+            case 'Martial_Arts':
+            case 'Melee':
+                setAttrs({
+                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
+                });
+                break;
+            default:
+                console.error("Unknown skill:", values[`${prefix}wskill`]);
+                break;
+        }
+    });
+};
+
+function updateWeaponDamage(rowId: string) {
+    const prefix = `repeating_weapons_${rowId}_`;
+        getAttrs([`${prefix}wstr`, `${prefix}wdam`, `${prefix}wdam_auto`, 'strength', 'mega_strength'], (values) => {
+        const attackDamage = parseInt(values[`${prefix}wdam`] || '0');
+        const autoDamage = parseInt(values[`${prefix}wdam_auto`] || '0');
+        if (values[`${prefix}wstr`] === '1') {
+            const strength = parseInt(values[`strength`] || '0');
+            const megaStrength = parseInt(values[`mega_strength`] || '0');
+            setAttrs({
+                [`${prefix}wdamtotal`]: strength + attackDamage,
+                [`${prefix}wdamdisplay`]: `[${autoDamage + (megaStrength * 5)}] + ${attackDamage + strength}`
+            });
+        }
+        else {
+            setAttrs({
+                [`${prefix}wdamtotal`]: attackDamage,
+                [`${prefix}wdamdisplay`]: `[${autoDamage}] + ${attackDamage}`
+            });
+        }
+    });
+};
+
+on('change:strength change:mega_strength change:dexterity change:mega_dexterity change:athletics change:brawl change:firearms change:melee change:throwing change:martial_arts change:archery change:gunnery change:heavy_weapons', function() {
+    console.log("Attribute or skill changed, updating attack bonuses.");
+    getSectionIDs('repeating_weapons', (idArray) => {
+        idArray.forEach(rowId => {
+            updateWeaponAttack(rowId);
+            updateWeaponDamage(rowId);
+        });
+    });
+
+});
+
 on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function() {
     console.log("Weapon skill changed, updating attack bonus.");
     
@@ -110,7 +178,7 @@ on("clicked:repeating_weapons:roll-attack", function(eventInfo) {
         const range = parseInt(values[`repeating_weapons_range`] || '0');
         const difficulty = parseInt(values[`repeating_weapons_wdifficulty`] || '0');
 
-        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7f1!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
+        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
         startRoll(roll, (results) => {
             console.log("Attack roll results:", results);
             finishRoll(results.rollId, {});
@@ -156,7 +224,7 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
             damage = Math.max(1, damage - soak);
         }
 
-        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7f1!>10s+${damageAdds} ]] }}`;
+        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7!>10s+${damageAdds} ]] }}`;
         const damageResults = await startRoll(roll);
         console.log("Damage roll results:", damageResults);
         const damageReport = damageResults.results.damage.result > 0 ? `inflicts ${damageResults.results.damage.result.toString()} levels of ${damageType} damage` : 'fails to inflict any damage';
