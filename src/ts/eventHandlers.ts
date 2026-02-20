@@ -1,6 +1,6 @@
-const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina","Mega_Perception","Mega_Intelligence","Mega_Wits","Mega_Charisma","Mega_Manipulation","Mega_Appearance"];
+const megaAttributes = ["Mega_Strength", "Mega_Dexterity", "Mega_Stamina", "Mega_Perception", "Mega_Intelligence", "Mega_Wits", "Mega_Charisma", "Mega_Manipulation", "Mega_Appearance"];
 megaAttributes.forEach(attr => {
-    on(`clicked:roll_${attr}`, function() {
+    on(`clicked:roll_${attr}`, function () {
         console.log(`Rolling ${attr}`);
         startRoll(`&{template:megaroll} {{subtag= @{character_name} }} {{name=${attr.replace("Mega_", "Mega ")} }} {{mega= [[ (@{${attr}} + ?{Modifier|0})d10 ]] }}`, (results) => {
             let successes = 0;
@@ -15,7 +15,7 @@ megaAttributes.forEach(attr => {
             }
             const computed = successes;
             finishRoll(
-                results.rollId, 
+                results.rollId,
                 {
                     mega: computed,
                 });
@@ -26,7 +26,7 @@ megaAttributes.forEach(attr => {
 
 const buttonlist = ["abilities", "quantum", "combat", "info", "help", "config"];
 buttonlist.forEach(button => {
-    on(`clicked:${button}`, function() {
+    on(`clicked:${button}`, function () {
         console.log(`Switching to ${button} tab`);
         setAttrs({
             sheetTab: button
@@ -34,44 +34,44 @@ buttonlist.forEach(button => {
     });
 });
 
-function updateWeaponAttack(rowId: string) {
-    const prefix = `repeating_weapons_${rowId}_`;
-        getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
+function updateWeaponAttack(rowId?: string) {
+    const prefix = rowId ? `repeating_weapons_${rowId}_` : 'repeating_weapons_';
+    getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
         'Dexterity', 'Strength', 'Athletics', 'Brawl', 'Firearms', 'Melee',
         'Throwing', 'Martial_Arts', 'Archery', 'Gunnery', 'Heavy_Weapons'], (values) => {
-        const accuracy = parseInt(values[`${prefix}wacc`] || '0');
-        const dexterity = parseInt(values['Dexterity'] || '0');
-        const strength = parseInt(values['Strength'] || '0');
-        const skillName = values[`${prefix}wskill`].replace(' ', '_');
-        const skillValue = parseInt(values[skillName] || '0');
-        switch (skillName) {
-            case 'Brawl':
-            case 'Throwing':
-                setAttrs({
-                    [`${prefix}wtotalacc`]: accuracy + strength + skillValue
-                });
-                break;
-            case 'Athletics':
-            case 'Archery':
-            case 'Firearms':
-            case 'Gunnery':
-            case 'Heavy_Weapons':
-            case 'Martial_Arts':
-            case 'Melee':
-                setAttrs({
-                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
-                });
-                break;
-            default:
-                console.error("Unknown skill:", values[`${prefix}wskill`]);
-                break;
-        }
-    });
+            const accuracy = parseInt(values[`${prefix}wacc`] || '0');
+            const dexterity = parseInt(values['Dexterity'] || '0');
+            const strength = parseInt(values['Strength'] || '0');
+            const skillName = values[`${prefix}wskill`].replace(' ', '_');
+            const skillValue = parseInt(values[skillName] || '0');
+            switch (skillName) {
+                case 'Brawl':
+                case 'Throwing':
+                    setAttrs({
+                        [`${prefix}wtotalacc`]: accuracy + strength + skillValue
+                    });
+                    break;
+                case 'Athletics':
+                case 'Archery':
+                case 'Firearms':
+                case 'Gunnery':
+                case 'Heavy_Weapons':
+                case 'Martial_Arts':
+                case 'Melee':
+                    setAttrs({
+                        [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
+                    });
+                    break;
+                default:
+                    console.error("Unknown skill:", values[`${prefix}wskill`]);
+                    break;
+            }
+        });
 };
 
-function updateWeaponDamage(rowId: string) {
-    const prefix = `repeating_weapons_${rowId}_`;
-        getAttrs([`${prefix}wstr`, `${prefix}wdam`, `${prefix}wdam_auto`, 'strength', 'mega_strength'], (values) => {
+function updateWeaponDamage(rowId?: string) {
+    const prefix = rowId ? `repeating_weapons_${rowId}_` : 'repeating_weapons_';
+    getAttrs([`${prefix}wstr`, `${prefix}wdam`, `${prefix}wdam_auto`, 'strength', 'mega_strength'], (values) => {
         const attackDamage = parseInt(values[`${prefix}wdam`] || '0');
         const autoDamage = parseInt(values[`${prefix}wdam_auto`] || '0');
         if (values[`${prefix}wstr`] === '1') {
@@ -91,7 +91,7 @@ function updateWeaponDamage(rowId: string) {
     });
 };
 
-on('change:strength change:mega_strength change:dexterity change:mega_dexterity change:athletics change:brawl change:firearms change:melee change:throwing change:martial_arts change:archery change:gunnery change:heavy_weapons', function() {
+on('change:strength change:mega_strength change:dexterity change:mega_dexterity change:athletics change:brawl change:firearms change:melee change:throwing change:martial_arts change:archery change:gunnery change:heavy_weapons', function () {
     console.log("Attribute or skill changed, updating attack bonuses.");
     getSectionIDs('repeating_weapons', (idArray) => {
         idArray.forEach(rowId => {
@@ -99,69 +99,19 @@ on('change:strength change:mega_strength change:dexterity change:mega_dexterity 
             updateWeaponDamage(rowId);
         });
     });
-
 });
 
-on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function() {
+on('change:repeating_weapons:wskill change:repeating_weapons:wacc', function () {
     console.log("Weapon skill changed, updating attack bonus.");
-    
-    const prefix = `repeating_weapons_`;
-    getAttrs([`${prefix}wacc`, `${prefix}wskill`, `${prefix}wtotalacc`,
-        'Dexterity', 'Strength', 'Athletics', 'Brawl', 'Firearms', 'Melee',
-        'Throwing', 'Martial_Arts', 'Archery', 'Gunnery', 'Heavy_Weapons'], (values) => {
-        const accuracy = parseInt(values[`${prefix}wacc`] || '0');
-        const dexterity = parseInt(values['Dexterity'] || '0');
-        const strength = parseInt(values['Strength'] || '0');
-        const skillName = values[`${prefix}wskill`].replace(' ', '_');
-        const skillValue = parseInt(values[skillName] || '0');
-        switch (skillName) {
-            case 'Brawl':
-            case 'Throwing':
-                setAttrs({
-                    [`${prefix}wtotalacc`]: accuracy + strength + skillValue
-                });
-                break;
-            case 'Athletics':
-            case 'Archery':
-            case 'Firearms':
-            case 'Gunnery':
-            case 'Heavy_Weapons':
-            case 'Martial_Arts':
-            case 'Melee':
-                setAttrs({
-                    [`${prefix}wtotalacc`]: accuracy + dexterity + skillValue
-                });
-                break;
-            default:
-                console.error("Unknown skill:", values[`${prefix}wskill`]);
-                break;
-        }
-    });
+    updateWeaponAttack();
 });
 
-
-on("change:repeating_weapons:wstr change:repeating_weapons:wdam change:repeating_weapons:wdam_auto", function() {
-    getAttrs(['repeating_weapons_wstr', 'repeating_weapons_wdam', 'repeating_weapons_wdam_auto', 'strength', 'mega_strength'], (values) => {
-        const attackDamage = parseInt(values[`repeating_weapons_wdam`] || '0');
-        const autoDamage = parseInt(values['repeating_weapons_wdam_auto'] || '0');
-        if (values['repeating_weapons_wstr'] === '1') {
-            const strength = parseInt(values[`strength`] || '0');
-            const megaStrength = parseInt(values[`mega_strength`] || '0');
-            setAttrs({
-                ['repeating_weapons_wdamtotal']: strength + attackDamage,
-                ['repeating_weapons_wdamdisplay']: `[${autoDamage + (megaStrength * 5)}] + ${attackDamage + strength}`
-            });
-        }
-        else {
-            setAttrs({
-                ['repeating_weapons_wdamtotal']: attackDamage,
-                ['repeating_weapons_wdamdisplay']: `[${autoDamage}] + ${attackDamage}`
-            });
-        }
-    });
+on("change:repeating_weapons:wstr change:repeating_weapons:wdam change:repeating_weapons:wdam_auto", function () {
+    console.log("Weapon strength or damage changed, updating damage.");
+    updateWeaponDamage();
 });
 
-on("clicked:repeating_weapons:roll-attack", function(eventInfo) {
+on("clicked:repeating_weapons:roll-attack", function (eventInfo) {
     console.log("Attack roll button clicked:", eventInfo);
     const match = eventInfo.sourceAttribute.match(/repeating_weapons_([^_]+)_roll-attack/i);
     if (!match) {
@@ -178,7 +128,7 @@ on("clicked:repeating_weapons:roll-attack", function(eventInfo) {
         const range = parseInt(values[`repeating_weapons_range`] || '0');
         const difficulty = parseInt(values[`repeating_weapons_wdifficulty`] || '0');
 
-        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7!>10s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
+        const roll = `&{template:attack} {{subtag= ${characterName} }} ${range > 0 ? `{{range= ${range} }}` : ''}  ${difficulty > 0 ? `{{difficulty= ${difficulty} }}` : ''} {{name= ${weaponName} }} {{attack= [[ (?{Modifier?|0} + ${attackBonus} )d10>7s+?{Bonus Successes?|0 }]] }} {{damage=[Roll Damage](~@{character_id}|repeating_weapons_${rowId}_roll-damage) }}`;
         startRoll(roll, (results) => {
             console.log("Attack roll results:", results);
             finishRoll(results.rollId, {});
@@ -186,7 +136,7 @@ on("clicked:repeating_weapons:roll-attack", function(eventInfo) {
     });
 });
 
-on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
+on("clicked:repeating_weapons:roll-damage", function (eventInfo) {
     console.log("Damage roll button clicked:", eventInfo);
     const match = eventInfo.sourceAttribute.match(/repeating_weapons_([^_]+)_roll-damage/i);
     if (!match) {
@@ -224,7 +174,7 @@ on("clicked:repeating_weapons:roll-damage", function(eventInfo) {
             damage = Math.max(1, damage - soak);
         }
 
-        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7!>10s+${damageAdds} ]] }}`;
+        const roll = `&{template:damage} {{subtag= ${characterName} }} {{name= ${weaponName} }} {{damage= [[ ${damage}d10>7s+${damageAdds} ]] }}`;
         const damageResults = await startRoll(roll);
         console.log("Damage roll results:", damageResults);
         const damageReport = damageResults.results.damage.result > 0 ? `inflicts ${damageResults.results.damage.result.toString()} levels of ${damageType} damage` : 'fails to inflict any damage';
@@ -240,38 +190,38 @@ on("clicked:add_quantum_power", () => {
             console.log('No power selected');
             return;
         }
-        
+
         const power = QuantumPowerData.QuantumPowers.find(p => p.name === selectedPower);
         if (!power) {
             console.log('Power not found:', selectedPower);
             return;
         }
-        
+
         // Create new repeating section row with data
         const rowAttrs: { [key: string]: string | number } = {};
-        
+
         // Basic fields
         rowAttrs['rPowerName'] = power.name;
         rowAttrs['rPowerSource'] = power.source;
         if (power.level !== undefined && power.level !== -1) {
             rowAttrs['rPowerLevel'] = String(power.level);
         }
-        
+
         // Range
         if (power.range) {
             rowAttrs['rRangep'] = power.range;
         }
-        
+
         // Area
         if (power.area) {
             rowAttrs['rAreaNotes'] = power.area;
         }
-        
+
         // Techniques
         if (power.techniques && power.techniques.length > 0) {
             rowAttrs['rPowerTechniques'] = power.techniques.join(', ');
         }
-        
+
         // Notes - combine effect and summary
         const noteParts: string[] = [];
         if (power.effect) {
@@ -281,7 +231,7 @@ on("clicked:add_quantum_power", () => {
             noteParts.push(`Duration: ${power.duration}`);
         }
         if (power.multipleActions !== null && power.multipleActions !== undefined) {
-            const ma = typeof power.multipleActions === 'boolean' 
+            const ma = typeof power.multipleActions === 'boolean'
                 ? (power.multipleActions ? 'Yes' : 'No')
                 : String(power.multipleActions);
             noteParts.push(`Multiple Actions: ${ma}`);
@@ -292,20 +242,20 @@ on("clicked:add_quantum_power", () => {
         if (noteParts.length > 0) {
             rowAttrs['rPowerNotes'] = noteParts.join('\n');
         }
-        
+
         // Generate new row ID and create the row
         getSectionIDs('repeating_Powers', (idArray) => {
             const newRowId = generateRowID();
             const rowUpdate: { [key: string]: string | number } = {};
-            
+
             // Prefix all attributes with the repeating section syntax
             Object.keys(rowAttrs).forEach(key => {
                 rowUpdate[`repeating_Powers_${newRowId}_${key}`] = rowAttrs[key];
             });
-            
+
             // Reset the selector
             rowUpdate['power_selector'] = '';
-            
+
             setAttrs(rowUpdate);
             console.log('Added power:', power.name, 'with row ID:', newRowId);
         });
@@ -334,7 +284,7 @@ on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
             return;
         }
         const updates: { [key: string]: string | number } = {};
-        
+
         // Basic fields
         updates[`${prefix}rPowerName`] = power.name;
         updates[`${prefix}rPowerSource`] = power.source;
@@ -346,12 +296,12 @@ on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
         if (power.range) {
             updates[`${prefix}rRangep`] = power.range;
         }
-        
+
         // Area
         if (power.area) {
             updates[`${prefix}rAreaNotes`] = power.area;
         }
-        
+
         // Notes - combine effect and summary
         const noteParts: string[] = [];
         if (power.effect) {
@@ -361,7 +311,7 @@ on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
             noteParts.push(`Duration: ${power.duration}`);
         }
         if (power.multipleActions !== null && power.multipleActions !== undefined) {
-            const ma = typeof power.multipleActions === 'boolean' 
+            const ma = typeof power.multipleActions === 'boolean'
                 ? (power.multipleActions ? 'Yes' : 'No')
                 : String(power.multipleActions);
             noteParts.push(`Multiple Actions: ${ma}`);
@@ -369,7 +319,7 @@ on("change:repeating_Powers:rpowerpreset", (eventInfo) => {
         if (noteParts.length > 0) {
             updates[`${prefix}rPowerNotes`] = noteParts.join('\n');
         }
-        
+
         if (Object.keys(updates).length) {
             setAttrs(updates);
         }

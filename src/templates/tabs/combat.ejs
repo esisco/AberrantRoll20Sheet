@@ -66,7 +66,7 @@ const movementTypes = [
                     <% for (let i = 1; i <= 10; i++) { -%>
                     <input type='radio' class="dot edit-mode" name='attr_Willpower_max' value=<%= i %><%= i === 1 ? ' checked' : '' %> /><span></span>
                     <% } -%>
-                    <button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7!>10s+?{Bonus Successes?|0 }]] }}"></button>
+                    <button type='roll' class='background' value="&{template:base} {{subtag= @{character_name} }} {{name= Willpower }} {{roll= [[ (?{Modifier?|0} + @{Willpower_max})d10>7s+?{Bonus Successes?|0 }]] }}"></button>
                 </div>
                 <div class="row">
                     <div class="item w20"></div>
