@@ -10,13 +10,34 @@
 				<li><strong>Quantum:</strong> Track quantum powers, quantum and taint</li>
 				<li><strong>Combat:</strong> Handle initiative, movement, weapons, health, and soak values</li>
 				<li><strong>Info:</strong> Character background and information</li>
+				<li><strong>Help:</strong> Access this help section</li>
 				<li><strong>Config:</strong> Configure sheet settings and preferences</li>
+			</ul>
+			<p>Click on the tabs to navigate between different sections of the character sheet. Each tab contains specific fields and options related to that aspect of your character.</p>
+			<h4>Edit Mode</h4>
+			<p>To modify your character's details, enable edit mode in the Config tab. When edit mode is on, you can click on various fields to edit them directly.
+			Remember to disable edit mode when you have finished making your changes.</p>
+			<h4>Icons</h4>
+			<p>Throughout the sheet, you will see various icons next to fields. These icons indicate different roll types you can make:</p>
+			<ul>
+				<li><button type="action" class="d10-dice grid_btn"></button> - Standard d10 roll</li>
+				<li><button type="action" class="mega-roll-btn"></button> - Mega attribute roll</li>
+				<li><button type="action" class="attack-roll-btn"></button> - Attack roll</li>
+				<li><button type="action" class="damage-roll-btn"></button> - Damage roll</li>
+				<li><button type="roll" class="roll-plus-btn"></button> - Roll with a quality</li>
 			</ul>
         </div>
 		<div class="col">
 			<h3>Rolling Dice</h3>
-			<p>Click on the d10 icon next to an ability, power, or attack to roll dice.<br/>
-                The system uses d10 dice pools with successes counted on 7+. 10s explode and 1s cancel successes.</p>
+			<p>Click on the icon next to an ability, power, or attack to roll dice.<br/>
+                The system uses d10 dice pools with successes counted on 7+. If you have no successes and any of the dice come up as one it is a botch.</p>
+
+			<h4>Qualities</h4>
+			<p>You may select a quality for each of your character's Attributes rated 4 or higher. A quality reflects a Trait's aspect in which a person is remarkable, like Flexible (Dexterity), Suave (Charisma) or Discerning (Intelligence).<br />
+In game terms, a quality allows you to reroll any "10s" you roll for actions when that quality comes into play (like wriggling out of bindings for Flexible, impressing others for Suave or noting the relative worth of gems for Discerning).
+Any successes gained on the additional rolls are added to your total (including the original "10s").
+And if you roll another "10" on a reroll, you keep rolling!<br />
+Only one quality may be chosen per Attribute.</p>
 			
 			<h4>Mega Attributes</h4>
 			<p>Mega attributes use a different rolling mechanic to represent extraordinary capabilities.
